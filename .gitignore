@@ -1,0 +1,7 @@
+.env
+raw_html/
+__pycache__/
+search_results/
+current_outputs.txt
+cache/
+.sentry-native/

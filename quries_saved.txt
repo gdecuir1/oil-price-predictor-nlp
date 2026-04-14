@@ -1,0 +1,27 @@
+tech economics finance stock news
+stock market OR equity market OR Wall Street news
+AAPL OR Apple stock OR earnings OR iPhone
+TSLA OR Tesla stock OR EV OR electric vehicle
+NVDA OR Nvidia stock OR AI OR semiconductor
+AMZN OR Amazon stock OR e-commerce OR cloud
+GOOGL OR Alphabet OR Google stock OR advertising
+MSFT OR Microsoft stock OR cloud OR AI
+crypto OR bitcoin OR cryptocurrency regulation OR blockchain
+Federal Reserve OR Fed rate OR interest rate hike OR cut
+inflation OR CPI OR consumer prices news
+recession OR economic slowdown OR GDP growth
+earnings season OR corporate earnings report
+M&A OR merger OR acquisition OR takeover news
+IPO OR initial public offering news
+tech regulation OR antitrust OR big tech scrutiny
+supply chain OR semiconductor shortage OR chip news
+oil price OR crude oil OR energy market news
+China economy OR US-China trade war OR tariffs
+Bloomberg OR Reuters finance OR business news
+Yahoo Finance OR market summary OR stock analysis
+AI OR artificial intelligence investment OR boom
+electric vehicle OR EV adoption OR battery technology
+central bank OR ECB OR Bank of England policy
+unemployment OR jobs report OR labor market news
+cryptocurrency crash OR bull run OR regulation
+fintech OR digital banking OR payment technology

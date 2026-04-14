@@ -1,0 +1,843 @@
+2026-04-08 22:46:22,815 - config - INFO - Node 3 initialized. Processing 14855 tasks.
+2026-04-08 22:46:22,816 - config - INFO - Node 3 loaded 1130 previously scraped URLs.
+2026-04-08 22:46:22,816 - config - INFO - [1/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [2/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [3/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [4/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [5/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [6/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [7/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [8/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [9/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [10/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [11/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [12/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [13/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [14/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [15/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [16/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [17/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [18/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [19/14855] Skipping cached URL.
+2026-04-08 22:46:22,816 - config - INFO - [20/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [21/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [22/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [23/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [24/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [25/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [26/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [27/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [28/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [29/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [30/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [31/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [32/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [33/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [34/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [35/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [36/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [37/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [38/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [39/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [40/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [41/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [42/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [43/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [44/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [45/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [46/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [47/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [48/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [49/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [50/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [51/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [52/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [53/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [54/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [55/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [56/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [57/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [58/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [59/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [60/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [61/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [62/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [63/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [64/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [65/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [66/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [67/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [68/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [69/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [70/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [71/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [72/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [73/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [74/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [75/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [76/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [77/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [78/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [79/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [80/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [81/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [82/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [83/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [84/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [85/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [86/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [87/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [88/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [89/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [90/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [91/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [92/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [93/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [94/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [95/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [96/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [97/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [98/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [99/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [100/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [101/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [102/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [103/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [104/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [105/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [106/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [107/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [108/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [109/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [110/14855] Skipping cached URL.
+2026-04-08 22:46:22,817 - config - INFO - [111/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [112/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [113/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [114/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [115/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [116/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [117/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [118/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [119/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [120/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [121/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [122/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [123/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [124/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [125/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [126/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [127/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [128/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [129/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [130/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [131/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [132/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [133/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [134/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [135/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [136/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [137/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [138/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [139/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [140/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [141/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [142/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [143/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [144/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [145/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [146/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [147/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [148/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [149/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [150/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [151/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [152/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [153/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [154/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [155/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [156/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [157/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [158/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [159/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [160/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [161/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [162/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [163/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [164/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [165/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [166/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [167/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [168/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [169/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [170/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [171/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [172/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [173/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [174/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [175/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [176/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [177/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [178/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [179/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [180/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [181/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [182/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [183/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [184/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [185/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [186/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [187/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [188/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [189/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [190/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [191/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [192/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [193/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [194/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [195/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [196/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [197/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [198/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [199/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [200/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [201/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [202/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [203/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [204/14855] Skipping cached URL.
+2026-04-08 22:46:22,818 - config - INFO - [205/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [206/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [207/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [208/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [209/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [210/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [211/14855] Skipping cached URL.
+2026-04-08 22:46:22,819 - config - INFO - [212/14855] Starting task: 'M&A OR merger OR acquisition OR takeover news'
+2026-04-08 22:46:22,819 - config - INFO - Booting profile 69d5c2247601e81f02e74e20 (Attempt 1/3)...
+/home/kahl/.gologin/browser/orbita-browser-144/chrome: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /home/kahl/.gologin/browser/orbita-browser-144/chrome)
+/home/kahl/.gologin/browser/orbita-browser-144/chrome: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /home/kahl/.gologin/browser/orbita-browser-144/chrome)
+/home/kahl/.gologin/browser/orbita-browser-144/chrome: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /home/kahl/.gologin/browser/orbita-browser-144/chrome)
+[258795:258795:0408/224632.101399:ERROR:base/i18n/rtl.cc:160] Failed to set the ICU default locale to . Falling back to en-US.
+[1:1:0408/224632.102566:ERROR:base/i18n/rtl.cc:160] Failed to set the ICU default locale to . Falling back to en-US.
+[258795:258795:0408/224632.103831:ERROR:gologin/preference/headless_preference_storage.cc:67] pref path /tmp/gologin_69d5c2247601e81f02e74e20/Default/Preferences
+[1:1:0408/224632.104798:ERROR:gologin/preference/headless_preference_storage.cc:67] pref path /tmp/gologin_69d5c2247601e81f02e74e20/Default/Preferences
+[258785:258785:0408/224632.107386:ERROR:gologin/preference/headless_preference_storage.cc:67] pref path /tmp/gologin_69d5c2247601e81f02e74e20/Default/Preferences
+[sentry] INFO using database path "/home/kahl/codes/quant/data_mining_project/dataset_build/we_scrape_all_day/.sentry-native"
+[sentry] DEBUG starting transport
+[sentry] DEBUG starting background worker thread
+[sentry] DEBUG starting backend
+[sentry] DEBUG processing and pruning old runs
+[sentry] DEBUG background worker thread started
+/proc/self/exe: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /proc/self/exe)
+
+DevTools listening on ws://127.0.0.1:28741/devtools/browser/1e008fc2-a45f-4065-bcfb-631c4476a09c
+Fontconfig error: Cannot load default config file: File not found
+[258785:258809:0408/224635.926957:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+(node:259037) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-08 22:46:40,782 - config - INFO - Initializing Google Mimicry Strategy...
+[258785:258809:0408/224640.847027:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+[258785:258809:0408/224708.494369:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+[258785:258809:0408/224710.693464:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+2026-04-08 22:47:15,033 - config - INFO - ✓ Saved results to 6eb0d9a99fed35b1fdc732cf1ffa2438.html
+2026-04-08 22:47:17,180 - config - INFO - [213/14855] Starting task: 'M&A OR merger OR acquisition OR takeover news'
+(node:262576) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-08 22:47:17,554 - config - INFO - Initializing Google Mimicry Strategy...
+2026-04-08 22:47:36,798 - config - INFO - ✓ Saved results to 339cb1f282973ad7c2a140b20f7dd2ce.html
+2026-04-08 22:47:39,050 - config - INFO - [214/14855] Starting task: 'M&A OR merger OR acquisition OR takeover news'
+(node:263769) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-08 22:47:39,435 - config - INFO - Initializing Google Mimicry Strategy...
+[258785:258809:0408/224757.886189:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+2026-04-08 22:48:03,065 - config - INFO - ✓ Saved results to 46182828f6ee1f909b2e33315d977382.html
+2026-04-08 22:48:05,869 - config - INFO - [215/14855] Starting task: 'M&A OR merger OR acquisition OR takeover news'
+(node:266424) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+2026-04-08 22:48:06,261 - config - INFO - Initializing Google Mimicry Strategy...
+[258785:258809:0408/224807.283705:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+2026-04-08 22:48:26,543 - config - INFO - ✓ Saved results to 12f0e3c6754c2a4cec82375d77cfb9c8.html
+2026-04-08 22:48:28,500 - config - INFO - [216/14855] Starting task: 'M&A OR merger OR acquisition OR takeover news'
+2026-04-08 22:48:28,500 - config - INFO - Batch limit reached. Restarting GoLogin profile to flush memory...
+2026-04-08 22:48:28,500 - config - INFO - -> Next session will handle 4 randomized tasks.
+2026-04-08 22:48:36,172 - config - INFO - Booting profile 69d5c2247601e81f02e74e20 (Attempt 1/3)...
+2026-04-08 22:48:44,952 - gologin - ERROR - HTTP request failed: GET https://geo.myip.link - Error: HTTPSConnectionPool(host='geo.myip.link', port=443): Max retries exceeded with url: / (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 522 Server Error')))
+2026-04-08 22:48:44,961 - config - ERROR - GoLogin proxy boot failed: ('Proxy check failed. Please check your proxy or network connection', ProxyError(MaxRetryError("HTTPSConnectionPool(host='geo.myip.link', port=443): Max retries exceeded with url: / (Caused by ProxyError('Unable to connect to proxy', OSError('Tunnel connection failed: 522 Server Error')))")))
+2026-04-08 22:48:48,437 - config - INFO - Waiting 10 seconds before retrying proxy connection...
+2026-04-08 22:48:58,445 - config - INFO - Booting profile 69d5c2247601e81f02e74e20 (Attempt 2/3)...
+/home/kahl/.gologin/browser/orbita-browser-144/chrome: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /home/kahl/.gologin/browser/orbita-browser-144/chrome)
+/home/kahl/.gologin/browser/orbita-browser-144/chrome: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /home/kahl/.gologin/browser/orbita-browser-144/chrome)
+/home/kahl/.gologin/browser/orbita-browser-144/chrome: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /home/kahl/.gologin/browser/orbita-browser-144/chrome)
+[1:1:0408/224904.917750:ERROR:base/i18n/rtl.cc:160] Failed to set the ICU default locale to . Falling back to en-US.
+[273438:273438:0408/224904.919374:ERROR:base/i18n/rtl.cc:160] Failed to set the ICU default locale to . Falling back to en-US.
+[1:1:0408/224904.920206:ERROR:gologin/preference/headless_preference_storage.cc:67] pref path /tmp/gologin_69d5c2247601e81f02e74e20/Default/Preferences
+[273438:273438:0408/224904.921870:ERROR:gologin/preference/headless_preference_storage.cc:67] pref path /tmp/gologin_69d5c2247601e81f02e74e20/Default/Preferences
+[273428:273428:0408/224904.922539:ERROR:gologin/preference/headless_preference_storage.cc:67] pref path /tmp/gologin_69d5c2247601e81f02e74e20/Default/Preferences
+[sentry] INFO using database path "/home/kahl/codes/quant/data_mining_project/dataset_build/we_scrape_all_day/.sentry-native"
+[sentry] DEBUG starting transport
+[sentry] DEBUG starting background worker thread
+[sentry] DEBUG starting backend
+[sentry] DEBUG processing and pruning old runs
+[sentry] DEBUG background worker thread started
+[sentry] DEBUG sending envelope
+[sentry] DEBUG submitting task to background worker thread
+[sentry] DEBUG executing task on worker thread
+* Host sentry-orbita.amzn.pro:443 was resolved.
+* IPv6: 2606:4700:20::ac43:4a7b, 2606:4700:20::681a:91, 2606:4700:20::681a:191
+* IPv4: 104.26.0.145, 104.26.1.145, 172.67.74.123
+*   Trying [2606:4700:20::ac43:4a7b]:443...
+/proc/self/exe: /usr/lib/libcurl-gnutls.so.4: no version information available (required by /proc/self/exe)
+
+DevTools listening on ws://127.0.0.1:23051/devtools/browser/424a08c0-1f0b-4a3e-92a6-95e4d599f242
+Fontconfig error: Cannot load default config file: File not found
+*   Trying 104.26.0.145:443...
+* GnuTLS priority: NORMAL:%PROFILE_MEDIUM:-ARCFOUR-128:-CTYPE-ALL:+CTYPE-X509:-VERS-SSL3.0:-VERS-TLS-ALL:+VERS-TLS1.3:+VERS-TLS1.2
+* ALPN: curl offers h2,http/1.1
+* SSL Trust Anchors:
+*   CAfile: 145 certificates in /etc/ssl/certs/ca-certificates.crt
+* SSL connection using TLS1.3 / ECDHE_RSA_AES_256_GCM_SHA384
+*   SSL certificate verified by GnuTLS
+*   SSL certificate expiration date OK
+*   SSL certificate activation date OK
+*   SSL certificate status verification SKIPPED
+*   common name: amzn.pro (matched)
+*   certificate public key: EC/ECDSA
+*   certificate version: #3
+*   subject: CN=amzn.pro
+*   start date: Tue, 03 Mar 2026 08:35:12 GMT
+*   expire date: Mon, 01 Jun 2026 09:35:10 GMT
+*   issuer: C=US,O=Google Trust Services,CN=WE1
+* ALPN: server accepted h2
+* Established connection to sentry-orbita.amzn.pro (104.26.0.145 port 443) from 10.98.0.7 port 34578 
+* using HTTP/2
+* [HTTP/2] [1] OPENED stream for https://sentry-orbita.amzn.pro:443/api/1/envelope/
+* [HTTP/2] [1] [:method: POST]
+* [HTTP/2] [1] [:scheme: https]
+* [HTTP/2] [1] [:authority: sentry-orbita.amzn.pro]
+* [HTTP/2] [1] [:path: /api/1/envelope/]
+* [HTTP/2] [1] [user-agent: sentry.native/0.6.1]
+* [HTTP/2] [1] [accept: */*]
+* [HTTP/2] [1] [x-sentry-auth: Sentry sentry_key=b93e53b7421f415d4a4691101a732b4d, sentry_version=7, sentry_client=sentry.native/0.6.1]
+* [HTTP/2] [1] [content-type: application/x-sentry-envelope]
+* [HTTP/2] [1] [content-length: 306]
+> POST /api/1/envelope/ HTTP/2
+Host: sentry-orbita.amzn.pro
+User-Agent: sentry.native/0.6.1
+Accept: */*
+x-sentry-auth:Sentry sentry_key=b93e53b7421f415d4a4691101a732b4d, sentry_version=7, sentry_client=sentry.native/0.6.1
+content-type:application/x-sentry-envelope
+content-length:306
+
+* upload completely sent off: 306 bytes
+< HTTP/2 200 
+< date: Thu, 09 Apr 2026 02:49:05 GMT
+< content-type: application/json
+< content-length: 2
+< server: cloudflare
+< nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+< vary: origin, access-control-request-method, access-control-request-headers
+< access-control-allow-origin: *
+< access-control-expose[141504:141526:0408/225102.290737:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:483] ConnectionHandler failed with net error: -2
+[141504:141526:0408/225102.709559:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+[141504:141526:0408/225130.840961:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+[141504:141526:0408/225229.417173:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+[141504:141526:0408/225430.042011:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+[141504:141526:0408/225735.593336:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -111
+[141504:141526:0408/230307.779546:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0408/231019.892724:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0408/231114.421647:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0408/231330.388232:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0408/232353.014674:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0408/233403.128382:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0408/234737.244269:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0408/235118.935000:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0408/235406.855179:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/000413.187882:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/001419.570359:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/002426.013780:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/003432.861288:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/004439.531636:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/005445.808490:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/010451.920391:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/011458.319239:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/012505.033360:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/013511.771031:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/014518.404382:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/015525.045954:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/020531.266861:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/021537.901017:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/022544.718844:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/023550.918052:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/024554.483525:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/025557.683055:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/030601.043052:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/031604.496787:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/032607.923141:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/033611.169800:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/034614.536867:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/035617.813381:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/040621.350789:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/092123.130843:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/092131.109648:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/092244.849208:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/092629.324419:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/092710.524622:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/093649.719871:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/094702.285209:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/095723.186332:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/100752.999760:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/101818.837715:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/113842.600417:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/114156.761511:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/115223.009867:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/120238.259551:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/121253.554797:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/122314.045575:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/123326.494622:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/124348.954295:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/125349.043317:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/130349.048925:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/150702.911876:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/150712.942801:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/151120.579739:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/151133.394348:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/151555.689084:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/152559.358531:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/153602.910353:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/154606.547150:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/155610.198602:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/160614.162026:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/161617.924400:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/163018.468682:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/163023.500974:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/163059.078546:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/163349.704044:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/163625.313776:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/164410.166759:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/165432.617888:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/170448.783680:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/171506.422156:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/172522.063608:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/180056.757055:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/180814.311891:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/185415.457360:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/185421.127301:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/185804.618057:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/185817.139940:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/185919.544465:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/190838.285032:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/190939.436702:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/191913.516362:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/192938.989352:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/194004.471372:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/195015.033555:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/200027.581969:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/201053.064035:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/202108.291608:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/202645.936814:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/203133.799538:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/203214.942960:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/203434.698612:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/203825.499289:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/204202.586485:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/204415.333188:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/205215.203900:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/210240.484625:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/211257.236288:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/212312.520247:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/213327.821034:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/214340.376780:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/215604.586710:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/215624.881974:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/220716.291829:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0409/220741.459805:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/221752.752777:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/222810.248164:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/223832.829436:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/224848.012324:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/225914.154838:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/230939.779590:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/231955.027626:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/232414.948770:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/232443.519129:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/233010.279725:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/234008.018628:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/234010.293026:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/234534.045672:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/235040.858286:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0409/235617.608882:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/000101.934896:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/000147.549891:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/001122.377854:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/002142.750225:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/003158.410747:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/003359.028584:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/003903.777485:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/004223.680694:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/005107.235967:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/005407.487446:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/010601.985151:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/011618.961802:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/011750.489117:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/012305.737379:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/012634.664596:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/013827.995694:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/014100.301622:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/092340.776450:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/092834.085558:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/092838.961066:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/093846.762126:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/094859.274598:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/095931.687175:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/095959.782412:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/100026.366401:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/100558.575588:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/101624.022552:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/102644.602366:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/103706.738431:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/112015.078888:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/112343.515321:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/113356.641173:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/114422.677899:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/115448.027620:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/120513.811277:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/121542.447955:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/122557.871594:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/123619.081857:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/124619.861417:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/125632.640580:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/130648.064305:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/151030.190186:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/151054.799461:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/151335.431148:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/151342.099221:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/152058.740943:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/153102.092637:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/154105.446256:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/155109.051101:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/160112.251925:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/161115.538931:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/162119.473702:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/180854.445092:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/180900.243163:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/180914.518736:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/180917.206840:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/180937.540782:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/181501.533690:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/181810.080814:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/182831.345848:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/183843.927782:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/184909.605594:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/185935.450118:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/190956.207173:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/192011.489636:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/193026.594259:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/194057.431484:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/195122.674230:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/200314.971282:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/200649.810444:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/200857.409836:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/201229.187820:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/201702.884422:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/201714.126902:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/202208.951260:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/202728.643674:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/202904.435460:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/203402.716776:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/203622.001258:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/203739.485156:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/204139.059522:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/204800.384815:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/205820.851871:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/210832.129063:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/210845.525823:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/210938.388120:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0410/212026.430174:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/213220.676091:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/214414.930428:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/215608.676801:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/220803.176544:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/221957.680163:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/222336.676751:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/222514.430277:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/222806.176587:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/223201.182451:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/224401.676558:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/225556.176684:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/230750.678740:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/231945.176136:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/233139.676306:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/234333.928059:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/235018.259236:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0410/235507.175913:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/000140.932837:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/000551.423985:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/001540.186133:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/001558.205431:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/001624.045186:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/002608.355712:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/002647.425659:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/003015.439942:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/003526.689886:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/003633.810151:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/004023.991873:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/004040.349004:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/004644.084205:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/005656.437974:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/010614.056449:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/010642.990735:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/010653.955648:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/010656.444230:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/011032.625751:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/011045.128821:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/011656.455026:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/012715.868065:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/013728.678715:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/014219.492734:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/014258.452818:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/014746.786944:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/014756.843390:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/015050.750187:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/015158.407655:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/015212.655961:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/015350.792401:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/015817.200948:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/015915.926191:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/020042.588876:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/020221.292432:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/020505.938352:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/020828.799291:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/020838.857049:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/021336.705095:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/021649.241758:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/021836.755815:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/021838.873583:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/021935.287075:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022024.076399:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022111.717795:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022120.643588:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022316.062744:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022443.546770:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022607.713582:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/022859.753573:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/023912.306975:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/024843.842217:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/025335.067870:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/025414.522848:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/025629.812850:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/030617.710438:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/031111.188357:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/031442.745406:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/032458.697986:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/134038.987791:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/134052.301814:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/134612.916117:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/135022.642648:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/140035.226946:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/141050.494623:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/142103.189481:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/143123.747688:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/144134.119438:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/144313.911273:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/145159.872768:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/145238.611181:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/145245.330678:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/150344.059432:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/150356.279715:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/150400.320863:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/150404.814782:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/150810.116381:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/150821.483233:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/150834.935124:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/151009.034792:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/151020.625092:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/151041.720878:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/151756.070711:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/152819.409824:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/152947.395124:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/153850.682128:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/154911.336460:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/155931.831788:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/161000.854267:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/162038.927360:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/163049.054977:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/164123.122066:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/165148.474572:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/174548.171037:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/174738.537357:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/175048.439960:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/175549.018048:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -331
+[141504:141526:0411/180119.608216:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/180124.674030:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/190812.321344:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/190816.356056:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -130
+[141504:141526:0411/190820.801114:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/190921.294973:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/191924.536642:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/192930.024284:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/193933.227248:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/194936.699305:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/195940.339207:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/200943.890153:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/201947.012348:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/202950.146150:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/203953.282623:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/204956.385569:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/210005.465594:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/211008.816738:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/212011.916266:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/213015.020725:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/214018.373675:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/215021.944142:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/220025.370636:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/221028.504560:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/222032.086201:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/223035.210041:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/224038.304427:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/225041.676219:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/230044.811831:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/231048.414079:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/232051.558087:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/233055.203088:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/234058.352676:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0411/235101.594490:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/000105.165414:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/001108.339618:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/002111.438004:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/003114.553764:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/004117.915613:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/005121.059191:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/010124.426874:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/011127.571823:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/012130.716438:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/013133.860855:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/014136.983217:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/015140.148204:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/020143.499915:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/021146.651282:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/022723.723148:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/022938.908680:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/023648.653507:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/024651.826698:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/025655.003776:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/030659.401940:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/031703.037558:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/032706.185924:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/033709.286793:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/034713.026225:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/035716.420828:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/040719.568458:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/041722.766846:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/042725.920798:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/043729.054396:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/044732.190991:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/045735.288213:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/050738.411858:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/051741.836603:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/052744.969625:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/053748.130115:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/054751.311843:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/055754.518237:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/060757.749825:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/061800.890784:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/062804.037096:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/063807.182802:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/064810.422524:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/065813.769164:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/070816.918162:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/071820.060045:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/072823.209339:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/073826.456423:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/074829.600355:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/075833.043818:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/080836.188183:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/081839.333847:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/082843.138356:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[141504:141526:0412/083846.309440:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+th error -127
+[146560:146594:0412/063808.893637:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/064812.574754:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/065815.737899:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/070818.870884:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/071822.296357:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/072825.460209:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/073828.602564:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/074832.012819:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/075835.115763:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/080838.340477:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/081842.002059:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/082845.105383:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[146560:146594:0412/083848.591195:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+or -127
+[190731:190754:0411/203953.002362:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/204956.195702:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/210004.105477:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/211007.306717:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/212010.744700:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/213013.954178:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/214017.628376:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/215020.812629:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/220024.673759:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/221027.877146:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/222031.521382:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/223035.119171:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/224038.241097:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/225041.605281:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/230044.752358:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/231048.129779:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/232051.696660:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/233055.271486:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/234058.412101:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0411/235101.594295:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/000104.842017:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/001107.970192:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/002111.238019:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/003114.419231:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/004117.843015:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/005120.944933:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/010124.490074:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/011127.595675:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/012130.716514:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/013133.860894:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/014136.972481:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/015140.148398:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/020143.393466:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/021146.975646:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/022723.741331:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/022940.955583:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/023649.332433:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/024652.472389:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/025655.601029:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/030659.755919:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/031702.978303:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/032706.164172:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/033709.309937:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/034712.479793:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/035715.661151:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/040718.806080:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/041721.948011:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/042725.308001:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/043728.543002:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/044731.999225:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/045735.149386:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/050738.297495:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/051741.493371:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/052744.967356:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/053748.129588:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/054751.599716:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/055755.133130:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/060758.319403:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/061801.457899:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/062804.576969:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/063807.762806:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/064811.206509:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/065814.456676:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/070817.578920:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/071820.723722:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/072824.437224:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/073827.579321:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/074831.334925:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/075834.478173:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/080837.599176:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/081841.237702:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/082844.915546:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
+[190731:190754:0412/083848.035058:ERROR:google_apis/gcm/engine/connection_factory_impl.cc:434] Failed to connect to MCS endpoint with error -127
