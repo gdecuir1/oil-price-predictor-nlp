@@ -1,6 +1,13 @@
-# .env
-CAPTCHA_API_KEY= # CAPTCHA_API_KEY
+# Copy to ".env" in this directory (see .gitignore). Required for scraper_engine.py:
+#   CAPTCHA_API_KEY — CapSolver (https://www.capsolver.com/) for ReCaptchaV2 when Google blocks.
+#   GOLOGIN_API_TOKEN — GoLogin (https://app.gologin.com/) to launch the anti-detect browser profile.
+#   DEFAULT_PROXY — optional HTTP smart/residential proxy for scripts that route traffic through a gateway.
 
-DEFAULT_PROXY= # Proxy server http gataway E.G:  http://YOUR_PROXY_USERNAME:YOUR_PROXY_PASSWORD@unblock.decodo.com:60000
+# CapSolver client key
+CAPTCHA_API_KEY=YOUR_CAPSOLVER_CLIENT_KEY
 
-GOLOGIN_API_TOKEN = # GOLOGIN_API_TOKEN
+# Smart proxy (example: Decodo unblock gateway). Format: http://USERNAME:PASSWORD@HOST:PORT
+DEFAULT_PROXY=http://YOUR_SMART_PROXY_USERNAME:YOUR_SMART_PROXY_PASSWORD@unblock.decodo.com:60000
+
+# GoLogin API token
+GOLOGIN_API_TOKEN=YOUR_GOLOGIN_API_TOKEN
