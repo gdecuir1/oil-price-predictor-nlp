@@ -1,13 +1,35 @@
 # Copy to ".env" in this directory (see .gitignore). Required for scraper_engine.py:
 #   CAPTCHA_API_KEY — CapSolver (https://www.capsolver.com/) for ReCaptchaV2 when Google blocks.
 #   GOLOGIN_API_TOKEN — GoLogin (https://app.gologin.com/) to launch the anti-detect browser profile.
-#   DEFAULT_PROXY — optional HTTP smart/residential proxy for scripts that route traffic through a gateway.
+#   DEFAULT_PROXY or SMARTPROXY_* — residential / smart HTTP proxy (Smartproxy is now "Decodo" in the dashboard)
 
 # CapSolver client key
 CAPTCHA_API_KEY=YOUR_CAPSOLVER_CLIENT_KEY
 
-# Smart proxy (example: Decodo unblock gateway). Format: http://USERNAME:PASSWORD@HOST:PORT
-DEFAULT_PROXY=http://YOUR_SMART_PROXY_USERNAME:YOUR_SMART_PROXY_PASSWORD@unblock.decodo.com:60000
-
 # GoLogin API token
 GOLOGIN_API_TOKEN=YOUR_GOLOGIN_API_TOKEN
+
+# ---- Smartproxy / Decodo (https://decodo.com/ — former Smartproxy) ----
+# 1) Create an account, buy residential proxy traffic, open the proxy setup screen.
+# 2) Use gateway "gate.decodo.com" or "gate.smartproxy.com" and port 7000 (see your dashboard; country endpoints may differ).
+# 3) Copy the exact username and password the dashboard shows (username may include -country-us etc.).
+# 4) Sticky session: the code adds "-session-n{node}-b{boot}" to the username on each
+#    GoLogin restart so the exit IP rotates without manual edits ("change the last segment"
+#    of the user string). Or set SMARTPROXY_ROTATION_MODE=last_digit to only rotate
+#    the last character 0-9.
+# 5) Optional: set GOLOGIN_APPLY_DEFAULT_PROXY=1 and only DEFAULT_PROXY to push that URL
+#    to the GoLogin profile; otherwise you must set SMARTPROXY_USERNAME + SMARTPROXY_PASSWORD.
+
+SMARTPROXY_HOST=gate.decodo.com
+SMARTPROXY_PORT=7000
+SMARTPROXY_USERNAME=YOUR_PROXY_USERNAME
+SMARTPROXY_PASSWORD=YOUR_PROXY_PASSWORD
+# session | last_digit
+SMARTPROXY_ROTATION_MODE=session
+
+# Filled automatically from SMARTPROXY_* when unset (for test.py and article_scraper).
+# You can set it by hand: http://USER:PASS@HOST:PORT
+# DEFAULT_PROXY=
+
+# Only needed if you do not use SMARTPROXY_USERNAME but want GoLogin to read DEFAULT_PROXY
+# GOLOGIN_APPLY_DEFAULT_PROXY=0

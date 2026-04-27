@@ -30,6 +30,7 @@ from config import (
     CAPTCHA_API_KEY,
     DEFAULT_PROXY,
     GOLOGIN_API_TOKEN,
+    build_gologin_smartproxy_payload,
 )
 
 # Setup Cache Directory for Harmonic Writes
@@ -196,6 +197,8 @@ class ScraperEngine:
         task_count = 0
         current_batch_limit = 0
         gl_sdk = None
+        gologin_boot_id = 0
+        ws_endpoint = None
 
         for i, task in enumerate(tasks):
             url_hash = hashlib.md5(task["url"].encode("utf-8")).hexdigest()
@@ -223,6 +226,7 @@ class ScraperEngine:
                         pass  # Ignore FileNotFoundError if proxy crashed
                     time.sleep(5)
 
+                gologin_boot_id += 1
                 max_boot_retries = 3
                 raw_endpoint = None
 
@@ -238,6 +242,29 @@ class ScraperEngine:
                                 "extra_params": ["--headless", "--disable-gpu"],
                             }
                         )
+
+                        sp_payload = build_gologin_smartproxy_payload(
+                            node_index, gologin_boot_id
+                        )
+                        if sp_payload:
+                            try:
+                                st = gl_sdk.changeProfileProxy(
+                                    base_profile_id, sp_payload
+                                )
+                            except Exception as e:
+                                logger.error(
+                                    f"changeProfileProxy failed (check SMARTPROXY_* / token): {e}"
+                                )
+                                raise
+                            if st is not None and st >= 400:
+                                raise RuntimeError(
+                                    f"GoLogin rejected proxy update (HTTP {st}). "
+                                    "Verify token and profile id."
+                                )
+                            logger.info(
+                                "Updated GoLogin profile with Smartproxy session "
+                                f"(boot {gologin_boot_id}, node {node_index})"
+                            )
 
                         raw_endpoint = gl_sdk.start()
                         if raw_endpoint:
