@@ -1,0 +1,182 @@
+[
+  {
+    "query": "Crude oil price OR Brent crude OR WTI crude news",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Crude+oil+price+OR+Brent+crude+OR+WTI+crude+news+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "OPEC+ OR OPEC production cuts OR oil quotas OR ministerial meeting",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=OPEC++OR+OPEC+production+cuts+OR+oil+quotas+OR+ministerial+meeting+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "US shale oil OR Permian Basin production OR fracking OR rig count",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=US+shale+oil+OR+Permian+Basin+production+OR+fracking+OR+rig+count+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Saudi+Aramco+OR+Saudi+oil+exports+OR+NEOM+energy+OR+KSA+oil+policy+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Russian oil price cap OR oil sanctions OR Urals crude OR Sokol grade",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Russian+oil+price+cap+OR+oil+sanctions+OR+Urals+crude+OR+Sokol+grade+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=EIA+Short-Term+Energy+Outlook+OR+oil+inventories+OR+gasoline+stocks+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "IEA monthly oil report OR global oil demand peak OR energy agency",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=IEA+monthly+oil+report+OR+global+oil+demand+peak+OR+energy+agency+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Refinery+maintenance+OR+crack+spread+OR+diesel+shortage+OR+jet+fuel+demand+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Strategic+Petroleum+Reserve+OR+SPR+refill+OR+US+Department+of+Energy+oil+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Houthi+Red+Sea+attacks+OR+Bab+el-Mandeb+shipping+OR+Suez+Canal+oil+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Israel-Hamas war oil impact OR Iran oil sanctions OR Strait of Hormuz",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Israel-Hamas+war+oil+impact+OR+Iran+oil+sanctions+OR+Strait+of+Hormuz+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Lebanon+Israel+border+tension+OR+Hezbollah+oil+market+OR+East+Med+gas+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Libya oil field shutdown OR Sharara field OR El Feel production",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Libya+oil+field+shutdown+OR+Sharara+field+OR+El+Feel+production+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Nigeria oil theft OR Dangote refinery OR Forcados exports",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Nigeria+oil+theft+OR+Dangote+refinery+OR+Forcados+exports+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Guyana+oil+production+OR+Exxon+Stabroek+block+OR+Venezuela+border+dispute+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=China+economic+stimulus+OR+Chinese+oil+refinery+run+rates+OR+teapot+refineries+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "India crude oil imports OR Russian oil trade India OR Bharat Petroleum",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=India+crude+oil+imports+OR+Russian+oil+trade+India+OR+Bharat+Petroleum+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Oil+tanker+freight+rates+OR+dark+fleet+oil+tankers+OR+maritime+insurance+oil+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Natural+gas+LNG+arbitrage+OR+European+gas+storage+OR+JKM+price+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Interest rates oil price OR US Dollar index oil OR Fed policy energy",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Interest+rates+oil+price+OR+US+Dollar+index+oil+OR+Fed+policy+energy+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Energy transition investment OR oil major buybacks OR M&A energy sector",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Energy+transition+investment+OR+oil+major+buybacks+OR+M&A+energy+sector+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Offshore+Brazil+pre-salt+OR+Petrobras+production+OR+FPSO+deployment+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Iraq Kurdistan oil exports OR Ceyhan pipeline OR SOMO oil",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Iraq+Kurdistan+oil+exports+OR+Ceyhan+pipeline+OR+SOMO+oil+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Kazakhstan CPC blend OR Tengiz field maintenance OR Caspian oil",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Kazakhstan+CPC+blend+OR+Tengiz+field+maintenance+OR+Caspian+oil+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Oil+spill+response+OR+environmental+regulation+oil+OR+carbon+capture+energy+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Global floating storage oil OR oil contango OR backwardation market",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Global+floating+storage+oil+OR+oil+contango+OR+backwardation+market+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Oil demand aviation recovery OR travel demand energy OR EV impact oil",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Oil+demand+aviation+recovery+OR+travel+demand+energy+OR+EV+impact+oil+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Arctic oil drilling OR Norway oil production OR Johan Sverdrup field",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Arctic+oil+drilling+OR+Norway+oil+production+OR+Johan+Sverdrup+field+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=TotalEnergies+Suriname+OR+Namibia+oil+discovery+OR+Orange+Basin+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  },
+  {
+    "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+    "search_date": "2026-05-04",
+    "url": "https://www.google.com/search?q=Energy+security+Europe+OR+winter+gas+outlook+OR+diesel+inventory+lows+after:2026-05-03+before:2026-05-05&tbm=nws&hl=en&gl=us&num=16",
+    "max_results": 8
+  }
+]
