@@ -1,0 +1,72 @@
+[
+  {
+    "query": "Crude oil price OR Brent crude OR WTI crude news",
+    "url": "https://www.google.com/search?q=Crude+oil+price+OR+Brent+crude+OR+WTI+crude+news+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/6fdaeee49cd0841ce42db1b16ffefbf9.html"
+  },
+  {
+    "query": "OPEC+ OR OPEC production cuts OR oil quotas OR ministerial meeting",
+    "url": "https://www.google.com/search?q=OPEC++OR+OPEC+production+cuts+OR+oil+quotas+OR+ministerial+meeting+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/7a27e36c0fec378a2f9a400ad734fccd.html"
+  },
+  {
+    "query": "US shale oil OR Permian Basin production OR fracking OR rig count",
+    "url": "https://www.google.com/search?q=US+shale+oil+OR+Permian+Basin+production+OR+fracking+OR+rig+count+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/b9d4ef3e5b91447cfabda82682e22e43.html"
+  },
+  {
+    "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+    "url": "https://www.google.com/search?q=Saudi+Aramco+OR+Saudi+oil+exports+OR+NEOM+energy+OR+KSA+oil+policy+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/046a0ab812fe048f60b12a9fdb80fc65.html"
+  },
+  {
+    "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+    "url": "https://www.google.com/search?q=Lebanon+Israel+border+tension+OR+Hezbollah+oil+market+OR+East+Med+gas+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/4da040cf24197e9420a41a4c23db90cf.html"
+  },
+  {
+    "query": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute",
+    "url": "https://www.google.com/search?q=Guyana+oil+production+OR+Exxon+Stabroek+block+OR+Venezuela+border+dispute+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/7657e0648e6a0ab10d332a2bf641c4d9.html"
+  },
+  {
+    "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+    "url": "https://www.google.com/search?q=Natural+gas+LNG+arbitrage+OR+European+gas+storage+OR+JKM+price+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/3171e9d354baaa936661f1ac37d6b2dd.html"
+  },
+  {
+    "query": "Interest rates oil price OR US Dollar index oil OR Fed policy energy",
+    "url": "https://www.google.com/search?q=Interest+rates+oil+price+OR+US+Dollar+index+oil+OR+Fed+policy+energy+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/43e1175d78785dc8044b35db628b2c55.html"
+  },
+  {
+    "query": "Energy transition investment OR oil major buybacks OR M&A energy sector",
+    "url": "https://www.google.com/search?q=Energy+transition+investment+OR+oil+major+buybacks+OR+M&A+energy+sector+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/8eea9a8fc12f33fd4d92fdd70769d1f5.html"
+  },
+  {
+    "query": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+    "url": "https://www.google.com/search?q=Oil+spill+response+OR+environmental+regulation+oil+OR+carbon+capture+energy+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/70dd4de4d15f1f476eb3d5c1dffd9bbe.html"
+  },
+  {
+    "query": "Oil demand aviation recovery OR travel demand energy OR EV impact oil",
+    "url": "https://www.google.com/search?q=Oil+demand+aviation+recovery+OR+travel+demand+energy+OR+EV+impact+oil+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/93a631f8944d3eee68eab056f6d37bcf.html"
+  },
+  {
+    "query": "Arctic oil drilling OR Norway oil production OR Johan Sverdrup field",
+    "url": "https://www.google.com/search?q=Arctic+oil+drilling+OR+Norway+oil+production+OR+Johan+Sverdrup+field+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/c52d429e6c26726789fd137c0a78bcf9.html"
+  },
+  {
+    "query": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin",
+    "url": "https://www.google.com/search?q=TotalEnergies+Suriname+OR+Namibia+oil+discovery+OR+Orange+Basin+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/96bfff9bb9ed5e655749f83db6365692.html"
+  },
+  {
+    "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+    "url": "https://www.google.com/search?q=Energy+security+Europe+OR+winter+gas+outlook+OR+diesel+inventory+lows+after:2026-04-29+before:2026-05-01&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/f31a67ffb7eb7a7b035595b07f2d5d72.html"
+  }
+]
