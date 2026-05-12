@@ -389,5 +389,31 @@ def parse_folder(folder, pattern="*.html"):
 
 
 if __name__ == "__main__":
-    parsed = parse_file("example.html")
-    print(json.dumps(parsed, indent=2, ensure_ascii=False))
+    INPUT_DIR = Path(__file__).resolve().parent / "oil_raw_articles"
+    OUTPUT_DIR = Path(__file__).resolve().parent / "parsed_articles"
+    OUTPUT_DIR.mkdir(exist_ok=True)
+
+    html_files = sorted(INPUT_DIR.glob("*.html"))
+    if not html_files:
+        print(f"No HTML files found in {INPUT_DIR}")
+        raise SystemExit(1)
+
+    print(f"Parsing {len(html_files)} files from {INPUT_DIR} -> {OUTPUT_DIR}")
+    total_articles = 0
+    errors = 0
+
+    for html_path in html_files:
+        try:
+            parsed = parse_file(html_path)
+            out_path = OUTPUT_DIR / (html_path.stem + ".json")
+            out_path.write_text(
+                json.dumps(parsed, indent=2, ensure_ascii=False), encoding="utf-8"
+            )
+            n = parsed["count"]
+            total_articles += n
+            print(f"  {html_path.name} -> {n} articles")
+        except Exception as exc:
+            errors += 1
+            print(f"  ERROR {html_path.name}: {exc}")
+
+    print(f"\nDone. {total_articles} articles from {len(html_files)} files ({errors} errors).")
