@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "query": "Crude oil price OR Brent crude OR WTI crude news",
+    "url": "https://www.google.com/search?q=Crude+oil+price+OR+Brent+crude+OR+WTI+crude+news+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/c71536df4c294314898b3db0246a28f7.html"
+  },
+  {
+    "query": "OPEC+ OR OPEC production cuts OR oil quotas OR ministerial meeting",
+    "url": "https://www.google.com/search?q=OPEC++OR+OPEC+production+cuts+OR+oil+quotas+OR+ministerial+meeting+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/a1cbc81bffe822e898dbc5536d28c652.html"
+  },
+  {
+    "query": "US shale oil OR Permian Basin production OR fracking OR rig count",
+    "url": "https://www.google.com/search?q=US+shale+oil+OR+Permian+Basin+production+OR+fracking+OR+rig+count+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/bc8b72de6186889afff31803b6b84109.html"
+  },
+  {
+    "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+    "url": "https://www.google.com/search?q=Saudi+Aramco+OR+Saudi+oil+exports+OR+NEOM+energy+OR+KSA+oil+policy+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/bb049a534ad9731f9a7af44ef04b94b0.html"
+  },
+  {
+    "query": "Russian oil price cap OR oil sanctions OR Urals crude OR Sokol grade",
+    "url": "https://www.google.com/search?q=Russian+oil+price+cap+OR+oil+sanctions+OR+Urals+crude+OR+Sokol+grade+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/b9b26096961037177c551a1e7fd4df04.html"
+  },
+  {
+    "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+    "url": "https://www.google.com/search?q=Houthi+Red+Sea+attacks+OR+Bab+el-Mandeb+shipping+OR+Suez+Canal+oil+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/8cfac9f5e57e61e1713fe49c22c85c5a.html"
+  },
+  {
+    "query": "Israel-Hamas war oil impact OR Iran oil sanctions OR Strait of Hormuz",
+    "url": "https://www.google.com/search?q=Israel-Hamas+war+oil+impact+OR+Iran+oil+sanctions+OR+Strait+of+Hormuz+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/2f357e0e8d492b6a0d246279f21c2a72.html"
+  },
+  {
+    "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+    "url": "https://www.google.com/search?q=Lebanon+Israel+border+tension+OR+Hezbollah+oil+market+OR+East+Med+gas+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/aba6f0e97b10adf7e48d1d7b08a0993f.html"
+  },
+  {
+    "query": "Libya oil field shutdown OR Sharara field OR El Feel production",
+    "url": "https://www.google.com/search?q=Libya+oil+field+shutdown+OR+Sharara+field+OR+El+Feel+production+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/41712c98b8852e589bcc551aca55216a.html"
+  },
+  {
+    "query": "Nigeria oil theft OR Dangote refinery OR Forcados exports",
+    "url": "https://www.google.com/search?q=Nigeria+oil+theft+OR+Dangote+refinery+OR+Forcados+exports+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/cc64309ef2157669179f76f375fab275.html"
+  },
+  {
+    "query": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute",
+    "url": "https://www.google.com/search?q=Guyana+oil+production+OR+Exxon+Stabroek+block+OR+Venezuela+border+dispute+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/694497f88535575e83bff5016580465a.html"
+  },
+  {
+    "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+    "url": "https://www.google.com/search?q=China+economic+stimulus+OR+Chinese+oil+refinery+run+rates+OR+teapot+refineries+after:2026-05-10+before:2026-05-12&tbm=nws&hl=en&gl=us&num=16",
+    "local_file": "oil_raw_articles/01495790421dd4d0b1c642a9dbd15d48.html"
+  }
+]
