@@ -1,0 +1,1508 @@
+<!DOCTYPE html><html lang="en" class="no-js"><!--<![endif]--><head><style><!----> <!--?lit$502355165$-->:export{fadeTransitionTime:700ms;slideTransitionTime:400ms}.osano-cm-window{font-size:16px;font-family:Helvetica,Arial,"Hiragino Sans GB",STXihei,"Microsoft YaHei","WenQuanYi Micro Hei",Hind,"MS Gothic","Apple SD Gothic Neo",NanumBarunGothic,sans-serif;font-smooth:always;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothingz:auto;display:block;position:absolute;left:0;top:0;z-index:2147483638;line-height:1;width:100%}.osano-cm-window--context_amp{height:100%}.osano-cm-window{--fade-transition-time: 700ms;--slide-transition-time: 400ms;--osano-focus-outline: 3px solid var(--osano-focus-outline-color);--osano-focus-outline-offset: 2px}.osano-visually-hidden{height:1px;width:1px;margin:-1px;opacity:0;position:absolute;left:-10000px;overflow:hidden}.osano-cm-button{border-width:thin;border-style:solid;border-radius:.25em;font-weight:bold;font-size:1em;padding:.5em .75em;margin:.125em;line-height:1;flex:1 1 auto;min-width:6em;cursor:pointer;transition-duration:200ms;transition-property:background-color;transition-timing-function:ease-out;background-color:var(--osano-button-background-color);border-color:var(--osano-button-border-color);color:var(--osano-button-foreground-color)}.osano-cm-button:hover{--osano-button-background-color: var(--osano-button-background-color-hover)}.osano-cm-button:focus-visible{--osano-button-background-color: var(--osano-button-background-color-hover);outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset)}.osano-cm-button--type_icon{min-width:1em;width:1em;line-height:0;height:1em;border-radius:50%}.osano-cm-button--type_accept,.osano-cm-button--type_accept-all{--osano-button-background-color: var(--osano-button-accept-background-color);--osano-button-border-color: var(--osano-button-accept-border-color);--osano-button-foreground-color: var(--osano-button-accept-foreground-color)}.osano-cm-button--type_accept:focus-visible,.osano-cm-button--type_accept:hover,.osano-cm-button--type_accept-all:focus-visible,.osano-cm-button--type_accept-all:hover{--osano-button-background-color: var(--osano-button-accept-background-color-hover)}.osano-cm-button--type_deny{--osano-button-background-color: var(--osano-button-deny-background-color);--osano-button-border-color: var(--osano-button-deny-border-color);--osano-button-foreground-color: var(--osano-button-deny-foreground-color)}.osano-cm-button--type_deny:focus-visible,.osano-cm-button--type_deny:hover{--osano-button-background-color: var(--osano-button-deny-background-color-hover)}.osano-cm-button--type_denyAll{--osano-button-background-color: var(--osano-button-reject-all-background-color);--osano-button-border-color: var(--osano-button-reject-all-border-color);--osano-button-foreground-color: var(--osano-button-reject-all-foreground-color)}.osano-cm-button--type_denyAll:focus-visible,.osano-cm-button--type_denyAll:hover{--osano-button-background-color: var( --osano-button-reject-all-background-color-hover )}.osano-cm-button--type_manage{--osano-button-background-color: var(--osano-button-manage-background-color);--osano-button-border-color: var(--osano-button-manage-border-color);--osano-button-foreground-color: var(--osano-button-manage-foreground-color)}.osano-cm-button--type_manage:focus-visible,.osano-cm-button--type_manage:hover{--osano-button-background-color: var(--osano-button-manage-background-color-hover)}.osano-cm-close{--osano-button-close-background-color: transparent;--osano-button-close-stroke-color: var(--osano-button-close-color);border-radius:50%;border-style:solid;border-width:2px;cursor:pointer;order:0;overflow:hidden;margin:.5em;min-height:20px;min-width:20px;padding:0;box-sizing:content-box;width:20px;height:20px;stroke-width:1px;text-decoration:none;transform:rotate(0deg);transition-property:transform,color,background-color,stroke,stroke-width;transition-duration:200ms;transition-timing-function:ease-out;z-index:2;line-height:normal;justify-content:center;display:flex;background-color:var(--osano-button-close-background-color);border-color:var(--osano-button-close-background-color);color:var(--osano-button-close-stroke-color);stroke:var(--osano-button-close-stroke-color)}.osano-cm-close:focus-visible{--osano-button-close-background-color: var(--osano-button-close-color);--osano-button-close-stroke-color: var(--osano-dialog-background-color);transform:rotate(90deg);stroke-width:2px;outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset)}.osano-cm-close:hover{transform:rotate(90deg);stroke-width:2px}.ccpa-opt-out-icon{display:flex;flex:1 1 auto}.ccpa-opt-out-icon svg{max-width:40px}.osano-cm-link{cursor:pointer;text-decoration:underline;transition-duration:200ms;transition-property:color;transition-timing-function:ease-out;color:var(--osano-link-color)}.osano-cm-link:hover,.osano-cm-link:active{outline:none;color:var(--osano-link-color-contrast)}.osano-cm-link:visited{outline:none;color:var(--osano-link-color-contrast)}.osano-cm-link:focus-visible{font-weight:bold;outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);color:var(--osano-link-color-contrast)}.osano-cm-link--type_purpose,.osano-cm-link--type_specialPurpose,.osano-cm-link--type_feature,.osano-cm-link--type_specialFeature{cursor:help;display:block;font-weight:normal;text-decoration:dashed}.osano-cm-link--type_purpose:active,.osano-cm-link--type_purpose:hover,.osano-cm-link--type_specialPurpose:active,.osano-cm-link--type_specialPurpose:hover,.osano-cm-link--type_feature:active,.osano-cm-link--type_feature:hover,.osano-cm-link--type_specialFeature:active,.osano-cm-link--type_specialFeature:hover{font-weight:normal;text-decoration:underline}.osano-cm-link--type_purpose:focus-visible,.osano-cm-link--type_specialPurpose:focus-visible,.osano-cm-link--type_feature:focus-visible,.osano-cm-link--type_specialFeature:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);font-weight:normal;text-decoration:underline}.osano-cm-link--type_denyAll{display:block;text-align:right}[dir=rtl] .osano-cm-link--type_denyAll{text-align:left}.osano-cm-link--type_vendor,.osano-cm-link--type_link{display:block}.osano-cm-link-separator::before{content:"|";padding:0 .5em}.osano-cm-vendor-link{font-size:.75em}.osano-cm-list-item{margin:0}.osano-cm-list-item--type_term{border-top-width:1px;border-top-style:solid;font-size:.875rem;font-weight:normal;margin-bottom:.25em;margin-top:.5em;padding:0 .75rem;padding-top:.5em;position:relative;top:-1px}.osano-cm-list-item--type_description{font-size:.75rem;font-weight:lighter;padding:0 .75rem}.osano-cm-list{list-style-position:outside;list-style-type:none;margin:0;padding:0}.osano-cm-list__list-item{text-indent:0}.osano-cm-list--type_description{margin:0 -1em}.osano-cm-list:first-of-type .osano-cm-list__list-item:first-of-type{border-top-width:0;margin-top:0;padding-top:0}.osano-cm-toggle{align-items:center;display:flex;flex-direction:row-reverse;justify-content:flex-start;margin:.25em 0;position:relative;pointer-events:auto;--osano-toggle-track-color: var(--osano-toggle-off-track-color);--osano-toggle-thumb-color: var(--osano-toggle-off-thumb-color);--osano-toggle-border-color: transparent}.osano-cm-toggle:hover{cursor:pointer}.osano-cm-toggle__label{margin:0 .5em 0 0}[dir=rtl] .osano-cm-toggle__label{margin:0 0 0 .5em}.osano-cm-toggle__switch{box-sizing:content-box;color:rgba(0,0,0,0);line-height:0;text-indent:-9999px;width:40px;height:18px;display:block;flex-shrink:0;border-radius:14px;border-style:solid;border-width:2px;margin:0;position:relative;transition-duration:200ms;transition-property:background-color,filter,border-color;transition-timing-function:ease-out;background-color:var(--osano-toggle-track-color);border-color:var(--osano-toggle-track-color)}.osano-cm-toggle__switch:hover{cursor:pointer}.osano-cm-toggle__switch::after{border-width:0;top:0;left:0;width:18px;height:18px;border-radius:9px;background-color:var(--osano-toggle-thumb-color);border-color:var(--osano-toggle-thumb-color)}.osano-cm-toggle__switch::before{border-radius:16px;border-width:2px;box-sizing:border-box;bottom:-6px;left:-6px;right:-6px;top:-6px;border-color:var(--osano-toggle-border-color)}.osano-cm-toggle__switch::after,.osano-cm-toggle__switch::before{border-style:solid;content:"";position:absolute;margin:0;transform:translateX(0);transition-duration:300ms;transition-property:transform,left,border-color;transition-timing-function:ease-out}.osano-cm-toggle__switch::after:active,.osano-cm-toggle__switch::before:active{transition-duration:100ms}.osano-cm-toggle__switch::after:active{width:26px}.osano-cm-toggle__switch::before:active{width:34px}[dir=rtl] .osano-cm-toggle__switch::after{left:100%;transform:translateX(-100%)}.osano-cm-toggle__input{height:1px;width:1px;margin:-1px;opacity:0;left:-10000px;position:absolute;overflow:hidden}[dir=rtl] .osano-cm-toggle__input{left:0;right:-10000px}.osano-cm-toggle__input:disabled{cursor:default}.osano-cm-toggle--type_checkbox .osano-cm-toggle__switch{border-style:solid;border-radius:4px;border-width:1px;height:22px;width:22px}.osano-cm-toggle--type_checkbox .osano-cm-toggle__switch::after{background-color:rgba(0,0,0,0) !important;border-bottom-width:2px;border-left-width:2px;border-radius:0;content:none;height:6px;left:3px;top:3px;transform:rotate(-45deg);transition-property:color;transition-timing-function:ease-out;width:12px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch{border-style:solid;border-radius:4px;border-width:1px;height:22px;width:22px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::after,.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::before{background-color:rgba(0,0,0,0) !important;border-top-width:1px;border-bottom-width:1px;border-radius:0;content:none;height:0;left:-3px;top:7px;transition-property:color;transition-timing-function:ease-out;width:12px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::after{transform:translate(50%, 50%) rotate(-45deg)}.osano-cm-toggle--type_opt-out .osano-cm-toggle__switch::before{transform:translate(50%, 50%) rotate(45deg)}.osano-cm-toggle__input:checked+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-on-track-color);--osano-toggle-thumb-color: var(--osano-toggle-on-thumb-color)}.osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{left:100%;transform:translateX(-100%)}[dir=rtl] .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{left:0;transform:translateX(0)}.osano-cm-toggle__input:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-off-track-color-hover);--osano-toggle-thumb-color: var(--osano-toggle-off-thumb-color-hover)}.osano-cm-toggle__input:focus-visible+.osano-cm-toggle__switch::before{--osano-toggle-border-color: var(--osano-toggle-off-track-color-hover)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch{cursor:default}.osano-cm-toggle--type_checkbox .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{content:"";left:3px;top:3px;transform:rotate(-45deg)}.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::before,.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{content:"";left:-1px;top:9px}.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::after{transform:translate(50%, 50%) rotate(-45deg)}.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:checked+.osano-cm-toggle__switch::before{transform:translate(50%, 50%) rotate(45deg)}.osano-cm-toggle--type_checkbox .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch,.osano-cm-toggle--type_opt-out .osano-cm-toggle__input:disabled+.osano-cm-toggle__switch{opacity:.3}.osano-cm-toggle__input:checked:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:checked:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-on-track-color-hover);--osano-toggle-thumb-color: var(--osano-toggle-on-thumb-color-hover)}.osano-cm-toggle__input:checked:focus-visible+.osano-cm-toggle__switch::before{--osano-toggle-border-color: var(--osano-toggle-on-track-color-hover)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-off-track-color-disabled)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:focus-visible+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch::after{--osano-toggle-thumb-color: var(--osano-toggle-off-thumb-color-disabled)}.osano-cm-toggle__input:disabled+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:focus-visible+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:hover+.osano-cm-toggle__switch::before{--osano-toggle-border-color: transparent}.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:checked:focus-visible+.osano-cm-toggle__switch,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch{--osano-toggle-track-color: var(--osano-toggle-on-track-color-disabled)}.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:checked:focus-visible+.osano-cm-toggle__switch::after,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::after{--osano-toggle-thumb-color: var(--osano-toggle-on-thumb-color-disabled)}.osano-cm-toggle__input:disabled:checked+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:checked:focus-visible+.osano-cm-toggle__switch::before,.osano-cm-toggle__input:disabled:checked:hover+.osano-cm-toggle__switch::before{--osano-toggle-border-color: transparent}.osano-cm-widget{cursor:pointer;position:fixed;background:none;border:none;bottom:12px;z-index:2147483636;width:40px;height:40px;opacity:.9;outline:none;padding:0;transition:transform 100ms linear 0s,opacity 200ms linear 0ms,visibility 0ms linear 0ms;visibility:visible}.osano-cm-widget--position_right{right:12px}.osano-cm-widget--position_left{left:12px}.osano-cm-widget:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);opacity:1;transform:scale(1.1)}.osano-cm-widget:hover{opacity:1;transform:scale(1.1)}.osano-cm-widget--hidden{opacity:0;visibility:hidden}.osano-cm-widget--hidden:focus-visible,.osano-cm-widget--hidden:hover{opacity:0;transform:scale(1)}.osano-cm-widget__outline{fill:var(--osano-widget-fill-color);stroke:var(--osano-widget-outline-color)}.osano-cm-widget__dot{fill:var(--osano-widget-color)}.osano-cm-dialog{--osano-gpc-color: var(--osano-dialog-gpc-color);--osano-gpc-border-color: var(--osano-dialog-gpc-border-color);--osano-gpc-background-color: var(--osano-dialog-gpc-background-color);--osano-gpc-foreground-color: var(--osano-dialog-gpc-foreground-color);box-sizing:border-box;font-size:1em;line-height:1.25;align-items:center;position:fixed;z-index:2147483637;padding:1.5em;overflow:auto;transition-property:opacity,visibility;transition-duration:700ms,0ms;transition-delay:0ms,0ms;visibility:visible;max-height:100vh;background:var(--osano-dialog-background-color);color:var(--osano-dialog-foreground-color)}.osano-cm-dialog--hidden{opacity:0;transition-delay:0ms,700ms;visibility:hidden}.osano-cm-dialog--type_bar{display:flex;flex-direction:column;box-sizing:border-box;right:0;left:0}.osano-cm-dialog--type_bar .osano-cm-button{flex:none;margin:.125em auto;width:80%}@media screen and (min-width: 768px){.osano-cm-dialog--type_bar{flex-direction:row}.osano-cm-dialog--type_bar .osano-cm-button{flex:1 1 100%;width:auto;margin:.25em .5em}}.osano-cm-dialog--type_box{width:calc(100vw - 2em);flex-direction:column;max-width:20em;max-height:calc(100vh - 2em)}.osano-cm-dialog__close{position:absolute;right:0;top:0}.osano-cm-dialog__list{margin:.5em 0 0;padding:0}.osano-cm-dialog__list .osano-cm-item{display:flex;margin-top:0}.osano-cm-dialog__list .osano-cm-item:last-child{margin-bottom:0}.osano-cm-dialog__list .osano-cm-toggle{flex-direction:row}[dir=rtl] .osano-cm-dialog__list .osano-cm-toggle{flex-direction:row-reverse}.osano-cm-dialog__list .osano-cm-label{white-space:nowrap}*[dir=ltr] .osano-cm-dialog__list .osano-cm-label{margin-left:.375em}*[dir=rtl] .osano-cm-dialog__list .osano-cm-label{margin-right:.375em}.osano-cm-dialog__buttons{display:flex;flex-wrap:wrap}.osano-cm-dialog--type_bar .osano-cm-dialog__content{flex:5;margin-bottom:.25em;width:100%}.osano-cm-dialog--type_box .osano-cm-dialog__content{display:flex;flex-direction:column;flex-grow:.0001;transition:flex-grow 1000ms linear}.osano-cm-dialog--type_box .osano-cm-link-separator::before{content:"";padding:0}.osano-cm-dialog--type_box .osano-cm-content__link{margin-bottom:.5em}.osano-cm-dialog--type_bar .osano-cm-dialog__list{display:flex;flex-direction:column;flex-wrap:wrap;justify-content:flex-start;margin:.75em auto}@media screen and (min-width: 376px){.osano-cm-dialog--type_bar .osano-cm-dialog__list{flex-direction:row}}@media screen and (min-width: 768px){.osano-cm-dialog--type_bar .osano-cm-dialog__list{margin:.5em 0 0 auto}[dir=rtl] .osano-cm-dialog--type_bar .osano-cm-dialog__list{margin:.5em auto 0 0}}[dir=ltr] .osano-cm-dialog--type_bar .osano-cm-dialog__list .osano-cm-item{margin-right:.5em}[dir=rtl] .osano-cm-dialog--type_bar .osano-cm-dialog__list .osano-cm-item{margin-left:.5em}.osano-cm-dialog--type_bar .osano-cm-dialog__list .osano-cm-label{padding-top:0}.osano-cm-dialog--type_bar .osano-cm-dialog__buttons{flex:1;justify-content:flex-end;width:100%;margin:0}@media screen and (min-width: 768px){.osano-cm-dialog--type_bar .osano-cm-dialog__buttons{position:sticky;top:0;width:auto;max-width:30vw;min-width:16em;margin:0 0 0 .5em}[dir=rtl] .osano-cm-dialog--type_bar .osano-cm-dialog__buttons{margin:0 .5em 0 0}}.osano-cm-dialog--type_box .osano-cm-dialog__buttons{margin:.5em 0 0}.osano-cm-dialog--type_bar.osano-cm-dialog--position_top{top:0}.osano-cm-dialog--type_bar.osano-cm-dialog--position_bottom{bottom:0}.osano-cm-dialog--type_box.osano-cm-dialog--position_top-left{top:1em;left:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_top-right{top:1em;right:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_bottom-left{bottom:1em;left:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_bottom-right{bottom:1em;right:1em}.osano-cm-dialog--type_box.osano-cm-dialog--position_center{top:50%;left:50%;transform:translate(-50%, -50%)}.osano-cm-dialog--type_box.osano-cm-dialog--wide{max-width:50em}@media screen and (max-height: 800px)and (max-width: 1200px){.osano-cm-dialog--type_box.osano-cm-dialog--wide{max-width:calc(100vw - 4em)}}.osano-cm-dialog--type_box.osano-cm-dialog--wide .osano-cm-dialog__list{display:flex;flex-wrap:wrap}.osano-cm-dialog--context_amp{position:relative;height:100%}.osano-cm-content__message{margin-bottom:1em;word-break:break-word;white-space:pre-line}.osano-cm-drawer-links{margin:.5em 0 0}.osano-cm-drawer-links__link{display:block}.osano-cm-storage-policy{display:inline-block}.osano-cm-usage-list{margin:0 0 .5em}.osano-cm-usage-list__list{list-style-position:inside;list-style-type:initial}.osano-cm-info-dialog{--osano-dialog-background-color: var(--osano-info-dialog-background-color);--osano-dialog-foreground-color: var(--osano-info-dialog-foreground-color);--osano-toggle-off-track-color: var(--osano-info-dialog-toggle-off-track-color);--osano-toggle-off-thumb-color: var(--osano-info-dialog-toggle-off-thumb-color);--osano-toggle-on-track-color: var(--osano-info-dialog-toggle-on-track-color);--osano-toggle-on-thumb-color: var(--osano-info-dialog-toggle-on-thumb-color);--osano-toggle-off-track-color-hover: var(--osano-info-dialog-toggle-off-track-color-hover);--osano-toggle-off-track-color-focus: var(--osano-info-dialog-toggle-off-track-color-focus);--osano-toggle-off-thumb-color-hover: var(--osano-info-dialog-toggle-off-thumb-color-hover);--osano-toggle-off-thumb-color-focus: var(--osano-info-dialog-toggle-off-thumb-color-focus);--osano-toggle-on-track-color-hover: var(--osano-info-dialog-toggle-on-track-color-hover);--osano-toggle-on-track-color-focus: var(--osano-info-dialog-toggle-on-track-color-focus);--osano-toggle-on-thumb-color-hover: var(--osano-info-dialog-toggle-on-thumb-color-hover);--osano-toggle-on-thumb-color-focus: var(--osano-info-dialog-toggle-on-thumb-color-focus);--osano-toggle-off-track-color-contrast: var( --osano-info-dialog-toggle-off-track-color-contrast );--osano-toggle-off-thumb-color-contrast: var( --osano-info-dialog-toggle-off-thumb-color-contrast );--osano-toggle-on-track-color-contrast: var(--osano-info-dialog-toggle-on-track-color-contrast);--osano-toggle-on-thumb-color-contrast: var(--osano-info-dialog-toggle-on-thumb-color-contrast);--osano-toggle-on-track-color-disabled: var(--osano-info-dialog-toggle-on-track-color-disabled);--osano-toggle-on-thumb-color-disabled: var(--osano-info-dialog-toggle-on-thumb-color-disabled);--osano-toggle-off-track-color-disabled: var( --osano-info-dialog-toggle-off-track-color-disabled );--osano-toggle-off-thumb-color-disabled: var( --osano-info-dialog-toggle-off-thumb-color-disabled );--osano-button-background-color: var(--osano-info-dialog-button-background-color);--osano-button-border-color: var(--osano-info-dialog-button-border-color);--osano-button-foreground-color: var(--osano-info-dialog-button-foreground-color);--osano-button-foreground-color-focus: var(--osano-info-dialog-button-foreground-color-focus);--osano-button-background-color-focus: var(--osano-info-dialog-button-background-color-focus);--osano-button-foreground-color-hover: var(--osano-info-dialog-button-foreground-color-hover);--osano-button-background-color-hover: var(--osano-info-dialog-button-background-color-hover);--osano-button-accept-background-color: var(--osano-info-dialog-button-background-color);--osano-button-accept-border-color: var(--osano-info-dialog-button-border-color);--osano-button-accept-foreground-color: var(--osano-info-dialog-button-foreground-color);--osano-button-accept-foreground-color-focus: var( --osano-info-dialog-button-foreground-color-focus );--osano-button-accept-background-color-focus: var( --osano-info-dialog-button-background-color-focus );--osano-button-accept-foreground-color-hover: var( --osano-info-dialog-button-foreground-color-hover );--osano-button-accept-background-color-hover: var( --osano-info-dialog-button-background-color-hover );--osano-button-deny-background-color: var(--osano-info-dialog-button-background-color);--osano-button-deny-border-color: var(--osano-info-dialog-button-border-color);--osano-button-deny-foreground-color: var(--osano-info-dialog-button-foreground-color);--osano-button-deny-foreground-color-focus: var( --osano-info-dialog-button-foreground-color-focus );--osano-button-deny-background-color-focus: var( --osano-info-dialog-button-background-color-focus );--osano-button-deny-foreground-color-hover: var( --osano-info-dialog-button-foreground-color-hover );--osano-button-deny-background-color-hover: var( --osano-info-dialog-button-background-color-hover );--osano-link-color: var(--osano-info-dialog-link-color);--osano-link-color-contrast: var(--osano-info-dialog-link-color-contrast);--osano-link-color-hover: var(--osano-info-dialog-link-color-hover);--osano-link-color-focus: var(--osano-info-dialog-link-color-focus);--osano-button-close-color: var(--osano-info-dialog-button-close-color);--osano-gpc-color: var(--osano-info-dialog-gpc-color);--osano-gpc-border-color: var(--osano-info-dialog-gpc-border-color);--osano-gpc-background-color: var(--osano-info-dialog-gpc-background-color);--osano-gpc-foreground-color: var(--osano-info-dialog-gpc-foreground-color);position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:2147483638;transition-property:opacity,visibility;transition-duration:200ms,0ms;transition-delay:0ms,0ms;visibility:visible;background:var(--osano-info-dialog-overlay-color)}.osano-cm-info-dialog--hidden{opacity:0;transition-delay:0ms,200ms;visibility:hidden}.osano-cm-header{margin:0 0 -1em;padding:1em 0;position:sticky;top:0;z-index:1;background:var(--osano-dialog-background-color);background:linear-gradient(180deg, var(--osano-dialog-background-color) 2.5em, var(--osano-clear-dialog-background) 100%)}.osano-cm-info{animation:400ms delay-overflow;box-sizing:border-box;position:fixed;bottom:0;top:0;max-width:20em;transition-property:transform;transition-duration:400ms;box-shadow:0 0 2px 2px #ccc;overflow:visible visible;width:100%;background:var(--osano-dialog-background-color);color:var(--osano-dialog-foreground-color)}.osano-cm-info--position_left{left:0;transform:translate(-100%, 0)}.osano-cm-info--position_right{right:0;transform:translate(100%, 0)}.osano-cm-info--open{animation:none;overflow:hidden auto;transform:translate(0, 0)}.osano-cm-info--do_not_sell{animation:none;transition:none;position:fixed;top:50%;left:50%;right:auto;transform:translate(-50%, -50%);height:fit-content;max-height:100vh}.osano-cm-info--do_not_sell .osano-cm-close{order:-1}.osano-cm-info--do_not_sell .osano-cm-header{box-sizing:content-box;display:block;flex:none}.osano-cm-info-views{align-items:flex-start;display:flex;flex-direction:row;flex-wrap:nowrap;height:100%;transition-property:transform;transition-duration:400ms;width:100%}*[dir=rtl] .osano-cm-info-views{flex-direction:row-reverse}.osano-cm-info-views__view{box-sizing:border-box;flex-shrink:0;width:100%}.osano-cm-info-views--position_0>*:not(:nth-of-type(1)){max-height:100%;overflow:hidden}.osano-cm-info-views--position_1>*:not(:nth-of-type(2)){max-height:100%;overflow:hidden}.osano-cm-info-views--position_1{transform:translateX(-100%)}.osano-cm-info-views--position_2>*:not(:nth-of-type(3)){max-height:100%;overflow:hidden}.osano-cm-info-views--position_2{transform:translateX(-200%)}.osano-cm-info--do_not_sell .osano-cm-info-views{height:fit-content}.osano-cm-view{height:0;padding:0 .75em 1em;width:100%;transition-property:height,visibility;transition-duration:0ms;transition-delay:400ms;visibility:hidden}.osano-cm-view__button{font-size:.875em;width:100%;margin:1em 0 0}.osano-cm-view--active{height:auto;transition-delay:0ms;visibility:visible}.osano-cm-description{font-size:.75em;font-weight:300;line-height:1.375;margin:1em 0 0;white-space:pre-line}.osano-cm-description:first-child{margin:0}.osano-cm-description:last-of-type{margin-bottom:1em}.osano-cm-drawer-toggle .osano-cm-label{font-size:.875em;margin:0 auto 0 0;line-height:1.375em}[dir=rtl] .osano-cm-drawer-toggle .osano-cm-label{margin:0 0 0 auto}.osano-cm-info-dialog-header{align-items:center;display:flex;flex-direction:row-reverse;min-height:3.25em;position:sticky;top:0;left:auto;width:100%;z-index:1;background:var(--osano-dialog-background-color);background:linear-gradient(180deg, var(--osano-dialog-background-color) 2.5em, var(--osano-clear-dialog-background) 100%)}*[dir=rtl] .osano-cm-info-dialog-header{flex-direction:row}.osano-cm-info-dialog-header__header{align-items:center;display:flex;flex:1 1 auto;font-size:1em;justify-content:flex-start;margin:0;order:1;padding:1em .75em}.osano-cm-info-dialog-header__description{font-size:.75em;line-height:1.375}.osano-cm-info-dialog-header__close{position:relative}.osano-cm-back{flex:0 1 auto;margin:0 0 0 .5em;min-width:0;order:2;position:relative;width:auto;z-index:2}[dir=rtl] .osano-cm-back{margin:0 .5em 0 0}.osano-cm-powered-by{align-items:center;display:flex;flex-direction:column;justify-content:center;margin:1em 0;font-weight:bold}.osano-cm-powered-by__link{font-size:.625em;text-decoration:none}.osano-cm-powered-by__link:hover{text-decoration:underline}.osano-cm-powered-by__link:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);text-decoration:underline}@keyframes delay-overflow{from{overflow:hidden auto}}.osano-cm-drawer-iab-button-container{display:flex;justify-content:center;gap:.5em;margin-bottom:2em}.osano-cm-illustrations__list>.osano-cm-list-item--type_description{padding:.2rem 1rem}.osano-cm-drawer-item.osano-cm-description__list li{padding-top:.75em}.osano-cm-consent-id-box{display:flex;align-items:center;gap:.5em;margin:1em 0;padding:.5em;border-width:thin;border-style:solid;border-color:var(--osano-button-border-color);border-radius:.25em;background:rgba(0,0,0,.02);cursor:pointer;transition:background-color .2s ease-out}.osano-cm-consent-id-box:hover{background-color:var(--osano-button-background-color-hover)}.osano-cm-consent-id-box:focus-visible{background-color:var(--osano-button-background-color-hover);outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset)}.osano-cm-consent-id-box__content{flex:5;display:flex;flex-direction:column;min-width:0}.osano-cm-consent-id-box__label{font-size:.625em;font-weight:bold;margin-bottom:.25em}.osano-cm-consent-id-box__uuid{font-size:.75em;font-family:monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.osano-cm-consent-id-box__button{flex-shrink:0;font-size:.75em;padding:.25em .3em;margin:0;width:auto;min-width:0}.osano-cm-consent-id-box__button--copied{--osano-button-background-color: var(--osano-button-accept-background-color-hover);--osano-button-border-color: var(--osano-button-accept-background-color-hover);--osano-button-foreground-color: var(--osano-button-accept-foreground-color-hover)}.osano-cm-tcf-purpose__label{display:block;padding:.25em 0 .5em;border-bottom:1px solid rgba(0,0,0,.1);margin-bottom:.5em}.osano-cm-tcf-purpose__toggle{float:right;margin-right:.5em;accent-color:var(--osano-toggle-on-track-color)}.osano-cm-opt-out-honored-wrapper{display:flex;align-items:center;max-width:max-content;padding:.5em;border-radius:1em;gap:.5em;margin:0 0 1em;border:1px solid;background:none;outline:none;position:relative}.osano-cm-opt-out-honored-wrapper__label{font-size:.75em;font-style:normal;font-weight:400;line-height:1.25;letter-spacing:.0625em;margin-right:.25em}.osano-cm-opt-out-honored-wrapper__additional-label{margin:.5em 0 0;font-size:.75em;font-weight:400;color:inherit;line-height:1.5}.osano-cm-opt-out-honored-wrapper__tooltip{position:absolute;background:#fff;color:#333;padding:1rem;border-radius:.25em;max-width:calc(100vw - 4em);white-space:normal;width:14rem;opacity:0;visibility:hidden;transition:opacity 200ms linear 0ms,visibility 200ms linear 200ms;z-index:2147483636;box-shadow:0 1px 10px rgba(0,0,0,.12),0 4px 5px rgba(0,0,0,.14),0 2px 4px rgba(0,0,0,.2);bottom:calc(100% + 12px)}.osano-cm-opt-out-honored-wrapper__tooltip::before{content:"";position:absolute;bottom:-6px;left:15%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#fff;box-shadow:2px 2px 4px rgba(0,0,0,.1)}.osano-cm-opt-out-honored-wrapper__tooltip{display:flex;gap:.5rem;align-items:flex-start}.osano-cm-opt-out-honored-wrapper__tooltip-icon{flex-shrink:0}.osano-cm-opt-out-honored-wrapper__tooltip-icon svg{display:block}.osano-cm-opt-out-honored-wrapper__tooltip-content{flex:1;display:flex;flex-direction:column;gap:.25rem}.osano-cm-opt-out-honored-wrapper__tooltip-title{margin:.125em 0;font-size:.875em;font-weight:600;color:#333;line-height:1.25}.osano-cm-opt-out-honored-wrapper__tooltip-subtitle{margin:0;font-size:.75em;font-weight:400;color:#666;line-height:1.25}.osano-cm-opt-out-honored-wrapper--position_right{bottom:1em;right:.75em}.osano-cm-opt-out-honored-wrapper--position_left{bottom:1em;left:.75em}.osano-cm-opt-out-honored-wrapper--position_right,.osano-cm-opt-out-honored-wrapper--position_left{background:var(--osano-gpc-background-color, );border-color:var(--osano-gpc-border-color);color:var(--osano-gpc-foreground-color);margin:0;max-width:calc(100vw - 2.5em);position:fixed;opacity:.9;transition:opacity 200ms linear 0ms,visibility 0ms linear 0ms;visibility:visible;z-index:2147483636}.osano-cm-opt-out-honored-wrapper--position_right:hover,.osano-cm-opt-out-honored-wrapper--position_left:hover{background:var(--osano-gpc-background-color-hover);opacity:1}.osano-cm-opt-out-honored-wrapper--position_right.osano-cm-opt-out-honored-wrapper--has-main-widget{bottom:1em;right:4em}.osano-cm-opt-out-honored-wrapper--position_left.osano-cm-opt-out-honored-wrapper--has-main-widget{bottom:1em;left:4em}.osano-cm-opt-out-honored-wrapper--clickable{cursor:pointer}.osano-cm-opt-out-honored-wrapper--hidden{opacity:0;transition-delay:0ms,200ms;visibility:hidden}.osano-cm-opt-out-honored-wrapper--context_dialog,.osano-cm-opt-out-honored-wrapper--context_description,.osano-cm-opt-out-honored-wrapper--context_list-item{background:var(--osano-gpc-background-color);border-color:var(--osano-gpc-border-color);color:var(--osano-gpc-foreground-color)}.osano-cm-opt-out-honored-wrapper--context_dialog,.osano-cm-opt-out-honored-wrapper--context_description{position:static;margin:0 0 .5em;opacity:1;z-index:auto;cursor:default}.osano-cm-opt-out-honored-wrapper--context_dialog .osano-cm-opt-out-honored-wrapper__label,.osano-cm-opt-out-honored-wrapper--context_description .osano-cm-opt-out-honored-wrapper__label{color:inherit}.osano-cm-opt-out-honored-wrapper--context_dialog .osano-cm-opt-out-honored-wrapper__tooltip,.osano-cm-opt-out-honored-wrapper--context_description .osano-cm-opt-out-honored-wrapper__tooltip{display:none}.osano-cm-opt-out-honored-wrapper--tooltip-active:hover .osano-cm-opt-out-honored-wrapper__tooltip,.osano-cm-opt-out-honored-wrapper--tooltip-active:focus-within .osano-cm-opt-out-honored-wrapper__tooltip{opacity:1;transition-delay:0ms,0ms;visibility:visible}.osano-cm-opt-out-honored-wrapper--clickable:focus-visible{outline:2px solid var(--osano-gpc-border-color, #06c);outline-offset:2px}.osano-cm-dialog .osano-cm-opt-out-honored-wrapper{margin:0 0 .5em}.osano-cm-opt-out-honored-wrapper__dot{fill:var(--osano-gpc-color)}.osano-cm-expansion-panel{display:block;font-size:.75em;margin:0 -1.5em 1em;padding:1.5em 1.5em 0;border-bottom:1px solid rgba(0,0,0,.1)}.osano-cm-expansion-panel--expanded{border-bottom:none}.osano-cm-expansion-panel--empty,.osano-cm-expansion-panel--empty:not([open]){border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:0}.osano-cm-expansion-panel__body{background-color:rgba(0,0,0,.1);list-style:none;overflow:hidden;max-height:0;margin:0 -1.5em;padding:0 1.5em;transition-property:max-height,padding-top,padding-bottom,visibility;transition-duration:.3s,.3s,.3s,0s;transition-delay:0ms,0ms,0ms,.3s;transition-timing-function:ease-out;line-height:1.25;visibility:hidden}.osano-cm-expansion-panel__toggle{cursor:pointer;display:block;line-height:1.25;margin:0 auto 1em 0;position:relative;color:var(--osano-link-color)}.osano-cm-expansion-panel__toggle:hover,.osano-cm-expansion-panel__toggle:active{outline:none;color:var(--osano-link-color-hover)}.osano-cm-expansion-panel__toggle:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);color:var(--osano-link-color-focus)}[dir=rtl] .osano-cm-expansion-panel__toggle{margin:0 0 1em auto}.osano-cm-expansion-panel--expanded .osano-cm-expansion-panel__body{max-height:none;padding:1.25em 1.5em 1em;transition-delay:0ms,0ms,0ms,0ms;visibility:visible}.osano-cm-disclosure-item__title{border:0;clear:both;display:block;flex:0 1 30%;font-size:1em;font-weight:bold;line-height:1.375;margin:0 0 .5em;padding:0}.osano-cm-disclosure-item__description{flex:0 1 70%;font-size:1em;line-height:1.375;margin:0 0 .5em;overflow:hidden;padding:0;text-overflow:ellipsis;white-space:pre-line}.osano-cm-disclosure{display:block;font-size:.75em;margin:0 -1.5em 1em;padding:1.5em 1.5em 0;border-bottom:none;padding-bottom:0}.osano-cm-disclosure--collapse{border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:1em}.osano-cm-disclosure--empty,.osano-cm-disclosure--empty:not([open]){border-bottom:1px solid rgba(0,0,0,.1);padding-bottom:0}.osano-cm-disclosure__list{line-height:1.25;list-style:none;margin:0 -1.5em;padding:1.25em 1.5em 1em;background-color:rgba(0,0,0,.1)}.osano-cm-disclosure__list:empty{border:none;padding:0 1.5em}.osano-cm-disclosure__list:first-of-type{margin-top:1em;padding:1.25em 1.5em 1em}.osano-cm-disclosure__list:first-of-type::after{background-color:var(--osano-link-color)}.osano-cm-disclosure__list:first-of-type:empty{padding:1.75em 1.5em .75em}.osano-cm-disclosure__list:not(:first-of-type):not(:empty){border-top:1px solid rgba(0,0,0,.1)}.osano-cm-disclosure__list:empty+.osano-cm-disclosure__list:not(:empty){border:none;padding:0 1.5em}.osano-cm-disclosure__list:not(:empty)~.osano-cm-disclosure__list:empty+.osano-cm-disclosure__list:not(:empty){border-top:1px solid rgba(0,0,0,.1)}.osano-cm-disclosure__list>.osano-cm-list-item{line-height:1.25}.osano-cm-disclosure__list>.osano-cm-list-item:not(:first-of-type){border-top:1px solid rgba(0,0,0,.1);margin:1em -1.25em 0;padding:1em 1.25em 0}.osano-cm-disclosure__toggle{cursor:pointer;display:block;line-height:1.25;margin:0 auto 0 0;position:relative;font-weight:bold;color:var(--osano-link-color)}.osano-cm-disclosure__toggle:hover{text-decoration:underline}.osano-cm-disclosure__toggle:active,.osano-cm-disclosure__toggle:hover{color:var(--osano-link-color)}.osano-cm-disclosure__toggle:focus-visible{outline:var(--osano-focus-outline);outline-offset:var(--osano-focus-outline-offset);text-decoration:underline;color:var(--osano-link-color-contrast)}[dir=rtl] .osano-cm-disclosure__toggle{margin:0 0 0 auto}.osano-cm-disclosure--loading .osano-cm-disclosure__list{height:0;line-height:0;max-height:0}.osano-cm-disclosure--loading .osano-cm-disclosure__list>*{display:none}.osano-cm-disclosure--loading .osano-cm-disclosure__list::after{content:"";display:block;transform:translate(0, -50%);width:1em;height:1em;border-radius:100%;animation-name:osano-load-scale;animation-duration:1s;animation-iteration-count:infinite;animation-timing-function:ease-in-out;top:-0.125em;position:relative}.osano-cm-disclosure--collapse .osano-cm-disclosure__list{display:none}.osano-cm-disclosure--collapse .osano-cm-disclosure__list::after{content:none}.osano-cm-disclosure-item{display:flex;flex-wrap:wrap;margin:0}.osano-cm-disclosure-item__title:last-of-type{margin-bottom:0}.osano-cm-disclosure-item__description:hover{word-break:break-word}.osano-cm-disclosure-item__description:last-of-type{margin-bottom:0}@keyframes osano-load-scale{0%{transform:translate(0, -50%) scale(0)}100%{transform:translate(0, -50%) scale(1);opacity:0}} :root { --osano-clear-dialog-background: <!--?lit$502355165$-->rgba(0,0,0,0); <!--?lit$502355165$-->--osano-button-border-color: #fff;
+--osano-dialog-type: bar;
+--osano-display-position: bottom;
+--osano-info-dialog-position: left;
+--osano-widget-position: right;
+--osano-opt-out-widget-position: left;
+--osano-button-background-color: #f1d600;
+--osano-button-foreground-color: #FFFFFF;
+--osano-dialog-background-color: #000;
+--osano-dialog-foreground-color: #FFFFFF;
+--osano-info-dialog-overlay-color: rgba(0,0,0,0.45);
+--osano-link-color: #37CD8F;
+--osano-toggle-off-track-color: #7A3FF1;
+--osano-toggle-off-thumb-color: #FFFFFF;
+--osano-toggle-on-track-color: #37CD8F;
+--osano-toggle-on-thumb-color: #FFFFFF;
+--osano-widget-color: #37cd8f;
+--osano-widget-outline-color: #29246a;
+--osano-widget-fill-color: #fff;
+--osano-focus-outline-color: Highlight;
+--osano-button-close-color: var(--osano-dialog-foreground-color);
+--osano-button-accept-background-color: var(--osano-button-background-color);
+--osano-button-accept-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-accept-foreground-color: var(--osano-button-foreground-color);
+--osano-button-deny-background-color: var(--osano-button-background-color);
+--osano-button-deny-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-deny-foreground-color: var(--osano-button-foreground-color);
+--osano-button-reject-all-background-color: var(--osano-button-background-color);
+--osano-button-reject-all-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-reject-all-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-reject-all-foreground-color: var(--osano-button-foreground-color);
+--osano-button-manage-background-color: var(--osano-button-background-color);
+--osano-button-manage-border-color: var(--osano-button-border-color, var(--osano-button-foreground-color));
+--osano-button-manage-foreground-color: var(--osano-button-foreground-color);
+--osano-info-dialog-link-color: var(--osano-link-color);
+--osano-info-dialog-button-close-color: var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color));
+--osano-info-dialog-toggle-off-track-color: var(--osano-toggle-off-track-color);
+--osano-info-dialog-toggle-off-thumb-color: var(--osano-toggle-off-thumb-color);
+--osano-info-dialog-toggle-on-track-color: var(--osano-toggle-on-track-color);
+--osano-info-dialog-toggle-on-thumb-color: var(--osano-toggle-on-thumb-color);
+--osano-info-dialog-button-background-color: var(--osano-button-background-color);
+--osano-info-dialog-button-border-color: var(--osano-info-dialog-button-foreground-color, var(--osano-button-foreground-color));
+--osano-info-dialog-button-foreground-color: var(--osano-button-foreground-color);
+--osano-dialog-gpc-background-color: var(--osano-dialog-background-color);
+--osano-dialog-gpc-border-color: var(--osano-dialog-foreground-color);
+--osano-dialog-gpc-foreground-color: var(--osano-dialog-foreground-color);
+--osano-dialog-gpc-color: #37cd84;
+--osano-info-dialog-gpc-background-color: var(--osano-info-dialog-background-color, var(--osano-dialog-background-color));
+--osano-info-dialog-gpc-border-color: var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color));
+--osano-info-dialog-gpc-foreground-color: var(--osano-info-dialog-foreground-color, var(--osano-dialog-foreground-color));
+--osano-info-dialog-gpc-color: var(--osano-dialog-gpc-color);
+--osano-gpc-background-color: #ffffff;
+--osano-gpc-border-color: #058a5e;
+--osano-gpc-foreground-color: #058a5e;
+--osano-gpc-color: #37cd84;
+--osano-gpc-background-color-hover: #ffffff;
+--osano-toggle-off-background-color: #d2cfff;
+--osano-toggle-button-off-color: #ffffff;
+--osano-toggle-on-background-color: #37cd8f;
+--osano-toggle-button-on-color: #f4f4f4;
+--osano-button-background-color-contrast: #ddc200;
+--osano-button-foreground-color-contrast: #ebebeb;
+--osano-dialog-background-color-contrast: #141414;
+--osano-dialog-foreground-color-contrast: #ebebeb;
+--osano-link-color-contrast: #23b97b;
+--osano-toggle-off-track-color-contrast: #8e53ff;
+--osano-toggle-off-track-color-disabled: #ba7fff;
+--osano-toggle-off-thumb-color-contrast: #ebebeb;
+--osano-toggle-off-thumb-color-disabled: #bfbfbf;
+--osano-toggle-on-track-color-contrast: #23b97b;
+--osano-toggle-on-track-color-disabled: #008d4f;
+--osano-toggle-on-thumb-color-contrast: #ebebeb;
+--osano-toggle-on-thumb-color-disabled: #bfbfbf;
+--osano-gpc-background-color-contrast: #ebebeb;
+--osano-button-background-color-hover: var(--osano-button-background-color-contrast, #ddc200);
+--osano-button-foreground-color-hover: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-background-color-focus: var(--osano-button-foreground-color-hover, var(--osano-button-foreground-color-contrast));
+--osano-button-foreground-color-focus: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-toggle-off-track-color-hover: var(--osano-toggle-off-track-color-contrast, #8e53ff);
+--osano-toggle-off-thumb-color-hover: var(--osano-toggle-off-thumb-color-contrast, #ebebeb);
+--osano-toggle-off-track-color-focus: var(--osano-toggle-off-thumb-color-hover, var(--osano-toggle-off-thumb-color-contrast));
+--osano-toggle-off-thumb-color-focus: var(--osano-toggle-off-track-color-hover, var(--osano-toggle-off-track-color-contrast));
+--osano-toggle-on-track-color-hover: var(--osano-toggle-on-track-color-contrast, #23b97b);
+--osano-toggle-on-thumb-color-hover: var(--osano-toggle-on-thumb-color-contrast, #ebebeb);
+--osano-toggle-on-track-color-focus: var(--osano-toggle-on-thumb-color-hover, var(--osano-toggle-on-thumb-color-contrast));
+--osano-toggle-on-thumb-color-focus: var(--osano-toggle-on-track-color-hover, var(--osano-toggle-on-track-color-contrast));
+--osano-button-accept-background-color-contrast: var(--osano-button-background-color-contrast, #ddc200);
+--osano-button-accept-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-accept-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-accept-foreground-color-hover: var(--osano-button-accept-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-accept-background-color-focus: var(--osano-button-accept-foreground-color-hover, var(--osano-button-accept-foreground-color-contrast));
+--osano-button-accept-foreground-color-focus: var(--osano-button-accept-background-color-hover, var(--osano-button-background-color-hover));
+--osano-button-deny-background-color-contrast: var(--osano-button-background-color-contrast, #ddc200);
+--osano-button-deny-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-deny-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-deny-foreground-color-hover: var(--osano-button-deny-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-deny-background-color-focus: var(--osano-button-deny-foreground-color-hover, var(--osano-button-deny-foreground-color-contrast));
+--osano-button-deny-foreground-color-focus: var(--osano-button-deny-background-color-hover, var(--osano-button-background-color-hover));
+--osano-button-reject-all-background-color-contrast: var(--osano-button-background-color-contrast, #ddc200);
+--osano-button-reject-all-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-reject-all-foreground-color-hover: var(--osano-button-reject-all-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-reject-all-background-color-focus: var(--osano-button-reject-all-foreground-color-hover, var(--osano-button-reject-all-foreground-color-contrast));
+--osano-button-reject-all-foreground-color-focus: var(--osano-button-reject-all-background-color-hover, var(--osano-button-background-color-hover));
+--osano-button-manage-background-color-contrast: var(--osano-button-background-color-contrast, #ddc200);
+--osano-button-manage-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-button-manage-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-button-manage-foreground-color-hover: var(--osano-button-manage-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-button-manage-background-color-focus: var(--osano-button-manage-foreground-color-hover, var(--osano-button-manage-foreground-color-contrast));
+--osano-button-manage-foreground-color-focus: var(--osano-button-manage-background-color-hover, var(--osano-button-background-color-hover));
+--osano-info-dialog-foreground-color: var(--osano-dialog-foreground-color);
+--osano-info-dialog-background-color: var(--osano-dialog-background-color);
+--osano-info-dialog-button-background-color-contrast: var(--osano-button-background-color-contrast, #ddc200);
+--osano-info-dialog-button-foreground-color-contrast: var(--osano-button-foreground-color-contrast, #ebebeb);
+--osano-info-dialog-button-background-color-hover: var(--osano-button-background-color-hover, var(--osano-button-background-color-contrast));
+--osano-info-dialog-button-foreground-color-hover: var(--osano-info-dialog-button-foreground-color-contrast, var(--osano-button-foreground-color-contrast));
+--osano-info-dialog-button-background-color-focus: var(--osano-info-dialog-button-foreground-color-hover, var(--osano-info-dialog-button-foreground-color-contrast));
+--osano-info-dialog-button-foreground-color-focus: var(--osano-info-dialog-button-background-color-hover, var(--osano-button-background-color-hover));
+--osano-info-dialog-toggle-off-track-color-contrast: var(--osano-toggle-off-track-color-contrast, #8e53ff);
+--osano-info-dialog-toggle-off-thumb-color-contrast: var(--osano-toggle-off-thumb-color-contrast, #ebebeb);
+--osano-info-dialog-toggle-off-track-color-hover: var(--osano-info-dialog-toggle-off-track-color-contrast, var(--osano-toggle-off-track-color-contrast));
+--osano-info-dialog-toggle-off-thumb-color-hover: var(--osano-info-dialog-toggle-off-thumb-color-contrast, var(--osano-toggle-off-thumb-color-contrast));
+--osano-info-dialog-toggle-off-track-color-focus: var(--osano-info-dialog-toggle-off-thumb-color-hover, var(--osano-info-dialog-toggle-off-thumb-color-contrast));
+--osano-info-dialog-toggle-off-thumb-color-focus: var(--osano-info-dialog-toggle-off-track-color-hover, var(--osano-info-dialog-toggle-off-track-color-contrast));
+--osano-info-dialog-toggle-off-track-color-disabled: var(--osano-toggle-off-track-color-disabled, #ba7fff);
+--osano-info-dialog-toggle-off-thumb-color-disabled: var(--osano-toggle-off-thumb-color-disabled, #bfbfbf);
+--osano-info-dialog-toggle-on-track-color-contrast: var(--osano-toggle-on-track-color-contrast, #23b97b);
+--osano-info-dialog-toggle-on-thumb-color-contrast: var(--osano-toggle-on-thumb-color-contrast, #ebebeb);
+--osano-info-dialog-toggle-on-track-color-hover: var(--osano-info-dialog-toggle-on-track-color-contrast, var(--osano-toggle-on-track-color-contrast));
+--osano-info-dialog-toggle-on-thumb-color-hover: var(--osano-info-dialog-toggle-on-thumb-color-contrast, var(--osano-toggle-on-thumb-color-contrast));
+--osano-info-dialog-toggle-on-track-color-focus: var(--osano-info-dialog-toggle-on-thumb-color-hover, var(--osano-info-dialog-toggle-on-thumb-color-contrast));
+--osano-info-dialog-toggle-on-thumb-color-focus: var(--osano-info-dialog-toggle-on-track-color-hover, var(--osano-info-dialog-toggle-on-track-color-contrast));
+--osano-info-dialog-toggle-on-track-color-disabled: var(--osano-toggle-on-track-color-disabled, #008d4f);
+--osano-info-dialog-toggle-on-thumb-color-disabled: var(--osano-toggle-on-thumb-color-disabled, #bfbfbf);
+--osano-info-dialog-link-color-contrast: var(--osano-link-color-contrast, #23b97b); } .osano-cm-window { direction: <!--?lit$502355165$-->ltr; text-align: <!--?lit$502355165$-->left; } </style>
+    <script async="" type="text/javascript" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" type="text/javascript" src="https://ak.sail-horizon.com/horizon/v1.js"></script><script async="" type="text/javascript" src="https://ak.sail-horizon.com/horizon/v1.js"></script><script class="exco-player" src="//player.ex.co/player/b339bedc-b28d-46b1-9ffd-825b0230be3c"></script><script async="" type="text/javascript" src="//static.chartbeat.com/js/chartbeat_video.js"></script><script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/74be5b62/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script referrerpolicy="unsafe-url" async="" type="text/javascript" src="https://ws.zoominfo.com/pixel/6245e68be2bbe6001aaa141b"></script><script async="" src="//www.googletagmanager.com/gtm.js?id=GTM-TZGJTC"></script><script type="text/javascript">window.dataLayer = window.dataLayer || [];</script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+        <script type="text/javascript"> const scrollTop_Height = 350 </script>
+    <title>The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall - WTOP News</title>
+			<!-- Begin IndexExchange  -->
+			<script async="" src="//js-sec.indexww.com/ht/p/186967-76288346428612.js"></script>
+			<!-- End IndexExchange -->
+					<!-- SailThru -->
+			<meta name="sailthru.canonical" content="https://wtop.com/national/2026/04/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal/">
+			<meta name="sailthru.date" content="2026-04-28 09:34:30">
+			
+					<meta name="sailthru.tags" content="National News,World News">
+			
+				
+								<meta name="sailthru.image.full" content="https://wtop.com/wp-content/uploads/2026/04/APTOPIX_Iran_War_65446-scaled.jpg">
+			<meta name="sailthru.image.thumb" content="https://wtop.com/wp-content/uploads/2026/04/APTOPIX_Iran_War_65446-150x150.jpg">
+				<!-- /SailThru -->
+		<!-- SailThru --><meta name="sailthru.canonical" content="https://wtop.com/national/2026/04/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal/"><meta name="sailthru.date" content="2026-04-28 09:34:30"><meta name="sailthru.image.full" content="https://wtop.com/wp-content/uploads/2026/04/APTOPIX_Iran_War_65446-scaled.jpg"><meta name="sailthru.image.thumb" content="https://wtop.com/wp-content/uploads/2026/04/APTOPIX_Iran_War_65446-150x150.jpg"><meta name="sailthru.tags" content="National News,World News"><!-- /SailThru -->			<script>
+				var refreshPageInterval;
+				function refreshPageAction( ) {
+					if( ! refreshPageInterval ){
+						refreshPageInterval = setInterval(function(){
+													window.location.reload(1);
+											}, ( 480 * 1000 ) );
+					}
+				}
+				refreshPageAction( );
+			</script>
+			        <script type="text/javascript">
+            document.cookie = "krg_crb=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
+            document.cookie = "krg_uid=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/";
+        </script>
+        
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="description" content="The United Arab Emirates announced Tuesday that it will leave OPEC effective May 1, stripping the oil cartel of one of its largest producers.">
+<meta property="og:image" content="https://wtop.com/wp-content/uploads/2026/04/APTOPIX_Iran_War_65446-scaled.jpg">
+<meta property="og:image:width" content="2560">
+<meta property="og:image:height" content="1706">
+<meta property="og:image:alt" content="APTOPIX Iran War">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall - WTOP News">
+<meta property="og:description" content="The United Arab Emirates announced Tuesday that it will leave OPEC effective May 1, stripping the oil cartel of one of its largest producers. While the announcement won't have an immediate impact on…">
+<meta property="og:url" content="https://wtop.com/national/2026/04/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal/">
+<meta property="og:site_name" content="WTOP News">
+<meta property="og:updated_time" content="2026-04-29T01:39+00:00">
+<meta property="article:published_time" content="2026-04-29T01:34+00:00">
+<meta property="article:modified_time" content="2026-04-29T01:39+00:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall - WTOP News">
+<meta name="twitter:description" content="The United Arab Emirates announced Tuesday that it will leave OPEC effective May 1, stripping the oil cartel of one of its largest producers. While the announcement won't have an immediate impact on…">
+<meta name="twitter:image" content="https://wtop.com/wp-content/uploads/2026/04/APTOPIX_Iran_War_65446-scaled.jpg">
+<meta name="twitter:image:width" content="2560">
+<meta name="twitter:image:height" content="1706">
+<meta name="twitter:image:alt" content="APTOPIX Iran War">
+<link rel="canonical" href="https://wtop.com/national/2026/04/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://wtop.com/","name":"WTOP | Washington\u2019s Top News | DC, MD &#038; VA News, Traffic &#038; Weather"}},{"@type":"ListItem","position":2,"item":{"@id":"https://wtop.com/national/","name":"National News"}},{"@type":"ListItem","position":3,"item":{"@id":"https://wtop.com/national/2026/04/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal/","name":"The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall"}}]}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 6.72ms meta | 0.14ms boot -->
+
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+<link rel="dns-prefetch" href="//secure-drm.imrworldwide.com">
+<link rel="dns-prefetch" href="//code.jquery.com">
+<link rel="dns-prefetch" href="//use.fontawesome.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/wtop.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.4"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="https://wtop.com/wp-includes/js/wp-emoji-release.min.js?ver=5.9.4" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="preload" as="font" crossorigin="" id="font-woff-italic-100-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/italic-100.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-italic-300-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/italic-300.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-italic-400-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/italic-400.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-italic-700-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/italic-700.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-italic-900-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/italic-900.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-normal-300-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/normal-300.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-normal-400-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/normal-400.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-normal-700-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/normal-700.woff2?ver=all" type="font/woff2" media="all">
+<link rel="preload" as="font" crossorigin="" id="font-woff-normal-900-css" href="https://wtop.com/wp-content/themes/wtop-new/css/fonts/Lato/normal-900.woff2?ver=all" type="font/woff2" media="all">
+<link rel="stylesheet" id="print-css" href="https://wtop.com/wp-content/themes/wtop-new/assets/css/print.css?ver=1" type="text/css" media="print">
+<link rel="stylesheet" id="SailThru-css" href="https://wtop.com/wp-content/plugins/sailthru-custom/assets/css/sailthru.css?ver=260416-181709" type="text/css" media="all">
+<link rel="stylesheet" id="Sailthru_Newsletters_Custom-css" href="https://wtop.com/wp-content/plugins/sailthru-newsletters-custom/assets/css/sailthru.css?ver=0.1" type="text/css" media="all">
+<link rel="stylesheet" id="sailthru-newsletter-signup-css-css" href="https://wtop.com/wp-content/plugins/sailthru-newsletters-custom/assets/css/sailthru-newsletter-signup.min.css?ver=1776363429" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css-css" href="https://use.fontawesome.com/releases/v6.7.1/css/all.css?ver=6.7.1" type="text/css" media="">
+<link rel="stylesheet" id="wtop-theme-stylesheet-css" href="https://wtop.com/wp-content/themes/wtop-new/style.css?ver=1776363429" type="text/css" media="all">
+<link rel="stylesheet" id="blog_styles-css" href="https://wtop.com/wp-content/themes/wtop-new/blog-styles.css?ver=1776363429" type="text/css" media="">
+
+		<!-- Media Trade Craft  -->
+		<link rel="preconnect" href="https://01.cdn.mediatradecraft.com/" crossorigin="">
+		<link rel="dns-prefetch" href="https://01.cdn.mediatradecraft.com/">
+		<link rel="preconnect" href="https://securepubads.g.doubleclick.net/" crossorigin="">
+		<link rel="dns-prefetch" href="https://securepubads.g.doubleclick.net/">
+		<link rel="preconnect" href="https://c.amazon-adsystem.com/" crossorigin="">
+		<link rel="dns-prefetch" href="https://c.amazon-adsystem.com/">
+		<link rel="preconnect" href="https://micro.rubiconproject.com/" crossorigin="">
+		<link rel="dns-prefetch" href="https://micro.rubiconproject.com/">
+
+		<script src="https://c.amazon-adsystem.com/aax2/apstag.js" async="true"></script>
+		<script src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" async="true"></script>
+		<script src="https://01.cdn.mediatradecraft.com/wtop/main/main.js?template=article" async="true"></script>
+		<link href="https://01.cdn.mediatradecraft.com/wtop/main/main.css" media="all" onload="this.media='all'" rel="stylesheet">
+
+		<!-- // Media Trade Craft -->
+
+		<meta name="sentry-trace" content="3cf50a35f4ab4ec685398bbc137b6967-2f02b27e43784d58-0">
+<meta name="traceparent" content="">
+<meta name="baggage" content="sentry-trace_id=3cf50a35f4ab4ec685398bbc137b6967,sentry-sample_rate=0.1,sentry-transaction=%2F%7Bprimary%7D%2F%7Byear%7D%2F%7Bmonthnum%7D%2F%7Bname%7D,sentry-public_key=e77a47c1ffc9f2f7f48a32f1ea577659,sentry-org_id=4509877757870080,sentry-release=0.0.1,sentry-environment=wtop-prod,sentry-sampled=false,sentry-sample_rand=0.555229">
+		<!-- Google Tag Manager -->
+		<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TZGJTC"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-TZGJTC');</script>
+		<!-- End Google Tag Manager -->
+            			<!-- <script>
+			(function() {
+				if (window.Osano && Osano.cm) {
+					const consent = Osano.cm.getConsent();
+					if (consent.consentedCategories.includes('C0001')) {
+						// Setup dataLayer and gtag before loading GA script
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments);}
+
+						gtag('js', new Date());
+
+						gtag('config', 'G-7DGXB37KZH', {
+							'author': 'The Associated Press',
+							'primary_category': 'National News'
+						});
+
+						// Now load gtag.js
+						var gtagScript = document.createElement("script");
+						gtagScript.async = true;
+						gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-7DGXB37KZH";
+						document.head.appendChild(gtagScript);
+					}
+				}
+			})();
+			</script> -->
+
+
+
+
+				<!-- Google Analytics  -->
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+			<!-- This is GA4 -->
+			<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7DGXB37KZH"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					'author' : 'The Associated Press',
+					'primary_category' : 'National News'
+				});
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-7DGXB37KZH');
+			</script>           
+              <!-- //This is GA4 -->    
+		<!-- // Google Analytics -->
+		<script src="/advertisement.js" defer=""></script>
+
+		        <script>
+            window.Site = window.Site || {};
+            window.Site.icons = window.Site.icons || {};
+            window.Site.icons['arrow-down'] = "<svg class=\"Svg\" data-name=\"arrow-down\" version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\" width=\"11px\" height=\"7px\" viewBox=\"0 0 11 7\" enable-background=\"new 0 0 11 7\" xml:space=\"preserve\">\t<image src=\"https:\/\/wtop.com\/wp-content\/themes\/wtop-new\/assets\/img\/icons\/arrow-down.png\" \/><path d=\"M9.786,0c-0.32,0-0.623,0.127-0.857,0.365l-3.43,3.601L2.143,0.444C1.911,0.162,1.573,0,1.214,0\n\tC0.545,0,0,0.561,0,1.25c0,0.296,0.101,0.58,0.285,0.805C0.3,2.076,0.316,2.097,0.335,2.116l4.279,4.493\n\tC4.843,6.857,5.165,7,5.497,7H5.5c0.333,0,0.654-0.143,0.876-0.385l4.291-4.506C10.882,1.876,11,1.571,11,1.25\n\tC11,0.561,10.455,0,9.786,0z\"\/><\/svg>";
+            window.Site.icons['image-arrow-circle-blue'] = "https:\/\/wtop.com\/wp-content\/themes\/wtop-new\/assets\/img\/icons\/arrow-circle-blue.png";
+            window.Site.icons['image-arrow-right-black'] = "https:\/\/wtop.com\/wp-content\/themes\/wtop-new\/assets\/img\/icons\/arrow-right-black.png";
+            window.Site.icons['image-arrow-left-black'] = "https:\/\/wtop.com\/wp-content\/themes\/wtop-new\/assets\/img\/icons\/arrow-left-black.png";
+        </script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js?ver=2.1.0" id="jquery-js"></script>
+
+        <script>
+        // Fallback to loading jQuery from a local path if the CDN is unavailable
+        (window.jQuery || append_jquery_fallback() );
+            function append_jquery_fallback(){
+                var script = document.createElement('script');
+                script.setAttribute('type', 'text/javascript');
+                script.setAttribute('src', 'https://wtop.com/wp-content/themes/wtop-new/assets/vendor/jquery/dist/jquery.min.js');
+                document.write(script.outerHTML);
+            }
+        </script><script type="text/javascript" src="//secure-drm.imrworldwide.com/novms/js/2/ggcmb400.js?ver=5.9.4" id="nielsensdk-js"></script>
+<script type="text/javascript" id="ggcom-js-extra">
+/* <![CDATA[ */
+var _nolggGlobalParams = {"sfcode":"drm","apid":"P161F34E0-CC10-4E18-B59B-CDAA8FC2516B","apn":"WTOP"};
+var _nolggGlobalParamsMeta = {"provider":"HubbardRadio","stationType":"1","assetid":"WTOP-FM"};
+var _nolggSettings = {"debug":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://wtop.com/wp-content/themes/wtop-new/js/ggCom_embed.js?ver=5.9.4" id="ggcom-js"></script>
+<script type="text/javascript" id="DFPLIGHT-js-extra">
+/* <![CDATA[ */
+var DFP_ad_slots = "[{\"name\":\"wtop_desktop_top\",\"sizes\":\"[[970, 250], [970, 90], [728, 90]]\",\"id\":\"DFP_slot_wtop_desktop_top_1\",\"sizeMapping\":{\"[1025, 900]\":\"[[1, 1],[970, 250], [970, 90], [728, 90]]\",\"[1025, 450]\":\"[[970, 90], [728, 90]]\",\"[0, 0]\":\"[]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_desktop_interstitial\",\"sizes\":\"[640, 480]\",\"id\":\"DFP_slot_wtop_desktop_interstitial_1\",\"sizeMapping\":{\"[1025, 200]\":\"[640, 480]\",\"[0, 0]\":\"[]\"},\"extra\":false,\"outofpage\":true,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_mobile_adhesion_1\",\"sizes\":\"[[320, 50],[1,1]]\",\"id\":\"DFP_slot_wtop_mobile_adhesion_1_1\",\"sizeMapping\":{\"[750, 200]\":\"[]\",\"[0, 0]\":\"[[320, 50],[1,1]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_article_300x600_1\",\"sizes\":\"[[300, 600]]\",\"id\":\"DFP_slot_wtop_article_300x600_1_1\",\"sizeMapping\":{\"[1025, 900]\":\"[[1, 1],[300, 600]]\",\"[1025, 450]\":\"[[1, 1],[300, 250]]\",\"[0, 0]\":\"[]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_1\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_1_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_2\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_2_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_3\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_3_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_4\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_4_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_5\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_5_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_6\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_6_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_7\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_7_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_desktop_8\",\"sizes\":\"[[620,250], [300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_desktop_8_1\",\"sizeMapping\":{\"[1025, 200]\":\"[[620,250], [300, 250]]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_article_mobile_300x250\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_article_mobile_300x250_1\",\"sizeMapping\":{\"[1024, 200]\":\"[]\",\"[0, 0]\":\"[300, 250]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_1\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_1_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_2\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_2_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_3\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_3_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_4\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_4_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_5\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_5_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_6\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_6_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_7\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_7_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false},{\"name\":\"wtop_in-article_mobile_8\",\"sizes\":\"[[300, 250]]\",\"id\":\"DFP_slot_wtop_in-article_mobile_8_1\",\"sizeMapping\":{\"[1025, 0]\":\"[]\",\"[0, 0]\":\"[[300, 250]]\"},\"extra\":false,\"outofpage\":false,\"companion\":false,\"expandedSize\":false,\"transition\":false,\"avoidRender\":false}]";
+var DFP_custom_targeting = {"is_front":"false","is_archive":"false","is_article":"true","is_gallery":"false","is_page":"false","is_traffic":"false","is_weather":"false","is_headlines":"false","is_search":"false","is_author":"false","is_dev":"false","include_cms_player":"false","disable_all_ads":"false","disable_header_ad":"false","disable_footer_ad":"false","disable_right_rail_ads":"false","disable_in_article_ads":"false","slug":"the-latest-us-appears-cold-to-iranian-pr","category":["national","world"],"section":["national","world"],"traffic":["national","world"],"weather":["national","world"],"region":["national","world"],"tag":[],"author":["The Associated Press"]};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://wtop.com/wp-content/plugins/dfp-custom-light/assets/js/dist/dfp-custom-light.min.js?ver=1.0.0" id="DFPLIGHT-js"></script>
+<link rel="https://api.w.org/" href="https://wtop.com/wp-json/"><link rel="alternate" type="application/json" href="https://wtop.com/wp-json/wp/v2/posts/29190124"><link rel="alternate" type="application/json+oembed" href="https://wtop.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://wtop.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F&amp;format=xml">
+<!-- Osano Cookies Consent Notice start for wtop.com -->
+
+	<script src="https://cmp.osano.com/Azqe5XTmI42atAm9K/0190736e-d38d-4b44-880d-587a15e02d1e/osano.js"></script>
+
+	<!-- Osano Cookies Consent Notice end for wtop.com -->
+
+        <style>
+            body{
+                padding : 0px !important;
+            }
+            html.wp-toolbar{padding-top: 0px !important;}
+        </style>
+                <!--ZOOMINFO HEADER SCRIPT-->
+        <script>
+            (function () {
+                var zi = document.createElement('script');
+                zi.type = 'text/javascript';
+                zi.async = true;
+                zi.referrerPolicy = 'unsafe-url';
+                zi.src = 'https://ws.zoominfo.com/pixel/6245e68be2bbe6001aaa141b';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(zi, s);
+            })();</script>
+        <!--ZOOMINFO HEADER SCRIPT END-->
+                    <meta property="source" content="the-associated-press">
+            <meta property="partner" content="true">
+                    <script type="application/ld+json">
+            {"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/wtop.com\/national\/2026\/04\/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal\/"},"headline":"The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall","url":"https:\/\/wtop.com\/national\/2026\/04\/the-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal\/","thumbnailUrl":"https:\/\/wtop.com\/wp-content\/uploads\/2026\/04\/APTOPIX_Iran_War_65446-150x150.jpg","image":{"@type":"ImageObject","url":"https:\/\/wtop.com\/wp-content\/uploads\/2026\/04\/APTOPIX_Iran_War_65446-scaled.jpg","width":2560,"height":1706},"dateCreated":"2026-04-29T01:34:30Z","datePublished":"2026-04-29T01:34:30Z","dateModified":"2026-04-29T01:39:01Z","articleSection":"National News","author":[{"@type":"Person","name":"The Associated Press"}],"creator":["The Associated Press"],"publisher":{"@type":"Organization","name":"WTOP News","logo":{"@type":"ImageObject","url":"https:\/\/wtop.com\/wp-content\/themes\/wtop-new\/assets\/img\/icons\/logo-162x60.gif"}},"keywords":[],"speakable":{"@type":"SpeakableSpecification","cssSelector":[".schema-title",".schema-summary"]}}
+        </script>
+        <link rel="alternate" type="application/rss+xml" title="WTOP News » Feed" href="https://wtop.com/feed/">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/favicon-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/favicon-160x160.png" sizes="160x160">
+        <link rel="icon" type="image/png" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/favicon-16x16.png" sizes="16x16">
+        <link rel="icon" type="image/png" href="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/favicon-32x32.png" sizes="32x32">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/mstile-144x144.png">
+        <meta name="msapplication-config" content="https://wtop.com/wp-content/themes/wtop-new/assets/img/favicons/browserconfig.xml">
+                <!-- Start SmartBanner configuration -->
+        <meta name="smartbanner:title" content="WTOP News">
+        <meta name="smartbanner:author" content="News Traffic Weather">
+        <meta name="smartbanner:price" content="FREE">
+        <meta name="smartbanner:price-suffix-google" content=" - In Google Play">
+        <meta name="smartbanner:icon-google" content="https://wtop.com/wp-content/themes/wtop-new/assets/img/app/Google-Play-Icon.png">
+        <meta name="smartbanner:button" content="VIEW">
+        <meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=com.audionowdigital.player.wtopradio">
+        <meta name="smartbanner:enabled-platforms" content="android">
+        <!-- End SmartBanner configuration -->
+        <link rel="icon" href="https://wtop.com/wp-content/uploads/2021/05/WtopNewsLogo_500x500-150x150.png" sizes="32x32">
+<link rel="icon" href="https://wtop.com/wp-content/uploads/2021/05/WtopNewsLogo_500x500-240x240.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://wtop.com/wp-content/uploads/2021/05/WtopNewsLogo_500x500-240x240.png">
+<meta name="msapplication-TileImage" content="https://wtop.com/wp-content/uploads/2021/05/WtopNewsLogo_500x500-300x300.png">
+
+		<!-- Chartbeat -->
+        <script type="text/javascript" src="//www.youtube.com/iframe_api"></script>
+        <script type="text/javascript">
+            (function() {
+                /** CONFIGURATION START **/
+                var _sf_async_config = window._sf_async_config = (window._sf_async_config || {});
+                _sf_async_config.uid = 55822 //CHANGE THIS TO YOUR ACCOUNT ID
+                _sf_async_config.domain = 'wtop.com'; //CHANGE THIS TO YOUR SITE ID
+                _sf_async_config.useCanonical = true;
+                _sf_async_config.useCanonicalDomain = true;
+                _sf_async_config.sections = 'National News'; //SET PAGE SECTION(S)
+                _sf_async_config.authors = 'The Associated Press'; //SET PAGE AUTHOR(S)
+                _sf_async_config.autoDetect = false;
+                /** CONFIGURATION END **/
+                function loadChartbeat() {
+                    var e = document.createElement('script');
+                    var n = document.getElementsByTagName('script')[0];
+                    e.type = 'text/javascript';
+                    e.async = true;
+                    e.src = '//static.chartbeat.com/js/chartbeat_video.js';
+                    n.parentNode.insertBefore(e, n);
+                }
+                var _cbv = window._cbv || (window._cbv = []);
+                _cbv.push(['autoDetectYouTubeIframes']);
+                loadChartbeat();
+            })();
+        </script>
+		<!-- /Chartbeat -->
+				<style type="text/css" id="wp-custom-css">
+			.instagram-media{margin:0 auto !important;}
+		</style>
+		        <script src="https://cdn.btmessage.com/script/rlink.js?o=5668060692217856" async="" type="module"></script>
+<script async="" src="https://ads.pubmatic.com/AdServer/js/pwt/160835/4933/pwt.js"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202605060101/pubads_impl.js" async=""></script><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202605120101/gpt" rel="compression-dictionary"><script charset="utf-8" data-webpack="mtc-publisher:chunk-706" src="https://01.cdn.mediatradecraft.com/wtop/main/706.js"></script><script fetchpriority="high" src="https://01.cdn.mediatradecraft.com/cmdjs/runtime-2.10.4.js" id="2.10.4"></script><script src="/advertisement.js"></script><style>.pbs{position:relative;max-height:var(--pbs-height);max-width:var(--pbs-width);margin-top:var(--pbs-margin-top);margin-right:var(--pbs-margin-right);margin-bottom:var(--pbs-margin-bottom);margin-left:var(--pbs-margin-left)}.pbs.collapsed{visibility:hidden;height:0}.pbs.hidden{display:none;position:fixed}.pbs.invisible{visibility:hidden}.pbs.full-screen{object-fit:contain;position:fixed !important;box-sizing:border-box !important;min-width:0 !important;max-width:none !important;min-height:0 !important;max-height:none !important;width:100% !important;height:100% !important;transform:none !important;inset:0 !important;margin:0 !important;z-index:999999999999999;background:#000}.pbs.full-screen .pbs__player{top:50%;left:50%;transform:translate(-50%, -50%);width:calc(100% - var(--exco-right-gallery-width)) !important;height:100% !important;display:flex;align-items:center}.pbs.full-screen .pbs__player .__exco_content_container{position:fixed}.pbs:fullscreen .pbs__player{top:50%;left:50%;transform:translate(-50%, -50%);width:calc(100% - var(--exco-right-gallery-width)) !important;height:100% !important;display:flex;align-items:center}.pbs:fullscreen .pbs__player .__exco_content_container{position:fixed}.pbs .exco-player__lazy-overlay{position:absolute;width:1px;visibility:hidden;pointer-events:none;top:50%;transform:translateY(-50%)}.pbs #__exco_content_video,.pbs #__cedato_content_video{object-fit:var(--exco-video-object-fit)}.pbs .__exco_video-background::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;background-image:var(--exco-video-bg-image);background-position:center center;background-size:cover;background-repeat:no-repeat;filter:blur(10px)}.pbs__player{position:relative}.pbs__player #exco_sticky-x-button-container.exco_sticky-upper{z-index:17}.pb-stream{overflow:hidden;margin:0 auto}*[data-pbs-display=false]{display:none}*[data-pbs-display=block]{display:none}*[data-pbs-root=true]{display:block}::cue{line-height:1.4}.exp-ui__wrapper.falcon{position:absolute;z-index:2;pointer-events:none;touch-action:none;top:0;right:0;bottom:0;left:0;font-family:Arial,Helvetica,sans-serif;font-weight:500;transition:background .3s ease-in-out}.exp-ui__wrapper.falcon.exp-ui__wrapper__clickable{cursor:default;pointer-events:auto}.exp-ui__wrapper.falcon:not(.exp-ui__state__ad-playing){background:linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 20%)}.exp-ui__wrapper.falcon.exp-ui__state__hovered:not(.exp-ui__state__ad-playing){background:linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%) !important}.exp-ui__wrapper.falcon.exp-ui__state__small-view.exp-ui__state__hovered:not(.exp-ui__state__ad-playing),.exp-ui__wrapper.falcon.exp-ui__state__tiny-view.exp-ui__state__hovered:not(.exp-ui__state__ad-playing){background:rgba(0,0,0,.6) !important}.exp-ui__wrapper.falcon *{box-sizing:border-box;-webkit-tap-highlight-color:rgba(0,0,0,0)}.exp-ui__wrapper.falcon .exp-ui__toolbar-wrapper{position:absolute;bottom:0;left:0;right:0;z-index:14;display:flex;flex-direction:column-reverse;text-transform:none;letter-spacing:normal}.exp-ui__wrapper.falcon .exp-ui__state__shown{opacity:1 !important}.exp-ui__wrapper.falcon .exp-ui__state__shown.exp-ui__state__disabled{opacity:.5 !important;cursor:not-allowed !important;pointer-events:none !important}.exp-ui__wrapper.falcon .exp-ui__state__hidden{z-index:-1;visibility:hidden}.exp-ui__wrapper.falcon .exp-ui__state__clickable{cursor:pointer;pointer-events:all}.exp-ui__wrapper.falcon .exp-ui__common-button svg{display:block}.exp-ui__wrapper.falcon .exp-ui__common-button svg path{-webkit-filter:drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2));filter:drop-shadow(0 1px 1px rgba(0, 0, 0, 0.2))}.exp-ui__wrapper.falcon .custom-icon{display:none;background-repeat:no-repeat;background-size:100% 100%}.pbs[data-pbs-device=desktop][data-pbs-position=sticky] .exp-ui__wrapper.falcon{background:linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 19.72%, rgba(0, 0, 0, 0) 31.47%)}.pbs[data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__state__hovered:not(.exp-ui__state__ad-playing),.pbs[data-pbs-position=sticky] .exp-ui__wrapper.falcon.exp-ui__state__hovered:not(.exp-ui__state__ad-playing){background:rgba(0,0,0,.6) !important}.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .__cedato_ad_container,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .__cedato_ad_container *,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .__exco_ad_container,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .__exco_ad_container *{pointer-events:none;touch-action:none}.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon *{pointer-events:none;touch-action:none}.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__skip-button,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__sticky-misty__close-btn,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__sticky__close-btn,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__subscription-box-clickable,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__keep-watching-btn,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__gallery_below,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__wide-gallery__scroll-container,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon .exp-ui__controls__initial-load .exp-ui__play-button{pointer-events:all;touch-action:auto}.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon.exp-ui__state__ad-playing .exp-ui__play-button,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon.exp-ui__state__ad-playing .exp-ui__pause-button,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon.exp-ui__state__ad-playing .exp-ui__sound-button,.pbs[data-pbs-device=mobile]:not([data-pbs-hover=true]) .exp-ui__wrapper.falcon.exp-ui__state__ad-playing .exp-ui__fullscreen-button{pointer-events:all;touch-action:auto}.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__top-sticky-mode .exp-ui__toolbar-wrapper:not(.exp-ui__progress-bar-hidden),.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__bottom-sticky-mode .exp-ui__toolbar-wrapper:not(.exp-ui__progress-bar-hidden){flex-direction:column}.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__top-sticky-mode .exp-ui__toolbar-wrapper:not(.exp-ui__progress-bar-hidden) .exp-ui__toolbar,.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__bottom-sticky-mode .exp-ui__toolbar-wrapper:not(.exp-ui__progress-bar-hidden) .exp-ui__toolbar{margin-bottom:calc(-1*var(--exco-mobile-sticky-border-radius))}.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__top-sticky-mode{border-radius:0 0 var(--exco-mobile-sticky-border-radius) 0}.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__top-sticky-mode .exp-ui__poster__wrapper,.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__top-sticky-mode .exp-ui__error-state{border-radius:0 0 var(--exco-mobile-sticky-border-radius) 0}.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__bottom-sticky-mode{border-radius:0 var(--exco-mobile-sticky-border-radius) 0 0}.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__bottom-sticky-mode .exp-ui__poster__wrapper,.pbs[data-pbs-position=sticky][data-pbs-device=mobile] .exp-ui__wrapper.falcon.exp-ui__bottom-sticky-mode .exp-ui__error-state{border-radius:0 var(--exco-mobile-sticky-border-radius) 0 0}.pb-stream{overflow:hidden}.pb-stream .avp-p-wrapper div[id^=content_]{overflow:hidden}.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__next-button,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__pause-button,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__play-button,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__prev-button{display:flex;position:absolute;top:50%;z-index:14;transform:translateY(-50%);padding:8px;border-radius:50%;opacity:0;transition:opacity .3s ease-in-out;background-color:rgba(0,0,0,.3);cursor:default;pointer-events:all}.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__next-button.exp-ui__state__shown,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__pause-button.exp-ui__state__shown,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__play-button.exp-ui__state__shown,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__prev-button.exp-ui__state__shown{cursor:pointer}.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__next-button{right:calc(50% - 100px)}.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__pause-button,.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__play-button{left:50%;padding:4px;transform:translate(-50%, -50%)}.exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__prev-button{left:calc(50% - 100px)}.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled) svg,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled) i{transition:all .3s ease-in-out}.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):hover svg,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):hover i,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):focus-visible svg,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):focus-visible i{transform:scale(1.1)}.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):hover svg,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):hover path,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):focus-visible svg,.pbs[data-pbs-device=desktop] .exp-ui__wrapper.falcon .exp-ui__controls .exp-ui__state__shown:not(.exp-ui__state__disabled):focus-visible path{fill:var(--exco-primary-color)}.exp-ui__wrapper.falcon .exp-ui__title-and-cta-wrapper{position:absolute;top:0;left:0;right:0;z-index:12;display:flex;justify-content:end;font-family:var(--exco-font-family);font-weight:var(--exco-font-weight)}.exp-ui__animated-title-wrapper{height:34px;width:100%;padding:5px 10px;line-height:24px;overflow:hidden !important;opacity:.4;transition:opacity .3s ease-in-out}.exp-ui__animated-title-wrapper .exp-ui__animated-title{display:block;overflow:hidden}.exp-ui__animated-title-wrapper.exp-ui__state__active{opacity:1}.exp-ui__animated-title-wrapper.exp-ui__state__active .exp-ui__animated-title{display:inline-block;overflow:auto}.exp-ui .vertical .exp-ui__animated-title-wrapper{opacity:0;transition:opacity .1s ease-in-out}.exp-ui .vertical .exp-ui__animated-title-wrapper.exp-ui__state__active{opacity:1}.exp-ui__animated-title{-webkit-text-size-adjust:100%;height:100%;margin:0;font-size:14px;text-align:start;white-space:pre;text-overflow:ellipsis;text-shadow:0 1px 1px rgba(0,0,0,.2);color:#fff;animation:title-animation var(--animation-duration) linear infinite}.exp-ui__animated-title-dot-delimiter{display:inline-block;width:4px;height:4px;border-radius:50%;margin:0 15px;vertical-align:middle;background-color:#fff}.pbs[data-pbs-device=mobile] .exp-ui__animated-title-wrapper,.pbs[data-pbs-position=sticky] .exp-ui__animated-title-wrapper,.exp-ui__wrapper.exp-ui__state__small-view .exp-ui__animated-title-wrapper,.exp-ui__wrapper.exp-ui__state__tiny-view .exp-ui__animated-title-wrapper{height:28px;line-height:18px}.pbs[data-pbs-device=mobile] .exp-ui__animated-title,.pbs[data-pbs-position=sticky] .exp-ui__animated-title,.exp-ui__wrapper.exp-ui__state__small-view .exp-ui__animated-title,.exp-ui__wrapper.exp-ui__state__tiny-view .exp-ui__animated-title{font-size:12px}@keyframes title-animation{0%{transform:translateX(0%)}90%{transform:translateX(calc(-1 * (var(--title-text-width) + 34px)))}100%{transform:translateX(calc(-1 * (var(--title-text-width) + 34px)))}}</style><style type="text/css" class="pbs-style">
+    .pbs[id="b339bedc-b28d-46b1-9ffd-825b0230be3c"],
+    .pbs[embed-id="b339bedc-b28d-46b1-9ffd-825b0230be3c"] {
+      width: calc(100% - 0px)
+    }
+    </style><style type="text/css" class="pbs-style">.pbs[data-player-id="undefined"],
+      .pbs[id="b339bedc-b28d-46b1-9ffd-825b0230be3c"],
+      .pbs[embed-id="b339bedc-b28d-46b1-9ffd-825b0230be3c"] {
+      --pbs-width:100%;
+      --pbs-height:auto;
+      --pbs-margin-top:unset;
+      --pbs-margin-right:unset;
+      --pbs-margin-bottom:unset;
+      --pbs-margin-left:unset;
+      --exco-primary-color:#548095;
+      --exco-primary-color-rgb:84, 128, 149;
+      --exco-secondary-color:#049cff;
+      --exco-secondary-color-rgb:4, 156, 255;
+      --exco-paging-color:#548095;
+      --exco-paging-color-rgb:84, 128, 149;
+      --pbs-color-progress-bar:#548095;
+      --pbs-color-progress-bar-rgb:84, 128, 149;
+      --exco-title-background-color:#548095;
+      --exco-title-background-color-rgb:84, 128, 149;
+      --pbs-color-transition:#049cff;
+      --pbs-color-transition-rgb:4, 156, 255;
+      --pbs-color-play-button:#548095;
+      --exco-cta-color-sticky:#548095;
+      --exco-title-text-color:#fff;
+      --exco-remaining-width-sticky:25%;
+      --exco-sticky-player-height:196.9px;
+      --exco-font-family:Roboto;
+      --exco-font-weight:undefined;
+      --exco-upper-sticky-background-color:#548095;
+      --exco-video-gallery-height: 0px;
+      --exco-right-gallery-width: 0px;
+      --exco-wide-right-gallery-width: 359px;
+      --exco-video-object-fit:contain;
+      --exco-mobile-sticky-border-radius:12px;
+       }</style><script charset="utf-8" src="https://cdn.ex.co/player/4.446.0/ui-falcon-keep-watching-btn.js"></script><script charset="utf-8" src="https://cdn.ex.co/player/4.446.0/ui-falcon-customer-logo.js"></script></head>
+    <body class="post-template-default single single-post postid-29190124 single-format-standard "><div data-nosnippet="" class="osano-cm-window" dir="ltr"><!----> <!--?lit$502355165$--><div hidden="" class="osano-visually-hidden"> <span id="osano-cm-aria.newWindow"><!--?lit$502355165$-->Opens in a new window</span> <span id="osano-cm-aria.external"><!--?lit$502355165$-->Opens an external website</span> <span id="osano-cm-aria.externalNewWindow"><!--?lit$502355165$-->Opens an external website in a new window</span> </div> <!--?lit$502355165$--> <div role="dialog" id="f43ceae4-6f1c-45af-bc5f-c21eb1e9ffe8" aria-label="Cookie Consent Banner" aria-describedby="f43ceae4-6f1c-45af-bc5f-c21eb1e9ffe8__label" class="osano-cm-window__dialog osano-cm-dialog osano-cm-dialog--position_bottom osano-cm-dialog--type_bar"> <!--?lit$502355165$--> <div class=" osano-cm-dialog__content osano-cm-content "> <!--?lit$502355165$--> <!--?lit$502355165$--> <span id="f43ceae4-6f1c-45af-bc5f-c21eb1e9ffe8__label" class=" osano-cm-content__message osano-cm-message "> <!--?lit$502355165$-->This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising. <!--?lit$502355165$--> <!--?lit$502355165$--> </span>  <!--?lit$502355165$--> <!--?lit$502355165$--><!--?lit$502355165$--><a rel="noopener" tabindex="0" href="http://corporate.hubbardradio.com/privacy-policy/" target="_blank" class=" osano-cm-storage-policy osano-cm-content__link osano-cm-link " aria-describedby="osano-cm-aria.newWindow"><!--?lit$502355165$-->Privacy Policy</a><!--?--><!--?lit$502355165$--> <!--?lit$502355165$--> <!--?lit$502355165$--> </div> <!--?lit$502355165$--> <div class="osano-cm-dialog__buttons osano-cm-buttons"> <!--?lit$502355165$--><!--?lit$502355165$--><button class=" osano-cm-accept osano-cm-buttons__button osano-cm-button osano-cm-button--type_accept " tabindex="0"> <!--?lit$502355165$-->Accept </button><!--?--> <!--?lit$502355165$--><!--?lit$502355165$--><button class=" osano-cm-deny osano-cm-buttons__button osano-cm-button osano-cm-button--type_deny " tabindex="0"> <!--?lit$502355165$-->Deny Non-Essential </button><!--?--> <!--?lit$502355165$--> <!--?lit$502355165$--><!--?lit$502355165$--><button class=" osano-cm-manage osano-cm-buttons__button osano-cm-button osano-cm-button--type_manage " tabindex="0"> <!--?lit$502355165$-->Manage Preferences </button><!--?--> </div> </div>  <!--?lit$502355165$--> <!--?lit$502355165$--> <button id="5882d3c0-4dba-4cae-8e43-29f4425d1f22" class=" osano-cm-window__widget osano-cm-widget osano-cm-widget--hidden osano-cm-widget--position_right " title="Cookie Preferences" aria-label="Cookie Preferences"> <svg role="img" width="40" height="40" viewBox="0 0 71.85 72.23" xmlns="http://www.w3.org/2000/svg" aria-labelledby="5882d3c0-4dba-4cae-8e43-29f4425d1f22"> <path d="m67.6 36.73a6.26 6.26 0 0 1 -3.2-2.8 5.86 5.86 0 0 0 -5.2-3.1h-.3a11 11 0 0 1 -11.4-9.5 6 6 0 0 1 -.1-1.4 9.2 9.2 0 0 1 .4-2.9 8.65 8.65 0 0 0 .2-1.6 5.38 5.38 0 0 0 -1.9-4.3 7.3 7.3 0 0 1 -2.5-5.5 3.91 3.91 0 0 0 -3.5-3.9 36.46 36.46 0 0 0 -15 1.5 33.14 33.14 0 0 0 -22.1 22.7 35.62 35.62 0 0 0 -1.5 10.2 34.07 34.07 0 0 0 4.8 17.6.75.75 0 0 0 .07.12c.11.17 1.22 1.39 2.68 3-.36.47 5.18 6.16 5.65 6.52a34.62 34.62 0 0 0 55.6-21.9 4.38 4.38 0 0 0 -2.7-4.74z" stroke-width="3" class=" osano-cm-widget__outline osano-cm-outline "></path> <path d="m68 41.13a32.37 32.37 0 0 1 -52 20.5l-2-1.56c-2.5-3.28-5.62-7.15-5.81-7.44a32 32 0 0 1 -4.5-16.5 34.3 34.3 0 0 1 1.4-9.6 30.56 30.56 0 0 1 20.61-21.13 33.51 33.51 0 0 1 14.1-1.4 1.83 1.83 0 0 1 1.6 1.8 9.38 9.38 0 0 0 3.3 7.1 3.36 3.36 0 0 1 1.2 2.6 3.37 3.37 0 0 1 -.1 1 12.66 12.66 0 0 0 -.5 3.4 9.65 9.65 0 0 0 .1 1.7 13 13 0 0 0 10.5 11.2 16.05 16.05 0 0 0 3.1.2 3.84 3.84 0 0 1 3.5 2 10 10 0 0 0 4.1 3.83 2 2 0 0 1 1.4 2z" stroke-width="3" class=" osano-cm-widget__outline osano-cm-outline "></path> <g class=" osano-cm-widget__dot osano-cm-dot "> <path d="m26.6 31.43a5.4 5.4 0 1 1 5.4-5.43 5.38 5.38 0 0 1 -5.33 5.43z"></path> <path d="m25.2 53.13a5.4 5.4 0 1 1 5.4-5.4 5.44 5.44 0 0 1 -5.4 5.4z"></path> <path d="m47.9 52.33a5.4 5.4 0 1 1 5.4-5.4 5.32 5.32 0 0 1 -5.24 5.4z"></path> </g> </svg> </button>  <!--?lit$502355165$--><div role="dialog" aria-modal="true" id="707ad004-ea66-40f4-86ea-4284d8a5120a" aria-labelledby="707ad004-ea66-40f4-86ea-4284d8a5120a__label" aria-hidden="true" class=" osano-cm-window__info-dialog osano-cm-info-dialog osano-cm-info-dialog--hidden "> <!--?lit$502355165$--><!--?lit$502355165$--><span tabindex="0" aria-hidden="true" data-focus="first"></span><!--?--> <div role="presentation" class=" osano-cm-info-dialog__info osano-cm-info osano-cm-info--position_left "> <!--?lit$502355165$--><div role="presentation" class=" osano-cm-info__info-dialog-header osano-cm-info-dialog-header "> <p role="heading" aria-level="1" aria-hidden="true" id="707ad004-ea66-40f4-86ea-4284d8a5120a__label" class=" osano-cm-info-dialog-header__header osano-cm-header "> <!--?lit$502355165$--> </p> <!--?lit$502355165$--> <!--?lit$502355165$--><button class=" osano-cm-info-dialog-header__close osano-cm-close "> <!--?lit$502355165$--><svg width="20px" height="20px" viewBox="0 0 20 20" aria-labelledby="5c068a8e-04e2-482f-8654-31a6338c8fc9"> <title id="5c068a8e-04e2-482f-8654-31a6338c8fc9"><!---->Close Cookie Preferences<!----></title> <line role="presentation" x1="2" y1="2" x2="18" y2="18"></line> <line role="presentation" x1="2" y1="18" x2="18" y2="2"></line> </svg> </button> </div> <div role="presentation" class=" osano-cm-info__info-views osano-cm-info-views osano-cm-info-views--hidden osano-cm-info-views--position_0 "> <!--?lit$502355165$--> </div> </div> <!--?lit$502355165$--><!--?lit$502355165$--><span tabindex="0" aria-hidden="true" data-focus="last"></span><!--?--> </div> </div>
+<!-- /18190176/Hubbard_Interstitial -->
+<div id="div-gpt-ad-1605720620965-0">
+</div>
+
+<header data-class="header" class="header header--has-primary-ad header--normal">
+        <div class="container header-container">
+        <div class="container__inner">
+            <div class="hamburger-logo-wrapper">
+                <div class="hamburger-container">
+                   <div class="header__inner">
+    <button class="nav__toggle" data-class="nav__toggle" type="button">
+        <span class="accessible-text">Click to toggle navigation menu.</span>
+        <span class="menuBar__container">
+                                        <span class="menuBar"></span>
+                                        <span class="menuBar"></span>
+                                        <span class="menuBar"></span>
+                                    </span>
+    </button>
+    <nav class="hamburgerNav__container" data-class="nav">
+        <ul id="menu-hamburger-menu-v2" class="header_nav--hamburger"><li id="menu-item-19764403" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/headlines/">Headlines</a></li>
+<li id="menu-item-19764404" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/local/">Local News</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-19764405" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/local/virginia/">Virginia</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+	<ul class="sub-menu">
+<li id="menu-item-19918798" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/virginia/alexandria/">Alexandria</a></li>
+<li id="menu-item-19918802" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/virginia/arlington/">Arlington</a></li>
+<li id="menu-item-19918806" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/virginia/fairfax-county/">Fairfax County</a></li>
+<li id="menu-item-19918793" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/virginia/loudoun-county/">Loudoun County</a></li>
+<li id="menu-item-19918804" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/virginia/prince-william-county/">Prince William County</a></li>
+<li id="menu-item-19918808" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/virginia/stafford-county/">Stafford County</a></li>
+	</ul>
+</li>
+<li id="menu-item-19764407" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/local/maryland/">Maryland</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+	<ul class="sub-menu">
+<li id="menu-item-19918811" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/anne-arundel-county/">Anne Arundel County</a></li>
+<li id="menu-item-19918812" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/baltimore/">Baltimore</a></li>
+<li id="menu-item-19918815" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/calvert-county/">Calvert County</a></li>
+<li id="menu-item-19918818" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/charles-county/">Charles County</a></li>
+<li id="menu-item-19918820" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/frederick-county/">Frederick County</a></li>
+<li id="menu-item-19918822" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/howard-county/">Howard County</a></li>
+<li id="menu-item-19918825" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/montgomery-county/">Montgomery County</a></li>
+<li id="menu-item-19918829" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/local/maryland/prince-georges-county/">Prince George's County</a></li>
+	</ul>
+</li>
+<li id="menu-item-19764409" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/local/dc/">DC</a></li>
+<li id="menu-item-20247102" class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://wtop.com/local/crime/">Crime News</a></li>
+<li id="menu-item-25697287" class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://wtop.com/local/matt-about-town/">Matt About Town</a></li>
+<li id="menu-item-19764410" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/weather-news/">Weather News</a></li>
+<li id="menu-item-19764412" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/dc-transit/">Transportation News</a></li>
+</ul>
+</li>
+<li id="menu-item-19764414" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/national/">National</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-19918840" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/national-security/">National Security</a></li>
+</ul>
+</li>
+<li id="menu-item-19764415" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/world/">World</a></li>
+<li id="menu-item-19764416" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/business-finance/">Business &amp; Finance</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-19918860" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/business-finance/consumer-news/">Consumer</a></li>
+<li id="menu-item-19918862" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/business-finance/real-estate/">Real Estate</a></li>
+<li id="menu-item-19918863" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/business-finance/recalls/">Recalls</a></li>
+</ul>
+</li>
+<li id="menu-item-19764417" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/government/">Government</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-19764423" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/government/congress/">Congress</a></li>
+<li id="menu-item-19918834" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/government/supreme-court/">Supreme Court</a></li>
+<li id="menu-item-19918835" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/government/white-house/">White House</a></li>
+<li id="menu-item-27071179" class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://wtop.com/government/liveblog-today-on-the-hill/">Today on the Hill</a></li>
+</ul>
+</li>
+<li id="menu-item-19764422" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/lifestyle/">Lifestyle</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-19918907" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/living/animals-pets/">Animals &amp; Pets</a></li>
+<li id="menu-item-19918866" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/living/food-restaurant/">Food &amp; Restaurants</a></li>
+<li id="menu-item-19918867" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/living/health-fitness/">Health &amp; Fitness</a></li>
+<li id="menu-item-19918868" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/living/life-style/">Life &amp; Style</a></li>
+<li id="menu-item-19918879" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/living/parenting/">Parenting</a></li>
+<li id="menu-item-19918891" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/living/travel/">Travel</a></li>
+</ul>
+</li>
+<li id="menu-item-19764425" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="/entertainment/">Entertainment</a></li>
+<li id="menu-item-19764426" class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a href="/sports/">Sports</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-19918914" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/baltimore-orioles/">Baltimore Orioles</a></li>
+<li id="menu-item-19918915" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/baltimore-ravens/">Baltimore Ravens</a></li>
+<li id="menu-item-19918916" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/dc-united/">DC United</a></li>
+<li id="menu-item-19918920" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/washington-capitals/">Washington Capitals</a></li>
+<li id="menu-item-19918943" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/washington-mystics/">Washington Mystics</a></li>
+<li id="menu-item-19918945" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/washington-nationals/">Washington Nationals</a></li>
+<li id="menu-item-19918946" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/washington-commanders/">Washington Commanders</a></li>
+<li id="menu-item-19918948" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sports/local-sports/washington-wizards/">Washington Wizards</a></li>
+</ul>
+</li>
+<li id="menu-item-25697629" class=" menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children"><a href="https://wtop.com/science/">Science</a><button class="mobileToggle"><span class="accessible-text">Click to expand menu.</span><i class="fas fa-chevron-right"></i></button>
+<ul class="sub-menu">
+<li id="menu-item-25697641" class=" menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://wtop.com/science/the-space-place/">The Space Place</a></li>
+</ul>
+</li>
+<li id="menu-item-19923037" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/gallery/?gallery-type=slideshow">Photo Galleries</a></li>
+<li id="menu-item-21139783" class=" menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/noticias/">WTOP Noticias</a></li>
+<li id="menu-item-25668642" class="advertise-menu-item menu-item menu-item-type-post_type menu-item-object-page"><a href="https://wtop.com/advertise/">Advertise on WTOP</a></li>
+<li id="menu-item-19764428" class="highlight-menu-item menu-item menu-item-type-custom menu-item-object-custom"><a href="https://federalnewsnetwork.com/">Federal News Network</a></li>
+<li id="menu-item-19910565" class="highlight-menu-item menu-item menu-item-type-custom menu-item-object-custom"><a href="https://games.wtop.com/?utm_source=hamburger_menu&amp;utm_medium=website&amp;utm_campaign=wtop_games">Fun &amp; Games</a></li>
+<li id="menu-item-19913837" class="highlight-menu-item menu-item menu-item-type-custom menu-item-object-custom"><a href="https://wtop.com/sponsored-content/">WTOP Insights</a></li>
+</ul>    </nav>
+    <button class="nav__close--overlay" data-class="nav__toggle" type="button">
+        <span class="accessible-text">Click to collapse navigation menu.</span>
+    </button>
+</div>                </div>
+                <div class="logo-container">
+                    <a href="https://wtop.com/">
+                        <img class="logo" src="https://wtop.com/wp-content/themes/wtop-new/images/wtop-news-logo-new.png" alt="WTOP News" loading="lazy">
+                    </a>
+                </div>   
+            </div>
+           
+            <div id="nav-search" class="nav-search-wrapper">
+                <nav class="primaryNav__container" align="center" data-class="nav">
+<!--                    <div class="primaryNav_mobile_bg" style="display: none"></div>-->
+                    <ul id="menu-main-top-v2" class="header_nav--primary"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19811294"><a href="https://wtop.com/headlines" class="Nav-link">News</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19811295"><a href="https://wtop.com/traffic/" class="Nav-link">Traffic</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19811296"><a href="https://wtop.com/weather/" class="Nav-link">Weather</a></li>
+</ul>                </nav>
+                
+<div class="search" data-class="search">
+    <button class="search__icon" data-class="search-toggle" aria-label="Search">
+        <i class="icon fa fa-search"></i>
+    </button>
+
+    <form role="search" method="get" class="search-form" id="wtop-new-search" action="https://wtop.com/search/">
+        <label for="st-search-input" class="accessible-text">site search query</label>
+        <input type="search" id="st-search-input" class="search-field st-default-search-input" data-class="search-input" placeholder="Search..." value="" name="s" autocomplete="off">
+    </form>
+</div>
+
+
+ 
+            </div>
+
+            <div class="live-radio-btn-wrapper">
+                <div class="live_radio_btn">
+                    <a href="https://live.wtop.com/listen/?_ga=2.215033812.256376027.1670249813-1613246209.1666804719&amp;utm_medium=web&amp;utm_source=homepage&amp;utm_content=header_button" target="_blank" aria-label="WTOP Listen live">
+                        <div class="live-radio-icon">
+                            <i class="far fa-play-circle fa-lg"></i>
+                        </div>
+                        <div class="live-radio-text">
+                            Live Radio                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- end of class "container__inner" -->
+<!--        <iframe src="http://git.wtop.com/wp-content/themes/wtop-new/partials/header/listen-live.php" style="width:100%; height:45px;"></iframe>-->
+        
+<!-- Listen Live starts -->
+<div id="header-audio-player">
+    <div class="inner left_container">
+        <div class="vu-meter-container listen-live-element"><a href="https://live.wtop.com/?autoplay=1&amp;utm_medium=web&amp;utm_source=homepage&amp;utm_content=listen_live_bar" target="_blank" aria-label="WTOP Listen live"><div class="vu-meter"><b></b><b></b><b></b><b></b><b></b></div></a></div>
+        <div class="title"><a href="https://live.wtop.com/listen/?autoplay=1&amp;utm_medium=web&amp;utm_source=homepage&amp;utm_content=listen_live_bar" target="_blank" aria-label="WTOP Listen live">Listen Live</a></div>
+    </div>
+<!--    <div class="inner center_container">-->
+<!--        <div class="audio__control--container">-->
+<!--            <div class="title">--><!--</div>-->
+<!--            <div class="audio__control audio__control--volume">-->
+<!--                <i class="fa fa-volume-up audio__volume-level-icon" aria-hidden="true"></i>-->
+<!--                <label for="audio__volume" class="accessible-text">change volume</label>-->
+<!--                <input class="audio__volume" type="range" min="0" max="1" value="1" step="0.1">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="audio_range_container"> -->
+<!--            <div class="audio_range"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="inner center_container" id="listen-live-container">
+        <div class="audio__control--container">
+
+<!--            <div class="audio__control audio__control--volume">-->
+<!--                <i class="fa fa-volume-up audio__volume-level-icon" aria-hidden="true"></i>-->
+<!--                <label for="audio__volume" class="accessible-text">change volume</label>-->
+<!--                <input class="audio__volume" type="range" min="0" max="1" value="1" step="0.1">-->
+<!--            </div>-->
+        </div>
+<!--        <div class="audio_range_container">-->
+<!--            <div class="audio_range"></div>-->
+<!--        </div>-->
+    </div>
+
+    <section class="header__account right">
+        <div class="header__account--details">
+            <div class="header__account--detail header__account--login wtop_live_login">
+                <div class="welcome"><a href="#" id="wtop_live_login"><span class="header__account--detail-login"><i class="fas fa-user"></i> <span class="header__account--detail-login-text">Login</span></span></a></div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- Listen Live ends -->
+    </div>    
+</header> 
+
+    
+
+
+<main class="page__single container shift_control" style="margin-top: 158.156px;">
+
+    <div class="page__container">
+        <section class="page__main">
+
+<style type="text/css">.ad__h250.ad__align.desktop_only.article_header { min-height: 150px !important; max-height: 150px !important;}</style>
+                <div class="ad__h250 ad__align desktop_only article_header">
+        <div id="mtc_leaderboard" class="ad__h90-inner"></div>
+    </div>
+
+                        <section class="page__single--header">
+                <div class="breadcrumbs breadcrumbs-header" data-swiftype-index="false"> <span><span><a href="https://wtop.com">Home</a> » <span><span><a href="https://wtop.com/national/"><strong>National News</strong></a> » <span><span><span class="breadcrumb_last">The Latest: United Arab…</span></span></span></span></span></span></span> </div><div class="wtop-article-age ribbon" id="wtop-article-age-identifier" data-display="1" data-postdate="2026-04-28"><span class="ribbon-content">This article is about <strong>2 weeks</strong> old</span></div>                    <h1 class="page__single--title schema-title">The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall</h1>
+                
+
+                    <div class="Box row">
+
+                        <center style="width: 100%;">
+                                                    </center>
+
+
+                    </div>
+                                
+                <div class="single-header--byline-and-share">
+                    
+      <div class="Entry-info single-header--byline">
+                    <div class="page__single--header-inner">
+              <div class="post__info">
+                  <div class="post__info--inner">
+                      <p class="post__author">
+                        
+															<a href="https://wtop.com/author/the-associated-press/">
+							
+							The Associated Press
+															</a>
+							
+                          	                                                                        </p>
+                                                <p class="article-post__date">April 28, 2026, 9:34 PM</p>
+                                        </div>
+              </div>
+          </div>
+      </div>
+
+
+                    
+                    <div class="share-bar">
+    <div class="share-bar__inner">
+        <ul class="share-bar__list">
+            <li class="share-bar__title">
+                Share This:
+            </li>
+                            <li>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F" target="_blank" rel="noreferrer nooppener">
+                        <span class="accessible-text">share on facebook</span>
+                        <i class="fab fa-facebook-square" aria-hidden="true"></i>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://twitter.com/intent/tweet?text=The+United+Arab+Emirates+announced+Tuesday+that+it+will+leave+OPEC+effective+May+1%2C+stripping+the+oil+cartel+of+one...&amp;url=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F" target="_blank" rel="noreferrer nooppener">
+                        <span class="accessible-text">share on X</span>
+                        <i class="fab fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://www.threads.net/intent/post?text=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F" target="_blank" rel="noreferrer nooppener">
+                        <span class="accessible-text">share on threads</span>
+                        <i class="fab fa-threads" aria-hidden="true"></i>
+                    </a>
+                </li>
+                            <li>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F" target="_blank" rel="noreferrer nooppener">
+                        <span class="accessible-text">share on linkedin</span>
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                </li>
+                            <li>
+                    <a href="mailto:?subject=The Latest: United Arab Emirates says it will exit OPEC, while US-Iran negotiations stall&amp;body=https%3A%2F%2Fwtop.com%2Fnational%2F2026%2F04%2Fthe-latest-us-appears-cold-to-iranian-proposal-to-end-the-war-without-a-nuclear-deal%2F" target="_blank" rel="noreferrer nooppener">
+                        <span class="accessible-text">share on email</span>
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                    </a>
+                </li>
+                            <li>
+                    <a href="javascript:window.print();" target="_blank" rel="noreferrer nooppener">
+                        <span class="accessible-text">print</span>
+                        <i class="fa fa-print" aria-hidden="true"></i>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </section>
+
+ 
+            <div class="schema-summary" style="display:none">The United Arab Emirates announced Tuesday that it will leave OPEC effective May 1, stripping the oil cartel of one…</div>
+
+            <div id="Entry-content" class="entry-content Entry-content ">
+                                                                    <div class="Before-content">
+                                            </div>
+                
+                                
+                <p>The United Arab Emirates announced Tuesday that <a href="https://apnews.com/article/opec-united-arab-emirates-leaving-cartel-4966108c3fafacb67181152216deda14">it will leave OPEC effective May 1</a>, stripping the oil cartel of one of its largest producers. While the announcement won’t have an immediate impact on world oil supplies that are constrained by the war in Iran and the closure of the <a href="https://apnews.com/article/us-iran-war-hormuz-april-27-2026-374d81d1aac6d8f19c21e1d1e10ab103">Strait of Hormuz</a>, it <a href="https://apnews.com/live/iran-war-israel-trump-04-28-2026#0000019d-d48d-d8f5-a19f-f7cfd2980000">could help lower oil prices after the war</a> if the UAE increases its production capacity. On Tuesday, Brent crude oil traded above $111 a barrel, over 50% higher than its prewar price.</p>
+
+<p><a href="https://apnews.com/article/us-iran-war-hormuz-april-27-2026-374d81d1aac6d8f19c21e1d1e10ab103">Iran offered to end its chokehold</a> on the <a href="https://apnews.com/article/the-worlds-most-important-21-miles-0000019d2fbfd29daffdefffc72e0000">Strait of Hormuz</a> if the U.S. lifts its blockade on the country and ends the war in a proposal that would postpone discussions on the Islamic Republic’s nuclear program, two regional officials said Monday. U.S. President Donald Trump seems unlikely to accept the offer, and U.S. Secretary of State Marco Rubio appeared to rule out any deal that excludes Iran’s nuclear program.</p>
+
+<p>Here is the latest:</p>
+
+<h2>Bahrain minister says it’s time to find solutions to restore peace after Iran strikes</h2>
+<p>Foreign Minister Abdullatif bin Rashid Al-Zayani urged the international community at this critical time “to shift from crisis management to finding solutions” to the Iranian crisis.</p>
+
+<p>This should include constructive dialogue that ensures Iran’s compliance with principles of good neighborliness and international law, respect for the sovereignty of states and freedom of navigation in the Strait of Hormuz and other vital waterways, he said.</p>
+
+<div class="wtop-exco-player-in-article"><script>(function(d,s,n){var js,fjs=d.getElementsByTagName(s)[0];js=d.createElement(s);js.className=n;js.src="//player.ex.co/player/b339bedc-b28d-46b1-9ffd-825b0230be3c";fjs.parentNode.insertBefore(js,fjs);}(document,"script","exco-player"));</script><div id="b339bedc-b28d-46b1-9ffd-825b0230be3c" data-pbs-root="true" data-pbs-position="static" class="pbs" data-pbs-device="desktop" data-pbs-video-title="true"><div class="pbs__player shown" id="exp_177d74fb-616b-450d-9dc0-e328e6ff3b07"><div class="pb-stream" style="width: 913px; height: 513.6px; background-color: black;"></div><div class="exp-ui"><div class="exp-ui__wrapper falcon exp-ui__wrapper__clickable"><div class="exp-ui__controls exp-ui__controls__initial-load"><div aria-disabled="false" aria-label="Previous" role="button" tabindex="-1" class="exp-ui__common-button exp-ui__prev-button"><i aria-hidden="true" class="custom-icon iconify" style="height: 32px; width: 32px; display: none;"></i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="32" width="32" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.63335 7C9.53543 7 10.2667 7.73128 10.2667 8.63336V21.3669C10.2667 22.269 9.53543 23.0003 8.63335
+         23.0003C7.73127 23.0003 6.99999 22.269 6.99999 21.3669V8.63336C6.99999 7.73128 7.73127 7 8.63335 7ZM12.4774
+         15.9954C11.7713 15.5198 11.7713 14.4805 12.4774 14.0049L21.1296 8.17695C21.9267 7.64006 23 8.21119 23
+         9.17222V20.8281C23 21.7891 21.9267 22.3602 21.1296 21.8233L12.4774 15.9954Z" fill="#ffffff"></path></svg></div><div aria-disabled="false" aria-label="Play" role="button" tabindex="0" class="exp-ui__common-button exp-ui__play-button exp-ui__state__shown"><i aria-hidden="true" class="custom-icon iconify" style="height: 48px; width: 48px; display: none;"></i><svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 22 22" height="48" width="48" aria-hidden="true" focusable="false"><path d="M21.45 14.1051C22.1389 14.5029 22.1389 15.4972 21.45 15.8949L12.55 21.0333C11.8611 21.4311 11 20.9339 11
+         20.1385V9.86154C11 9.0661 11.8611 8.56895 12.55 8.96667L21.45 14.1051Z" fill="#ffffff"></path></svg></div><div aria-disabled="false" aria-label="Next" role="button" tabindex="-1" class="exp-ui__common-button exp-ui__next-button"><i aria-hidden="true" class="custom-icon iconify" style="height: 32px; width: 32px; display: none;"></i><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="32" width="32" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.3667 7C20.4646 7 19.7333 7.73128 19.7333 8.63336V21.3669C19.7333 22.269 20.4646 23.0003 21.3667
+         23.0003C22.2687 23.0003 23 22.269 23 21.3669V8.63336C23 7.73128 22.2687 7 21.3667 7ZM17.5226 15.9954C18.2287
+         15.5198 18.2287 14.4805 17.5226 14.0049L8.87039 8.17695C8.07332 7.64006 7 8.21119 7 9.17222V20.8281C7
+         21.7891 8.07332 22.3602 8.87039 21.8233L17.5226 15.9954Z" fill="#ffffff"></path></svg></div></div><div class="exp-ui__title-and-cta-wrapper"></div></div></div></div></div></div>
+
+<p>Al-Zaysni, who chaired a ministerial meeting of the U.N. Security Council, told diplomats Iran must also halt its nuclear, missile and drone programs, refrain from arming or financing proxies and armed militias, and stop attacking Bahrain and other Gulf countries and Jordan.</p>
+
+<h2>An Israeli military contractor is killed by drone strike in Lebanon</h2>
+<p>A brief statement by the Israeli army said the civilian employee of an engineering company was working with the military on projects in southern Lebanon.</p>
+
+<p>An Israeli military official confirmed the contractor was a civilian and died in a drone attack. The official spoke on condition of anonymity under military briefing rules.</p>
+
+<p>Despite a ceasefire in Lebanon, Israeli forces and Hezbollah militants have been intermittently attacking each other in the south, where Israeli soldiers are occupying a slice of territory along the border. — By Josef Federman</p>
+
+<h2>Israeli strike on a Lebanese army patrol killed 5, including 3 paramedics, and wounds 2 soldiers</h2>
+<p>That’s according to the Lebanese Health Ministry, which said the toll is still preliminary. The Israeli strike was in the southern town of Majdal Zoun, near the coastal city of Tyre.</p>
+
+<p>Israeli forces hit an army patrol that was accompanying Civil Defense medical teams and bulldozers during a rescue operation at the site of a previous Israeli strike, the Lebanese army and Civil Defense said. Some of the responders were trapped under rubble by the second strike, they said.</p>
+
+<p>The Israeli military did not immediately comment.</p>
+
+<p>Lebanese President Joseph Aoun condemned the strike, saying it was part of a pattern of Israeli attacks on rescue and emergency workers in violation of international law.</p>
+
+<p>The Western-backed Lebanese army has largely stood on the sidelines during the recent rounds of fighting between Israel and Hezbollah, although dozens of its soldiers have been killed.</p>
+
+<h2>Israeli president invites Netanyahu and prosecutors for talks on settling corruption charges</h2>
+<p>President Isaac Herzog’s office asked for a response by Sunday to his invitation, which came days after he announced he would not decide on Netanyahu’s request for a pardon and instead urge the sides to reach a settlement.</p>
+
+<p>Netanyahu asked Herzog last November to cancel his trial, saying that dropping the charges would help unify the country. Trump has made multiple <a href="https://apnews.com/article/israel-netanyahu-trump-politics-letter-trial-36cfeeacf4fa038e784f43f31a56fe4e">appeals to Herzog</a> to end the trial.</p>
+
+<p>Herzog’s invitation says he believes that efforts to reach a settlement “must be exhausted first” before he can consider the pardon request. There was no immediate comment from Netanyahu’s office or the attorney general’s office.</p>
+
+<p>Netanyahu is charged with breach of trust, fraud and accepting bribes in three separate cases accusing him of exchanging favors with wealthy associates. He denies all charges.</p>
+
+<p>The trial has dragged on for <a href="https://apnews.com/article/8e0479ea534139e46dc0df2349b95ba3">six years</a> in a case that has bitterly divided the Israeli public. Netanyahu and his supporters claim he is the victim of a politically motivated witch hunt by the media, police and prosecutors.</p>
+
+<h2>Gulf Arab countries jointly condemn Iran’s actions in the Strait of Hormuz</h2>
+<p>The leaders of several wealthy Gulf nations rejected Iran’s “illegal actions” to close the strait and threaten navigation, warning against any disruption to shipping or charging fees for safe passage.</p>
+
+<p>The statement followed a Gulf Cooperation Council meeting on Tuesday in Saudi Arabia, chaired by Saudi Crown Prince Mohammed bin Salman and attended by leaders from Qatar and Bahrain, Kuwait’s crown prince, and the United Arab Emirates’ foreign minister.</p>
+
+<p>They called for restoring “security and freedom of navigation” to prewar levels and urged deeper military integration, including joint infrastructure projects and a ballistic missile early warning system.</p>
+
+<h2>US budget airlines seek billions in aid amid soaring fuel costs</h2>
+<p>Their trade group is asking the Trump administration for $2.5 billion to offset rising jet fuel costs and keep ticket prices affordable. The Association of Value Airlines said smaller carriers are being hit hardest by the jump in fuel prices, despite carrying more than 90 million passengers last year.</p>
+
+<p>“Temporary government support” would help “preserve vital industry competition,” the association said.</p>
+
+<p>The trade group represents Frontier, Allegiant, Avelo and Sun Country. Another member, Spirit, is separately in talks with the U.S. government on a potential financing deal aimed at keeping the struggling carrier flying as it navigates fuel price shocks during its second bankruptcy since 2024.</p>
+
+<h2>Protesters urge boycott of Eurovision Song Contest over Israel’s participation</h2>
+<p>Dozens of protesters gathered outside the Serbian state RTS broadcaster on Tuesday, waving Palestinian flags and <a href="https://apnews.com/hub/israel-hamas-war">accusing Israel of atrocities in Gaza</a> while demanding that the Balkan country pull out of the <a href="https://apnews.com/hub/eurovision-song-contest">Eurovision Song Contest</a> because of Israel’s participation.</p>
+
+<p><a href="https://apnews.com/article/eurovision-song-contest-boycott-israel-gaza-vienna-f6f7f0c8d97339665383f480dcdac583">The year’s main competition</a> with 35 competing countries is scheduled to be held May 12-16 in Vienna. Serbia, which has close ties with Israel, will be represented by Lavina, a six-member metal band.</p>
+
+<p>The contest strives to put pop music before politics but has repeatedly been embroiled in world events. Russia was expelled in 2022 after its <a href="https://apnews.com/hub/russia-ukraine">full-scale invasion of Ukraine</a>. The decision to allow Israel to compete <a href="https://apnews.com/article/eurovision-song-contest-israel-what-to-know-b13dcea24fbbd28e73fa79e9a45977d7">prompted the walkout</a> of Slovenia, Iceland, Ireland, the Netherlands and Spain.</p>
+
+<p>RTV Slovenia said it will air a Palestinian program at the time of the Eurovision contest.</p>
+
+<h2>Israeli ambassador says Lebanese government must disarm Hezbollah</h2>
+<p>Lebanon’s government has demanded that Hezbollah disarm, but Israel says this has not happened. A ceasefire in the latest Israeli-Hezbollah conflict was recently extended for three weeks.</p>
+
+<p>Danon said that if the U.N. Security Council wants to help Lebanon, it should ask the government how many Hezbollah weapons it has seized, “which tunnels have been destroyed and what is being done to stop arms smuggling from Iran.”</p>
+
+<p>“International support for Lebanon must depend on results on the ground and not more empty statements,” Danon said.</p>
+
+<h2>Israel’s UN envoy says Hezbollah is ‘Lebanon’s greatest obstacle to sovereignty’</h2>
+<p>Ambassador Danny Danon said it’s impossible to talk about peace in Lebanon without mentioning Hezbollah, the militant group with areas of influence in the south bordering Israel and elsewhere in the country.</p>
+
+<p>“Hezbollah is not just set on Israel’s destruction. It is Lebanon’s greatest obstacle to sovereignty. It has weakened the Lebanese government,” he told a ministerial meeting of the U.N. Security Council.</p>
+
+<p>___</p>
+
+<p>This item has been updated to correct the quote. The previous quote was in remarks distributed by Israel’s U.N. Mission but was changed when the ambassador delivered his speech to the U.N. Security Council.</p>
+
+<h2>Palestinian minister tells UN that Israel must stop killing civilians</h2>
+<p>Varsen Aghabekian accused Israel of seeking the collapse of the Palestinian Authority and Israeli settlers of terrorizing Palestinians in the West Bank on a daily basis.</p>
+
+<p>“This has to stop immediately,” she said. “The situation of the Palestinian civilian population must be a top priority.”</p>
+
+<p>Aghabekian said there is no justification for Israel preventing shelter materials from entering Gaza and restricting aid and access for humanitarian workers.</p>
+
+<h2>Palestinian minister says ‘Palestine must remain a priority’ for action toward an independent state</h2>
+<p>Foreign Minister Varsen Aghabekian said the ceasefire in Gaza must be upheld and Israel’s pursuit of “forcible displacement and annexation,” not only in Gaza but in the West Bank and East Jerusalem, must be stopped.</p>
+
+<p>As phase two of the Gaza peace plan gets underway, she said, “We reiterate our vision of one state, one government, one law and one gun and the need for full Israeli withdrawal from the Gaza Strip.”</p>
+
+<p>Aghabekian told a ministerial meeting of the U.N. Security Council on Tuesday that Gaza’s transition must be in line with its reunification with the West Bank under the Palestinian Authority, “leading to Palestinian self-determination and independent statehood.”</p>
+
+<h2>Gaza hospital director’s detention is extended</h2>
+<p>Physicians for Human Rights-Israel says a court in Israel has indefinitely extended the detention of <a href="https://apnews.com/article/gaza-palestinian-doctors-israel-ceasefire-release-9d5258814292cfc32c16f90e8d63e675">Dr. Hossam Abu Safiya</a>, who became the face of health workers’ struggle in Gaza to keep treating patients under Israeli bombardment.</p>
+
+<p>The Israeli military has said Abu Safiya, director of Kamal Adwan Hospital in northern Gaza, was being investigated on suspicion of cooperating with or working for Hamas. Staff and international aid groups that worked with him have denied the claims.</p>
+
+<p>The rights group in a statement Tuesday says he is held in harsh conditions in Negev Prison. It says the Beersheba District Court approved the extension of his detention without charges having been filed, after his defense had sought his immediate release.</p>
+
+<h2>BP earns online backlash as its profit more than doubles during Iran war</h2>
+<p>The British energy giant reported quarterly earnings Tuesday of $3.84 billion, or $1.47 per share, far exceeding last year’s $687 million, or 26 cents per share. The huge profits beat analysts’ heightened expectations and generated immediate online vitriol.</p>
+
+<p>“Families are being pushed to the brink by spiraling energy bills, while fossil fuel companies turn a war into a windfall,” wrote Clémence Dubois, global campaigns director at 350.org.</p>
+
+<p>“These astronomical profits are a startling reminder that when conflict drives up the price of oil and gas, energy companies profit and households pay,” wrote Simon Francis, coordinator with End Fuel Poverty Coalition.</p>
+
+<p>BP shares rose more than 1%, close to a 52-week high, as did shares of other major oil producers. It was BP’s first earnings report since the <a href="https://apnews.com/article/iran-us-israel-war-economy-blockade-steel-exports-7d3c6c63ec432e57325814d48938ccfe">Iran war</a> began, previewing what to expect when Exxon Mobil, Chevron and ConocoPhillips report earnings later this week.</p>
+
+<p>▶ <a href="https://apnews.com/article/bp-oil-trump-iran-gas-aaa-inflation-72afb280c68760743a7199f7f44cda56">Read more</a></p>
+
+<h2>Israeli strike wounds 2 soldiers, traps 3 rescuers in southern Lebanon</h2>
+<p>Two Lebanese soldiers were wounded and three Civil Defense personnel were trapped under rubble after an Israeli strike targeted an army patrol accompanied by rescue teams and two bulldozers in the southern town of Majdal Zoun, near Tyre, according to the Lebanese Army and Civil Defense.</p>
+
+<p>The Israeli army has not immediately commented on the attack, which came as clashes and intermittent air strikes continue despite a U.S.-brokered ceasefire.</p>
+
+<p>At least seven Lebanese army soldiers have been killed since the conflict between Hezbollah and Israel reignited on March 2.</p>
+
+<h2>Oil prices climb again amid more uncertainty over the Iran war</h2>
+<p>Another climb in oil prices because of <a href="https://apnews.com/hub/iran">the Iran war</a> is helping to halt <a href="https://apnews.com/article/stocks-record-war-iran-inflation-profits-3555dbbd948b63faad9656ebdfc4f223">Wall Street’s record-setting rally</a>. The price for a barrel of Brent crude oil to be delivered in June climbed 2.7% to $111.18. Brent to be delivered in July, which is where traders are focusing more in the oil market, rose 2.6% to $104.33 Tuesday.</p>
+
+<p>After sitting around $70 in late February, Brent prices are moving closer to their peak of $119, reached when worries about the war were at their heights.</p>
+
+<p>The Trump administration seemed unlikely Tuesday to accept Iran’s offer to reopen the <a href="https://apnews.com/article/the-worlds-most-important-21-miles-0000019d2fbfd29daffdefffc72e0000">Strait of Hormuz</a> if the U.S. lifts its blockade. Iran also wants to postpone discussions on the Islamic Republic’s nuclear program, which Rubio appeared to rule out.</p>
+
+<p>Average U.S. gasoline prices reached $4.18 a gallon on Tuesday, the most since 2022, according to the auto club AAA.</p>
+
+<p>▶ <a href="https://apnews.com/article/stock-markets-trump-oil-iran-war-1901470c64a6055c80656fad64f863e5">Read more</a></p>
+
+<h2>US envoy says Hamas is the ‘obstacle’ to Palestinians in Gaza living in peace and prosperity</h2>
+<p>Ambassador Mike Waltz urged countries with influence on Hamas to press the militant group to demilitarize and accept that it will not have a direct or indirect role in Gaza “through weapons and terrorism and violent intimidation.”</p>
+
+<p>“The moment Hamas agrees to demilitarize, a new chapter in Gaza’s history will be written,” he told a ministerial meeting of the U.N. Security Council on the Middle East.</p>
+
+<p>“Every day we either move closer to a future where Palestinians in Gaza and the West Bank live in freedom and prosperity, at peace with Israel — or we drift back toward chaos, rockets, hostages and rubble,” Walz said.</p>
+
+<p>He said there is a plan for reconstruction and development of Gaza and financing, and there is a pathway to peace and eased security restrictions, but Hamas is holding Gaza back.</p>
+
+<h2>US military boards another ship as it enforces blockade on Iranian ports</h2>
+<p>The U.S. military said Tuesday in a social media post that it boarded and released another commercial ship that was suspected of heading for Iran.</p>
+
+<p>The post by U.S. Central Command on X included a video showed marines fast-roping from a helicopter onto the vessel, which it said was the Comoros-flagged M/V Blue Star III. It happened in the Arabian Sea, east of the Strait of Hormuz.</p>
+
+<p>“U.S. forces released the vessel after conducting a search and confirming the ship’s voyage would not include an Iranian port call,” the command said.</p>
+
+<p>The command said it has now redirected 39 vessels since start of the blockade on ships going to and from Iranian ports.</p>
+
+<h2>Israel destroys alleged Hezbollah tunnel network in southern Lebanon</h2>
+<p>The military detonated a large explosion late Tuesday in Qantara, and Israel’s Geological Survey said the blast was so powerful it registered as a “seismic event.”</p>
+
+<p>The army said the network included two large tunnels — one about 800 meters (yards) long and the other 1.2 kilometers (0.7 miles) — that were equipped with sleeping rooms, toilets, kitchen facilities and launchers aimed at Israel. It released photos and video footage of what it said were the tunnels.</p>
+
+<p>An Israeli military official said the network included large rooms where over 100 Hezbollah fighters could gather at once. He also said it ran underneath and alongside a mosque, school and soccer field. </p>
+
+<p>The official spoke on condition of anonymity under military briefing rules.</p>
+
+<p>In a statement, Defense Minister Israel Katz said the army has been instructed to destroy any Hezbollah infrastructure it finds, “just like in Gaza.”</p>
+
+<p>— By Josef Federman</p>
+
+<h2>Amnesty International urges Israel to stop destroying civilian property in southern Lebanon</h2>
+<p>The human rights organization made the statement Tuesday after a video circulated on social media showing Israeli military excavators destroying solar panels for the Lebanese border village of Debel and its water station.</p>
+
+<p>On Saturday, the Israeli military said it was investigating the incident after the footage emerged. Debel is the same village where a soldier was filmed earlier this month smashing a statue of Jesus, prompting international condemnation.</p>
+
+<p>“Amnesty International has previously documented extensive destruction by the Israeli military along Lebanon’s border before and after the November 2024 ceasefire,” the group said, adding it had called for reparations and war crimes investigations. “So far, neither has appeared.”</p>
+
+<h2>Away from the spotlight, the situation in Gaza and the West Bank is ‘steadily worsening,’ UN official says</h2>
+<p>U.N. Assistant Secretary-General Khaled Khiari said Gaza is facing “ongoing and deadly Israeli strikes and dire humanitarian conditions,” with 1.8 million people — nearly its entire population — living in camps and dependent on aid.</p>
+
+<p>He told a U.N. Security Council ministerial meeting Tuesday that in the West Bank, “violence, including rampant settler attacks, displacement and accelerating settlement activity, is threatening entire communities and further eroding prospects for a political process” toward a two-state solution.</p>
+
+<p>In Gaza, he said, “the ceasefire is increasingly fragile as Israeli strikes and armed activity by Hamas and other groups continue.”</p>
+
+<p>Khiari, whose portfolio includes the Middle East, warned that while diplomatic efforts are underway to consolidate the ceasefire and implement Phase II of the peace plan, “talks on the disarmament of Hamas and other armed groups have thus far not resulted in an agreement, raising concerns over the potential return to widespread hostilities.”</p>
+
+<h2>The UAE’s exit from OPEC won’t expand global oil supplies right away</h2>
+<p>The UAE’s move appears to be part of an effort to assert themselves as leaders and independent actors in the region, and sell oil and gas when and how they see fit, said Karen Young, senior research scholar at Columbia University’s Center on Global Energy Policy.</p>
+
+<p>“This exit of OPEC fits into the UAE need for flexibility with key energy consumers as well — including a future relationship with China and a more competitive relationship with Saudi Arabia,” she said.</p>
+
+<p>The exit won’t immediately change export capacity, since the UAE’s lone pipeline around the Strait of Hormuz to the port at Fujairah on the Gulf of Oman is already running at full capacity, she noted.</p>
+
+<h2>Lebanon’s Health Ministry raises death toll of Israel-Hezbollah war to 2,534</h2>
+<p>The ministry added on Tuesday that 7,863 have been wounded since the war broke out on March 2.</p>
+
+<p>The war has displaced more than 1 million people and caused destruction worth billions of dollars.</p>
+
+<h2>Peak oil means sell barrels now or leave money on the table</h2>
+<p>Leon said the approaching peak in global oil demand has shifted the incentive for producers from collective restraint to earning money from their reserves now.</p>
+
+<p>He said the UAE, with its 4.8 million barrels per day of production capacity and potential to increase output, is “particularly well positioned to pursue such a strategy outside the group.”</p>
+
+<h2>An OPEC without the UAE could increase global energy supply volatility, analyst says</h2>
+<p>The UAE’s withdrawal removes one of OPEC’s few members with ability to quickly increase production — the mechanism through which the cartel manages oil prices, said Jorge Leon, head of geopolitical analysis at Rystad Energy.</p>
+
+<p>“A structurally weaker OPEC, with less spare capacity concentrated within the group, will find it increasingly difficult to calibrate supply and stabilize prices,” Leon said. “The net effect points to a more fragmented supply landscape and a potentially more volatile oil market over time as OPEC’s capacity to smooth imbalances diminishes.”</p>
+
+<h2>Trump claims Iran has ‘just’ informed the US it’s in a ‘State of Collapse’</h2>
+<p>“They want us to ‘Open the Hormuz Strait,’ as soon as possible, as they try to figure out their leadership situation,” Trump posted on social media.</p>
+
+<p>He added that he believes they will be able to sort out reported divisions within the Islamic Republic government about negotiations with the U.S.</p>
+
+<p>The White House did not immediately respond to questions about who on the Iranian side delivered the message, who in the Republican administration received it and whether the communications were conducted directly with the U.S. or through an intermediary.</p>
+
+<h2>Israel to investigate ship carrying what Ukraine says is ‘stolen grain’</h2>
+<p>Israel’s Foreign Minister Gideon Saar said on Tuesday that Israel’s tax authority has opened an investigation into a ship expected to dock in the Haifa port that Ukraine said carries stolen grain.</p>
+
+<p>Earlier, Ukrainian President Volodymyr Zelenskyy wrote on X that Ukraine is preparing sanctions against companies that profit from grain harvested from areas of Ukraine under Russian control. Saar dismissed Zelenskyy’s comments as “Twitter diplomacy” and said Ukraine had not provided information about the cargo’s contents or a request for legal assistance.</p>
+
+<p>“The vessel has not entered the port and has yet to submit its documents. It is not possible to verify the truth of the Ukrainian claims regarding the forgery of the bill of lading,” Saar said.</p>
+
+<p>▶ <a href="https://apnews.com/article/ukraine-israel-grain-russia-imports-5bd03adce2a22d55f6c6e812a5d84684">Read more</a></p>
+
+<h2>Israel has ‘no territorial ambitions’ in Lebanon, Israel’s foreign minister says</h2>
+<p>Gideon Saar said the Israeli military-occupied “buffer zone” that stretches 10 kilometers (6 miles) into Lebanon is necessary to protect residents in Israel’s north.</p>
+
+<p>“Hezbollah has transformed the entire front line of southern Lebanon into a network of terrorist infrastructure, and this threat has not been properly addressed by the Lebanese government,” he said during a press conference with Serbian Foreign Minister Marko Đurić in Jerusalem.</p>
+
+<p>Saar refused to comment on the fragile ceasefire with Hezbollah, which both sides have violated multiple times since Trump announced it last week, and whether Israel might expand its military operations beyond southern Lebanon. He did note Israel’s first direct negotiations with Lebanon in decades.</p>
+
+<h2>Iran’s economy has been battered. Its leaders still think Trump will blink first</h2>
+<p><a href="https://apnews.com/article/iran-us-war-ceasefire-tehran-trump-civilization-threat-3fae8cb8c07f92184d7485da663f75b0">U.S. and Israeli airstrikes crippled thousands of factories</a> in Iran, and the economic damage is reverberating — <a href="https://apnews.com/hub/iran">millions more</a> Iranians could lose their jobs. Most damaging, Israeli strikes knocked out most steel and petrochemical production, causing a surge in prices for metals and plastic. Things could get worse as the U.S. <a href="https://apnews.com/article/iran-blockade-strait-hormuz-trump-navy-f7af4e8f73dc75e158790db8c32296ac">blockades Iranian ports</a>.</p>
+
+<p>Economic woes sparked the <a href="https://apnews.com/article/iran-protests-nuclear-us-what-to-know-explainer-845b3ac10c37727add7118ec9c2f6e46">mass protests that were crushed</a> before the war and could again push Iranians into the streets. But Iran’s leaders are betting that economic self-reliance built under decades of sanctions can help them endure the pain longer than Trump.</p>
+
+<p>▶ <a href="https://apnews.com/article/iran-us-israel-war-economy-blockade-steel-exports-7d3c6c63ec432e57325814d48938ccfe">Read more</a></p>
+
+
+
+                
+                                    <p>Copyright
+                        ©&nbsp;2026 The Associated Press. All rights reserved. This material may not be published, broadcast, written or redistributed.</p>
+                
+                <div class="after-content After-content">
+                                    </div>
+
+                        </div>
+            
+            <div class="lower-share-bar">
+                            </div>
+
+                        <div class="page__single--more">
+                                    <div class="page__single--more-inner">
+                        <h2 class="page__single--more-title">Related News</h2>
+                                            <article class="post__template--wide ">
+                            <div class="post__template--wide-img-div">
+                                            <a href="https://wtop.com/national/2026/05/missouris-new-us-house-map-goes-to-court-while-louisiana-and-south-carolina-consider-redistricting/">
+                            <img src="https://wtop.com/wp-content/uploads/2026/05/Election_2_26-Redistricting_664_7-480x320.jpg" width="" height="" srcset="" sizes="(max-width: 768px) 33.3vw, (max-width: 1080px) 15vw, 137px" alt="Missouri’s new US House map goes to court while Louisiana and South Carolina consider redistricting" loading="lazy">
+                        </a>
+                                                        </div>
+                        <div class="post__template--wide-content-div">
+                <h3 class="post__template--wide-title">
+                                        <a href="https://wtop.com/national/2026/05/missouris-new-us-house-map-goes-to-court-while-louisiana-and-south-carolina-consider-redistricting/" class="post__template--wide-title-link">
+                        Missouri’s new US House map goes to court while Louisiana and South Carolina consider redistricting                    </a>
+                                    </h3>
+                            </div>
+        </article>
+                    <article class="post__template--wide ">
+                            <div class="post__template--wide-img-div">
+                                            <a href="https://wtop.com/national/2026/05/hegseth-is-facing-a-new-round-of-questioning-from-congress-on-the-iran-war-and-more/">
+                            <img src="https://wtop.com/wp-content/uploads/2026/05/Trump_12721-480x320.jpg" width="" height="" srcset="" sizes="(max-width: 768px) 33.3vw, (max-width: 1080px) 15vw, 137px" alt="Hegseth faces bipartisan grilling about weapons drawdown during the Iran war" loading="lazy">
+                        </a>
+                                                        </div>
+                        <div class="post__template--wide-content-div">
+                <h3 class="post__template--wide-title">
+                                        <a href="https://wtop.com/national/2026/05/hegseth-is-facing-a-new-round-of-questioning-from-congress-on-the-iran-war-and-more/" class="post__template--wide-title-link">
+                        Hegseth faces bipartisan grilling about weapons drawdown during the Iran war                    </a>
+                                    </h3>
+                            </div>
+        </article>
+                    <article class="post__template--wide ">
+                            <div class="post__template--wide-img-div">
+                                            <a href="https://wtop.com/national/2026/05/the-latest-hegseth-faces-a-new-round-of-questioning-from-congress-on-the-iran-war/">
+                            <img src="https://wtop.com/wp-content/uploads/2026/05/Trump_1_192-480x320.jpg" width="" height="" srcset="" sizes="(max-width: 768px) 33.3vw, (max-width: 1080px) 15vw, 137px" alt="The Latest: Hegseth defends $1.5 trillion budget to Congress as Iran war cost climbs" loading="lazy">
+                        </a>
+                                                        </div>
+                        <div class="post__template--wide-content-div">
+                <h3 class="post__template--wide-title">
+                                        <a href="https://wtop.com/national/2026/05/the-latest-hegseth-faces-a-new-round-of-questioning-from-congress-on-the-iran-war/" class="post__template--wide-title-link">
+                        The Latest: Hegseth defends $1.5 trillion budget to Congress as Iran war cost climbs                    </a>
+                                    </h3>
+                            </div>
+        </article>
+                        </div>
+                                                    <div class="page__single--more-inner">
+                        <h2 class="page__single--more-title">Recommended</h2>
+                                                <article class="post__template--wide ">
+                            <div class="post__template--wide-img-div">
+                                            <a href="https://wtop.com/baltimore/2026/05/federal-charges-filed-against-dali-operator-employee-in-crash-that-caused-the-deadly-collapse-of-baltimores-key-bridge/">
+                            <img src="https://wtop.com/wp-content/uploads/2025/03/Baltimore_Bridge_Collapse_71768-180x120.jpg" width="2560" height="1706" srcset="" sizes="(max-width: 768px) 33.3vw, (max-width: 1080px) 15vw, 137px" alt="Federal charges filed against Dali operator, employee in crash that caused the deadly collapse of Baltimore's Key Bridge" loading="lazy">
+                        </a>
+                                                        </div>
+                        <div class="post__template--wide-content-div">
+                <h3 class="post__template--wide-title">
+                                        <a href="https://wtop.com/baltimore/2026/05/federal-charges-filed-against-dali-operator-employee-in-crash-that-caused-the-deadly-collapse-of-baltimores-key-bridge/" class="post__template--wide-title-link">
+                        Federal charges filed against Dali operator, employee in crash that caused the deadly collapse of Baltimore's Key Bridge                    </a>
+                                    </h3>
+                            </div>
+        </article>
+                    <article class="post__template--wide ">
+                            <div class="post__template--wide-img-div">
+                                            <a href="https://wtop.com/maryland/2026/05/the-late-hip-hop-legend-tupac-shakur-who-lived-in-baltimore-has-street-dedicated-to-him/">
+                            <img src="https://wtop.com/wp-content/uploads/2026/05/GettyImages-883992172-180x120.jpg" width="1024" height="695" srcset="" sizes="(max-width: 768px) 33.3vw, (max-width: 1080px) 15vw, 137px" alt="Street named after hip-hop legend Tupac Shakur, who lived in Md. as a teenager" loading="lazy">
+                        </a>
+                                                        </div>
+                        <div class="post__template--wide-content-div">
+                <h3 class="post__template--wide-title">
+                                        <a href="https://wtop.com/maryland/2026/05/the-late-hip-hop-legend-tupac-shakur-who-lived-in-baltimore-has-street-dedicated-to-him/" class="post__template--wide-title-link">
+                        Street named after hip-hop legend Tupac Shakur, who lived in Md. as a teenager                    </a>
+                                    </h3>
+                            </div>
+        </article>
+                    <article class="post__template--wide ">
+                            <div class="post__template--wide-img-div">
+                                            <a href="https://wtop.com/maryland/2026/05/2-maryland-residents-exposed-to-hantavirus-while-traveling-near-infected-passenger/">
+                            <img src="https://wtop.com/wp-content/uploads/2025/09/maryland_health_dept-1536x1024-1-e1778574864562-180x120.jpg" width="1017" height="679" srcset="" sizes="(max-width: 768px) 33.3vw, (max-width: 1080px) 15vw, 137px" alt="2 Maryland residents exposed to hantavirus while traveling near infected passenger" loading="lazy">
+                        </a>
+                                                        </div>
+                        <div class="post__template--wide-content-div">
+                <h3 class="post__template--wide-title">
+                                        <a href="https://wtop.com/maryland/2026/05/2-maryland-residents-exposed-to-hantavirus-while-traveling-near-infected-passenger/" class="post__template--wide-title-link">
+                        2 Maryland residents exposed to hantavirus while traveling near infected passenger                    </a>
+                                    </h3>
+                            </div>
+        </article>
+                        </div>
+                            </div>
+
+            <div class="article-signature">
+        <div class="page__single--categories-tags">
+                    <div>
+                <div class="related-categories-title">
+                    <h3>Related Categories: </h3>
+                </div>
+                <div class="related-categories-container">
+                                            <a href="https://wtop.com/national/" class="related-categories-category">National News</a>
+                        |                                            <a href="https://wtop.com/world/" class="related-categories-category">World News</a>
+                                                            </div>
+            </div>
+        
+            </div>
+
+</div>
+            
+                        <div id="below-single-article"></div>
+
+
+                                <div class="RevContent">
+        <!-- RevContent -->
+        <div id="rc-widget-beea07" data-rc-widget="" data-widget-host="habitat" data-endpoint="//trends.revcontent.com" data-widget-id="145002"></div>
+        <script type="text/javascript" src="https://assets.revcontent.com/master/delivery.js" defer="defer"></script>
+        <!-- // RevContent -->
+        </div>
+                    <!-- FNN Stories Widget -->
+<div class="fnn-stories-widget">
+    
+<div style="margin-top: 20px;padding-top:20px;border-top:2px solid #eee;">
+    <img src="https://wtop.com/wp-content/themes/wtop-new/images/fnn-logo.svg" style="max-width:250px;" alt="Federal News Network Logo">
+    <div class="row" id="fnn_widget_on_wtop_article" style="min-height:220px;"></div>
+</div></div>
+<!-- End of FNN Stories Widget -->
+
+        </section>
+                    <aside class="page__sidebar page__sidebar--single-article">
+
+                
+                
+                                
+            </aside>
+            </div>
+</main><iframe name="__gppLocator" style="display: none;" data-gtm-yt-inspected-8="true" data-gtm-yt-inspected-1738222_308="true"></iframe><iframe name="__tcfapiLocator" style="display: none;" data-gtm-yt-inspected-8="true" data-gtm-yt-inspected-1738222_308="true"></iframe><iframe name="__uspapiLocator" style="display: none;" data-gtm-yt-inspected-8="true" data-gtm-yt-inspected-1738222_308="true"></iframe>
+
+<footer class="footer" id="wtop-footer">
+    <div class="container">
+        <div class="footer__outer company-info">
+            <div class="footer-logo">
+                <img src="/wp-content/themes/wtop-new/assets/img/logo_footer_desktop_WTOPnews_horizontal.png" alt="WTOP logo">
+            </div>
+            <div class="footer-address">
+                <div class="icon">
+                    <svg id="Layer_3" data-name="Layer 3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.43 23.44">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <path class="cls-1" d="M11.66,.37C6.74,.37,2.74,4.35,2.74,9.25c0,3.63,8.71,13.97,8.71,13.97,0,0,9.13-10.14,9.13-13.97C20.58,4.35,16.59,.37,11.66,.37Zm0,11.43c-1.61,0-2.91-1.3-2.91-2.9s1.3-2.9,2.91-2.9,2.91,1.3,2.91,2.9-1.3,2.9-2.91,2.9Z"></path>
+                    </svg>
+                </div>
+
+                <p>5425 Wisconsin Ave<br>
+                Chevy Chase, MD 20815</p>
+            </div>
+            <div class="footer-email">
+                <div class="icon">
+                    <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.43 23.44">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <path class="cls-1" d="M.41,19.17V4.42H23.11v14.74H.41Zm1.1-1.62l6.52-5.76L1.51,6.04v11.51Zm.73-12.16l8.27,7.31c.92,.81,1.57,.81,2.49,0l8.27-7.31H2.24Zm19.04,12.8l-6.52-5.75c-1.28,1.13-2.12,1.91-3,1.91s-1.72-.78-3-1.91l-6.52,5.75H21.28Zm-5.78-6.4l6.52,5.76V6.04l-6.52,5.75Z"></path>
+                    </svg>
+                </div>
+                <p>
+                    <a href="mailto:hello@wtop.com">hello@wtop.com</a>
+                </p>
+            </div>
+            <div class="footer-phone">
+                <div class="icon">
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23.43 23.44">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+                            </style>
+                        </defs>
+                        <path class="cls-1" d="M5.09,0c.52,.8,1.06,1.58,1.54,2.39,.56,.95,1.05,1.94,1.58,2.9,.28,.5,.1,.85-.28,1.2-.67,.61-1.31,1.26-1.99,1.86-.54,.47-.49,.97-.21,1.55,1.43,2.94,3.5,5.3,6.31,6.98,.51,.31,1.04,.58,1.57,.86,.58,.31,1.08,.24,1.53-.28,.57-.67,1.2-1.3,1.77-1.99,.34-.42,.71-.57,1.18-.32,1.59,.86,3.19,1.73,4.76,2.63,.25,.14,.39,.47,.58,.72v.14c-.08,.25-.17,.5-.23,.75-.39,1.87-1.52,3.05-3.28,3.67-1.83,.64-3.62,.38-5.39-.24-3.98-1.39-7.25-3.83-9.95-7.04C2.43,13.23,.79,10.35,.16,7.02-.26,4.83,.09,2.72,1.9,1.24,2.65,.62,3.73,.4,4.66,0c.14,0,.29,0,.43,0Z"></path>
+                    </svg>
+                </div>
+                <p>
+                    <a href="tel:2028955000">202.895.5000</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer__outer">
+            <div class="footer__inner fcc-notices">
+                <p class="copyright"></p>
+                <p class="copyright">Copyright © 2026 by WTOP. All rights reserved. This website is not intended for users located within the European Economic Area.</p>
+            </div>
+            <div class="footer__inner">
+                <nav class="footerNav__primary">
+                    <ul id="menu-footer-primary-v2" class="footerNav__primary--list"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907781"><a href="https://wtop.com/about-wtop-news/" class="Nav-link">About Us</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23092485"><a href="https://wtop.com/wtop-our-news-philosophy/" class="Nav-link">News Philosophy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907782"><a href="https://wtop.com/news-team/" class="Nav-link">News Team</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907784"><a target="_blank" rel="noopener" href="https://hubbardbroadcasting.com/" class="Nav-link">Careers</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907785"><a href="https://wtop.com/advertise/" class="Nav-link">Advertise</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907787"><a href="https://wtop.com/contests/" class="Nav-link">Contests</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907795"><a href="https://wtop.com/contact-us/" class="Nav-link">Contacts</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907797"><a href="https://wtop.com/submit-news-tip/" class="Nav-link">News Tips</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907799"><a href="https://wtop.com/wtop-charity-partners/" class="Nav-link">Charities</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907802"><a href="https://wtop.com/wtop-community-events/" class="Nav-link">Events</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20982396"><a href="https://wtop.com/wtop-press-releases/" class="Nav-link">Press</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907807"><a href="https://wtop.com/podcasts/" class="Nav-link">Podcasts</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907808"><a target="_blank" rel="noopener" href="https://federalnewsnetwork.com/" class="Nav-link">Federal News Network</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-28682008"><a href="https://wtop.com/about-wtop-news/" class="Nav-link">103.5 FM | 107.7 FM | 103.9 FM</a></li>
+</ul>                </nav>
+            </div>
+            <div class="footer__aside">
+                <div class="footer__subscribe" data-class="subscribe">
+                    <form class="footer__subscribe--form sailthru-form-content visible" name="emailsignupform_footer" id="sailthru-form-content-footer" data-class="subscribe-form" action="https://wtop.com/newsletters-signup/" method="post">
+                        <div class="footer__subscribe--stepOne" data-class="subscribe-step-one">
+                            <h2 class="footer__subscribe--title">Sign up for or manage your WTOP email subscriptions</h2>
+                            <div class="footer__subscribe--email-container">
+                                <label for="footer-email" class="accessible-text">Email</label>
+                                <div class="footer__subscribe--input-container">
+                                    <input type="email" class="footer__subscribe--input" name="email" required="" id="footer-email" placeholder="Enter Email">
+                                </div>
+                                <div class="footer__subscribe--submit-container">
+                                    <button class="footer__subscribe--submit" data-class="subscribe-advance-step-one">
+                                        Go
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="subscribe__stepTwo" id="confirmation-message-sailthru-form-content-footer" aria-live="polite"><div class="image"><img src="https://wtop.com/wp-content/themes/wtop-new/assets/img/loading.gif" alt="Loading..." loading="lazy"> </div></div>
+                         
+                    
+                    
+                </div>
+
+                <div class="socialMedia footer__aside">
+                    <div class="socialMedia--outer">
+                    <a href="https://www.facebook.com/wtopnews/" target="_blank" class="socialMedia__link socialMedia__link--facebook">
+    <span class="accessible-text">facebook</span>
+</a>
+<a href="https://www.instagram.com/wtopnews" target="_blank" class="socialMedia__link socialMedia__link--instagram">
+    <span class="accessible-text">instagram</span>
+</a>
+<a href="https://twitter.com/WTOP" target="_blank" class="socialMedia__link socialMedia__link--x">
+    <span class="accessible-text">x</span>
+</a>
+<a href="https://www.tiktok.com/@wtopnews" target="_blank" class="socialMedia__link socialMedia__link--tiktok">
+    <span class="accessible-text">tiktok</span>
+</a>
+<a href="https://www.youtube.com/@WTOPNewsDC" target="_blank" class="socialMedia__link socialMedia__link--youtube">
+    <span class="accessible-text">youtube</span>
+</a>
+<a href="https://www.threads.net/@wtopnews" target="_blank" class="socialMedia__link socialMedia__link--threads">
+    <span class="accessible-text">threads</span>
+</a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <nav class="footerNav__util">
+            <ul id="menu-footer-utility-v2" class="footerNav__util--list"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907825"><a href="https://wtop.com/feedback/" class="Nav-link">Feedback</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907826"><a target="_blank" rel="noopener" href="http://corporate.hubbardradio.com/privacy-policy/" class="Nav-link">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907827"><a target="_blank" rel="noopener" href="http://corporate.hubbardradio.com/terms-of-use/" class="Nav-link">Terms of Use</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907829"><a href="https://wtop.com/copyright/" class="Nav-link">Copyright</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907830"><a target="_blank" rel="noopener" href="http://corporate.hubbardradio.com/" class="Nav-link">Hubbard Radio</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907831"><a target="_blank" rel="noopener" href="http://corporate.hubbardradio.com/dmca-notice/" class="Nav-link">DMCA Notice</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-19907833"><a target="_blank" rel="noopener" href="https://wtop.com/wp-content/uploads/2025/05/Hubbard-Radio-Washington-DC-FCC-EEO-Public-File-Report-2025.pdf" class="Nav-link">EEO</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19907835"><a href="https://wtop.com/wtop-103-5-fm-wwwt-107-7-fm-wtlp-103-9-fm-wwfd-820-am-online-fcc-public-inspection-files/" class="Nav-link">FCC Public Inspection Files</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21672983"><a href="https://wtop.com/fcc-applications/" class="Nav-link">FCC Applications</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20591652"><a href="https://corporate.hubbardradio.com/data-request?site=wtopfm" class="Nav-link">Do Not Sell My Info – CA Resident Only</a></li>
+<li class="osano-cm-dom-info-dialog-open menu-item menu-item-type-custom menu-item-object-custom menu-item-27904517"><a href="#" class="Nav-link">Cookie Preferences</a></li>
+</ul>        </nav>
+<!--        <div class="dfp_mobile_adhesion_spacer"></div>-->
+    </div>
+</footer>
+            <!-- Osano: Footer -->
+            <script>
+                window.Osano('onInitialized', function() {
+                    var dataReqSelector = "li.osano-cm-dom-info-dialog-open"; //  "a[href*='corporate.hubbardradio.com/data-request']";
+                    if(jQuery(dataReqSelector).length) {
+                        jQuery(dataReqSelector).removeClass('d-none');
+                    }
+                    else {
+                        jQuery(".osano-cm-widget").css('display','initial');
+                    }
+                    jQuery(dataReqSelector).on("click", function() {
+                        try {
+                            event.preventDefault();
+                            Osano.cm.showDrawer('osano-cm-dom-info-dialog-open');
+                        } catch (error) {
+                            console.error(error);
+                            console.error('Osano must be loaded before triggering the dialog.');
+                        }
+                    });
+                });
+            </script>
+            <!-- End Osano: Footer -->
+                <!--ZOOMINFO FOOTER HTML-->
+        <noscript><img src="https://ws.zoominfo.com/pixel/6245e68be2bbe6001aaa141b"
+            width="1" height="1" style="display: none;" />
+        </noscript>
+        <!--ZOOMINFO FOOTER HTML ENDS-->
+        <link rel="stylesheet" id="exco-custom-styles-css" href="https://wtop.com/wp-content/plugins/exco-custom/assets/css/exco-styles.css?ver=5.9.4" type="text/css" media="all">
+<script type="text/javascript" id="sailthru-newsletter-signup-js-js-extra">
+/* <![CDATA[ */
+var sailthru_newsletter_data = {"ajaxurl":"https:\/\/wtop.com\/wp-admin\/admin-ajax.php","signup_error":"There seems to be an issue with the system, please try again later.","user_confirmation_message":"You have already signed up for newsletters and\/or alerts. Please check your email for a link to manage your account settings."};
+var sailthru_newsletter_plugin_data = {"user_confirmation_message":"You have already signed up for newsletters and\/or alerts. Please check your email for a link to manage your account settings.","form_action":"https:\/\/wtop.com\/newsletters-signup\/","themepath":"https:\/\/wtop.com\/wp-content\/themes\/wtop-new","ispost":"1","popup_setting":{"layout":null,"ispopup":null,"days":0}};
+var ajax_object = {"ajaxurl":"https:\/\/wtop.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://wtop.com/wp-content/plugins/sailthru-newsletters-custom/assets/js/sailthru-newsletter-signup.min.js?ver=1776363429" id="sailthru-newsletter-signup-js-js"></script>
+<script type="text/javascript" id="wtop-scripts-js-extra">
+/* <![CDATA[ */
+var localized = {"ajaxurl":"https:\/\/wtop.com\/wp-admin\/admin-ajax.php","siteurl":"https:\/\/wtop.com","template_uri":"https:\/\/wtop.com\/wp-content\/themes\/wtop-new"};
+var wtop_live_data = {"cookie_domain":"wtop.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://wtop.com/wp-content/themes/wtop-new/js/scripts.min.js?ver=1776363429" id="wtop-scripts-js"></script>
+<script type="text/javascript" src="https://wtop.com/wp-content/themes/wtop-new/js/lozad.min.js?ver=1776363429" id="lozad-js"></script>
+<script type="text/javascript" src="https://wtop.com/wp-content/themes/wtop-new/js/FNNWidget/dist/fnn_widget.js?ver=1776363429" id="fnn_widget-js"></script>
+<script type="text/javascript" id="SailThru-js-extra">
+/* <![CDATA[ */
+var Sailthru_config = {"domain":"horizon.wtop.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://wtop.com/wp-content/plugins/sailthru-custom/assets/js/sailthru.js?ver=260416-181709" id="SailThru-js"></script>
+<script type="text/javascript" id="Sailthru_Newsletters_Custom-js-extra">
+/* <![CDATA[ */
+var Sailthru_config = {"domain":"horizon.wtop.com"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://wtop.com/wp-content/plugins/sailthru-newsletters-custom/assets/js/sailthru.js?ver=0.1" id="Sailthru_Newsletters_Custom-js"></script>
+		<!-- ComScore -->
+		<script defer="">
+		    var _comscore = _comscore || [];
+		    _comscore.push({ c1: "2", c2: "16067480" });
+                    function downloadComScoreAtOnload() {
+                        var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+                        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+                        el.parentNode.insertBefore(s, el);
+                    }
+                    if (window.addEventListener)
+                        window.addEventListener("load", downloadComScoreAtOnload, false);
+                    else if (window.attachEvent)
+                        window.attachEvent("onload", downloadComScoreAtOnload);
+                    else window.onload = downloadComScoreAtOnload; 
+		</script>
+		<noscript>
+		  <img src="//b.scorecardresearch.com/p?c1=2&c2=16067480&cv=2.0&cj=1" />
+		</noscript>
+		<!-- /ComScore -->
+				<!-- Quantcast -->
+		<script type="text/javascript" defer="">
+                    var _qevents = _qevents || [];
+
+                    function downloadQuantcastAtOnload() {
+                        var elem = document.createElement('script');
+                        elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js";
+                        elem.async = true;
+                        elem.type = "text/javascript";
+                        var scpt = document.getElementsByTagName('script')[0];
+                        scpt.parentNode.insertBefore(elem, scpt);
+                    }
+
+                    _qevents.push({
+                            qacct:"p-sgZGQjSAzUNrD"
+                    });
+                    if (window.addEventListener)
+                        window.addEventListener("load", downloadQuantcastAtOnload, false);
+                    else if (window.attachEvent)
+                        window.attachEvent("onload", downloadQuantcastAtOnload);
+                    else window.onload = downloadQuantcastAtOnload; 
+		</script>
+		<noscript>
+			<div style="display:none;">
+				<img src="//pixel.quantserve.com/pixel/p-sgZGQjSAzUNrD.gif" border="0" height="1" width="1" alt="Quantcast"/>
+			</div>
+		</noscript>
+		<!-- /Quantcast -->
+		
+<div id="modalWtopLiveLogin">	
+    <div class="form">				
+        <div class="error-message text-left"></div>
+        <div>
+            Log in to your WTOP account for notifications and alerts customized for you.
+        </div>
+        <form>
+            <div class="group_field email_input_group">
+                <i class="fas fa-at"></i>
+                <input type="email" name="email" placeholder="Email" autocomplete="off">                                    
+            </div>
+            <div class=" group_field password_input_group">
+                <i class="fas fa-key"></i>
+                <input type="password" name="password" placeholder="Password">                                    
+            </div>                                
+            <input type="submit" class="btn" value="LOGIN">
+            <br>
+            <a href="https://live.wtop.com/listen/register" target="_blank">Sign up</a>
+        </form>
+    </div>
+</div>
+<div id="modalLogoutOptions">
+    <div class="row">
+        <div class="small-6 large-6 columns text-center">
+            <button class="logout show-as-link">
+                <i class="fas fa-sign-out-alt"></i> <span class="small-text">LOGOUT</span>
+            </button>
+        </div>
+        <div class="small-6 large-6 columns text-center">
+            <button class="view-profile show-as-link">            
+                <i class="fas fa-user"></i> <span class="small-text">VIEW PROFILE</span>
+            </button>
+        </div>
+    </div>
+</div>
+<script src="/openad.js" type="text/javascript"></script><div id="tUfcWlBkDZTs" style="display: none;"></div>
+    <script type="text/javascript">
+        if (document.getElementById('tUfcWlBkDZTs')) {
+            // do nothing
+        } else {
+            if (window.cnxps || window.cnx) {
+                document.getElementById('tnvbNcaMHUrl').style.display = "block";
+
+            }
+        }
+    </script>
+<script type="text/javascript">
+    jQuery( document ).ready( function( $ ) {
+        $( 'a' ).each(function() {
+            // 'href' attribute shoult not be empty, so it doesn't interfere with other javascript functionalities
+            if( $(this).attr( 'href' ) ){
+                var a = new RegExp( window.location.host + '|javascript:', 'i' );
+                if( ! a.test( this.href ) )  {
+                    $( this ).click( function( event ) {
+                        event.preventDefault( );
+                        event.stopPropagation( );
+                        window.open( this.href, '_blank' );
+                    });
+                }
+            }
+        });
+    });
+
+    const observer = lozad('.wtop-lozad'); 
+    observer.observe();
+</script>
+
+
+<iframe src="https://cdn.btmessage.com/assets/bt-rlink-storage-BvSbFeGG.html" id="bt-rlink-iframe" style="display: none;" data-gtm-yt-inspected-8="true" data-gtm-yt-inspected-1738222_308="true"></iframe><div class="sub-menu--overlay"></div><img src="https://ad-delivery.net/px.gif?ch=2" style="display: none !important; width: 1px !important; height: 1px !important;"><img src="https://ad.doubleclick.net/favicon.ico?ad=300x250&amp;ad_box_=1&amp;adnet=1&amp;showad=1&amp;size=250x250" style="display: none !important; width: 1px !important; height: 1px !important;"><img src="https://ad-delivery.net/px.gif?ch=1&amp;e=0.9194420499499302" style="display: none !important; width: 1px !important; height: 1px !important;">
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","175156686171397");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=175156686171397&amp;ev=PageView&amp;noscript=1"></noscript>
+<script type="text/javascript" id="" charset="">(function(){var a=document.createElement("script");a.src="/advertisement.js";document.head.appendChild(a)})();</script><script type="text/javascript" id="" charset="">_linkedin_partner_id="2540737";window._linkedin_data_partner_ids=window._linkedin_data_partner_ids||[];window._linkedin_data_partner_ids.push(_linkedin_partner_id);</script><script type="text/javascript" id="" charset="">(function(a){a||(window.lintrk=function(c,d){window.lintrk.q.push([c,d])},window.lintrk.q=[]);a=document.getElementsByTagName("script")[0];var b=document.createElement("script");b.type="text/javascript";b.async=!0;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";a.parentNode.insertBefore(b,a)})(window.lintrk);</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2540737&amp;fmt=gif">
+</noscript><div style="display: none; visibility: hidden;"><script>(function(){var f=setInterval(function(){for(var d=document.getElementsByTagName("iframe"),b=!1,c=0;c<d.length;c++){var e=d[c],a=e.getAttribute("src");a&&a.indexOf("youtube.com/embed")!==-1&&a.indexOf("enablejsapi\x3d1")===-1&&(b=a.indexOf("?")===-1?a+"?enablejsapi\x3d1":a+"\x26enablejsapi\x3d1",e.setAttribute("src",b),b=!0)}b&&clearInterval(f)},500)})();</script>
+
+</div><style type="text/css" class="pbs-style">@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</style></body></html>

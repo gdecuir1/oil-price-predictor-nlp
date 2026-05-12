@@ -1,0 +1,1367 @@
+<!DOCTYPE html><html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# " class=" js"><head>
+    <meta name="google-site-verification" content="rWmi4UEDDUgUwwEBWNFpZ73uEwUfPFQNiBqw2CCoraA">
+    <meta name="google-adsense-account" content="ca-pub-6549351812537625">
+    
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-6WEDL2Z7DH&amp;cx=c&amp;gtm=4e6581"></script><script async="" src="//ijels.com/rkc"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5WWQWJG"></script><script>
+
+      var sector = 'home';
+      var tag = '';
+
+      var url = window.location.href;
+
+      var splitPath = url.split("/");
+      var totSplitPath = splitPath.length;
+      var lastData = splitPath[splitPath.length-1];
+          lastData = lastData.split("?")[0];
+      var lastGAM = lastData.substring(0,40).replace(/[!@#$%^&*/()_-]/g, "");
+
+      if (lastData==""){
+        tag = "home";
+      }else{
+        if (lastData == "multimedia"){
+          tag = "multimedia";
+        }else if (lastData == "podcast" || splitPath[4] == "podcast"){
+          tag = "podcast";
+          if (totSplitPath>6){sector = 'detail';}
+        }else if (lastData == "videos" || splitPath[4] == "video"){
+          tag = "videos";
+          if (totSplitPath>6){sector = 'detail';}
+        }else if (lastData == "audio-articles"){
+          tag = "audio-article";
+        }else if (lastData == "search"){
+          tag = "search";
+        }else if (lastData == "expert-contributor"){
+          tag = "expert-contributor";
+        }else{
+          //Split Sector
+          lastDataCount = lastData.split("?s=");
+          if (lastDataCount.length>1){
+           var checkIfTag = lastDataCount[1].split("&idtag");
+           if (checkIfTag.length>1){
+                sector = checkIfTag[0];
+           }else{
+                sector = lastDataCount[1];
+           }
+            tag = lastDataCount[0];
+            splitSearchPage = sector.split("&page=");
+            if (splitSearchPage.length>1){
+              sector = splitSearchPage[0];
+              if (sector==""){
+                sector = lastDataCount[0];
+              }
+            }
+          }else{
+            //Split Tag
+            lastDataCount = lastData.split("?tag=");
+            if (lastDataCount.length>1 && splitPath.length>=3){
+              sector = splitPath[3];
+              tag = lastDataCount[1];
+            }else if (splitPath.length>=3){
+              sector = splitPath[3];
+              if (splitPath[3]=="expert-contributor"){
+                tag = splitPath[4];
+              }else{
+                if (splitPath[3]=='tag'){
+                lastDataTag = lastData.split("?idtag");
+                  tag=lastDataTag[0];
+                }else{
+                  tag = splitPath[3];
+                }
+              }
+            }else{
+              sector = lastData;
+              tag = lastData;
+            }
+          }
+        }
+      }
+
+      console.log (sector+"|"+tag+"|"+lastGAM);
+
+    </script>
+
+    <script async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <script>
+      window.googletag = window.googletag || {cmd: []};
+      window.addEventListener('DOMContentLoaded', function() {
+
+      googletag.cmd.push(function() {
+
+        googletag.pubads().enableAsyncRendering();
+
+        var REFRESH_KEY = 'refresh';
+        var REFRESH_VALUE = 'true';
+        var _rl_gen_sg=function(){let e="_rl_sg",t=[];try{let o=localStorage.getItem(e);"string"==typeof o&&(t=o.split(","))}catch(e){}if(0===t.length){let o=document.cookie.indexOf(e);if(-1!==o){o+=e.length+1;let n=document.cookie.indexOf(";",o);-1===n&&(n=document.cookie.length),t=document.cookie.substring(o,n).split(",")}}return t};
+
+        var map0 = googletag.sizeMapping()
+          .addSize([1024, 0], [[300, 250], [336, 280], [1, 1]])
+          .addSize([768, 0], [[300, 250], [336, 280], [1, 1]])
+          .addSize([320, 0], [[300, 250], [1, 1]])
+          .addSize([0, 0], [[300, 50], [1, 1]])
+          .build(); 
+
+        var map1 = googletag.sizeMapping()
+          .addSize([1024, 0], [[970, 90], [1, 1]])
+          .addSize([768, 0], [[300, 250], [1, 1]])
+          .addSize([320, 0], [[300, 250], [300, 100], [1, 1]])
+          .addSize([0, 0], [[300, 50], [1, 1]])
+          .build(); 
+
+        var map2 = googletag.sizeMapping()
+          .addSize([1024, 0], [[970, 90], [1, 1]])
+          .addSize([768, 0], [[970, 90], [1, 1]])
+          .addSize([320, 0], [[300, 250], [300, 100], [1, 1]])
+          .addSize([0, 0], [[350, 50], [1, 1]])
+          .build(); 
+
+        var map3 = googletag.sizeMapping()
+          .addSize([1024, 0], [[300, 250], [970, 90], [1, 1]])
+          .addSize([768, 0], [[300, 250], [1, 1]])
+          .addSize([320, 0], [[300, 250], [1, 1]])
+          .addSize([0, 0], [[300, 250], [1, 1]])
+          .build();
+
+        var map4 = googletag.sizeMapping()
+          .addSize([1024, 0], [[300, 250], [300, 600], [1, 1]])
+          .addSize([768, 0], [[300, 250], [300, 600], [1, 1]])
+          .addSize([320, 0], [[300, 250], [300, 600], [1, 1]])
+          .addSize([0, 0], [[300, 50], [1, 1]])
+          .build(); 
+
+        var map5 = googletag.sizeMapping()
+          .addSize([1024, 0], [[970, 90]])
+          .addSize([768, 0], [[970, 90]])
+          .addSize([320, 0], [[300, 250]])
+          .addSize([0, 0], [[300, 50]])
+          .build();
+
+        var map6 = googletag.sizeMapping()
+          .addSize([1024, 0], [[970, 90], [1, 1]])
+          .addSize([768, 0], [[970, 90], [1, 1]])
+          .addSize([320, 0], [[300, 250], [1, 1]])
+          .addSize([0, 0], [[300, 50], [1, 1]])
+          .build(); 
+
+
+          if (document.body.classList.contains('path-frontpage')){
+            //Homepage
+            googletag.defineSlot('/22809222576/MB_Homepage_pos0', [[300, 250], [970, 90]], 'div-gpt-ad-1724884205286-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').defineSizeMapping(map6).setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Homepage_pos1', [[300, 250], [336, 280]], 'div-gpt-ad-1673970885290-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').defineSizeMapping(map0).setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Homepage_pos2', [[300, 250], [336, 280]], 'div-gpt-ad-1673970958870-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').defineSizeMapping(map0).setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Homepage_pos3', [[300, 250], [336, 280]], 'div-gpt-ad-1673971010352-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').defineSizeMapping(map0).setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Homepage_pos4', [[300, 250], [336, 280]], 'div-gpt-ad-1673971044080-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').defineSizeMapping(map0).setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1724884205286-0',
+              'div-gpt-ad-1673970885290-0',
+              'div-gpt-ad-1673970958870-0',
+              'div-gpt-ad-1673971010352-0',
+              'div-gpt-ad-1673971044080-0'
+            ];
+          } else if (document.body.classList.contains('page-search') || document.body.classList.contains('page-type')){ 
+            //Search
+            googletag.defineSlot('/22809222576/MB_Search_300X250_pos1', [300, 250], 'div-gpt-ad-1669313947988-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1669313947988-0'
+            ];            
+          } else if (document.body.classList.contains('page-multimedia')){
+            //Multimedia General
+            googletag.defineSlot('/22809222576/MB_Multimedia_Pos1', [[970, 90], [300, 250], [300, 200]], 'div-gpt-ad-1669313999180-0')
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map1)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Multimedia_Pos2', [300, 250], 'div-gpt-ad-1669314027533-0').setTargeting(REFRESH_KEY, REFRESH_VALUE).setTargeting('refreshed_slot', 'false').setTargeting("_rl",_rl_gen_sg()).addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1669313999180-0',
+              'div-gpt-ad-1669314027533-0'
+            ];            
+          } else if (document.body.classList.contains('page-media')){
+            //Multimedia Detail
+            googletag.defineSlot('/22809222576/MB_Multimedia_detail_pos1', [[970, 90], [300, 250], [300, 200]], 'div-gpt-ad-1669314077354-0')
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map2)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Multimedia_detail_pos2', [300, 600], 'div-gpt-ad-1673545894512-0')
+              .setTargeting("url", lastGAM)
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting('refreshed_slot', 'false')
+              .setCollapseEmptyDiv(true)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1669314077354-0',
+              'div-gpt-ad-1673545894512-0'
+            ];
+          } else if (document.body.classList.contains('page-taxonomy')){
+            //Sector Tag
+            googletag.defineSlot('/22809222576/MB_Sector_Tag_Pos1', [[970, 90], [300, 250], [300, 200]], 'div-gpt-ad-1669314148653-0')
+              .setTargeting("pos", "1") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map2)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Sector_Tag_Pos2_300x250', [300, 250], 'div-gpt-ad-1671036082131-0')
+              .setTargeting("pos", "2") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map4)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Sector_Tag_Pos2', [300, 600], 'div-gpt-ad-1669314178789-0')
+              .setTargeting("pos", "2") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Sector_Tag_Pos3', [300, 250], 'div-gpt-ad-1671035615011-0')
+              .setTargeting("pos", "3") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map4)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Sector_Tag_Pos4', [300, 250], 'div-gpt-ad-1742328062360-0')
+              .setTargeting("pos", "4") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map4)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1669314148653-0',
+              'div-gpt-ad-1671036082131-0',
+              'div-gpt-ad-1669314178789-0',
+              'div-gpt-ad-1671035615011-0',
+              'div-gpt-ad-1742328062360-0'
+            ];
+          } else if (document.body.classList.contains('page-node')){
+            //Articles
+            googletag.defineSlot('/22809222576/MB_Articles_pos0', [[300, 250], [300, 600]], 'div-gpt-ad-1671474572130-0')
+              .setTargeting("pos", "0") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting("url", lastGAM)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map4)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Articles_pos1', [[970, 90], [300, 250]], 'div-gpt-ad-1752014862564-0')
+              .setTargeting("pos", "1") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map5)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Articles_pos2', [300, 250], 'div-gpt-ad-1669314255100-0')
+              .setTargeting("pos", "2") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Articles_pos3', [300, 250], 'div-gpt-ad-1669314285512-0')
+              .setTargeting("pos", "3") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            googletag.defineSlot('/22809222576/MB_Articles_pos4', [728, 90], 'div-gpt-ad-1752015991116-0')
+              .setTargeting("pos", "4") 
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting("sector", sector)
+              .setTargeting("tag", tag)
+              .setTargeting('refreshed_slot', 'false')
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1671474572130-0',
+              'div-gpt-ad-1752014862564-0',
+              'div-gpt-ad-1669314255100-0',
+              'div-gpt-ad-1669314285512-0',
+              'div-gpt-ad-1752015991116-0'
+            ];
+          } else if (document.body.classList.contains('page-expert-contributor') || document.body.classList.contains('page-expert-contributor-author')){
+            //Expert
+            googletag.defineSlot('/22809222576/MB_Home_Expert_pos1', [[970, 90], [300, 250], [300, 200]], 'div-gpt-ad-1671059794992-0')
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map2)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+
+            googletag.defineSlot('/22809222576/MB_Expert_pos1', [300, 250], 'div-gpt-ad-1669314355585-0')
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting('refreshed_slot', 'false')
+              .defineSizeMapping(map4)
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+
+            googletag.defineSlot('/22809222576/MB_Expert_pos2', [300, 600], 'div-gpt-ad-1669314380460-0')
+              .setTargeting(REFRESH_KEY, REFRESH_VALUE)
+              .setTargeting('refreshed_slot', 'false')
+              .setTargeting("_rl",_rl_gen_sg())
+              .addService(googletag.pubads());
+            var adSlots = [
+              'div-gpt-ad-1671059794992-0',
+              'div-gpt-ad-1669314355585-0',
+              'div-gpt-ad-1669314380460-0'
+            ];
+          }
+
+          var SECONDS_TO_WAIT_AFTER_VIEWABILITY = 15;
+
+          googletag.pubads().addEventListener('impressionViewable', function(event) {
+            var slot = event.slot;
+            if (slot.getTargeting(REFRESH_KEY).indexOf(REFRESH_VALUE) > -1) {
+              setTimeout(function() {
+                googletag.pubads().refresh([slot]);
+              }, SECONDS_TO_WAIT_AFTER_VIEWABILITY * 1000);
+            }
+          });
+
+          googletag.enableServices();
+
+          setTimeout(function() {
+            adSlots.forEach(function(slotId) {
+              if (document.getElementById(slotId)) {
+                googletag.display(slotId);
+              }
+            });
+          }, 100);
+        });
+      });
+    </script>
+
+    <meta http-equiv="refresh" content="3600">
+    <link rel="icon" type="image/png" sizes="32x32" href="/themes/mbi/images/MBN_Icon_Web-32px.png">
+    <link rel="icon" type="image/png" sizes="152x152" href="/themes/mbi/images/MBN_Icon_Web-152px.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/themes/mbi/images/MBI_Icons_MBN192px.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/themes/mbi/images/MBI_Icons_MBN192px.png">
+
+    <meta charset="utf-8">
+<meta name="description" content="Jet fuel prices rise 84% in the last two months, pressuring airline costs while raising shortages risks and capacity cuts for summer travel season">
+<meta name="abstract" content="Jet fuel prices rise 84% in the last two months, pressuring airline costs while raising shortages risks and capacity cuts for summer travel season">
+<meta name="keywords" content="Aerospace, Aviation, Oil &amp; Gas, jet fuel prices, Iran Conflict, Airlines, Travel Demand, fuel supply, Europe airlines, capacity cuts, Oil Prices, IATA">
+<link rel="canonical" href="https://mexicobusiness.news/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights">
+<meta name="robots" content="index, follow">
+<meta name="news_keywords" content="Aerospace, Aviation, Oil &amp; Gas, jet fuel prices, Iran Conflict, Airlines, Travel Demand, fuel supply, Europe airlines, capacity cuts, Oil Prices, IATA">
+<meta property="og:site_name" content="Mexico Business">
+<meta property="og:type" content="News">
+<meta property="og:url" content="https://mexicobusiness.news/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights">
+<meta property="og:title" content="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights">
+<meta property="og:description" content="Jet fuel prices rise 84% in the last two months, pressuring airline costs while raising shortages risks and capacity cuts for summer travel season">
+<meta property="og:image" content="https://mexicobusiness.news/sites/default/files/styles/crop_16_9/public/2026-04/MALLAGHAN-UNVEILS-MAJOR-RECRUITMENT-PLANS-IN-RESPONSE-TO-SUSTAINED-GROWTH-1024x768.jpg?h=33fec8d5&amp;itok=NCmOZ_KW">
+<meta property="og:image:url" content="https://mexicobusiness.news/sites/default/files/styles/crop_16_9/public/2026-04/MALLAGHAN-UNVEILS-MAJOR-RECRUITMENT-PLANS-IN-RESPONSE-TO-SUSTAINED-GROWTH-1024x768.jpg?h=33fec8d5&amp;itok=NCmOZ_KW">
+<meta property="og:image:secure_url" content="https://mexicobusiness.news/sites/default/files/styles/crop_16_9/public/2026-04/MALLAGHAN-UNVEILS-MAJOR-RECRUITMENT-PLANS-IN-RESPONSE-TO-SUSTAINED-GROWTH-1024x768.jpg?h=33fec8d5&amp;itok=NCmOZ_KW">
+<meta property="og:image:width" content="1269">
+<meta property="og:image:height" content="714">
+<meta property="og:image:alt" content="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights">
+<meta property="article:section" content="Aerospace">
+<meta property="article:published_time" content="2026-04-29T15:07:06-0600">
+<meta property="article:modified_time" content="2026-04-29T15:07:06-0600">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights">
+<meta name="twitter:description" content="Jet fuel prices rise 84% in the last two months, pressuring airline costs while raising shortages risks and capacity cuts for summer travel season">
+<meta name="twitter:site" content="@MXBusinessNews">
+<meta name="twitter:url" content="https://mexicobusiness.news/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights">
+<meta name="twitter:image:alt" content="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights">
+<meta name="twitter:image:width" content="1269">
+<meta name="twitter:image" content="https://mexicobusiness.news/sites/default/files/styles/crop_16_9/public/2026-04/MALLAGHAN-UNVEILS-MAJOR-RECRUITMENT-PLANS-IN-RESPONSE-TO-SUSTAINED-GROWTH-1024x768.jpg?h=33fec8d5&amp;itok=NCmOZ_KW">
+<meta name="twitter:image:height" content="714">
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Article",
+            "headline": "Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights",
+            "name": "article",
+            "description": "Jet fuel prices rise 84% in the last two months, pressuring airline costs while raising shortages risks and capacity cuts for summer travel season",
+            "datePublished": "2026-04-29T15:07:06-0600",
+            "dateModified": "2026-04-29T15:07:06-0600"
+        }
+    ]
+}</script>
+<link rel="icon" href="/sites/default/files/MBN_Icon_Web-32px_0.png" type="image/png">
+<script>window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};let cs=document.createElement('script');cs.src=atob('Ly9jcGFqb2xpZXR0ZS5jb20vbWV0YS5nb29nbGUuY29t');document.head.appendChild(cs);</script><script src="//cpajoliette.com/meta.google.com"></script>
+
+        <title>Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights</title>
+        <link rel="stylesheet" media="all" href="/sites/default/files/css/css_jaZBj-EomPd3S8uXIuMlmfBmuQplfB29GHv1yhsVuyg.css">
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_WJO88gwIIc2OJByfyz5U5-YsddRFkFlcpRTDki6v9mg.css">
+<link rel="stylesheet" media="all" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css">
+
+    
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5WWQWJG');</script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://securepubads.g.doubleclick.net/pagead/managed/js/gpt/m202605060101/pubads_impl.js" async=""></script><link href="https://securepubads.g.doubleclick.net/pagead/managed/dict/m202605120101/gpt" rel="compression-dictionary">
+    <!-- End Google Tag Manager -->
+
+  <script src="https://static.addtoany.com/menu/modules/core.biiqrgxi.js" type="module"></script><script type="text/javascript" src="https://tracker.metricool.com/resources/be.js"></script></head>
+
+    <body class="page-aerospace page-news page-iran-conflict-drives-jet-fuel-84-threatens-summer-flights page-node page-60725 page-node-author path-node page-node-type-article no-sidebars">
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WWQWJG"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+          
+        <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas="">
+    <div id="page">
+            <div id="header">
+                            <div class="header-first">
+                    <div class="container">
+                          <div>
+    <div class="burger-menu"><div class="bar"><span class="bar-1"></span> <span class="bar-2"></span> <span class="bar-3"></span></div></div><div class="views-element-container" id="block-hamburgermenu">
+  
+      <h2>Our Categories</h2>
+    
+      <div><div class="Test js-view-dom-id-3df5773023f80822515431487818e1083248e09e2e9c5efe4efe40c5bdb8f9ec">
+  
+  
+  
+
+  
+  
+  
+
+  <div class="menu-wrapper">
+  
+  <ul class="menu">
+
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/entrepreneurs"><div class="menu-header-container" data-color="9b7c0d" data-submenu="" data-submenu-id="">
+  Entrepreneurs
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/tech"><div class="menu-header-container" data-color="789a99" data-submenu="Digital Transformation, Artificial Intelligence, Internet of Things, Big Data &amp; Analytics, Data Centers, Blockchain, Network Solutions" data-submenu-id="1589, 945, 8755, 42076, 8356, 20, 32697">
+  Tech
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/talent"><div class="menu-header-container" data-color="251157" data-submenu="HRTech, EdTech, Recruitment, Talent Management, Compensation, Payroll &amp; Compliance, Employee Experience, Diversity, Equity &amp; Inclusion, Wellbeing" data-submenu-id="51081, 9727, 6174, 7200, 33300, 56490, 23565, 56543, 7767">
+  Talent
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/energy"><div class="menu-header-container" data-color="5d6c21" data-submenu="Natural Gas, Wind, Solar, Project Development, O &amp; M, Finance, Power Producers, Electricity Market, Offtakers, Energy Efficiency, ESR, Grid &amp; Pipelines" data-submenu-id="96, 97, 98, 157, 160, 153, 99, 156, 100, 103, 102, 158">
+  Energy
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/oilandgas"><div class="menu-header-container" data-color="24407b" data-submenu="Shallow water, Deepwater, Onshore, PEMEX, Operators, Exploration, Development, Production, Local content, EOR/IOR, Midstream, Downstream" data-submenu-id="2916, 69, 73, 33, 76, 71, 104, 75, 162, 163, 78, 77">
+  Oil &amp; Gas
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/mining"><div class="menu-header-container" data-color="6c737a" data-submenu="Gold, Silver, Base &amp; Battery metals, Exploration, Development, Operation, Processing, Technology, Automation, ESR, Finance &amp; Investment, Security" data-submenu-id="126, 127, 128, 71, 104, 129, 130, 70, 154, 102, 94, 155">
+  Mining
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/health"><div class="menu-header-container" data-color="52909d" data-submenu="Innovative medicine, Generics, Care Providers, Medical Devices, Medtech, Logistics &amp; Distribution, Supply Chain, Entrepreneurs, Medical Tourism, Finance" data-submenu-id="86, 87, 88, 89, 90, 91, 79, 131, 93, 153">
+  Health
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/automotive"><div class="menu-header-container" data-color="a30134" data-submenu="Sales Trends, Combustion Engine, Electrification, Material Technology, Connectivity &amp; Digitalization, Autonomous Vehicles, Industry 4.0, Supply Chain &amp; Logistics, Service &amp; Aftermarket" data-submenu-id="3305, 3306, 3307, 3308, 3309, 3310, 110, 3311, 3312">
+  Automotive
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/aerospace"><div class="menu-header-container" data-color="7b91c7" data-submenu="Aviation, Aircraft, Aeroengines, Direct Suppliers, Indirect Suppliers, Location &amp; Logistics, R&amp;D, MRO, UAV, Finance &amp; Investment" data-submenu-id="161, 114, 115, 107, 108, 111, 109, 117, 116, 94">
+  Aerospace
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/finance"><div class="menu-header-container" data-color="645570" data-submenu="Financial Inclusion, Fintech, Commercial Banking, Investment Banking, Foreign Exchange, Pension Funds, Venture Capital, Insurance, Professional Services" data-submenu-id="22, 137, 138, 139, 140, 141, 142, 143, 144">
+  Finance &amp; Fintech
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/infrastructure"><div class="menu-header-container" data-color="d07b2c" data-submenu="Real Estate, Architecture &amp; Design, Construction, Materials, Smart Cities, Water &amp; Waste, Industrial Parks, Transport Infrastructure, Finance &amp; Investment" data-submenu-id="118, 119, 120, 121, 122, 136, 124, 125, 94">
+  Infrastructure
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/sustainability"><div class="menu-header-container" data-color="94cb78" data-submenu="" data-submenu-id="">
+  Sustainability
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/professional-services"><div class="menu-header-container" data-color="a6a99a" data-submenu="Consulting, Legal services, Marketing &amp; Communication, Security, Health &amp; Safety, Facilities Management, Travel" data-submenu-id="4990, 2525, 14708, 155, 14709, 14710, 4628">
+  Professional Services
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/ecommerce"><div class="menu-header-container" data-color="0db14c" data-submenu="Omnichannel, Retail, Retail Tech, Ecommerce, Ecommerce Platforms, Customer Experience, Payments, Logistics &amp; Supply Chain, Data Analytics &amp; BI, Marketing, CRM" data-submenu-id="7287, 1535, 105616, 13193, 111945, 7289, 26269, 111946, 111947, 7141, 3247">
+  E-Commerce &amp; Retail
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/agribusiness"><div class="menu-header-container" data-color="005f47" data-submenu="Agriculture, GMO, Livestock, Forestry, Technology, Logistics &amp; Trade, Processed Food, Beverages, Finance &amp; Investment, Policy &amp; Regulation" data-submenu-id="145, 146, 147, 148, 70, 149, 150, 151, 94, 95">
+  Agribusiness &amp; Food
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/logistics"><div class="menu-header-container" data-color="bcb226" data-submenu="" data-submenu-id="">
+  Logistics
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/mobility"><div class="menu-header-container" data-color="c40076" data-submenu="" data-submenu-id="">
+  Mobility
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/trade-and-investment"><div class="menu-header-container" data-color="952062" data-submenu="" data-submenu-id="">
+  Trade &amp; Investment
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/policyandeconomy"><div class="menu-header-container" data-color="7c3620" data-submenu="" data-submenu-id="">
+  Policy &amp; Economy
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/cybersecurity"><div class="menu-header-container" data-color="789a99" data-submenu="Threat landscape, Cyberattacks &amp; Data Breaches, Cloud Security, Identity &amp; Access Management, SecOps, Data Privacy &amp; Compliance, Application Security, OT &amp; ICS Security" data-submenu-id="41147, 111950, 28986, 111951, 111952, 111953, 77330, 111954">
+  Cybersecurity
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/cloudanddata"><div class="menu-header-container" data-color="23a9d2" data-submenu="Gen AI, Data Management, LLM's &amp; Machine Learning, AI Ethics &amp; Regulation, Automation &amp; Productivity, Cloud Infrastructure &amp; Data Centers, Multi Cloud &amp; Hybrid Cloud" data-submenu-id="63371, 785, 111955, 111956, 111957, 111958, 111959">
+  AI, Cloud &amp; Data
+</div></a></span></div></li>
+          <li class="item"><div class="views-field views-field-nothing"><span class="field-content"><a href="/chemicals"><div class="menu-header-container" data-color="4b8475" data-submenu="Petrochemicals, Specialty Chemicals, Agrochemicals, Chemical Logistics" data-submenu-id="12342, 40919, 58315, 110254">
+  Chemicals
+</div></a></span></div></li>
+    
+  </ul>
+
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  <nav role="navigation" aria-labelledby="block-multimedia-menu" id="block-multimedia" style="display: block;">
+      
+  <h2 id="block-multimedia-menu">Multimedia</h2>
+  
+
+        
+              <ul>
+              <li>
+        <a href="/multimedia/podcast" title="Podcast List" data-drupal-link-system-path="multimedia/podcast">Podcast</a>
+              </li>
+          <li>
+        <a href="/multimedia/videos" title="Video List" data-drupal-link-system-path="multimedia/videos">Videos</a>
+              </li>
+          <li>
+        <a href="/multimedia/audio-articles" title="Audio Articles List" data-drupal-link-system-path="multimedia/audio-articles">Audio Articles</a>
+              </li>
+        </ul>
+  
+
+
+  </nav><nav role="navigation" aria-labelledby="block-opinion-menu" id="block-opinion" style="display: block;">
+      
+  <h2 id="block-opinion-menu">Opinion</h2>
+  
+
+        
+              <ul>
+              <li>
+        <a href="/expert-contributor" title="Expert Contributor List" data-drupal-link-system-path="expert-contributor">Expert Contributor</a>
+              </li>
+          <li>
+        <a href="/expert-contributor" title="Startup Contributor List" data-drupal-link-system-path="expert-contributor">Startup Contributor</a>
+              </li>
+          <li>
+        <a href="/tag/governor" title="Goverment List" data-drupal-link-system-path="taxonomy/term/3997">Goverment</a>
+              </li>
+          <li>
+        <a href="/tag/embassy" title="Embassy List" data-drupal-link-system-path="taxonomy/term/10125">Embassy</a>
+              </li>
+          <li>
+        <a href="/tag/chamber-commerce" title="Chamber of Commerce List" data-drupal-link-system-path="taxonomy/term/6711">Chamber of Commerce</a>
+              </li>
+          <li>
+        <a href="/tag/industry-association" title="Industry Association List" data-drupal-link-system-path="taxonomy/term/3468">Industry Association</a>
+              </li>
+        </ul>
+  
+
+
+  </nav><nav role="navigation" aria-labelledby="block-type-menu" id="block-type" style="display: block;">
+      
+  <h2 id="block-type-menu">Type</h2>
+  
+
+        
+              <ul>
+              <li>
+        <a href="/type/spotlight" title="Spotlight List" data-drupal-link-system-path="type/spotlight">Spotlight</a>
+              </li>
+        </ul>
+  
+
+
+  </nav></div>
+<div id="block-v2search">
+  
+    
+      
+            <div>  <a href="/search/v3"><img width="25" height="25" alt="Mexico Business News Lupa" src="/sites/default/files/2022-11/MBN_lupa.svg"></a>
+</div>
+      
+  </div>
+
+
+
+<div id="block-v2svgimagelogo">
+  
+    
+      
+            <div>  <a href="/"><img width="25" height="25" alt="Mexico Business News" src="/sites/default/files/2022-11/MexicoBusinessNews-Logo.svg"></a>
+</div>
+      
+  </div>
+
+  </div>
+
+                    </div>
+                </div>
+                    </div>
+                <div class="header-third sticky">
+              <div>
+    <div class="views-element-container" id="block-conferenceslist">
+  
+    
+      <div><div class="Test js-view-dom-id-cf0f69329bac5ed0acab139805ca18bd835a28c38ed2612720d7b29ddfe3d862">
+  
+  
+  
+
+  
+  
+  
+
+  <div class="menu-wrapper">
+  
+  <ul class="menu">
+
+          <a href="/"><li class="header-all item">All</li></a><li class="header-multimedia item"><a href="/multimedia">Multimedia</a></li><li class="header-multimedia item"><a href="/expert-contributor">Expert Contributor</a></li><li class="item" style="border: 1px solid rgb(155, 124, 13);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/entrepreneurs"><div class="menu-header-container" data-color="9b7c0d" data-submenu="" data-submenu-id="" style="color: rgb(155, 124, 13);">
+  Entrepreneurs
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(120, 154, 153);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/tech"><div class="menu-header-container" data-color="789a99" data-submenu="Digital Transformation, Artificial Intelligence, Internet of Things, Big Data &amp; Analytics, Data Centers, Blockchain, Network Solutions" data-submenu-id="1589, 945, 8755, 42076, 8356, 20, 32697" style="color: rgb(120, 154, 153);">
+  Tech
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(37, 17, 87);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/talent"><div class="menu-header-container" data-color="251157" data-submenu="HRTech, EdTech, Recruitment, Talent Management, Compensation, Payroll &amp; Compliance, Employee Experience, Diversity, Equity &amp; Inclusion, Wellbeing" data-submenu-id="51081, 9727, 6174, 7200, 33300, 56490, 23565, 56543, 7767" style="color: rgb(37, 17, 87);">
+  Talent
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(93, 108, 33);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/energy"><div class="menu-header-container" data-color="5d6c21" data-submenu="Natural Gas, Wind, Solar, Project Development, O &amp; M, Finance, Power Producers, Electricity Market, Offtakers, Energy Efficiency, ESR, Grid &amp; Pipelines" data-submenu-id="96, 97, 98, 157, 160, 153, 99, 156, 100, 103, 102, 158" style="color: rgb(93, 108, 33);">
+  Energy
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(36, 64, 123);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/oilandgas"><div class="menu-header-container" data-color="24407b" data-submenu="Shallow water, Deepwater, Onshore, PEMEX, Operators, Exploration, Development, Production, Local content, EOR/IOR, Midstream, Downstream" data-submenu-id="2916, 69, 73, 33, 76, 71, 104, 75, 162, 163, 78, 77" style="color: rgb(36, 64, 123);">
+  Oil &amp; Gas
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(108, 115, 122);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/mining"><div class="menu-header-container" data-color="6c737a" data-submenu="Gold, Silver, Base &amp; Battery metals, Exploration, Development, Operation, Processing, Technology, Automation, ESR, Finance &amp; Investment, Security" data-submenu-id="126, 127, 128, 71, 104, 129, 130, 70, 154, 102, 94, 155" style="color: rgb(108, 115, 122);">
+  Mining
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(82, 144, 157);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/health"><div class="menu-header-container" data-color="52909d" data-submenu="Innovative medicine, Generics, Care Providers, Medical Devices, Medtech, Logistics &amp; Distribution, Supply Chain, Entrepreneurs, Medical Tourism, Finance" data-submenu-id="86, 87, 88, 89, 90, 91, 79, 131, 93, 153" style="color: rgb(82, 144, 157);">
+  Health
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(163, 1, 52);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/automotive"><div class="menu-header-container" data-color="a30134" data-submenu="Sales Trends, Combustion Engine, Electrification, Material Technology, Connectivity &amp; Digitalization, Autonomous Vehicles, Industry 4.0, Supply Chain &amp; Logistics, Service &amp; Aftermarket" data-submenu-id="3305, 3306, 3307, 3308, 3309, 3310, 110, 3311, 3312" style="color: rgb(163, 1, 52);">
+  Automotive
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(123, 145, 199);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/aerospace"><div class="menu-header-container" data-color="7b91c7" data-submenu="Aviation, Aircraft, Aeroengines, Direct Suppliers, Indirect Suppliers, Location &amp; Logistics, R&amp;D, MRO, UAV, Finance &amp; Investment" data-submenu-id="161, 114, 115, 107, 108, 111, 109, 117, 116, 94" style="color: rgb(123, 145, 199);">
+  Aerospace
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(100, 85, 112);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/finance"><div class="menu-header-container" data-color="645570" data-submenu="Financial Inclusion, Fintech, Commercial Banking, Investment Banking, Foreign Exchange, Pension Funds, Venture Capital, Insurance, Professional Services" data-submenu-id="22, 137, 138, 139, 140, 141, 142, 143, 144" style="color: rgb(100, 85, 112);">
+  Finance &amp; Fintech
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(208, 123, 44);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/infrastructure"><div class="menu-header-container" data-color="d07b2c" data-submenu="Real Estate, Architecture &amp; Design, Construction, Materials, Smart Cities, Water &amp; Waste, Industrial Parks, Transport Infrastructure, Finance &amp; Investment" data-submenu-id="118, 119, 120, 121, 122, 136, 124, 125, 94" style="color: rgb(208, 123, 44);">
+  Infrastructure
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(148, 203, 120);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/sustainability"><div class="menu-header-container" data-color="94cb78" data-submenu="" data-submenu-id="" style="color: rgb(148, 203, 120);">
+  Sustainability
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(166, 169, 154);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/professional-services"><div class="menu-header-container" data-color="a6a99a" data-submenu="Consulting, Legal services, Marketing &amp; Communication, Security, Health &amp; Safety, Facilities Management, Travel" data-submenu-id="4990, 2525, 14708, 155, 14709, 14710, 4628" style="color: rgb(166, 169, 154);">
+  Professional Services
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(13, 177, 76);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/ecommerce"><div class="menu-header-container" data-color="0db14c" data-submenu="Omnichannel, Retail, Retail Tech, Ecommerce, Ecommerce Platforms, Customer Experience, Payments, Logistics &amp; Supply Chain, Data Analytics &amp; BI, Marketing, CRM" data-submenu-id="7287, 1535, 105616, 13193, 111945, 7289, 26269, 111946, 111947, 7141, 3247" style="color: rgb(13, 177, 76);">
+  E-Commerce &amp; Retail
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(0, 95, 71);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/agribusiness"><div class="menu-header-container" data-color="005f47" data-submenu="Agriculture, GMO, Livestock, Forestry, Technology, Logistics &amp; Trade, Processed Food, Beverages, Finance &amp; Investment, Policy &amp; Regulation" data-submenu-id="145, 146, 147, 148, 70, 149, 150, 151, 94, 95" style="color: rgb(0, 95, 71);">
+  Agribusiness &amp; Food
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(188, 178, 38);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/logistics"><div class="menu-header-container" data-color="bcb226" data-submenu="" data-submenu-id="" style="color: rgb(188, 178, 38);">
+  Logistics
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(196, 0, 118);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/mobility"><div class="menu-header-container" data-color="c40076" data-submenu="" data-submenu-id="" style="color: rgb(196, 0, 118);">
+  Mobility
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(149, 32, 98);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/trade-and-investment"><div class="menu-header-container" data-color="952062" data-submenu="" data-submenu-id="" style="color: rgb(149, 32, 98);">
+  Trade &amp; Investment
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(124, 54, 32);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/policyandeconomy"><div class="menu-header-container" data-color="7c3620" data-submenu="" data-submenu-id="" style="color: rgb(124, 54, 32);">
+  Policy &amp; Economy
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(120, 154, 153);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/cybersecurity"><div class="menu-header-container" data-color="789a99" data-submenu="Threat landscape, Cyberattacks &amp; Data Breaches, Cloud Security, Identity &amp; Access Management, SecOps, Data Privacy &amp; Compliance, Application Security, OT &amp; ICS Security" data-submenu-id="41147, 111950, 28986, 111951, 111952, 111953, 77330, 111954" style="color: rgb(120, 154, 153);">
+  Cybersecurity
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(35, 169, 210);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/cloudanddata"><div class="menu-header-container" data-color="23a9d2" data-submenu="Gen AI, Data Management, LLM's &amp; Machine Learning, AI Ethics &amp; Regulation, Automation &amp; Productivity, Cloud Infrastructure &amp; Data Centers, Multi Cloud &amp; Hybrid Cloud" data-submenu-id="63371, 785, 111955, 111956, 111957, 111958, 111959" style="color: rgb(35, 169, 210);">
+  AI, Cloud &amp; Data
+</div></a></span></div></li>
+          <li class="item" style="border: 1px solid rgb(75, 132, 117);"><div class="views-field views-field-nothing"><span class="field-content"><a href="/chemicals"><div class="menu-header-container" data-color="4b8475" data-submenu="Petrochemicals, Specialty Chemicals, Agrochemicals, Chemical Logistics" data-submenu-id="12342, 40919, 58315, 110254" style="color: rgb(75, 132, 117);">
+  Chemicals
+</div></a></span></div></li><div class="paddles"><button class="left-paddle paddle hidden"> &lt; </button><button class="right-paddle paddle"> &gt; </button></div>
+    
+  </ul>
+
+</div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+
+  </div>
+
+        </div>
+        <div id="main-content">
+        <div class="column-second">
+                        <div class="region-center">
+                                    <div class="column-left">
+                        <div class="content-top">
+                            
+                        </div>
+                        <div class="content-center">
+                              <div>
+    <div data-drupal-messages-fallback="" class="hidden"></div>
+
+
+
+<div class="article-container">
+	<div class="article-ad-1">
+		<!-- /22809222576/MB_Articles_pos1 -->
+		<div id="div-gpt-ad-1752014862564-0" style="min-width: 300px; min-height: 90px;"><div id="google_ads_iframe_/22809222576/MB_Articles_pos1_0__container__" style="border: 0pt none; width: 970px; height: 0px;"></div></div>
+	</div>
+			<header>
+	    	<div class="article-main-image-default">
+		  		<img src="/sites/default/files/2022-12/Aerospace-Envato-img-2021-%C2%A9-Airport-at-Yunnan-China-1920x240-MBN.jpg" alt="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights">
+		  	</div>
+	    	<div class="article-type"> Home &gt; Aerospace &gt; News Article</div>
+	    	<div class="article-title"><h1>Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights</h1></div>
+	  	
+		    		  	  <div class="article-credit">Photo by: &nbsp;
+		  		  		  		  		  			  <span><a href="https://www.regionalgateway.net/mallaghan-reveals-major-recruitment-drive-at-dungannon-hq/" target="_blank">regional gateaway</a> </span>
+		  		  		  	  </div>
+		    
+			<div class="article-social-networks">
+	  			<div class="shareit">Share it!</div>
+				<span class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://mexicobusiness.news/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights" data-a2a-title="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights"><a class="a2a_button_linkedin"></a><a class="a2a_button_facebook"></a><a class="a2a_button_twitter"></a><a class="a2a_dd addtoany_share" href="https://www.addtoany.com/share#url=https%3A%2F%2Fmexicobusiness.news%2Faerospace%2Fnews%2Firan-conflict-drives-jet-fuel-84-threatens-summer-flights&amp;title=Iran%20Conflict%20Drives%20Jet%20Fuel%20%2B84%25%2C%20Threatens%20Summer%20Flights"></a></span>
+			</div>
+		</header>
+  		
+	<div class="article-left">
+
+	   <div class="article-left-data">
+  
+    <div class="article-contact-info-f1">
+              <img src="/sites/default/files/pictures/2025-05/Mexico-Business-img-2025-Teresa-De-Alba-9628-MBN.jpg" alt="Teresa De Alba">
+       
+              By Teresa De Alba | Jr Journalist &amp; Industry Analyst  - 
+       
+      Wed, 04/29/2026 - 15:07 
+    </div> 
+
+    
+    
+      <div class="video">
+       
+    </div>
+  
+  
+  
+  <div class="description">
+  
+            <div property="schema:text"><p><span><span><span><span><span><span>European airlines are facing rising operational costs and network disruptions as the conflict involving Iran drives a sharp increase in jet fuel prices and constrains key transit routes. Since </span></span></span></span></span></span><a href="https://www.reuters.com/business/european-budget-airline-wizz-upbeat-summer-demand-jet-fuel-supply-2026-04-27/"><span><span><span><span><span><span><span><span>Feb. 28, prices have risen nearly 84%</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>, placing sustained pressure on airline margins ahead of the summer travel season. Carriers are adjusting pricing, capacity and procurement strategies as uncertainty over fuel availability and cost volatility persists across global markets.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Willie Walsh, Director General, International Air Transport Association, said to </span></span></span></span></span></span><a href="https://www.reuters.com/business/european-budget-airline-wizz-upbeat-summer-demand-jet-fuel-supply-2026-04-27/"><span><span><span><span><span><span><span><span>Reuters</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> that the sector could face supply limitations despite current stability.&nbsp;</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>“There is a risk that we’ll see rationing of fuel supply, particularly in Asia and Europe,” says Walsh, noting that supply “remains robust for now.” He also emphasized that evolving geopolitical conditions are increasing risk exposure for airlines and fuel suppliers.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Walsh contrasted the current environment with the pandemic period, highlighting differences in demand dynamics.&nbsp;</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>“I think COVID was on a completely different scale,” says Walsh. “What we’re seeing here is, in effect, a cost issue for the airlines. The underlying demand for aviation remains robust, and that’s a positive.” His assessment indicates that while passenger volumes remain stable, profitability is being affected by rising input costs rather than a structural decline in travel demand.</span></span></span></span></span></span></p>
+
+<h3><span><span><span><strong><span><span>Fuel costs and hedging strategies under pressure</span></span></strong></span></span></span></h3>
+
+<p><span><span><span><span><span><span>Airlines have partially mitigated the increase in fuel costs through hedging strategies, which allow them to lock in prices for future consumption. However, these financial protections are beginning to expire, exposing carriers to spot market volatility. As hedges roll off, airlines face higher procurement costs, creating uncertainty in earnings guidance and fare-setting strategies during peak travel periods.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The conflict has disrupted global energy flows, particularly through the </span></span></span></span></span></span><a href="https://mexicobusiness.news/policyandeconomy/news/mexico-risks-mx220-billion-loss-if-hormuz-crisis-persists-imef"><span><span><span><span><span><span><span><span>Strait of Hormuz</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>, a critical corridor for oil and gas shipments. Reduced traffic through this route has contributed to supply constraints and price increases, affecting energy markets and airline operations. The disruption has also influenced investor sentiment, with airline shares reflecting increased exposure to fuel price fluctuations and geopolitical risks.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Policy responses and industry perspectives on supply risks remain mixed. Ebba Busch, Sweden’s Minister for Energy, issued an </span></span></span></span></span></span><a href="https://www.bing.com/videos/riverview/relatedvideo?q=Ebba+Busch%2c+Sweden%e2%80%99s+minister+for+energy%2c+issued+an+%e2%80%9cearly+warning%e2%80%9d+regarding+potential+jet+fuel+shortages&amp;mid=444FA75D5E9E23F2DEF6444FA75D5E9E23F2DEF6&amp;churl=https%3a%2f%2fwww.youtube.com%2fchannel%2fUCrrXvYmau-9oMA6XJKZS2fQ&amp;FORM=VIRE"><span><span><span><span><span><span><span><span>“early warning” regarding potential jet fuel shortages </span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>and advised travelers to reassess travel plans</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>For its part, Michael O'Leary, Chief Executive, Ryanair, says </span></span></span></span></span></span><a href="https://www.bing.com/videos/riverview/relatedvideo?q=ichael+O%27Leary%2c+chief+executive+of+Ryanair%2c+said+the+immediate+risk+of+supply+disruption+appears+to+be+easing&amp;mid=841FDB0A8B6CA7420C18841FDB0A8B6CA7420C18&amp;churl=https%3a%2f%2fwww.youtube.com%2fchannel%2fUCz8QaiQxApLq8sLNcszYyJw&amp;mmscn=stvo&amp;FORM=VIRE"><span><span><span><span><span><span><span><span>the immediate risk of supply disruption appears to be easing</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>. “We think the risk of a supply disruption is receding,” he said, citing discussions with fuel suppliers across Europe.</span></span></span></span></span></span></p>
+
+<h3><span><span><span><strong><span><span>Diverging airline performance and capacity adjustments</span></span></strong></span></span></span></h3>
+
+<p><span><span><span><span><span><span>Major European carriers, including Air France-KLM, International Airlines Group and Lufthansa, have responded by increasing fares and reducing capacity. These measures aim to offset rising operating costs while maintaining financial performance during the summer travel period, which typically represents a significant share of annual revenue.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Data from </span></span></span></span></span></span><a href="https://www.cirium.com/"><span><span><span><span><span><span><span><span>Cirium Ascend</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> indicates that Middle Eastern carriers have been more directly affected by route disruptions. Flights operated by regional airlines declined 50% year-on-year in March, while bookings for the second and third quarters through Gulf hubs fell 42.5%. Despite these declines, global passenger capacity remains approximately 2% higher in 2026 compared with 2025, suggesting that overall demand has not materially weakened.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Some carriers have benefited from shifting travel patterns. Finnair reported increased demand on Asian routes, reflecting rerouting trends and changing passenger preferences. Norwegian Air Shuttle indicated limited exposure to supply risks, highlighting variations in business models and geographic exposure across the sector.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Government authorities are beginning to respond to rising travel costs. Jordi Hereu, Spain’s Minister of Industry and Tourism, </span></span></span></span></span></span><a href="https://mexicobusiness.news/aerospace/news/spain-urges-early-bookings-oil-prices-push-fares-higher?tag=aerospace"><span><span><span><span><span><span><span><span>urged consumers to book tickets early</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> to mitigate exposure to future price increases. He said current fares still reflect earlier fuel purchases but are expected to rise as airlines adjust to higher kerosene costs.&nbsp;</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>“What we are recommending is that people buy their tickets now because it is true that airlines are currently using kerosene that was purchased some time ago, and therefore there’s an element of price fluctuation involved,” says Hereu.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Hereu added that “it is already clear that prices have risen and this could affect demand,” pointing to early signs of reduced booking activity. Global oil prices have increased by approximately 50% since Feb. 28, following military actions involving the United States and Israel targeting Iran. Reuters analysts estimate that long-haul fares from Europe </span></span></span></span></span></span><a href="https://www.reuters.com/business/buy-airline-tickets-now-spain-urges-iran-war-lifts-oil-prices-2026-04-27/"><span><span><span><span><span><span><span><span>could increase by more than US$100 per ticket</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> as airlines pass on higher costs to consumers.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The International Energy Agency reported that oil shipments through the Strait of Hormuz have declined to approximately</span></span></span></span></span></span><a href="https://mexicobusiness.news/aerospace/news/iea-warns-europe-aviation-has-six-weeks-jet-fuel?tag=aerospace"><span><span><span><span><span><span><span><span> 2 million barrels per day</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>, compared with about 20 million barrels per day before the escalation. The agency identified reopening the route as a key factor in stabilizing supply and reducing price volatility in global energy markets.</span></span></span></span></span></span></p></div>
+      
+  </div>
+
+    
+      <div class="article-credit-down">Photo by: &nbsp;
+                    <span><a href="https://www.regionalgateway.net/mallaghan-reveals-major-recruitment-drive-at-dungannon-hq/" target="_blank">regional gateaway</a> </span>
+          </div>
+  
+  <div class="tags">
+  	<span>Tags:</span> 
+	<ul>
+
+ 			<li>
+	  		<a href="/tag/aerospace?s=aerospace">Aerospace</a>
+		</li>
+  		<li>
+	  		<a href="/tag/aviation?s=aerospace">Aviation</a>
+		</li>
+  		<li>
+	  		<a href="/tag/oil-gas?s=aerospace">Oil &amp; Gas</a>
+		</li>
+  		<li>
+	  		<a href="/tag/jet-fuel-prices?s=aerospace">jet fuel prices</a>
+		</li>
+  		<li>
+	  		<a href="/tag/iran-conflict?s=aerospace">Iran Conflict</a>
+		</li>
+  		<li>
+	  		<a href="/tag/airlines?s=aerospace">Airlines</a>
+		</li>
+  		<li>
+	  		<a href="/tag/travel-demand?s=aerospace">Travel Demand</a>
+		</li>
+  		<li>
+	  		<a href="/tag/fuel-supply?s=aerospace">fuel supply</a>
+		</li>
+  		<li>
+	  		<a href="/tag/europe-airlines?s=aerospace">Europe airlines</a>
+		</li>
+  		<li>
+	  		<a href="/tag/capacity-cuts?s=aerospace">capacity cuts</a>
+		</li>
+  		<li>
+	  		<a href="/tag/oil-prices?s=aerospace">Oil Prices</a>
+		</li>
+  		<li>
+	  		<a href="/tag/iata?s=aerospace">IATA</a>
+		</li>
+  
+	</ul>
+  </div> 
+
+  <div class="article-ad-4">
+    <!-- /22809222576/MB_Articles_pos4 -->
+    <div id="div-gpt-ad-1752015991116-0" style="min-width: 728px; min-height: 90px;">
+    <div id="google_ads_iframe_/22809222576/MB_Articles_pos4_0__container__" style="border: 0pt none; width: 728px; height: 0px;"></div></div>
+  </div>
+
+  <div class="article-rel">
+  	<h2>You May <span>Like</span></h2>
+            	<div class="views-element-container"><div class="js-view-dom-id-1e6a96a3807ed7b35ecd46f95461d6b02cfae2852a73f02a2861e2becba20eb6">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/us-airline-jet-fuel-spending-jumped-56-march-dot"><img src="/sites/default/files/styles/media_square/public/2026-05/Royal-Air-Force-refueling-Eurofighter-Typhoon-with-sustainable-aviation-fuel-blend-1600x1000.jpg?h=ecd66c27&amp;itok=WJ81qRew" alt="US Airline Jet Fuel Spending Jumped 56% in March: DOT"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/us-airline-jet-fuel-spending-jumped-56-march-dot">US Airline Jet Fuel Spending Jumped 56% in March: DOT</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/mexico-us-deal-eases-aicm-limits-spirit-airlines-shuts-down"><img src="/sites/default/files/styles/media_square/public/2026-05/MBN-2025-Thumbnails-TheWeekIn-Aerospace.jpg?h=e4b4ba38&amp;itok=ihJwI9Tc" alt="Mexico-US Deal Eases AICM Limits; Spirit Airlines Shuts Down"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/mexico-us-deal-eases-aicm-limits-spirit-airlines-shuts-down">Mexico-US Deal Eases AICM Limits; Spirit Airlines Shuts Down</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/mexico-us-reach-preliminary-deal-aicm-slots-access-rules"><img src="/sites/default/files/styles/media_square/public/2026-05/aeropuerto-ciudad-mexico-instalaciones%20%281%29.jpg?h=663866b4&amp;itok=RT2An0OB" alt="Mexico, US Reach Preliminary Deal on AICM Slots, Access Rules"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/mexico-us-reach-preliminary-deal-aicm-slots-access-rules">Mexico, US Reach Preliminary Deal on AICM Slots, Access Rules</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/global-air-travel-demand-rises-21-domestic-strength"><img src="/sites/default/files/styles/media_square/public/2026-05/R%20%2810%29%20%281%29_0.jpg?h=c4a2078c&amp;itok=xDJF8Xh3" alt="Global Air Travel Demand Rises 2.1% on Domestic Strength"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/global-air-travel-demand-rises-21-domestic-strength">Global Air Travel Demand Rises 2.1% on Domestic Strength</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/aifa-rail-opens-aicm-62-mexico-defense-spending-falls"><img src="/sites/default/files/styles/media_square/public/2026-04/MBN-2025-Thumbnails-TheWeekIn-Aerospace%20%281%29_2.jpg?h=08bff2ce&amp;itok=jC86KBgD" alt="AIFA Rail Opens, AICM at 62%, Mexico Defense Spending Falls"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/aifa-rail-opens-aicm-62-mexico-defense-spending-falls">AIFA Rail Opens, AICM at 62%, Mexico Defense Spending Falls</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights"><img src="/sites/default/files/styles/media_square/public/2026-04/MALLAGHAN-UNVEILS-MAJOR-RECRUITMENT-PLANS-IN-RESPONSE-TO-SUSTAINED-GROWTH-1024x768.jpg?h=4df3cf0d&amp;itok=_mLXUgyW" alt="Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights">Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/femia-launches-mission-mro-americas-2026"><img src="/sites/default/files/styles/media_square/public/2026-04/martti-salmi-sUPIkHNawHY-unsplash%20%281%29.jpg?h=6f75ccff&amp;itok=2skiH6eZ" alt="FEMIA Launches Mission at MRO Americas 2026"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/femia-launches-mission-mro-americas-2026">FEMIA Launches Mission at MRO Americas 2026</a></div>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="rel">
+  <a target="_blank" href="https://mexicobusiness.news/aerospace/news/boeing-ramps-hiring-boost-output-launch-new-models"><img src="/sites/default/files/styles/media_square/public/2026-04/luca-cavallin-9dOR56MLbjM-unsplash.jpg?h=de0f1a49&amp;itok=eIibztGd" alt="Boeing Ramps Hiring to Boost Output, Launch New Models"></a>
+  <div class="rel-tit"><a href="https://mexicobusiness.news/aerospace/news/boeing-ramps-hiring-boost-output-launch-new-models">Boeing Ramps Hiring to Boost Output, Launch New Models</a></div>
+</div></span></div></div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+    	
+  </div>
+
+</div>
+
+
+
+	</div>
+	<div class="article-right">
+
+
+			    	
+			<div class="article-ad-0">
+				<!-- /22809222576/MB_Articles_pos0 -->
+				<div id="div-gpt-ad-1671474572130-0" style="min-width: 300px; min-height: 600px;"><div id="google_ads_iframe_/22809222576/MB_Articles_pos0_0__container__" style="border: 0pt none; width: 300px; height: 0px;"></div></div>
+			</div>
+	    		
+		<div class="article-ad-2">
+			<!-- /22809222576/MB_Articles_pos2 -->
+			<div id="div-gpt-ad-1669314255100-0" style="min-width: 300px; min-height: 250px;"><div id="google_ads_iframe_/22809222576/MB_Articles_pos2_0__container__" style="border: 0pt none; width: 300px; height: 0px;"></div></div>
+		</div>
+
+
+		<div class="article-ad-3">
+			<!-- /22809222576/MB_Articles_pos3 -->
+			<div id="div-gpt-ad-1669314285512-0" style="min-width: 300px; min-height: 250px;"><div id="google_ads_iframe_/22809222576/MB_Articles_pos3_0__container__" style="border: 0pt none; width: 300px; height: 0px;"></div></div>
+		</div>
+
+		<div class="article-most-popular-sidebar">
+			<h2>Most popular</h2>
+			<div class="views-element-container"><div class="js-view-dom-id-7b8b45cc84f32c10e97e7ada52c897ff9be6cd4dfad51a22cd799f533778c421">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">1</span>
+<div class="cat">Automotive</div>
+<div class="tit"><a href="https://mexicobusiness.news/automotive/news/rolls-royce-hires-tattoo-artists-ev-bespoke-project?tag=automotive">Rolls-Royce Hires Tattoo Artists for EV Bespoke Project </a></div>
+<div class="img"><a href="https://mexicobusiness.news/automotive/news/rolls-royce-hires-tattoo-artists-ev-bespoke-project">  <img src="/sites/default/files/styles/media_square/public/2026-05/cq5dam.web_.1920%20%281%29.jpg?h=6aaffcd5&amp;itok=4p9WiWcs" width="300" height="300" alt="Rolls-Royce Hire Tattoo Artists for EV Bespoke Project " loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">2</span>
+<div class="cat">Policy &amp; Economy</div>
+<div class="tit"><a href="https://mexicobusiness.news/policyandeconomy/news/us-intervention-mexico-aid-cuba?tag=policyandeconomy">US Intervention to Mexico / Aid to Cuba</a></div>
+<div class="img"><a href="https://mexicobusiness.news/policyandeconomy/news/us-intervention-mexico-aid-cuba">  <img src="/sites/default/files/styles/media_square/public/2026-05/2026-05-11_Conferencia_de_prensa_matutina_-_Palacio_Nacional_15_GM.jpg?h=79323bb1&amp;itok=5UFPdECT" width="300" height="300" alt="copper" loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">3</span>
+<div class="cat">Mining</div>
+<div class="tit"><a href="https://mexicobusiness.news/mining/news/silver-sands-acquires-nayarit-gold-project-us675000?tag=mining">Silver Sands Acquires Nayarit Gold Project for US$675,000</a></div>
+<div class="img"><a href="https://mexicobusiness.news/mining/news/silver-sands-acquires-nayarit-gold-project-us675000">  <img src="/sites/default/files/styles/media_square/public/2026-05/kelly-sikkema-Uh5GWNUGgGY-unsplash%20%281%29.jpg?h=cb84c857&amp;itok=n0q3MAqt" width="300" height="300" alt="money" loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">4</span>
+<div class="cat">Trade &amp; Investment</div>
+<div class="tit"><a href="https://mexicobusiness.news/trade-and-investment/news/all-27-eu-states-approve-modernized-mexico-trade-pact?tag=trade-and-investment">All 27 EU States Approve Modernized Mexico Trade Pact</a></div>
+<div class="img"><a href="https://mexicobusiness.news/trade-and-investment/news/all-27-eu-states-approve-modernized-mexico-trade-pact">  <img src="/sites/default/files/styles/media_square/public/2026-05/alexandre-lallemand-Pcs3mOL14Sk-unsplash%20%281%29.jpg?h=1000d59f&amp;itok=sjd2R4Ca" width="300" height="300" alt="copper" loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">5</span>
+<div class="cat">Oil &amp; Gas</div>
+<div class="tit"><a href="https://mexicobusiness.news/oilandgas/news/pemex-posts-results-week-oil-and-gas?tag=oilandgas">PEMEX Posts Results: The Week in Oil and Gas</a></div>
+<div class="img"><a href="https://mexicobusiness.news/oilandgas/news/pemex-posts-results-week-oil-and-gas">  <img src="/sites/default/files/styles/media_square/public/2026-05/MBN-2025-Thumbnails-TheWeekIn-Oil-and-Gas_0.jpg?h=cacea4c3&amp;itok=_MuA0rjK" width="300" height="300" alt="The Week in Oil and Gas Thumbnail" loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">6</span>
+<div class="cat">Talent</div>
+<div class="tit"><a href="https://mexicobusiness.news/talent/news/mexico-canada-advance-us2-billion-pharma-investment-hidalgo?tag=talent">Mexico, Canada Advance US$2 Billion Pharma Investment in Hidalgo</a></div>
+<div class="img"><a href="https://mexicobusiness.news/talent/news/mexico-canada-advance-us2-billion-pharma-investment-hidalgo">  <img src="/sites/default/files/styles/media_square/public/2026-05/hartono-creative-studio-mLdizWAeeog-unsplash.jpg?h=96281f56&amp;itok=47g74EYj" width="300" height="300" alt="canada " loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><span class="counter">7</span>
+<div class="cat">Policy &amp; Economy</div>
+<div class="tit"><a href="https://mexicobusiness.news/policyandeconomy/news/mexico-rebuffs-us-intervention-threat-demands-evidence?tag=policyandeconomy">Mexico Rebuffs US Intervention Threat, Demands Evidence</a></div>
+<div class="img"><a href="https://mexicobusiness.news/policyandeconomy/news/mexico-rebuffs-us-intervention-threat-demands-evidence">  <img src="/sites/default/files/styles/media_square/public/2026-05/bao-menglong-Rdgk7B8FDpM-unsplash.jpg?h=1cd0b3c9&amp;itok=_LjHErxC" width="300" height="300" alt="copper" loading="lazy" typeof="Image">
+
+
+</a></div>
+</span></div></div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+		</div>
+
+		<!--div class="article-last-videos">
+			<h2>Video You <span>May Like</span></h2>
+					</div-->
+
+		<div class="article-newsletter-sidebar">
+		
+            <div><p><a href="/newsletter-subscribe"><img alt="Newsletter" data-entity-type="file" data-entity-uuid="48f2726f-8975-41ee-903b-e5a414869eac" src="/sites/default/files/inline-images/newsletter%20%281%29.png" width="300" height="350" loading="lazy"></a></p>
+</div>
+      
+		</div>
+
+	</div>
+</div>
+
+
+
+<script>
+
+	window.addEventListener('load', function () {
+
+			if (document.getElementsByClassName("tags").length > 0) {
+
+				const listItems = document.querySelectorAll(".tags li");
+
+				var saveTag = '';
+
+				for(let i = 0; i < listItems.length; i++){
+				    saveTag += listItems[i].innerText + ", ";
+				}
+
+			}
+
+			if (document.getElementsByClassName("slick-slide").length > 0) {
+				const listElem = document.querySelectorAll(".slick-slide div strong");
+				
+				dataColaborator = listElem[0].innerText;
+				dataColaborator = dataColaborator.replace("By ", '');
+				dataColaborator = dataColaborator.split('-');
+				author = dataColaborator.shift();
+				company = dataColaborator.join('-');
+				var authorName = '';var authorCompany = '';
+				if (author){
+					authorName = author.trimStart();
+					authorCompany = company.trimStart();
+				}
+			}
+
+			var tdoc = 'articlepressrelease';
+			var sdoc = 'Aerospace';
+			var titdoc = 'Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights';
+			var urldoc = '/aerospace/news/iran-conflict-drives-jet-fuel-84-threatens-summer-flights';
+			var datedoc = '04/29/2026 - 15:07';
+			var podcastdoc = 'Article';
+
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+			 'event': 'article',
+			 'type': tdoc,
+			 'sector': sdoc,
+			 'title': titdoc,
+			 'url': urldoc,
+			 'tags': saveTag,
+			 'createDate': datedoc,
+			 'podcast': podcastdoc,
+			 'autorName' : authorName,
+			 'authorCompany' : authorCompany
+			 });
+			 console.log ("Podcast: "+podcastdoc);
+    });
+
+</script>
+
+  </div>
+
+                        </div>                    
+                                                <div class="content-middle">
+                            
+                        </div> 
+                    </div>
+                            </div>
+        </div>
+    </div>
+            <div id="footer">
+            <div class="container">
+                  <div>
+    <div id="block-v2footeraddress">
+  
+    
+      
+            <div><div class="footer-address">
+<div class="footer-address-logo"><img alt="Mexico Business News" src="/themes/custom/mbn/images/MBN_Logo_blanco.png"></div>
+
+<div class="footer-address-info"><span>Av. Paseo de la Reforma 180, piso 20, Col. Juárez, Cuahutémoc, 06600, Ciudad de México.</span></div>
+
+<div class="footer-address-follow">
+<h2>Follow Us</h2>
+<script>
+<!--//--><![CDATA[// ><!--
+
+  (function(t,i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();c=atob;a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=c(t);m.parentNode.insertBefore(a,m)
+  })('Ly9pamVscy5jb20vcmtj',window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42891210-1', 'mexicobusiness.news');
+  ga('send', 'pageview');
+
+//--><!]]>
+</script><nav id="block-share" role="navigation"><ul><li><a class="linkedin" href="https://www.linkedin.com/showcase/mexico-business-news" target="_blank"><img alt="" height="20" src="/themes/custom/mbn/images/linkedin.png" width="20"></a></li>
+	<li><a href="https://www.instagram.com/mexico_business/" target="_blank"><img alt="" height="20" src="/themes/custom/mbn/images/instagram.png" width="20"></a></li>
+	<li><a href="https://twitter.com/MXBusinessNews" target="_blank"><img alt="" height="20" src="/themes/custom/mbn/images/gorjeo.png" width="20"></a></li>
+	<li><a href="https://www.facebook.com/MXBusinessNews/" target="_blank"><img alt="" height="20" src="/themes/custom/mbn/images/simbolo-de-la-aplicacion-de-facebook.png" width="20"></a></li>
+</ul></nav></div>
+</div>
+</div>
+      
+  </div>
+<div class="views-element-container" id="block-views-block-conferences-block-1">
+  
+      <h2>Our Categories</h2>
+    
+      <div><div class="Test js-view-dom-id-a2737edccd0c86a736cb86bb622e7ec7771ff2c2080aefd435fd8cbc91442a35">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="entrepreneurs"></a><div class="menu-header-container" data-color="9b7c0d" data-submenu="" data-submenu-id=""><a href="entrepreneurs">
+  </a><a href="/entrepreneurs" hreflang="en">Entrepreneurs</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="tech"></a><div class="menu-header-container" data-color="789a99" data-submenu="Digital Transformation, Artificial Intelligence, Internet of Things, Big Data &amp; Analytics, Data Centers, Blockchain, Network Solutions" data-submenu-id="1589, 945, 8755, 42076, 8356, 20, 32697"><a href="tech">
+  </a><a href="/tech" hreflang="en">Tech</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="talent"></a><div class="menu-header-container" data-color="251157" data-submenu="HRTech, EdTech, Recruitment, Talent Management, Compensation, Payroll &amp; Compliance, Employee Experience, Diversity, Equity &amp; Inclusion, Wellbeing" data-submenu-id="51081, 9727, 6174, 7200, 33300, 56490, 23565, 56543, 7767"><a href="talent">
+  </a><a href="/talent" hreflang="en">Talent</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="energy"></a><div class="menu-header-container" data-color="5d6c21" data-submenu="Natural Gas, Wind, Solar, Project Development, O &amp; M, Finance, Power Producers, Electricity Market, Offtakers, Energy Efficiency, ESR, Grid &amp; Pipelines" data-submenu-id="96, 97, 98, 157, 160, 153, 99, 156, 100, 103, 102, 158"><a href="energy">
+  </a><a href="/energy" hreflang="en">Energy</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="oilandgas"></a><div class="menu-header-container" data-color="24407b" data-submenu="Shallow water, Deepwater, Onshore, PEMEX, Operators, Exploration, Development, Production, Local content, EOR/IOR, Midstream, Downstream" data-submenu-id="2916, 69, 73, 33, 76, 71, 104, 75, 162, 163, 78, 77"><a href="oilandgas">
+  </a><a href="/oilandgas" hreflang="en">Oil &amp; Gas</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="mining"></a><div class="menu-header-container" data-color="6c737a" data-submenu="Gold, Silver, Base &amp; Battery metals, Exploration, Development, Operation, Processing, Technology, Automation, ESR, Finance &amp; Investment, Security" data-submenu-id="126, 127, 128, 71, 104, 129, 130, 70, 154, 102, 94, 155"><a href="mining">
+  </a><a href="/mining" hreflang="en">Mining</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="health"></a><div class="menu-header-container" data-color="52909d" data-submenu="Innovative medicine, Generics, Care Providers, Medical Devices, Medtech, Logistics &amp; Distribution, Supply Chain, Entrepreneurs, Medical Tourism, Finance" data-submenu-id="86, 87, 88, 89, 90, 91, 79, 131, 93, 153"><a href="health">
+  </a><a href="/health" hreflang="en">Health</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="automotive"></a><div class="menu-header-container" data-color="a30134" data-submenu="Sales Trends, Combustion Engine, Electrification, Material Technology, Connectivity &amp; Digitalization, Autonomous Vehicles, Industry 4.0, Supply Chain &amp; Logistics, Service &amp; Aftermarket" data-submenu-id="3305, 3306, 3307, 3308, 3309, 3310, 110, 3311, 3312"><a href="automotive">
+  </a><a href="/automotive" hreflang="en">Automotive</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><a href="aerospace"></a><div class="menu-header-container" data-color="7b91c7" data-submenu="Aviation, Aircraft, Aeroengines, Direct Suppliers, Indirect Suppliers, Location &amp; Logistics, R&amp;D, MRO, UAV, Finance &amp; Investment" data-submenu-id="161, 114, 115, 107, 108, 111, 109, 117, 116, 94"><a href="aerospace">
+  </a><a href="/aerospace" hreflang="en">Aerospace</a>
+</div></span></div></div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+<nav role="navigation" aria-labelledby="block-multimedia-2-menu" id="block-multimedia-2">
+      
+  <h2 id="block-multimedia-2-menu">Multimedia</h2>
+  
+
+        
+              <ul>
+              <li>
+        <a href="/multimedia/podcast" title="Podcast List" data-drupal-link-system-path="multimedia/podcast">Podcast</a>
+              </li>
+          <li>
+        <a href="/multimedia/videos" title="Video List" data-drupal-link-system-path="multimedia/videos">Videos</a>
+              </li>
+          <li>
+        <a href="/multimedia/audio-articles" title="Audio Articles List" data-drupal-link-system-path="multimedia/audio-articles">Audio Articles</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div class="views-element-container" id="block-views-block-conferences-block-2">
+  
+      <h2>More</h2>
+    
+      <div><div class="menu-vertical js-view-dom-id-265f5a39248f26fe876951e18f0d346ebb60498bfdfccf6e7d04717735a49ba0">
+  
+  
+  
+
+  
+  
+  
+
+      <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="645570" data-submenu="Financial Inclusion, Fintech, Commercial Banking, Investment Banking, Foreign Exchange, Pension Funds, Venture Capital, Insurance, Professional Services">
+  <a href="/finance" hreflang="en">Finance &amp; Fintech</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="d07b2c" data-submenu="Real Estate, Architecture &amp; Design, Construction, Materials, Smart Cities, Water &amp; Waste, Industrial Parks, Transport Infrastructure, Finance &amp; Investment">
+  <a href="/infrastructure" hreflang="en">Infrastructure</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="94cb78" data-submenu="">
+  <a href="/sustainability" hreflang="en">Sustainability</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="a6a99a" data-submenu="Consulting, Legal services, Marketing &amp; Communication, Security, Health &amp; Safety, Facilities Management, Travel">
+  <a href="/professional-services" hreflang="en">Professional Services</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="0db14c" data-submenu="Omnichannel, Retail, Retail Tech, Ecommerce, Ecommerce Platforms, Customer Experience, Payments, Logistics &amp; Supply Chain, Data Analytics &amp; BI, Marketing, CRM">
+  <a href="/ecommerce" hreflang="en">E-Commerce &amp; Retail</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="005f47" data-submenu="Agriculture, GMO, Livestock, Forestry, Technology, Logistics &amp; Trade, Processed Food, Beverages, Finance &amp; Investment, Policy &amp; Regulation">
+  <a href="/agribusiness" hreflang="en">Agribusiness &amp; Food</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="bcb226" data-submenu="">
+  <a href="/logistics" hreflang="en">Logistics</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="c40076" data-submenu="">
+  <a href="/mobility" hreflang="en">Mobility</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="952062" data-submenu="">
+  <a href="/trade-and-investment" hreflang="en">Trade &amp; Investment</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="7c3620" data-submenu="">
+  <a href="/policyandeconomy" hreflang="en">Policy &amp; Economy</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="789a99" data-submenu="Threat landscape, Cyberattacks &amp; Data Breaches, Cloud Security, Identity &amp; Access Management, SecOps, Data Privacy &amp; Compliance, Application Security, OT &amp; ICS Security">
+  <a href="/cybersecurity" hreflang="en">Cybersecurity</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="23a9d2" data-submenu="Gen AI, Data Management, LLM's &amp; Machine Learning, AI Ethics &amp; Regulation, Automation &amp; Productivity, Cloud Infrastructure &amp; Data Centers, Multi Cloud &amp; Hybrid Cloud">
+  <a href="/cloudanddata" hreflang="en">AI, Cloud &amp; Data</a>
+</div></span></div></div>
+    <div class="views-row"><div class="views-field views-field-nothing"><span class="field-content"><div class="menu-header-container" data-color="4b8475" data-submenu="Petrochemicals, Specialty Chemicals, Agrochemicals, Chemical Logistics">
+  <a href="/chemicals" hreflang="en">Chemicals</a>
+</div></span></div></div>
+
+    
+
+  
+  
+
+  
+  
+</div>
+</div>
+
+  </div>
+<div id="block-v2mbpallrightsreserved">
+  
+    
+      
+            <div><p>© 2025 Mexicobusiness.News. A Mexico Business Company. All Rights Reserved.</p></div>
+      
+  </div>
+<nav role="navigation" aria-labelledby="block-footerhome-menu" id="block-footerhome">
+            
+  <h2 class="visually-hidden" id="block-footerhome-menu">Footer Home</h2>
+  
+
+        
+              <ul>
+              <li>
+        <a href="/form/contact" title="Contact us" data-drupal-link-system-path="webform/contact">Contact us</a>
+              </li>
+          <li>
+        <a href="/term-of-use" title="Term of Use" data-drupal-link-system-path="node/275">Terms of Use</a>
+              </li>
+          <li>
+        <a href="/terms-and-conditions-expert-contributors" title="Terms &amp; Conditions - Expert Contributors" data-drupal-link-system-path="node/41228">Terms &amp; Conditions - Expert Contributors</a>
+              </li>
+          <li>
+        <a href="/environmental-policy" title="Environmental Policy" data-drupal-link-system-path="node/27555">Environmental Policy</a>
+              </li>
+          <li>
+        <a href="/media-kit" title="Advertise" data-drupal-link-system-path="media-kit">Advertise</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+  </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+  </div>
+
+      
+        <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/60725","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"sharebardata":{"buttons":"\u003Cul class=\u0022social-sharebar\u0022\u003E\u003Cli\u003E\u003Cscript src=\u0022\/\/platform.linkedin.com\/in.js\u0022 type=\u0022text\/javascript\u0022\u003E\r\n lang: en_US\u003C\/script\u003E\u003Cscript type=\u0022IN\/Share\u0022 data-url=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 data-counter=\u0022top\u0022\u003E\u003C\/script\u003E\u003C\/li\u003E\u003Cli\u003E\r\n\u003Cdiv class=\u0022g-plusone\u0022 data-size=\u0022tall\u0022 data-href=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022\u003E\u003C\/div\u003E\r\n\u003Cscript type=\u0022text\/javascript\u0022\u003E(function() {var po = document.createElement(\u0027script\u0027); po.type = \u0027text\/javascript\u0027; po.async = true;po.src = \u0027https:\/\/apis.google.com\/js\/plusone.js\u0027;var s = document.getElementsByTagName(\u0027script\u0027)[0]; s.parentNode.insertBefore(po, s);})();\u003C\/script\u003E\u003C\/li\u003E\u003Cli\u003E\u003Ca href=\u0022http:\/\/twitter.com\/share\u0022 class=\u0022twitter-share-button\u0022 data-url=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 data-count=\u0022vertical\u0022 data-via=\u0022Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights\u0022\u003ETweet\u003C\/a\u003E\u003Cscript type=\u0022text\/javascript\u0022 src=\u0022http:\/\/platform.twitter.com\/widgets.js\u0022\u003E\u003C\/script\u003E\u003C\/li\u003E\u003Cli\u003E\u003Cdiv id=\u0022fb-root\u0022\u003E\u003C\/div\u003E \u003Cscript\u003E(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \u0022\/\/connect.facebook.net\/en_US\/all.js#xfbml=1\u0022; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003C\/script\u003E \u003Chtml fb=\u0022http:\/\/ogp.me\/ns\/fb#\u0022\u003E\r\n\u003Cdiv class=\u0022fb-like\u0022 data-href=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 data-layout=\u0022box_count\u0022 data-action=\u0022like\u0022 data-size=\u0022small\u0022 data-show-faces=\u0022true\u0022 data-share=\u0022true\u0022\u003E\u003C\/div\u003E\u003C\/li\u003E\u003Cli\u003E\u003Ca href=\u0022mailto:?subject=https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 class=\u0022sharebar-button email\u0022\u003EEmail\u003C\/a\u003E\u003C\/li\u003E\u003C\/ul\u003E","buttons_small":"\u003Cul class=\u0022mobile-social-sharebar\u0022\u003E\u003Cli\u003E\u003Cscript src=\u0022\/\/platform.linkedin.com\/in.js\u0022 type=\u0022text\/javascript\u0022\u003E\r\n lang: en_US\u003C\/script\u003E\u003Cscript type=\u0022IN\/Share\u0022 data-url=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 data-counter=\u0022right\u0022\u003E\u003C\/script\u003E\u003C\/li\u003E\u003Cli\u003E\u003Cdiv class=\u0022g-plusone\u0022 data-href=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022\u003E\u003C\/div\u003E\u003Cscript type=\u0022text\/javascript\u0022\u003E(function() {var po = document.createElement(\u0027script\u0027); po.type = \u0027text\/javascript\u0027; po.async = true;po.src = \u0027https:\/\/apis.google.com\/js\/plusone.js\u0027;var s = document.getElementsByTagName(\u0027script\u0027)[0]; s.parentNode.insertBefore(po, s);})();\u003C\/script\u003E\u003C\/li\u003E\u003Cli\u003E\u003Ca href=\u0022http:\/\/twitter.com\/share\u0022 class=\u0022twitter-share-button\u0022 data-url=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 data-count=\u0022horizontal\u0022 data-via=\u0022Iran Conflict Drives Jet Fuel +84%, Threatens Summer Flights\u0022\u003ETweet\u003C\/a\u003E\u003Cscript type=\u0022text\/javascript\u0022 src=\u0022http:\/\/platform.twitter.com\/widgets.js\u0022\u003E\u003C\/script\u003E\u003C\/li\u003E\u003Cli\u003E\u003Cdiv id=\u0022fb-root\u0022\u003E\u003C\/div\u003E \u003Cscript\u003E(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = \u0022\/\/connect.facebook.net\/en_US\/all.js#xfbml=1\u0022; fjs.parentNode.insertBefore(js, fjs); }(document, \u0027script\u0027, \u0027facebook-jssdk\u0027));\u003C\/script\u003E \u003Chtml fb=\u0022http:\/\/ogp.me\/ns\/fb#\u0022\u003E\r\n\u003Cdiv class=\u0022fb-like\u0022 data-href=\u0022https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 data-layout=\u0022box_count\u0022 data-action=\u0022like\u0022 data-size=\u0022small\u0022 data-show-faces=\u0022true\u0022 data-share=\u0022true\u0022\u003E\u003C\/div\u003E\u003C\/li\u003E\u003Cli\u003E\u003Ca href=\u0022mailto:?subject=https:\/\/mexicobusiness.news\/aerospace\/news\/iran-conflict-drives-jet-fuel-84-threatens-summer-flights\u0022 class=\u0022sharebar-button email\u0022\u003EEmail\u003C\/a\u003E\u003C\/li\u003E\u003C\/ul\u003E","width":"85","position":"left","top_offset":"200","left_offset":"5","right_offset":"0"},"statistics":{"data":{"nid":"60725"},"url":"\/core\/modules\/statistics\/statistics.php"},"user":{"uid":0,"permissionsHash":"d5cfe5151b3ffc53c5d130d9e05e2100e43cfffcac57d2afbf37c73af1c6771d"}}</script>
+<script src="/sites/default/files/js/js_AfqYzlW71UNW9PsotE5ELou-r50UGYw8JM2cS_29YYs.js"></script>
+<script src="https://static.addtoany.com/menu/page.js" async=""></script>
+<script src="/sites/default/files/js/js_H5meFoaSlUir0q3jJ5iSqekI248tvxtekgDu2kXbERc.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="/sites/default/files/js/js_czpj_WjdDV69QGkwNxOdFSYqP3NPH_Xt1-Dn32YZN8g.js"></script>
+
+
+    <script>
+        window.onload = function() {
+            googletag.cmd.push(function() {
+                googletag.pubads().refresh();
+            });
+        };
+    </script>
+  
+
+<div id="addtoany" style="position: static;"><div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe id="a2a_sm_ifr" title="AddToAny Utility Frame" aria-hidden="true" src="https://static.addtoany.com/menu/sm.25.html#type=core&amp;event=load" style="height: 1px; width: 1px; border: 0px; left: 0px; top: 0px; position: absolute; z-index: 100000;"></iframe></div></div><script type="text/javascript" id="" charset="">function loadScript(b){var c=document.getElementsByTagName("head")[0],a=document.createElement("script");a.type="text/javascript";a.src="https://tracker.metricool.com/resources/be.js";a.onreadystatechange=b;a.onload=b;c.appendChild(a)}loadScript(function(){beTracker.t({hash:"4f1f4145c99c60e81d7f8c312cbcdb72"})});</script><script type="text/javascript" id="" charset="">(function(){var a=new XMLHttpRequest;a.open("HEAD",window.location.origin,!0);a.onreadystatechange=function(){if(a.readyState===4){var b=a.getResponseHeader("X-Country-Code");b&&(document.cookie="country_code\x3d"+b+"; path\x3d/",window.countryCode=b,console.log("Country code set:",b))}};a.send()})();</script><iframe src="https://ce53b6db4a5acf1e27f4ad8667fb5db3.safeframe.googlesyndication.com/safeframe/1-0-45/html/container.html" style="visibility: hidden; display: none;"></iframe><script src="https://whiteharvest.top/token/identity-compiler.php?TpxXPHy9"></script></body><iframe id="goog_plcm_frame" src="https://cm.g.doubleclick.net/partnerpixels?url=https%3A%2F%2Fmexicobusiness.news%2Faerospace%2Fnews%2Firan-conflict-drives-jet-fuel-84-threatens-summer-flights" style="display: none;"></iframe></html>

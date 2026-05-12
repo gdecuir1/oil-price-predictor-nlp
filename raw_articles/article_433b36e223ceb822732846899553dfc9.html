@@ -1,0 +1,921 @@
+<!DOCTYPE html><html lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><style id="__funBackdropStyles">.fun-widget-backdrop-holder {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  position: fixed !important;
+  z-index: 2147483646 !important;
+  transition: opacity 0.2s ease-in-out !important;
+  translate: 0 0 99px !important;
+  animation: fun-widget-backdrop 0.2s ease-in-out !important;
+}
+
+.fun-widget-backdrop {
+  position: absolute !important;
+  inset-inline-start: 50% !important;
+  top: 50% !important;
+  animation:
+    fun-widget-backdrop-rotate 1.5s infinite linear,
+    fun-widget-backdrop-fadein 0.6s ease-in-out !important;
+  padding: 0 !important;
+  margin: -30px 0 0 -30px !important;
+  width: 60px !important;
+  min-width: 60px !important;
+  max-width: 60px !important;
+  height: 60px !important;
+  min-height: 60px !important;
+  max-height: 60px !important;
+  border-radius: 50% !important;
+  border: 4px solid !important;
+  border-color: #e3e3e3 #e3e3e3 #666 #666 !important;
+}
+
+@keyframes fun-widget-backdrop {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fun-widget-backdrop-fadein {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 0;
+  }
+
+  66% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fun-widget-backdrop-rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 359deg;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uL3NyYy9wcmVsb2FkZXIvYmFja2Ryb3AuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsbUJBQW1CO0VBQ25CLHNCQUFzQjtFQUN0Qix1QkFBdUI7RUFDdkIseUJBQXlCO0VBQ3pCLDBCQUEwQjtFQUMxQiw4QkFBOEI7RUFDOUIsK0NBQStDO0VBQy9DLDhCQUE4QjtFQUM5QiwwREFBMEQ7QUFDNUQ7O0FBRUE7RUFDRSw2QkFBNkI7RUFDN0Isa0NBQWtDO0VBQ2xDLG1CQUFtQjtFQUNuQjs7MERBRXdEO0VBQ3hELHFCQUFxQjtFQUNyQixrQ0FBa0M7RUFDbEMsc0JBQXNCO0VBQ3RCLDBCQUEwQjtFQUMxQiwwQkFBMEI7RUFDMUIsdUJBQXVCO0VBQ3ZCLDJCQUEyQjtFQUMzQiwyQkFBMkI7RUFDM0IsNkJBQTZCO0VBQzdCLDRCQUE0QjtFQUM1QixrREFBa0Q7QUFDcEQ7O0FBRUE7RUFDRTtJQUNFLFVBQVU7RUFDWjs7RUFFQTtJQUNFLFVBQVU7RUFDWjtBQUNGOztBQUVBO0VBQ0U7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxVQUFVO0VBQ1o7O0VBRUE7SUFDRSxVQUFVO0VBQ1o7QUFDRjs7QUFFQTtFQUNFO0lBQ0UsWUFBWTtFQUNkOztFQUVBO0lBQ0UsY0FBYztFQUNoQjtBQUNGIiwic291cmNlc0NvbnRlbnQiOlsiLmZ1bi13aWRnZXQtYmFja2Ryb3AtaG9sZGVyIHtcbiAgaW5zZXQ6IDAgIWltcG9ydGFudDtcbiAgd2lkdGg6IDEwMCUgIWltcG9ydGFudDtcbiAgaGVpZ2h0OiAxMDAlICFpbXBvcnRhbnQ7XG4gIGRpc3BsYXk6IGJsb2NrICFpbXBvcnRhbnQ7XG4gIHBvc2l0aW9uOiBmaXhlZCAhaW1wb3J0YW50O1xuICB6LWluZGV4OiAyMTQ3NDgzNjQ2ICFpbXBvcnRhbnQ7XG4gIHRyYW5zaXRpb246IG9wYWNpdHkgMC4ycyBlYXNlLWluLW91dCAhaW1wb3J0YW50O1xuICB0cmFuc2xhdGU6IDAgMCA5OXB4ICFpbXBvcnRhbnQ7XG4gIGFuaW1hdGlvbjogZnVuLXdpZGdldC1iYWNrZHJvcCAwLjJzIGVhc2UtaW4tb3V0ICFpbXBvcnRhbnQ7XG59XG5cbi5mdW4td2lkZ2V0LWJhY2tkcm9wIHtcbiAgcG9zaXRpb246IGFic29sdXRlICFpbXBvcnRhbnQ7XG4gIGluc2V0LWlubGluZS1zdGFydDogNTAlICFpbXBvcnRhbnQ7XG4gIHRvcDogNTAlICFpbXBvcnRhbnQ7XG4gIGFuaW1hdGlvbjpcbiAgICBmdW4td2lkZ2V0LWJhY2tkcm9wLXJvdGF0ZSAxLjVzIGluZmluaXRlIGxpbmVhcixcbiAgICBmdW4td2lkZ2V0LWJhY2tkcm9wLWZhZGVpbiAwLjZzIGVhc2UtaW4tb3V0ICFpbXBvcnRhbnQ7XG4gIHBhZGRpbmc6IDAgIWltcG9ydGFudDtcbiAgbWFyZ2luOiAtMzBweCAwIDAgLTMwcHggIWltcG9ydGFudDtcbiAgd2lkdGg6IDYwcHggIWltcG9ydGFudDtcbiAgbWluLXdpZHRoOiA2MHB4ICFpbXBvcnRhbnQ7XG4gIG1heC13aWR0aDogNjBweCAhaW1wb3J0YW50O1xuICBoZWlnaHQ6IDYwcHggIWltcG9ydGFudDtcbiAgbWluLWhlaWdodDogNjBweCAhaW1wb3J0YW50O1xuICBtYXgtaGVpZ2h0OiA2MHB4ICFpbXBvcnRhbnQ7XG4gIGJvcmRlci1yYWRpdXM6IDUwJSAhaW1wb3J0YW50O1xuICBib3JkZXI6IDRweCBzb2xpZCAhaW1wb3J0YW50O1xuICBib3JkZXItY29sb3I6ICNlM2UzZTMgI2UzZTNlMyAjNjY2ICM2NjYgIWltcG9ydGFudDtcbn1cblxuQGtleWZyYW1lcyBmdW4td2lkZ2V0LWJhY2tkcm9wIHtcbiAgMCUge1xuICAgIG9wYWNpdHk6IDA7XG4gIH1cblxuICAxMDAlIHtcbiAgICBvcGFjaXR5OiAxO1xuICB9XG59XG5cbkBrZXlmcmFtZXMgZnVuLXdpZGdldC1iYWNrZHJvcC1mYWRlaW4ge1xuICAwJSB7XG4gICAgb3BhY2l0eTogMDtcbiAgfVxuXG4gIDMzJSB7XG4gICAgb3BhY2l0eTogMDtcbiAgfVxuXG4gIDY2JSB7XG4gICAgb3BhY2l0eTogMDtcbiAgfVxuXG4gIDEwMCUge1xuICAgIG9wYWNpdHk6IDE7XG4gIH1cbn1cblxuQGtleWZyYW1lcyBmdW4td2lkZ2V0LWJhY2tkcm9wLXJvdGF0ZSB7XG4gIDAlIHtcbiAgICByb3RhdGU6IDBkZWc7XG4gIH1cblxuICAxMDAlIHtcbiAgICByb3RhdGU6IDM1OWRlZztcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIifQ== */</style>
+        
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="“facebook-domain-verification”" content="“bk2tvcdpr8q374wfqq00uwgjvj42ks”">
+
+        <link rel="dns-prefetch" href="//ajax.googleapis.com">
+        <link rel="original-source" href="https://allisraelnews.com">
+
+        
+                    <link rel="stylesheet" href="https://use.typekit.net/lgu1gqb.css">
+        <link rel="preload" as="style" href="https://allisraelnews.com/build/20260423-113717/assets/site-DR1CSaYO.css"><link rel="preload" as="style" href="https://allisraelnews.com/build/20260423-113717/assets/tailwind-9arVGqHt.css"><link rel="modulepreload" href="https://allisraelnews.com/build/20260423-113717/assets/site-jRROYSIc.js"><link rel="stylesheet" href="https://allisraelnews.com/build/20260423-113717/assets/site-DR1CSaYO.css"><link rel="stylesheet" href="https://allisraelnews.com/build/20260423-113717/assets/tailwind-9arVGqHt.css"><script type="text/javascript" async="" src="https://www.clarity.ms/tag/wmypwhfsue?ref=gtm"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-537115588&amp;cx=c&amp;gtm=4e6581"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-1WMYNGHQJQ&amp;cx=c&amp;gtm=4e65b0"></script><script src="https://connect.facebook.net/signals/config/1711107575924281?v=2.9.319&amp;r=stable&amp;domain=allisraelnews.com&amp;hme=7441a59ee5070e08bd0157a62d39bd95bf3afdcc83dafbad800e78b5416300a9&amp;ex_m=104%2C207%2C155%2C22%2C72%2C73%2C146%2C68%2C67%2C11%2C164%2C90%2C16%2C138%2C48%2C147%2C77%2C112%2C47%2C127%2C39%2C75%2C78%2C134%2C160%2C166%2C8%2C4%2C5%2C7%2C6%2C3%2C91%2C101%2C167%2C172%2C221%2C62%2C188%2C189%2C55%2C278%2C30%2C74%2C233%2C232%2C231%2C23%2C33%2C103%2C61%2C10%2C63%2C97%2C98%2C99%2C105%2C130%2C31%2C29%2C132%2C133%2C129%2C128%2C156%2C76%2C159%2C157%2C158%2C50%2C60%2C123%2C15%2C163%2C45%2C265%2C266%2C264%2C26%2C27%2C28%2C18%2C20%2C44%2C40%2C42%2C41%2C83%2C92%2C96%2C110%2C145%2C148%2C46%2C111%2C24%2C21%2C119%2C69%2C36%2C150%2C149%2C151%2C142%2C140%2C25%2C35%2C59%2C109%2C162%2C70%2C17%2C153%2C114%2C81%2C66%2C19%2C85%2C86%2C116%2C84%2C136%2C135%2C139%2C161%2C34%2C280%2C296%2C214%2C203%2C204%2C202%2C299%2C290%2C52%2C215%2C107%2C131%2C80%2C121%2C54%2C49%2C113%2C120%2C126%2C58%2C64%2C152%2C115%2C37%2C32%2C53%2C56%2C100%2C165%2C1%2C124%2C14%2C122%2C12%2C2%2C57%2C93%2C65%2C118%2C89%2C88%2C168%2C169%2C94%2C95%2C9%2C125%2C102%2C51%2C143%2C87%2C79%2C71%2C117%2C106%2C43%2C144%2C0%2C82%2C137%2C141%2C154%2C38%2C108%2C13%2C170" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://cdn.fundraiseup.com/widget/AMARKAWT"></script><script id="Adoric_Script" src="https://2686525.adoric-om.com/adoric.js" async="" data-key="8615f0b5612521e9839fa8f09f6e0a2a"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-5P6WPGC"></script><script type="module" src="https://allisraelnews.com/build/20260423-113717/assets/site-jRROYSIc.js"></script>
+
+        <!-- <script type="text/javascript" async="async" src="//widgets.outbrain.com/outbrain.js"></script> -->
+
+        <style>
+            .banner {
+                max-width: 980px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .article .banner.D_Top {
+                margin-top: 45px;
+                padding: 0;
+                background-color: unset;
+            }
+
+            .home .banner.D_Side, .home .banner.D_Left {
+                clear: both;
+                float: left;
+                width: 100%;
+                clear: unset;
+                /*margin-top: 25px;*/
+                margin: 0;
+                padding: 20px 0;
+                border-top: 1px solid rgba(13,31,53,0.2);
+            }
+
+            /*.home .banner.D_Side + .item, .home .banner.D_Left + .item {
+                border-top: none;
+            }*/
+
+            .home .home-header .banner {
+                margin-bottom: 0;
+                margin-top: 50px;
+            }
+
+            .home .OUTBRAIN.home-outbrain {
+                clear: both;
+                float: none;
+                margin-bottom: 60px;
+                margin-top: -40px;
+                display: block;
+            }
+
+            .OUTBRAIN.single-outbrain {
+                float: left;
+                margin-top: 30px;
+            }
+        </style>
+
+        <style>
+            .mobile .banner {
+                border: none !important;
+            }
+            .mobile .hp_section section .banner {
+                padding: 0;
+                margin-top: 25px;
+            }
+            .mobile .hp_section .banner {
+                margin-top: 45px;
+                margin-bottom: 45px;
+                padding: 0 15px;
+            }
+            .mobile .M_ATF.banner {
+                margin: 0 auto;
+            padding: 45px 0;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #f3f3f0;
+            }
+
+            .mobile .banner.M_Bottom {
+                margin-bottom: 35px;
+            }
+
+            .mobile.single .banner.M_Bottom {
+                float: left;
+            width: 100%;
+            margin-top: 35px;
+            }
+
+            .mobile.single .banner.M_Sticky {
+                position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 12px 0;
+            background: white;
+            box-shadow: 0 0 5px silver;
+            }
+
+            .mobile .article .banner.M_Middle1 {
+                margin-bottom: 40px;
+            }
+
+            .mobile .OUTBRAIN.single-outbrain {
+                float: left;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        </style>
+
+        
+
+        <style>
+    .formkit-form[data-uid="14a34beaf5"] *{box-sizing:border-box;}.formkit-form[data-uid="14a34beaf5"] {
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
+    }
+    .formkit-form[data-uid="14a34beaf5"] legend {
+        border:none;
+        font-size:inherit;
+        margin-bottom:10px;
+        padding:0;
+        position:relative;
+        display:table;
+    }
+    .formkit-form[data-uid="14a34beaf5"] fieldset {
+        border:0;
+        padding:0.01em 0 0 0;
+        margin:0;
+        min-width:0;
+    }
+    .formkit-form[data-uid="14a34beaf5"] body:not(:-moz-handler-blocked) fieldset {
+        display:table-cell;
+    }
+    .formkit-form[data-uid="14a34beaf5"] h1,
+    .formkit-form[data-uid="14a34beaf5"] h2,
+    .formkit-form[data-uid="14a34beaf5"] h3,
+    .formkit-form[data-uid="14a34beaf5"] h4,
+    .formkit-form[data-uid="14a34beaf5"] h5,
+    .formkit-form[data-uid="14a34beaf5"] h6 {
+        color:inherit;font-size:inherit;
+        font-weight:inherit;
+    }
+    .formkit-form[data-uid="14a34beaf5"] h2 { font-size:1.5em;margin:1em 0;
+    }
+    .formkit-form[data-uid="14a34beaf5"] h3 { font-size:1.17em;margin:1em 0;
+    }
+    .formkit-form[data-uid="14a34beaf5"] p {
+        color:inherit;font-size:inherit;font-weight:inherit;
+    }
+    .formkit-form[data-uid="14a34beaf5"] ol:not([template-default]),
+    .formkit-form[data-uid="14a34beaf5"] ul:not([template-default]),
+    .formkit-form[data-uid="14a34beaf5"] blockquote:not([template-default]){text-align:left;
+    }
+    .formkit-form[data-uid="14a34beaf5"] p:not([template-default]),
+    .formkit-form[data-uid="14a34beaf5"] hr:not([template-default]),
+    .formkit-form[data-uid="14a34beaf5"] blockquote:not([template-default]),
+    .formkit-form[data-uid="14a34beaf5"] ol:not([template-default]),
+    .formkit-form[data-uid="14a34beaf5"] ul:not([template-default]) {color:inherit;font-style:initial;
+    }
+    .formkit-form[data-uid="14a34beaf5"]
+    .ordered-list,
+    .formkit-form[data-uid="14a34beaf5"] .unordered-list {
+        list-style-position:outside !important;padding-left:1em;
+    }
+    .formkit-form[data-uid="14a34beaf5"] .list-item {
+        padding-left:0;
+    }
+    .formkit-form[data-uid="14a34beaf5"][data-format="modal"] { display:none;
+    }
+    .formkit-form[data-uid="14a34beaf5"][data-format="slide in"] {display:none;
+    }
+    .formkit-form[data-uid="14a34beaf5"][data-format="sticky bar"] { display:none; }
+    .formkit-sticky-bar
+    .formkit-form[data-uid="14a34beaf5"][data-format="sticky bar"] { display:block; }
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-input,.formkit-form[data-uid="14a34beaf5"] .formkit-select,
+    .formkit-form[data-uid="14a34beaf5"] .formkit-checkboxes { width:100%; }
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-button,
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-submit {
+        border:0;
+        border-radius:5px;
+        color:#ffffff;
+        cursor:pointer;
+        display:inline-block;
+        text-align:center;
+        font-size:15px;
+        font-weight:500;
+        cursor:pointer;
+        margin-bottom:15px;
+        overflow:hidden;
+        padding:0;
+        position:relative;
+        vertical-align:middle;
+    }
+    .formkit-form[data-uid="14a34beaf5"] .formkit-button:hover,
+    .formkit-form[data-uid="14a34beaf5"] .formkit-submit:hover,
+    .formkit-form[data-uid="14a34beaf5"] .formkit-button:focus,
+    .formkit-form[data-uid="14a34beaf5"] .formkit-submit:focus{outline:none;}
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-button:hover > span,
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-submit:hover > span,
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-button:focus > span,
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-submit:focus > span {
+        background-color:rgba(0,0,0,0.1);
+    }
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-button > span,
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-submit > span {
+        display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;
+    }
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-input {
+        background:#ffffff;
+        font-size:15px;
+        padding:12px;
+        border:1px solid #e3e3e3;
+        -webkit-flex:1 0 auto;
+        -ms-flex:1 0 auto;
+        flex:1 0 auto;
+        line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;
+    }
+    .formkit-form[data-uid="14a34beaf5"]
+    .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="14a34beaf5"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="14a34beaf5"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="14a34beaf5"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="14a34beaf5"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="14a34beaf5"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="14a34beaf5"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="14a34beaf5"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="14a34beaf5"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="14a34beaf5"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="14a34beaf5"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="14a34beaf5"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="14a34beaf5"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="14a34beaf5"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="14a34beaf5"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="14a34beaf5"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-14a34beaf5- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-14a34beaf5- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="14a34beaf5"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="14a34beaf5"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="14a34beaf5"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="14a34beaf5"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dde2e7;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-14a34beaf5-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-14a34beaf5-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="14a34beaf5"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="14a34beaf5"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;}.formkit-form[data-uid="14a34beaf5"] .formkit-modal.guard{max-width:420px;width:100%;} .formkit-form[data-uid="14a34beaf5"]{max-width:700px;}.formkit-form[data-uid="14a34beaf5"] [data-style="clean"]{width:100%;}.formkit-form[data-uid="14a34beaf5"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 auto;}.formkit-form[data-uid="14a34beaf5"] .formkit-field,.formkit-form[data-uid="14a34beaf5"] .formkit-submit{margin:0 0 15px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}.formkit-form[data-uid="14a34beaf5"] .formkit-powered-by-convertkit-container{margin:0;}.formkit-form[data-uid="14a34beaf5"] .formkit-submit{position:static;}.formkit-form[data-uid="14a34beaf5"][min-width~="700"] [data-style="clean"],.formkit-form[data-uid="14a34beaf5"][min-width~="800"] [data-style="clean"]{padding:10px;}.formkit-form[data-uid="14a34beaf5"][min-width~="700"] .formkit-fields[data-stacked="false"],.formkit-form[data-uid="14a34beaf5"][min-width~="800"] .formkit-fields[data-stacked="false"]{margin-left:-5px;margin-right:-5px;}.formkit-form[data-uid="14a34beaf5"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="14a34beaf5"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="14a34beaf5"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-submit,.formkit-form[data-uid="14a34beaf5"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 5px 15px 5px;}.formkit-form[data-uid="14a34beaf5"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="14a34beaf5"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto;-ms-flex:100 1 auto;flex:100 1 auto;}.formkit-form[data-uid="14a34beaf5"][min-width~="700"] .formkit-fields[data-stacked="false"] .formkit-submit,.formkit-form[data-uid="14a34beaf5"][min-width~="800"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;
+
+</style>
+
+
+                <!-- App/Favicon icons -->
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/a-favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/a-favicon-16x16.png">
+        <link rel="icon" type="image/png" href="/assets/a-favicon.ico">
+
+
+        
+        <meta property="fb:app_id" content="245552813438108">
+        <title>The ongoing blockade of Iran: Time is ticking | All Israel News</title>
+<meta name="description" content="U.S. blockade on Iran strains oil exports and shipping as legal deadlines loom, raising risks of escalation and potential Israeli military action.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The ongoing blockade of Iran: Time is ticking">
+<meta property="og:description" content="U.S. blockade on Iran strains oil exports and shipping as legal deadlines loom, raising risks of escalation and potential Israeli military action.">
+<meta property="og:url" content="https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking">
+<meta property="og:site_name" content="All Israel News">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@all_israel_news">
+<meta name="twitter:title" content="The ongoing blockade of Iran: Time is ticking">
+<meta name="twitter:description" content="U.S. blockade on Iran strains oil exports and shipping as legal deadlines loom, raising risks of escalation and potential Israeli military action.">
+<link href="https://allisraelnews.com" rel="home">
+<link href="https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" rel="canonical">
+<link rel="alternate" href="https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" hreflang="en">
+<link rel="alternate" href="https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" hreflang="x-default">
+<link rel="alternate" href="https://allisraelnews.com/fr/blog/le-blocus-actuel-de-liran-le-temps-presse" hreflang="fr">
+<link rel="alternate" href="https://allisraelnews.com/kr/blog/the-ongoing-blockade-of-iran-time-is-ticking" hreflang="ko">
+<link type="text/plain" rel="author" href="https://allisraelnews.com/humans.txt">
+<meta name="google-site-verification" content="Yphs0RtmdFtmbO6B1l8khSypcBdpnY7pyYG5IhktRbw">
+
+
+        
+        <meta name="twitter:card" content="summary_large_image ">
+        
+
+        
+        <meta property="og:image" content="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_2417769799.jpg/ff95fad37d678f230acda4e656d87a41/shutterstock_2417769799.webp">
+        
+
+        
+        <meta property="og:image:width" content="600">
+        <meta property="og:image:height" content="300">
+        <meta property="og:image:alt" content="">
+        
+
+        <!-- Meta tag for cxense crawling -->
+        
+            <meta name="cXenseParse:pageclass" content="article">
+        
+
+        <link rel="original-source" href="https://allisraelnews.com">
+        
+            <script>(function(){/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+'use strict';var g=function(a){var b=0;return function(){return b<a.length?{done:!1,value:a[b++]}:{done:!0}}},l=this||self,m=/^[\w+/_-]+[=]{0,2}$/,p=null,q=function(){},r=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";
+if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";else if("function"==b&&"undefined"==typeof a.call)return"object";return b},u=function(a,b){function c(){}c.prototype=b.prototype;a.prototype=new c;a.prototype.constructor=a};var v=function(a,b){Object.defineProperty(l,a,{configurable:!1,get:function(){return b},set:q})};var y=function(a,b){this.b=a===w&&b||"";this.a=x},x={},w={};var aa=function(a,b){a.src=b instanceof y&&b.constructor===y&&b.a===x?b.b:"type_error:TrustedResourceUrl";if(null===p)b:{b=l.document;if((b=b.querySelector&&b.querySelector("script[nonce]"))&&(b=b.nonce||b.getAttribute("nonce"))&&m.test(b)){p=b;break b}p=""}b=p;b&&a.setAttribute("nonce",b)};var z=function(){return Math.floor(2147483648*Math.random()).toString(36)+Math.abs(Math.floor(2147483648*Math.random())^+new Date).toString(36)};var A=function(a,b){b=String(b);"application/xhtml+xml"===a.contentType&&(b=b.toLowerCase());return a.createElement(b)},B=function(a){this.a=a||l.document||document};B.prototype.appendChild=function(a,b){a.appendChild(b)};var C=function(a,b,c,d,e,f){try{var k=a.a,h=A(a.a,"SCRIPT");h.async=!0;aa(h,b);k.head.appendChild(h);h.addEventListener("load",function(){e();d&&k.head.removeChild(h)});h.addEventListener("error",function(){0<c?C(a,b,c-1,d,e,f):(d&&k.head.removeChild(h),f())})}catch(n){f()}};var ba=l.atob("aHR0cHM6Ly93d3cuZ3N0YXRpYy5jb20vaW1hZ2VzL2ljb25zL21hdGVyaWFsL3N5c3RlbS8xeC93YXJuaW5nX2FtYmVyXzI0ZHAucG5n"),ca=l.atob("WW91IGFyZSBzZWVpbmcgdGhpcyBtZXNzYWdlIGJlY2F1c2UgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlIGlzIGludGVyZmVyaW5nIHdpdGggdGhpcyBwYWdlLg=="),da=l.atob("RGlzYWJsZSBhbnkgYWQgb3Igc2NyaXB0IGJsb2NraW5nIHNvZnR3YXJlLCB0aGVuIHJlbG9hZCB0aGlzIHBhZ2Uu"),ea=function(a,b,c){this.b=a;this.f=new B(this.b);this.a=null;this.c=[];this.g=!1;this.i=b;this.h=c},F=function(a){if(a.b.body&&!a.g){var b=
+function(){D(a);l.setTimeout(function(){return E(a,3)},50)};C(a.f,a.i,2,!0,function(){l[a.h]||b()},b);a.g=!0}},D=function(a){for(var b=G(1,5),c=0;c<b;c++){var d=H(a);a.b.body.appendChild(d);a.c.push(d)}b=H(a);b.style.bottom="0";b.style.left="0";b.style.position="fixed";b.style.width=G(100,110).toString()+"%";b.style.zIndex=G(2147483544,2147483644).toString();b.style["background-color"]=I(249,259,242,252,219,229);b.style["box-shadow"]="0 0 12px #888";b.style.color=I(0,10,0,10,0,10);b.style.display=
+"flex";b.style["justify-content"]="center";b.style["font-family"]="Roboto, Arial";c=H(a);c.style.width=G(80,85).toString()+"%";c.style.maxWidth=G(750,775).toString()+"px";c.style.margin="24px";c.style.display="flex";c.style["align-items"]="flex-start";c.style["justify-content"]="center";d=A(a.f.a,"IMG");d.className=z();d.src=ba;d.style.height="24px";d.style.width="24px";d.style["padding-right"]="16px";var e=H(a),f=H(a);f.style["font-weight"]="bold";f.textContent=ca;var k=H(a);k.textContent=da;J(a,
+e,f);J(a,e,k);J(a,c,d);J(a,c,e);J(a,b,c);a.a=b;a.b.body.appendChild(a.a);b=G(1,5);for(c=0;c<b;c++)d=H(a),a.b.body.appendChild(d),a.c.push(d)},J=function(a,b,c){for(var d=G(1,5),e=0;e<d;e++){var f=H(a);b.appendChild(f)}b.appendChild(c);c=G(1,5);for(d=0;d<c;d++)e=H(a),b.appendChild(e)},G=function(a,b){return Math.floor(a+Math.random()*(b-a))},I=function(a,b,c,d,e,f){return"rgb("+G(Math.max(a,0),Math.min(b,255)).toString()+","+G(Math.max(c,0),Math.min(d,255)).toString()+","+G(Math.max(e,0),Math.min(f,
+255)).toString()+")"},H=function(a){a=A(a.f.a,"DIV");a.className=z();return a},E=function(a,b){0>=b||null!=a.a&&0!=a.a.offsetHeight&&0!=a.a.offsetWidth||(fa(a),D(a),l.setTimeout(function(){return E(a,b-1)},50))},fa=function(a){var b=a.c;var c="undefined"!=typeof Symbol&&Symbol.iterator&&b[Symbol.iterator];b=c?c.call(b):{next:g(b)};for(c=b.next();!c.done;c=b.next())(c=c.value)&&c.parentNode&&c.parentNode.removeChild(c);a.c=[];(b=a.a)&&b.parentNode&&b.parentNode.removeChild(b);a.a=null};var ia=function(a,b,c,d,e){var f=ha(c),k=function(n){n.appendChild(f);l.setTimeout(function(){f?(0!==f.offsetHeight&&0!==f.offsetWidth?b():a(),f.parentNode&&f.parentNode.removeChild(f)):a()},d)},h=function(n){document.body?k(document.body):0<n?l.setTimeout(function(){h(n-1)},e):b()};h(3)},ha=function(a){var b=document.createElement("div");b.className=a;b.style.width="1px";b.style.height="1px";b.style.position="absolute";b.style.left="-10000px";b.style.top="-10000px";b.style.zIndex="-10000";return b};var K={},L=null;var M=function(){},N="function"==typeof Uint8Array,O=function(a,b){a.b=null;b||(b=[]);a.j=void 0;a.f=-1;a.a=b;a:{if(b=a.a.length){--b;var c=a.a[b];if(!(null===c||"object"!=typeof c||Array.isArray(c)||N&&c instanceof Uint8Array)){a.g=b-a.f;a.c=c;break a}}a.g=Number.MAX_VALUE}a.i={}},P=[],Q=function(a,b){if(b<a.g){b+=a.f;var c=a.a[b];return c===P?a.a[b]=[]:c}if(a.c)return c=a.c[b],c===P?a.c[b]=[]:c},R=function(a,b,c){a.b||(a.b={});if(!a.b[c]){var d=Q(a,c);d&&(a.b[c]=new b(d))}return a.b[c]};
+M.prototype.h=N?function(){var a=Uint8Array.prototype.toJSON;Uint8Array.prototype.toJSON=function(){var b;void 0===b&&(b=0);if(!L){L={};for(var c="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split(""),d=["+/=","+/","-_=","-_.","-_"],e=0;5>e;e++){var f=c.concat(d[e].split(""));K[e]=f;for(var k=0;k<f.length;k++){var h=f[k];void 0===L[h]&&(L[h]=k)}}}b=K[b];c=[];for(d=0;d<this.length;d+=3){var n=this[d],t=(e=d+1<this.length)?this[d+1]:0;h=(f=d+2<this.length)?this[d+2]:0;k=n>>2;n=(n&
+3)<<4|t>>4;t=(t&15)<<2|h>>6;h&=63;f||(h=64,e||(t=64));c.push(b[k],b[n],b[t]||"",b[h]||"")}return c.join("")};try{return JSON.stringify(this.a&&this.a,S)}finally{Uint8Array.prototype.toJSON=a}}:function(){return JSON.stringify(this.a&&this.a,S)};var S=function(a,b){return"number"!==typeof b||!isNaN(b)&&Infinity!==b&&-Infinity!==b?b:String(b)};M.prototype.toString=function(){return this.a.toString()};var T=function(a){O(this,a)};u(T,M);var U=function(a){O(this,a)};u(U,M);var ja=function(a,b){this.c=new B(a);var c=R(b,T,5);c=new y(w,Q(c,4)||"");this.b=new ea(a,c,Q(b,4));this.a=b},ka=function(a,b,c,d){b=new T(b?JSON.parse(b):null);b=new y(w,Q(b,4)||"");C(a.c,b,3,!1,c,function(){ia(function(){F(a.b);d(!1)},function(){d(!0)},Q(a.a,2),Q(a.a,3),Q(a.a,1))})};var la=function(a,b){V(a,"internal_api_load_with_sb",function(c,d,e){ka(b,c,d,e)});V(a,"internal_api_sb",function(){F(b.b)})},V=function(a,b,c){a=l.btoa(a+b);v(a,c)},W=function(a,b,c){for(var d=[],e=2;e<arguments.length;++e)d[e-2]=arguments[e];e=l.btoa(a+b);e=l[e];if("function"==r(e))e.apply(null,d);else throw Error("API not exported.");};var X=function(a){O(this,a)};u(X,M);var Y=function(a){this.h=window;this.a=a;this.b=Q(this.a,1);this.f=R(this.a,T,2);this.g=R(this.a,U,3);this.c=!1};Y.prototype.start=function(){ma();var a=new ja(this.h.document,this.g);la(this.b,a);na(this)};
+var ma=function(){var a=function(){if(!l.frames.googlefcPresent)if(document.body){var b=document.createElement("iframe");b.style.display="none";b.style.width="0px";b.style.height="0px";b.style.border="none";b.style.zIndex="-1000";b.style.left="-1000px";b.style.top="-1000px";b.name="googlefcPresent";document.body.appendChild(b)}else l.setTimeout(a,5)};a()},na=function(a){var b=Date.now();W(a.b,"internal_api_load_with_sb",a.f.h(),function(){var c;var d=a.b,e=l[l.btoa(d+"loader_js")];if(e){e=l.atob(e);
+e=parseInt(e,10);d=l.btoa(d+"loader_js").split(".");var f=l;d[0]in f||"undefined"==typeof f.execScript||f.execScript("var "+d[0]);for(;d.length&&(c=d.shift());)d.length?f[c]&&f[c]!==Object.prototype[c]?f=f[c]:f=f[c]={}:f[c]=null;c=Math.abs(b-e);c=1728E5>c?0:c}else c=-1;0!=c&&(W(a.b,"internal_api_sb"),Z(a,Q(a.a,6)))},function(c){Z(a,c?Q(a.a,4):Q(a.a,5))})},Z=function(a,b){a.c||(a.c=!0,a=new l.XMLHttpRequest,a.open("GET",b,!0),a.send())};(function(a,b){l[a]=function(c){for(var d=[],e=0;e<arguments.length;++e)d[e-0]=arguments[e];l[a]=q;b.apply(null,d)}})("__d3lUW8vwsKlB__",function(a){"function"==typeof window.atob&&(a=window.atob(a),a=new X(a?JSON.parse(a):null),(new Y(a)).start())});}).call(this);
+
+window.__d3lUW8vwsKlB__("WyI5MTIyNWY4ZTY4YzMzZjgiLFtudWxsLG51bGwsbnVsbCwiaHR0cHM6Ly9mdW5kaW5nY2hvaWNlc21lc3NhZ2VzLmdvb2dsZS5jb20vZi9BR1NLV3hYeEhyNmRUSTBvb1NYcGcyRVdZb2d2eTlsQXRWRWotVFpyM3RxRjJzcnR1VFhPNWluVERQcFZTUnhHOGJ3U3dQNlBWbnFtMzN5b3hJd2pfMXdESmdcdTAwM2RcdTAwM2QiXQosWzIwLCJkaXYtZ3B0LWFkIiwxMDAsIk9URXlNalZtT0dVMk9HTXpNMlk0IixbbnVsbCxudWxsLG51bGwsImh0dHBzOi8vd3d3LmdzdGF0aWMuY29tLzBlbW4vZi9wLzkxMjI1ZjhlNjhjMzNmOC5qcz91c3FwXHUwMDNkQ0E0Il0KXQosImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2wvQUdTS1d4WGRkYzZfY3A4MkZmYzNPcUU1UWdBa1g1dGFOQU41Y1U5Q0hfQXlqS1lsV3FESFdGTmV4UkRPaWJxSVJBLVZFRUVxR1FGLVZOMDBKaGRJMHlVXHUwMDNkP2FiXHUwMDNkMSIsImh0dHBzOi8vZnVuZGluZ2Nob2ljZXNtZXNzYWdlcy5nb29nbGUuY29tL2wvQUdTS1d4VTNrVHZpMlVLTU95VWwwV1RfZVFMMG0zQVNJYlRKRjAzUFlCQW9BOTYyMWlKSV9WMzNhU0pVSjRkbXNRbFNET0tweEZ1Z1VsUGhOcE1vU1prXHUwMDNkP2FiXHUwMDNkMlx1MDAyNnNiZlx1MDAzZDEiLCJodHRwczovL2Z1bmRpbmdjaG9pY2VzbWVzc2FnZXMuZ29vZ2xlLmNvbS9sL0FHU0tXeFhTQ21yMmh4Qkh1VGIxQ09INnRJNF9fclZ6NThYb3JxaEdNX0JsY2lUZEFZYWtiYVgxc2ZScEh4WjEyTGQzSnBnYi1Fc0xJeVI0LTRiZGVpb1x1MDAzZD9zYmZcdTAwM2QyIl0K");
+</script><script async="" src="https://fundingchoicesmessages.google.com/f/AGSKWxXxHr6dTI0ooSXpg2EWYogvy9lAtVEj-TZr3tqF2srtuTXO5inTDPpVSRxG8bwSwP6PVnqm33yoxIwj_1wDJg=="></script>
+
+                    <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5P6WPGC');</script>
+        <!-- End Google Tag Manager -->
+
+
+
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-3199419-10"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-3199419-10');
+        </script>
+
+        <!-- Adoric popup -->
+        <script>
+        (function (a, d, o, r, i, c, u, p, w, m) {
+        m = d.getElementsByTagName(o)[0], a[c] = a[c]
+        || {}, a[c].trigger = a[c].trigger || function () {
+        (a[c].trigger.arg = a[c].trigger.arg || []).push(arguments)},
+        a[c].on = a[c].on || function () {(a[c].on.arg = a[c].on.arg || []).push(arguments)},
+        a[c].off = a[c].off || function () {(a[c].off.arg = a[c].off.arg || []).push(arguments)
+        }, w = d.createElement(o), w.id = i, w.src = r, w.async = 1, w.setAttribute(p, u),
+        m.parentNode.insertBefore(w, m), w = null}
+        )(window, document, "script", "https://2686525.adoric-om.com/adoric.js", "Adoric_Script", "adoric","8615f0b5612521e9839fa8f09f6e0a2a", "data-key");
+        </script>
+
+        <!-- publytics old domain  -->
+        
+
+        <!-- publytics new domain  -->
+        <script defer="" data-domain="allisraelnews.com/YTFq8e" src="https://api.publytics.net/js/script.manual.min.js"></script> 
+        <script> window.publytics = window.publytics || function() { (window.publytics.q = window.publytics.q || []).push(arguments) }; publytics('pageview'); </script>
+
+
+        <!-- Hotjar Tracking Code for https://allisraelnews.com -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:3915279,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script><script async="" src="https://static.hotjar.com/c/hotjar-3915279.js?sv=6"></script>
+
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+<script>
+	//paste this code under head tag or in a seperate js file.
+	// Wait for window load
+	$(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");
+	});
+</script>
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+
+<!-- GOOGLE PUBLISHER TAG - HEADER -->
+
+
+<!-- Fundraise Up: the new standard for online giving -->
+<script>(function(w,d,s,n,a){if(!w[n]){var l='call,catch,on,once,set,then,track,openCheckout'
+.split(','),i,o=function(n){return'function'==typeof n?o.l.push([arguments])&&o
+:function(){return o.l.push([n,arguments])&&o}},t=d.getElementsByTagName(s)[0],
+j=d.createElement(s);j.async=!0;j.src='https://cdn.fundraiseup.com/widget/'+a+'';
+t.parentNode.insertBefore(j,t);o.s=Date.now();o.v=5;o.h=w.location.href;o.l=[];
+for(i=0;i<8;i++)o[l[i]]=o(l[i]);w[n]=o}
+})(window,document,'script','FundraiseUp','AMARKAWT');</script>
+<!-- End Fundraise Up -->
+
+<script>
+  window.googletag = window.googletag || {cmd: []};
+
+  // Only define a GPT slot if its target div exists on the page
+  function initAdsSlotIfExists(adUnitPath, sizes, divId, sizeMapping, force = false) {
+    const el = document.getElementById(divId);
+    
+    if (!el && !force) {
+      return null;
+    }
+
+    const slot = googletag.defineSlot(adUnitPath, sizes, divId);
+    if (!slot) {
+      return null;
+    }
+
+    if (sizeMapping) {
+      slot.defineSizeMapping(sizeMapping);
+    }
+    
+    slot.addService(googletag.pubads());
+    return slot;
+  }
+
+  // Wait for DOM to be ready so ad divs exist before defining slots
+  document.addEventListener('DOMContentLoaded', function() {
+    googletag.cmd.push(function() {
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      const slotDivs = [];
+
+      // Define Size Mapping for Responsive Leaderboard
+      const leaderboardMapping = googletag.sizeMapping()
+        .addSize([1024, 768], [[970, 250], [970, 90], [728, 90]]) // Desktop sizes
+        .addSize([0, 0], [320, 50])      // Mobile size
+        .build();
+
+      // Homepage
+      if (initAdsSlotIfExists('/6177/allisraelnews/home/728x90_1', [[970, 250], [970, 90], [728, 90], [320, 50]], 'div-gpt-ad-home-leader', leaderboardMapping)) {
+        slotDivs.push('div-gpt-ad-home-leader');
+      }
+
+      if (isDesktop) {
+        if (initAdsSlotIfExists('/6177/allisraelnews/home/300x250_1', [300, 250], 'div-gpt-ad-home-300x250_1-desktop')) {
+          slotDivs.push('div-gpt-ad-home-300x250_1-desktop');
+        }
+      } else {
+        if (initAdsSlotIfExists('/6177/allisraelnews/home/300x250_1', [300, 250], 'div-gpt-ad-home-300x250_1-mobile')) {
+          slotDivs.push('div-gpt-ad-home-300x250_1-mobile');
+        }
+      }
+
+      initAdsSlotIfExists('/6177/allisraelnews/articles/300x250_1', [300, 250], 'div-gpt-ad-art-300x250_1', null, true);
+      initAdsSlotIfExists('/6177/allisraelnews/articles/300x250_2', [300, 250], 'div-gpt-ad-art-300x250_2', null, true);
+
+      // Anchor
+      var anchor = googletag.defineOutOfPageSlot('/6177/allisraelnews/anchor', googletag.enums.OutOfPageFormat.BOTTOM_ANCHOR);
+      if (anchor) {
+        anchor.addService(googletag.pubads());
+      }
+
+      googletag.pubads().setPrivacySettings({ nonPersonalizedAds: true });
+      googletag.pubads().enableSingleRequest();
+      googletag.enableServices();
+
+      slotDivs.forEach(function(divId) {
+        googletag.display(divId);
+      });
+    });
+  });
+</script>
+
+<!-- End Salem Media Ads -->
+
+        <!-- Addsearch - Allow submitting the form with a search query -->
+        <script>
+        window.addsearch_settings = {
+            allow_parent_form_submit: true,
+            serp_url: '/search',
+            placeholder : 'Search here',
+            display_url: true,
+            display_resultscount: true,
+            display_date: true,
+            display_sortby: true
+        }
+        </script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-1WMYNGHQJQ"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-1WMYNGHQJQ');
+        </script>
+
+        <!-- Meta Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1711107575924281');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1711107575924281&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
+
+    <style type="text/css">.v-select{position:relative;font-family:inherit}.v-select,.v-select *{box-sizing:border-box}.v-select[dir=rtl] .vs__actions{padding:0 3px 0 6px}.v-select[dir=rtl] .dropdown-toggle .clear{margin-left:6px;margin-right:0}.v-select[dir=rtl] .selected-tag .close{margin-left:0;margin-right:2px}.v-select[dir=rtl] .dropdown-menu{text-align:right}.v-select .open-indicator{display:flex;align-items:center;cursor:pointer;pointer-events:all;opacity:1;width:12px}.v-select .open-indicator,.v-select .open-indicator:before{transition:all .15s cubic-bezier(1,-.115,.975,.855);transition-timing-function:cubic-bezier(1,-.115,.975,.855)}.v-select .open-indicator:before{border-color:rgba(60,60,60,.5);border-style:solid;border-width:3px 3px 0 0;content:"";display:inline-block;height:10px;width:10px;vertical-align:text-top;transform:rotate(133deg);box-sizing:inherit}.v-select.open .open-indicator:before{transform:rotate(315deg)}.v-select.loading .open-indicator{opacity:0}.v-select .dropdown-toggle{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:flex;padding:0 0 4px;background:none;border:1px solid rgba(60,60,60,.26);border-radius:4px;white-space:normal}.v-select .dropdown-toggle:after{display:none}.v-select .vs__selected-options{display:flex;flex-basis:100%;flex-grow:1;flex-wrap:wrap;padding:0 2px;position:relative}.v-select .vs__actions{display:flex;align-items:stretch;padding:0 6px 0 3px}.v-select .dropdown-toggle .clear{font-size:23px;font-weight:700;line-height:1;color:rgba(60,60,60,.5);padding:0;border:0;background-color:transparent;cursor:pointer;margin-right:6px}.v-select.searchable .dropdown-toggle{cursor:text}.v-select.unsearchable .dropdown-toggle{cursor:pointer}.v-select.open .dropdown-toggle{border-bottom-color:transparent;border-bottom-left-radius:0;border-bottom-right-radius:0}.v-select .dropdown-menu{display:block;position:absolute;top:100%;left:0;z-index:1000;min-width:160px;padding:5px 0;margin:0;width:100%;overflow-y:auto;border:1px solid rgba(0,0,0,.26);box-shadow:0 3px 6px 0 rgba(0,0,0,.15);border-top:none;border-radius:0 0 4px 4px;text-align:left;list-style:none;background:#fff}.v-select .no-options{text-align:center}.v-select .selected-tag{display:flex;align-items:center;background-color:#f0f0f0;border:1px solid #ccc;border-radius:4px;color:#333;line-height:1.42857143;margin:4px 2px 0;padding:0 .25em;transition:opacity .25s}.v-select.single .selected-tag{background-color:transparent;border-color:transparent}.v-select.single.open .selected-tag{position:absolute;opacity:.4}.v-select.single.searching .selected-tag{display:none}.v-select .selected-tag .close{margin-left:2px;font-size:1.25em;appearance:none;padding:0;cursor:pointer;background:0 0;border:0;font-weight:700;line-height:1;color:#000;text-shadow:0 1px 0 #fff;filter:alpha(opacity=20);opacity:.2}.v-select.single.searching:not(.open):not(.loading) input[type=search]{opacity:.2}.v-select input[type=search]::-webkit-search-cancel-button,.v-select input[type=search]::-webkit-search-decoration,.v-select input[type=search]::-webkit-search-results-button,.v-select input[type=search]::-webkit-search-results-decoration{display:none}.v-select input[type=search]::-ms-clear{display:none}.v-select input[type=search],.v-select input[type=search]:focus{appearance:none;-webkit-appearance:none;-moz-appearance:none;line-height:1.42857143;font-size:1em;display:inline-block;border:1px solid transparent;border-left:none;outline:none;margin:4px 0 0;padding:0 7px;max-width:100%;background:none;box-shadow:none;flex-grow:1;width:0;height:inherit}.v-select.unsearchable input[type=search]{opacity:1}.v-select.unsearchable input[type=search]:hover{cursor:pointer}.v-select li{line-height:1.42857143}.v-select li>a{display:block;padding:3px 20px;clear:both;color:#333;white-space:nowrap}.v-select li:hover{cursor:pointer}.v-select .dropdown-menu .active>a{color:#333;background:rgba(50,50,50,.1)}.v-select .dropdown-menu>.highlight>a{background:#5897fb;color:#fff}.v-select .highlight:not(:last-child){margin-bottom:0}.v-select .spinner{align-self:center;opacity:0;font-size:5px;text-indent:-9999em;overflow:hidden;border-top:.9em solid hsla(0,0%,39%,.1);border-right:.9em solid hsla(0,0%,39%,.1);border-bottom:.9em solid hsla(0,0%,39%,.1);border-left:.9em solid rgba(60,60,60,.45);transform:translateZ(0);animation:vSelectSpinner 1.1s infinite linear;transition:opacity .1s}.v-select .spinner,.v-select .spinner:after{border-radius:50%;width:5em;height:5em}.v-select.disabled .dropdown-toggle,.v-select.disabled .dropdown-toggle .clear,.v-select.disabled .dropdown-toggle input,.v-select.disabled .open-indicator,.v-select.disabled .selected-tag .close{cursor:not-allowed;background-color:#f8f8f8}.v-select.loading .spinner{opacity:1}@-webkit-keyframes vSelectSpinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes vSelectSpinner{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}.fade-enter-active,.fade-leave-active{transition:opacity .15s cubic-bezier(1,.5,.8,1)}.fade-enter,.fade-leave-to{opacity:0}</style><script async="" src="https://script.hotjar.com/modules.6a0f3932cb1341a35c18.js" charset="utf-8"></script><link href="https://ucarecdn.com/" rel="dns-prefetch"><style>:root {
+    --ht-color-text: inherit;
+    --ht-color-accent: #2997cf;
+    --ht-color-accent-text: #ffffff;
+    --ht-color-box: #ffffff;
+    --ht-color-box-text: #111111;
+    --ht-color-box-text-light: #767676;
+	--ht-color-input: #f1f1f1;
+
+    /* accent variations */
+    --ht-color-accent-35: color-mix(in srgb, var(--ht-color-accent) 35%, transparent);
+    --ht-color-accent-15: color-mix(in srgb, var(--ht-color-accent) 15%, transparent);
+    --ht-color-accent-5: color-mix(in srgb, var(--ht-color-accent) 5%, transparent);
+
+    --ht-box-shadow: 0px 2px 5px 1px rgba(0, 52, 102, 0.11);
+    --ht-box-radius: 20px;
+    --ht-box-border: 0px solid #aaaaaa;
+    --ht-button-radius: 20px;
+
+    --ht-color-danger: #ab2525;
+    --ht-color-success: #5d995d;
+    --ht-color-info: #5875b9;
+    --ht-color-warning: #8b5b04;
+}</style><link class="__ADORIC__" rel="stylesheet" type="text/css" href="https://static.adoric.com/adoric.v9.11.min.css" media="none"></head>
+
+    <body class="text-dark">
+
+         
+
+        
+            <!-- Google Tag Manager (noscript) -->
+            <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5P6WPGC"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+            <!-- End Google Tag Manager (noscript) -->
+        
+
+        
+
+        <div id="app"><div><div class="relative z-50 h-15"><div class="fixed top-0 left-0 right-0 flex items-center justify-center md:justify-between p-3 bg-new_dark h-15" data-gtm-vis-recent-on-screen32458470_77="1038" data-gtm-vis-first-on-screen32458470_77="1038" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><a href="/" class="mr-2"><img src="/img/logo.svg" alt="All Israel" class="w-32 lg:w-40 -mt-2"></a> <div class="flex-grow hidden px-3 text-center text-white lg:block text-text-base">
+            The ongoing blockade of Iran: Time is ticking
+        </div> <ul class="hidden md:flex text-xl leading-none md:mr-6"><li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/fr"><img src="/img/flags/french_flag.png" title="French" alt="French" width="30" class="lg:mb-2 mb-4"></a></li> <li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/es"><img src="/img/flags/spanish_flag.png" title="Spanish" alt="Spanish" width="30" class="lg:mb-2 mb-4"></a></li> <li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/de"><img src="/img/flags/german_flag.png" title="German" alt="German" width="30" class="lg:mb-2 mb-4"></a></li> <li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/pt"><img src="/img/flags/portuguese_flag.jpg" title="Portuguese" alt="Portuguese" width="30" class="lg:mb-2 mb-4"></a></li> <li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/ru"><img src="/img/flags/russian_flag.png" title="Russian" alt="Russian" width="30" class="lg:mb-2 mb-4"></a></li> <li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/kr"><img src="/img/flags/korean_flag.png" title="Korean" alt="Korean" width="30" class="lg:mb-2 mb-4"></a></li> <li class="ml-1 lg:ml-3 pt-3 md:pt-2"><a href="/cn"><img src="/img/flags/chinese_flag.png" title="Chinese" alt="Chinese" width="30" class="lg:mb-2 mb-4"></a></li></ul> <ul class="flex -ml-2 md:mr-1 mr-2 text-xl leading-none lg:-ml-3"><li class="ml-3 lg:ml-3"><a href="https://www.youtube.com/channel/UCu6O9MhKi6m7pgJcchrkxjA?sub_confirmation=1" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" fill="#FF0000" viewBox="0 0 24 24" class="w-7 h-7"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg> <span class="sr-only">Youtube</span></a></li></ul> <a href="/search"><div class="w-12 mr-0 text-2xl leading-none text-white ico ico--search lg:hidden"></div></a> <a href="/search" class="md:w-12 md:h-12 justify-center text-white items-center ico--search ico text-2xl transition duration-300 hidden lg:inline-flex"><span class="sr-only">Search</span></a></div></div> <div class="lg:pl-18"><aside class="hidden lg:block mt-15 w-18 fixed top-0 bottom-0 left-0 z-20 overflow-hidden bg-gray-400"><div class="overflow-hidden overflow-y-auto px-4 absolute top-0 h-full"><div class="pb-10 mt-8 text-center"><div class="font-extrabold uppercase text-2sm">May 3, 2026</div> <div class="text-sm uppercase">Recent Articles</div></div> <div class="pb-8 -mt-8"><div class="pt-5 mt-5 border-t border-dark"><a href="/blog/fake-iranian-opposition-wolves-in-different-wolves-clothes" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/b7103b31-7190-4b34-b554-700946bb8208.png/32b6f23bc849b53df80029bf472f119d/b7103b31-7190-4b34-b554-700946bb8208.webp" alt="" loading="lazy" title="AI-generated image of Maryam Rajavi dressed as a wolf in a hijab" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    opinion
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/blog/fake-iranian-opposition-wolves-in-different-wolves-clothes">Fake Iranian opposition – Wolves in different wolves clothes</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/trump-says-iran-has-not-paid-big-enough-price-after-tehran-submits-new-proposal-to-end-war" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/2026-05-02t223408z_505245882_rc2a1laq5cfh_rtrmadp_3_usa-trump.jpg/650ebe4acc00056e47b06c941adb5685/2026-05-02t223408z_505245882_rc2a1laq5cfh_rtrmadp_3_usa-trump.webp" alt="" loading="lazy" title="U.S. President Donald Trump speaks to the media before boarding Air Force One for departure to Miami, Florida, at Palm Beach International Airport in West Palm Beach, Florida, U.S., May 2, 2026. Photo: Reuters Connect" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/trump-says-iran-has-not-paid-big-enough-price-after-tehran-submits-new-proposal-to-end-war">Trump says Iran 'has not paid big enough price,' after Tehran submits new proposal to end war</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/experts-doubt-israels-quadrupled-pr-budget-will-improve-countrys-image" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/2025-11-29t152929z_1197444118_mt1zuma0007nvbh3_rtrmadp_3_zuma.jpg/ecd9893109add7c2d130d1089071c330/2025-11-29t152929z_1197444118_mt1zuma0007nvbh3_rtrmadp_3_zuma.webp" alt="" loading="lazy" title="Pro-Palestinian protesters holding signs march past City Hall during an anti-Israel rally in downtown Los Angeles, November 29, 2025.(Photo: Ghawam Kouchaki/ZUMA Press Wire via Reuters)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/experts-doubt-israels-quadrupled-pr-budget-will-improve-countrys-image">Experts skeptical Israel’s PR surge will improve its image</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/upcoming-lag-bomer-bonfires-raise-wildfire-concerns-as-israel-braces-for-summer-fire-season" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/f250430yz57.jpg/7c1b43ee111e6b500edea9b01e041b98/f250430yz57.webp" alt="" loading="lazy" title="Illustrative - A wildfire near Latrun outside of Jerusalem, April 30, 2025. (Photo: Yossi Zamir/Flash90)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/upcoming-lag-bomer-bonfires-raise-wildfire-concerns-as-israel-braces-for-summer-fire-season">Lag B’Omer bonfires raise wildfire concerns as Israel braces for summer fire season</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/blog/getting-americans-to-turn-on-israel" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_2384335421.jpg/29a3c2de17e7f3b7edd2f7e0e22f36df/shutterstock_2384335421.webp" alt="" loading="lazy" title="Anti-Israel protest in Washington, DC, Nov. 4, 2023. (Photo: Shutterstock)" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    opinion
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/blog/getting-americans-to-turn-on-israel">Getting Americans to turn on Israel</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/dearborn-michigan-the-anti-israel-epicenter-in-the-us" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/2024-05-19t200332z_2003288906_rc2vt7al03rl_rtrmadp_3_israel-palestinians-usa-protests.jpg/e5e88e17aca897b75a91a37279c272c0/2024-05-19t200332z_2003288906_rc2vt7al03rl_rtrmadp_3_israel-palestinians-usa-protests.webp" alt="" loading="lazy" title="Pro-Palestinian rally for a ceasefire in Gaza during the conflict between Israel and Hamas in Dearborn, Michigan, May 19, 2024. (Photo: REUTERS/Rebecca Cook)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/dearborn-michigan-the-anti-israel-epicenter-in-the-us">Dearborn Michigan: The anti-Israel epicenter of the United States?</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/outgoing-iaf-chief-tomer-bar-concludes-39-year-career-warns-no-iran-nuclear-deal-would-be-major-failure" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/5996617495000845357.jpg/2155bdb13b2d3705c29bb33e3474d40f/5996617495000845357.webp" alt="" loading="lazy" title="Israeli Air Force Commander Maj. Gen. Tomer Bar speaking during a Memorial Day ceremony, April 21, 2026. (Photo: IDF)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/outgoing-iaf-chief-tomer-bar-concludes-39-year-career-warns-no-iran-nuclear-deal-would-be-major-failure">Outgoing IAF Chief Tomer Bar concludes 39-year career, warns the absence of an Iran nuclear deal would be 'major failure'</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/eu-denounces-antisemitism-and-glorification-of-jihad-in-palestinian-schoolbooks-report" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/f240130ja10.jpg/14d34ad24ce7f3b6486cd4e9b7ddbcb9/f240130ja10.webp" alt="" loading="lazy" title="A UNRWA-funded school in the east Jerusalem neighborhood of Silwan, January 30, 2024. (Photo: Jamal Awad/Flash90)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/eu-denounces-antisemitism-and-glorification-of-jihad-in-palestinian-schoolbooks-report">EU denounces 'antisemitism' and 'glorification of jihad' in Palestinian schoolbooks – report</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/blog/despite-war-israel-continues-to-bless-the-world" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_1953294673.jpg/afe8e304efe26dd3504b65d18bf8cfc1/shutterstock_1953294673.webp" alt="" loading="lazy" title="Hydroponically grown strawberries in an agricultural farm in southern Israel. (Photo: Shutterstock)" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    opinion
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/blog/despite-war-israel-continues-to-bless-the-world">Despite war, Israel continues to bless the world</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/israel-develops-ai-powered-wildfire-detection-systems-as-major-wildfires-rage-across-us-and-japan" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/2026-04-27t000000z_2124071356_mt1kyodo0005dvs57_rtrmadp_3_wildfire-in-iwate-pref.jpg/75c8bec7cd3bab447d5f4338fb8c01b1/2026-04-27t000000z_2124071356_mt1kyodo0005dvs57_rtrmadp_3_wildfire-in-iwate-pref.webp" alt="" loading="lazy" title="Smoke rises in mountainous areas of Otsuchi, Iwate Prefecture, northeastern Japan, April 27, 2026. (Photo: Kyodo via Reuters)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/israel-develops-ai-powered-wildfire-detection-systems-as-major-wildfires-rage-across-us-and-japan">Israel develops AI-powered wildfire detection systems as major wildfires rage across US and Japan</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/iranian-leader-mojtaba-khamenei-threatens-washington-us-belongs-at-bottom-of-persian-gulf" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/mojtaba-khamenei.jpg/8e2802aac0f0ee5e129d8576532de9c5/mojtaba-khamenei.webp" alt="" loading="lazy" title="Iran’s new supreme leader, Mojtaba Khamenei, the second son of late Iran's Supreme Leader Ayatollah Ali Khamenei, attends a rally in Tehran, Iran, May 31, 2019. (Photo: Hamid Forootan/ISNA/WANA via REUTERS)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/iranian-leader-mojtaba-khamenei-threatens-washington-us-belongs-at-bottom-of-persian-gulf">Iranian leader Mojtaba Khamenei threatens Washington, says US belongs at bottom of Persian Gulf</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/israel-receives-us-shipment-of-6500-tons-of-munitions-in-major-resupply-operation" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/hhkoevaw0aaai1w.jpg/05d97f8d6bfb10540051e7fa0e47e561/hhkoevaw0aaai1w.webp" alt="" loading="lazy" title="Military equipment from the US arrives in Israel, April 30, 2026. (Photo: Israel Department of Defense)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/israel-receives-us-shipment-of-6500-tons-of-munitions-in-major-resupply-operation">Israel receives US shipment of 6,500 tons of munitions in major resupply operation</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/young-men-are-coming-back-to-church-what-do-they-believe-about-israel" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_1615084897.jpg/32c1d7ee3e19f8ee6dbb7d126d9f513b/shutterstock_1615084897.webp" alt="" loading="lazy" title="Illustrative - A young man in church (Photo: Shutterstock)" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    podcast interview
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/young-men-are-coming-back-to-church-what-do-they-believe-about-israel">Young men are coming back to church – What do they believe about Israel?</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/trump-netanyahu-stopped-iran-from-carrying-out-second-holocaust-israeli-minister-amichai-chikli-tells-all-israel-news-now-israel-needs-a-stronger-alliance-with-christians" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/screenshot-2026-05-01-at-14.07.47.png/32ce20ab2de7176746fd9c84e0711472/screenshot-2026-05-01-at-14.07.47.webp" alt="" loading="lazy" title="(Photo: Screenshot/TBN's The Rosenberg Report)" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    NEWSMAKER INTERVIEW
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/trump-netanyahu-stopped-iran-from-carrying-out-second-holocaust-israeli-minister-amichai-chikli-tells-all-israel-news-now-israel-needs-a-stronger-alliance-with-christians">Trump &amp; Netanyahu stopped Iran from carrying out ‘Second Holocaust,’ Israeli Minister Amichai Chikli tells ALL ISRAEL NEWS – now Israel needs a stronger alliance with Christians</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/groundbreaking-study-by-israeli-researchers-create-first-map-of-healthy-human-liver" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_2590374839.jpg/aaaa6282403247cba3e21e18b92e4ffa/shutterstock_2590374839.webp" alt="" loading="lazy" title="3D image of a human liver (Photo: Shutterstock)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/groundbreaking-study-by-israeli-researchers-create-first-map-of-healthy-human-liver">Groundbreaking study by Israeli researchers create first map of healthy human liver</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/hezbollah-drones-kill-israeli-soldier-wound-17-others-as-idf-struggles-to-cope-with-growing-fpv-drone-threat" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/sgt.-liem-ben-hamo-.jpg/87a63073ab5e12e3b91c7fdfedb3a635/sgt.-liem-ben-hamo-.webp" alt="" loading="lazy" title="Sgt. Liem Ben Hamo (Photo: IDF)" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    northern front
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/hezbollah-drones-kill-israeli-soldier-wound-17-others-as-idf-struggles-to-cope-with-growing-fpv-drone-threat">Hezbollah drones kill Israeli soldier, wound 17 others as IDF struggles to cope with growing FPV-drone threat</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/israel-provided-iron-beam-laser-defense-system-to-uae-to-boost-defense-against-iranian-drones" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/AIN/WhatsApp_Image_2025-12-28_at_14.58.28.jpg/5e1bc8133a284045e6f5d32cf7deafdc/WhatsApp_Image_2025-12-28_at_14.58.28.webp" alt="" loading="lazy" title="Iron Beam laser missile defense system (Photo: Ministry of Defense)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/israel-provided-iron-beam-laser-defense-system-to-uae-to-boost-defense-against-iranian-drones">Israel provided Iron Beam laser defense system to UAE to boost defense against Iranian drones - report</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/police-arrest-man-who-assaulted-nun-in-jerusalem-an-attack-condemned-by-foreign-ministry-and-hebrew-university-officials" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/screenshot-2026-05-01-at-12.21.56.png/e002c05ee03e6dc8bffe4e62ee23fdfb/screenshot-2026-05-01-at-12.21.56.webp" alt="" loading="lazy" title="A nun was assaulted near in Jerusalem, April 28, 2026. (Photo: Police Spokesperson's Unit)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/police-arrest-man-who-assaulted-nun-in-jerusalem-an-attack-condemned-by-foreign-ministry-and-hebrew-university-officials">Police arrest man who assaulted nun in Jerusalem; attack condemned by Foreign Ministry, Hebrew University officials</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/israel-prepares-for-iran-war-to-resume-as-early-as-next-week-as-trump-briefed-on-military-options" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/mod-still-april-30.jpg/5a9fc83d557f5f85e372b4390784ab1e/mod-still-april-30.webp" alt="" loading="lazy" title="Still image from footage of unloading of 6,500 tons of munitions and military equipment delivered to Israel. (Credit: Israel Ministry of Defense)" class="w-full"></a> <div class="pt-2"><div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/israel-prepares-for-iran-war-to-resume-as-early-as-next-week-as-trump-briefed-on-military-options">Israel prepares for Iran war to resume as early as next week, President Trump briefed on military options</a></div></div></div> <div class="pt-5 mt-5 border-t border-dark"><a href="/blog/the-burden-called-israel" class="block mb-1 flex flex-col"><img width="320" height="200" src="https://cdn.allisraelnews.com/containers/digitalocean/AIN/F240512MG16.jpg/6c9ff7ee6452bc5a209985c8925ea79f/F240512MG16.webp" alt="" loading="lazy" title="Volunteers replace the flag with a huge 90 square meter flag, one of the largest National Flags, that can be seen from across the Syrian border, in Tel Saki Memorial Site, Golan Heights on May 12, 2024. (Photo: Michael Giladi/ Flash90)" class="w-full"></a> <div class="pt-2"><div class="mb-2"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                    opinion
+                </div></div> <div class="text-2xl font-extrabold leading-none tracking-tight"><a href="/blog/the-burden-called-israel">The burden called Israel</a></div></div></div></div></div> <div class="absolute bottom-0 left-0 right-0 flex flex-col items-center text-gray-200 bg-white pt-1 shadow-white pointer-events-none" data-gtm-vis-recent-on-screen32458470_77="1040" data-gtm-vis-first-on-screen32458470_77="1040" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"></div></aside> <div class="z-20 flex-grow lg:shadow-mainbox"><div class="flex-grow px-4 shadow-article"><article class="pt-4 pb-6 mx-auto max-w-6xl"><div class="flex w-full" data-gtm-vis-recent-on-screen32458470_77="1042" data-gtm-vis-first-on-screen32458470_77="1042" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><div class="flex-grow lg:pr-10"><header><div class="pb-4"></div> <div class="flex items-center justify-between font-bold py-2 pl-3 border-t border-solid text-black lg:flex sm:block" data-gtm-vis-recent-on-screen32458470_77="1044" data-gtm-vis-first-on-screen32458470_77="1044" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1">Opinion Blog / Guest Columnist</div> <div class="flex items-center justify-between py-3 px-5 mb-1 border-t border-b border-solid lg:flex sm:block" style="background-color: rgb(211, 211, 211);" data-gtm-vis-recent-on-screen32458470_77="1046" data-gtm-vis-first-on-screen32458470_77="1046" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><div class="flex self-center" data-gtm-vis-recent-on-screen32458470_77="1048" data-gtm-vis-first-on-screen32458470_77="1048" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><time datetime="May 2nd, 2026" class="mt-0 text-gray-200 text-xs-bottom-2 divide-gray-300"><img src="https://ain-images.nyc3.digitaloceanspaces.com/old_assets/josh-bowditch.png" alt="Josh Bowditch" loading="lazy" title="Josh Bowditch" class="mr-3 mt-1 flex-shrink-0 my-2 h-24 w-24 rounded-full xl:w-24 xl:h-24"> <span class="rssauthor"><a title="Josh Bowditch" href="/writer/josh-bowditch" class="font-bold inline-block mt-1 text-sm text-new_primary">Josh Bowditch</a></span>
+        
+
+    
+
+
+                                        | <small>May 2, 2026</small></time></div> <div class="items-center justify-between hidden lg:flex"><ul class="flex -ml-4 text-3xl leading-none lg:-ml-6"><li class="ml-4 lg:ml-6"><a href="https://www.facebook.com/sharer/sharer.php?u=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#3b5998" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"></path></svg> <span class="sr-only">Facebook</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://twitter.com/intent/tweet?text=The ongoing blockade of Iran: Time is ticking&amp;url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;via=all_israel_news" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 bg-white rounded py-1 px-1 hover:text-opacity-100"><svg fill="none" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006"><path d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z" fill="#000"></path></svg> <span class="sr-only">Twitter (X)</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://web.whatsapp.com/send?text=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking?utm_source=whatsapp%26utm_medium=social" target="_blank" data-action="share/whatsapp/share" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"></path></svg> <span class="sr-only">Whatsapp</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://reddit.com/submit?url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;title=The ongoing blockade of Iran: Time is ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="400" cy="400" fill="#ff4500" r="400"></circle><path d="M666.8 400c.08 5.48-.6 10.95-2.04 16.24s-3.62 10.36-6.48 15.04c-2.85 4.68-6.35 8.94-10.39 12.65s-8.58 6.83-13.49 9.27c.11 1.46.2 2.93.25 4.4a107.268 107.268 0 0 1 0 8.8c-.05 1.47-.14 2.94-.25 4.4 0 89.6-104.4 162.4-233.2 162.4S168 560.4 168 470.8c-.11-1.46-.2-2.93-.25-4.4a107.268 107.268 0 0 1 0-8.8c.05-1.47.14-2.94.25-4.4a58.438 58.438 0 0 1-31.85-37.28 58.41 58.41 0 0 1 7.8-48.42 58.354 58.354 0 0 1 41.93-25.4 58.4 58.4 0 0 1 46.52 15.5 286.795 286.795 0 0 1 35.89-20.71c12.45-6.02 25.32-11.14 38.51-15.3s26.67-7.35 40.32-9.56 27.45-3.42 41.28-3.63L418 169.6c.33-1.61.98-3.13 1.91-4.49.92-1.35 2.11-2.51 3.48-3.4 1.38-.89 2.92-1.5 4.54-1.8 1.61-.29 3.27-.26 4.87.09l98 19.6c9.89-16.99 30.65-24.27 48.98-17.19s28.81 26.43 24.71 45.65c-4.09 19.22-21.55 32.62-41.17 31.61-19.63-1.01-35.62-16.13-37.72-35.67L440 186l-26 124.8c13.66.29 27.29 1.57 40.77 3.82a284.358 284.358 0 0 1 77.8 24.86A284.412 284.412 0 0 1 568 360a58.345 58.345 0 0 1 29.4-15.21 58.361 58.361 0 0 1 32.95 3.21 58.384 58.384 0 0 1 25.91 20.61A58.384 58.384 0 0 1 666.8 400zm-396.96 55.31c2.02 4.85 4.96 9.26 8.68 12.97 3.71 3.72 8.12 6.66 12.97 8.68A40.049 40.049 0 0 0 306.8 480c16.18 0 30.76-9.75 36.96-24.69 6.19-14.95 2.76-32.15-8.68-43.59s-28.64-14.87-43.59-8.68c-14.94 6.2-24.69 20.78-24.69 36.96 0 5.25 1.03 10.45 3.04 15.31zm229.1 96.02c2.05-2 3.22-4.73 3.26-7.59.04-2.87-1.07-5.63-3.07-7.68s-4.73-3.22-7.59-3.26c-2.87-.04-5.63 1.07-7.94 2.8a131.06 131.06 0 0 1-19.04 11.35 131.53 131.53 0 0 1-20.68 7.99c-7.1 2.07-14.37 3.54-21.72 4.39-7.36.85-14.77 1.07-22.16.67-7.38.33-14.78.03-22.11-.89a129.01 129.01 0 0 1-21.64-4.6c-7.08-2.14-13.95-4.88-20.56-8.18s-12.93-7.16-18.89-11.53c-2.07-1.7-4.7-2.57-7.38-2.44s-5.21 1.26-7.11 3.15c-1.89 1.9-3.02 4.43-3.15 7.11s.74 5.31 2.44 7.38c7.03 5.3 14.5 9.98 22.33 14s16 7.35 24.4 9.97 17.01 4.51 25.74 5.66c8.73 1.14 17.54 1.53 26.33 1.17 8.79.36 17.6-.03 26.33-1.17A153.961 153.961 0 0 0 476.87 564c7.83-4.02 15.3-8.7 22.33-14zm-7.34-68.13c5.42.06 10.8-.99 15.81-3.07 5.01-2.09 9.54-5.17 13.32-9.06s6.72-8.51 8.66-13.58A39.882 39.882 0 0 0 532 441.6c0-16.18-9.75-30.76-24.69-36.96-14.95-6.19-32.15-2.76-43.59 8.68s-14.87 28.64-8.68 43.59c6.2 14.94 20.78 24.69 36.96 24.69z" fill="#fff"></path></svg> <span class="sr-only">Reddit</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://t.me/share/url?url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking?utm_source=telegram%26utm_medium=social | entities}}&amp;text=The ongoing blockade of Iran: Time is ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg fill="none" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250 500c138.071 0 250-111.929 250-250S388.071 0 250 0 0 111.929 0 250s111.929 250 250 250z" fill="#34aadf"></path><path d="M104.047 247.832s125-51.3 168.352-69.364c16.619-7.225 72.977-30.347 72.977-30.347s26.012-10.115 23.844 14.451c-.723 10.116-6.503 45.52-12.283 83.815-8.671 54.191-18.064 113.439-18.064 113.439s-1.445 16.619-13.728 19.509-32.515-10.115-36.127-13.006c-2.891-2.167-54.191-34.682-72.977-50.578-5.058-4.335-10.838-13.005.722-23.121 26.012-23.844 57.081-53.468 75.867-72.254 8.671-8.671 17.341-28.902-18.786-4.336-51.3 35.405-101.878 68.642-101.878 68.642s-11.561 7.225-33.237.722c-21.677-6.502-46.966-15.173-46.966-15.173s-17.34-10.838 12.284-22.399z" fill="#fff"></path></svg> <span class="sr-only">Telegram</span></a></li> <li data-lang="eng" data-site="All Israel News" data-title="The ongoing blockade of Iran: Time is ticking" data-link="https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" class="ml-4 lg:ml-6"><a href="mailto:?subject=The ongoing blockade of Iran: Time is ticking=I found this on All Israel News and thought it might interest you: https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" onclick="return false;"><span class="sr-only">Email</span></a></li> <a href="javascript:window.print();" class="inline-block text-opacity-75 transition duration-300 ico ico--print text-dark hover:text-opacity-100"><span class="sr-only">Print</span></a></ul></div></div> <div class="flex items-center mb-4 flex-wrap py-2 border-b border-solid text-gray text-sm" data-gtm-vis-recent-on-screen32458470_77="1049" data-gtm-vis-first-on-screen32458470_77="1049" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1">
+                            ALL ISRAEL NEWS is committed to fair and balanced coverage and analysis, and honored to publish a wide-range of opinions. That said, views expressed by guest columnists may not necessarily reflect the views of our staff.
+                        </div> <div class="mb-3 flex items-center" data-gtm-vis-recent-on-screen32458470_77="1051" data-gtm-vis-first-on-screen32458470_77="1051" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><div class="inline-block px-2 py-1 mr-1 leading-none tracking-wide text-white uppercase bg-alert text-2xs">
+                                opinion
+                            </div></div> <h1 class="mb-3 text-3xl font-extrabold leading-none tracking-tight lg:text-5xl lg:leading-tight">
+                        The ongoing blockade of Iran: Time is ticking
+                    </h1></header> <div class="items-center justify-between py-0 mb-4 flex" data-gtm-vis-recent-on-screen32458470_77="1053" data-gtm-vis-first-on-screen32458470_77="1053" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><div class="flex items-center justify-between" data-gtm-vis-recent-on-screen32458470_77="1054" data-gtm-vis-first-on-screen32458470_77="1054" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><time class="mt-0 text-gray-200 text-xs-bottom-2 divide-gray-300"><small class="mr-6">Read this article in: </small></time>&nbsp;
+            <ul class="flex text-3xl leading-none"><li class="ml-2 lg:ml-3 pt-3 md:pt-2"><a href="https://allisraelnews.com/fr/blog/le-blocus-actuel-de-liran-le-temps-presse"><img src="/img/flags/fr_flag.png" title="fr" alt="fr" width="35" class="lg:mb-2 mb-4"></a></li> <li class="ml-2 lg:ml-3 pt-3 md:pt-2"><a href="https://allisraelnews.com/kr/blog/the-ongoing-blockade-of-iran-time-is-ticking"><img src="/img/flags/kr_flag.png" title="kr" alt="kr" width="35" class="lg:mb-2 mb-4"></a></li></ul></div></div> <div class="block lg:mr-5 -mx-4 lg:ml-0"><img width="640" src="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_2417769799.jpg/303965f0674d7d0178fa5282146543c4/shutterstock_2417769799.webp" alt="" loading="lazy" title="Illustrative - A large crude oil tanker (Photo: Shutterstock)" class="w-full mb-1 align-top"></div> <div class="pt-1 pb-5 text-sm text-gray-200">
+                        
+                            Illustrative - A large crude oil tanker (Photo: Shutterstock)
+                        
+                    </div> <iframe src="https://trinitymedia.ai/player/trinity-i/2900015433/?pageURL=https%3A//allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;readContentType=URL" class="trinity-player trinity-iframe" style="border: 0px; width: 100% !important; height: 80px !important;"></iframe> <div class="mb-8 prose md:prose-lg lg:prose-xl"><main id="article-main"><p>The US blockade is delineated from Ras al Hadd, Oman, the point at the interface of the Gulf of Oman and Arabian Sea, across to the Iran-Pakistan border [1].&nbsp;Crude oil is Iran’s most valuable export [2].&nbsp;Iran’s storage for crude oil, based on domestic rate of production, is limited to about a month of accumulation before reaching capacity, at which point Iranian oil wells would have to be shut in [3].&nbsp;Shutting in an oil well risks “water coning”, in which water intrudes into the reservoir, permanently trapping oil within rock pores and making it irrecoverable [4]. As time is ticking, the Israeli Defense Minister suggested that Israel may take military action against Iran independently of the United States on the basis of existential threats [5].</p><p><strong>Blockade Crossings</strong></p><div id="div-gpt-ad-art-300x250_1" style="margin: 20px auto; text-align: center;"></div><p>Since the start of the U.S. blockade, a few dry bulk cargo ships have crossed the blockade line.&nbsp;This includes two dry bulk cargo ships, the <em>Locarno</em> and the <em>Ponente</em>, departing the Iranian port at Chabahar and destined for Brazil [6].&nbsp;Likely carrying urea fertilizer, as Brazil imports bulk quantities of it from Iran [7], they may have been given permission to cross the blockade.&nbsp;Iran produces an abundance of natural gas, a portion of which is used to produce ammonia [8], which in turn is used to produce urea [9]. The disruption of fertilizer supply is a noted concern for halted shipping in the situation with Iran [10].&nbsp;On April 26, the dry bulk cargo ship <em>Ascanio</em>, which left the Iranian port of Bandar Imam Khomeini, crossed the blockade line [11].&nbsp;The <em>Ascanio</em> reportedly had delivered commodity food to Iran [12]. Dry bulk shipments in or out of the Straight of Hormuz are typically either for commodity food or fertilizers [13].</p><p><strong>Above the Law</strong></p><p>The war began on February 28 and congressional approval to continue the war is required by US law within 60 days [14].&nbsp;Indeed, blockading is an act or war [15], and as such congressional approval would be required by end of day May 1.&nbsp;Daniel 11:36 speaks of a ruler who will do as he pleases. In context this is speaking of a king during the intertestamental period who was a prototype of antichrist.&nbsp; In many ways this behavior is characteristic of the President of the United States, especially in this case where US law is overridden.&nbsp;The motive for pointing this out is not political, but to show the inconsistency of an administration which is emphatically claimed to be conservative.&nbsp;</p><div id="div-gpt-ad-art-300x250_2" style="margin: 20px auto; text-align: center;"></div><p><strong>Warning about the “Golden Age”</strong></p><p>In his book <em>The Art of the Deal</em>, the man who is now President of the United States wrote “the dollar always talks in the end”.&nbsp;This is stated in the context of criticizing presidents Jimmy Carter and Ronald Reagen and the importance to “deliver the goods” to the people.&nbsp;These personal thoughts give insight to his ambition and desired outcome.&nbsp;Biblically speaking, the “golden-age” is an illusion because of “the deceitfulness of riches” (Matthew 13:22, Mark 4:19). Riches are conducive to pride, as with King Solomon, who although the wisest man, still suffered from pride because of his riches. Interestingly, Solomon’s gold is associated with the number 666 in 2 Chronicles 9:13.</p><p><br><strong>Resources</strong></p><p>[1] Wells, K., P. Hempel, C. Moorman, B. Rezaei, B. Schmida, A. Fattah, N. Morrison, K. Campa, R. Reddy, and B. Carter. Iran Update Special Report, April 16, 2026.&nbsp; Institute for the Study of War.</p><p>[2] Moorman, C., B. Schmida, A. Fattah, W. Doran, N. Morrison, K. Campa, A. Ganzeveld. Iran Update Special Report, April 27, 2026.&nbsp; Institute for the Study of War.</p><p>[3] Paton, C.&nbsp; 2026, April 23.&nbsp; Analysis: <em>Iran Economy looks set to withstand US naval blockade, analysts say</em>.&nbsp; The Times of Israel.&nbsp;&nbsp;</p><p>[4] Maleki, M.&nbsp; 2026, April 13.&nbsp; Insight: <em>What the US naval blockade would mean for Iran’s economy</em>.&nbsp; Iran International.</p><p>[5] Fabian, E.&nbsp; 2026, April 30.&nbsp; Live Update: <em>Katz warns Israel may act ‘soon’ to eliminate ‘existential threats’ by Iran</em>.&nbsp; The Times of Israel.&nbsp;&nbsp;</p><p>[6] Tobin, Y., J. Brody, S. Havdala, and R. Gabber.&nbsp; Operations Epic Fury and Roaring Lion: 4/23/26 Update.&nbsp; The Jewish Institute for National Security of America.</p><p>[7] 2023.&nbsp; Argus Brazil Grains and Fertilizer, Issue 23-1.&nbsp; Argus Media Group.</p><p>[8] March/April 2018.&nbsp; Nitrogen+Syngas 352:26-29.&nbsp; BC Insight.&nbsp;&nbsp;</p><p>[9] Pellegrino, J. L.&nbsp; 2000.&nbsp; Energy and Environmental Profile of the Chemicals Industry.</p><p>[10] Ratner, M., P. Brown, L. W. Rosen, and C. Thomas.&nbsp; 2026, March 11.&nbsp; Iran Conflict and the Strait of Hormuz: Impacts on Oil, Gas, and Other Commodities.&nbsp; U.S. Congressional Research Service.&nbsp;&nbsp;</p><p>[11] Tobin, Y., J. Brody, S. Havdala, and R. Gabber.&nbsp; Operations Epic Fury and Roaring Lion: 4/25/26 – 4/26/26 Update.&nbsp; The Jewish Institute for National Security of America.</p><p>[12] Soon, W. 2026, April 23.&nbsp; Hormuz Stalls after Iran Made First Ship Seizures.&nbsp; Bloomberg.</p><p>[13] Frittelli, J. and B. Goldman.&nbsp; 2026, April 10.&nbsp; The Strait of Hormuz in Brief: Non-Oil Shipments and Effects on U.S. Shippers.&nbsp; Congressional Research Service.</p><p>[14] Zengerle, P.&nbsp; 2026, April 30.&nbsp; Analysis: <em>Deadline approaches for Trump to secure Congressional approval for Iran War</em>.&nbsp; The Times of Israel.</p><p>[15] Whiteman, M. M.&nbsp; 1968.&nbsp; Digest of International Law, Volume 10.&nbsp; US Government Printing Office, Washington, DC.</p> <small class="-mt-5"><div style="padding-top: 3px; color: rgb(85, 85, 85); text-align: center;"></div></small></main> <header></header></div> <div class="flex mb-10 md:hidden"><span class="text-dark pr-5 font-bold">Share:</span> <div class="flex items-center justify-between w-full mb-6 lg:justify-start"><ul class="flex -ml-4 text-3xl leading-none lg:-ml-6"><li class="ml-4 lg:ml-6"><a href="https://www.facebook.com/sharer/sharer.php?u=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#3b5998" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"></path></svg> <span class="sr-only">Facebook</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://twitter.com/intent/tweet?text=The ongoing blockade of Iran: Time is ticking&amp;url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;via=all_israel_news" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 bg-white rounded py-1 px-1 hover:text-opacity-100"><svg fill="none" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006"><path d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z" fill="#000"></path></svg> <span class="sr-only">Twitter (X)</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://web.whatsapp.com/send?text=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking?utm_source=whatsapp%26utm_medium=social" target="_blank" data-action="share/whatsapp/share" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"></path></svg> <span class="sr-only">Whatsapp</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://reddit.com/submit?url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;title=The ongoing blockade of Iran: Time is ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="400" cy="400" fill="#ff4500" r="400"></circle><path d="M666.8 400c.08 5.48-.6 10.95-2.04 16.24s-3.62 10.36-6.48 15.04c-2.85 4.68-6.35 8.94-10.39 12.65s-8.58 6.83-13.49 9.27c.11 1.46.2 2.93.25 4.4a107.268 107.268 0 0 1 0 8.8c-.05 1.47-.14 2.94-.25 4.4 0 89.6-104.4 162.4-233.2 162.4S168 560.4 168 470.8c-.11-1.46-.2-2.93-.25-4.4a107.268 107.268 0 0 1 0-8.8c.05-1.47.14-2.94.25-4.4a58.438 58.438 0 0 1-31.85-37.28 58.41 58.41 0 0 1 7.8-48.42 58.354 58.354 0 0 1 41.93-25.4 58.4 58.4 0 0 1 46.52 15.5 286.795 286.795 0 0 1 35.89-20.71c12.45-6.02 25.32-11.14 38.51-15.3s26.67-7.35 40.32-9.56 27.45-3.42 41.28-3.63L418 169.6c.33-1.61.98-3.13 1.91-4.49.92-1.35 2.11-2.51 3.48-3.4 1.38-.89 2.92-1.5 4.54-1.8 1.61-.29 3.27-.26 4.87.09l98 19.6c9.89-16.99 30.65-24.27 48.98-17.19s28.81 26.43 24.71 45.65c-4.09 19.22-21.55 32.62-41.17 31.61-19.63-1.01-35.62-16.13-37.72-35.67L440 186l-26 124.8c13.66.29 27.29 1.57 40.77 3.82a284.358 284.358 0 0 1 77.8 24.86A284.412 284.412 0 0 1 568 360a58.345 58.345 0 0 1 29.4-15.21 58.361 58.361 0 0 1 32.95 3.21 58.384 58.384 0 0 1 25.91 20.61A58.384 58.384 0 0 1 666.8 400zm-396.96 55.31c2.02 4.85 4.96 9.26 8.68 12.97 3.71 3.72 8.12 6.66 12.97 8.68A40.049 40.049 0 0 0 306.8 480c16.18 0 30.76-9.75 36.96-24.69 6.19-14.95 2.76-32.15-8.68-43.59s-28.64-14.87-43.59-8.68c-14.94 6.2-24.69 20.78-24.69 36.96 0 5.25 1.03 10.45 3.04 15.31zm229.1 96.02c2.05-2 3.22-4.73 3.26-7.59.04-2.87-1.07-5.63-3.07-7.68s-4.73-3.22-7.59-3.26c-2.87-.04-5.63 1.07-7.94 2.8a131.06 131.06 0 0 1-19.04 11.35 131.53 131.53 0 0 1-20.68 7.99c-7.1 2.07-14.37 3.54-21.72 4.39-7.36.85-14.77 1.07-22.16.67-7.38.33-14.78.03-22.11-.89a129.01 129.01 0 0 1-21.64-4.6c-7.08-2.14-13.95-4.88-20.56-8.18s-12.93-7.16-18.89-11.53c-2.07-1.7-4.7-2.57-7.38-2.44s-5.21 1.26-7.11 3.15c-1.89 1.9-3.02 4.43-3.15 7.11s.74 5.31 2.44 7.38c7.03 5.3 14.5 9.98 22.33 14s16 7.35 24.4 9.97 17.01 4.51 25.74 5.66c8.73 1.14 17.54 1.53 26.33 1.17 8.79.36 17.6-.03 26.33-1.17A153.961 153.961 0 0 0 476.87 564c7.83-4.02 15.3-8.7 22.33-14zm-7.34-68.13c5.42.06 10.8-.99 15.81-3.07 5.01-2.09 9.54-5.17 13.32-9.06s6.72-8.51 8.66-13.58A39.882 39.882 0 0 0 532 441.6c0-16.18-9.75-30.76-24.69-36.96-14.95-6.19-32.15-2.76-43.59 8.68s-14.87 28.64-8.68 43.59c6.2 14.94 20.78 24.69 36.96 24.69z" fill="#fff"></path></svg> <span class="sr-only">Reddit</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://t.me/share/url?url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking?utm_source=telegram%26utm_medium=social | entities}}&amp;text=The ongoing blockade of Iran: Time is ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg fill="none" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250 500c138.071 0 250-111.929 250-250S388.071 0 250 0 0 111.929 0 250s111.929 250 250 250z" fill="#34aadf"></path><path d="M104.047 247.832s125-51.3 168.352-69.364c16.619-7.225 72.977-30.347 72.977-30.347s26.012-10.115 23.844 14.451c-.723 10.116-6.503 45.52-12.283 83.815-8.671 54.191-18.064 113.439-18.064 113.439s-1.445 16.619-13.728 19.509-32.515-10.115-36.127-13.006c-2.891-2.167-54.191-34.682-72.977-50.578-5.058-4.335-10.838-13.005.722-23.121 26.012-23.844 57.081-53.468 75.867-72.254 8.671-8.671 17.341-28.902-18.786-4.336-51.3 35.405-101.878 68.642-101.878 68.642s-11.561 7.225-33.237.722c-21.677-6.502-46.966-15.173-46.966-15.173s-17.34-10.838 12.284-22.399z" fill="#fff"></path></svg> <span class="sr-only">Telegram</span></a></li> <li class="ml-4 lg:ml-6"><a href="javascript:window.print();" class="inline-block text-opacity-75 transition duration-300 ico ico--print text-dark hover:text-opacity-100"><span class="sr-only">Print</span></a></li></ul></div></div> <div class="flex mb-5 pb-5 border-b border-solid border-dark" style="direction: ltr;"><img src="https://ain-images.nyc3.digitaloceanspaces.com/old_assets/josh-bowditch.png" alt="" class="h-24 w-24 rounded-full xl:w-24 xl:h-24"> <div class="space-y-2 pl-5 space-y-1"><div class="text-lg leading-5 font-medium"><a href="/writer/josh-bowditch"><h2>Josh Bowditch</h2></a></div> <div><p class="text-grey-300"></p><p>Josh Bowditch is an aspirer of stewardship in the Biblical sense. This includes ascertaining the truth and writing concisely about topics of interest.</p> <p></p></div></div></div> <div class="flex hidden md:flex"><span class="text-dark pr-5 font-bold text-lg">Share:</span> <div class="flex items-center justify-between w-full mb-6 lg:justify-start"><ul class="flex -ml-4 text-3xl leading-none lg:-ml-6"><li class="ml-4 lg:ml-6"><a href="https://www.facebook.com/sharer/sharer.php?u=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#3b5998" viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z"></path></svg> <span class="sr-only">Facebook</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://twitter.com/intent/tweet?text=The ongoing blockade of Iran: Time is ticking&amp;url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;via=all_israel_news" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 bg-white rounded py-1 px-1 hover:text-opacity-100"><svg fill="none" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006"><path d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z" fill="#000"></path></svg> <span class="sr-only">Twitter (X)</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://web.whatsapp.com/send?text=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking?utm_source=whatsapp%26utm_medium=social" target="_blank" data-action="share/whatsapp/share" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="green" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"></path></svg> <span class="sr-only">Whatsapp</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://reddit.com/submit?url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking&amp;title=The ongoing blockade of Iran: Time is ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" width="30" height="30"><circle cx="400" cy="400" fill="#ff4500" r="400"></circle><path d="M666.8 400c.08 5.48-.6 10.95-2.04 16.24s-3.62 10.36-6.48 15.04c-2.85 4.68-6.35 8.94-10.39 12.65s-8.58 6.83-13.49 9.27c.11 1.46.2 2.93.25 4.4a107.268 107.268 0 0 1 0 8.8c-.05 1.47-.14 2.94-.25 4.4 0 89.6-104.4 162.4-233.2 162.4S168 560.4 168 470.8c-.11-1.46-.2-2.93-.25-4.4a107.268 107.268 0 0 1 0-8.8c.05-1.47.14-2.94.25-4.4a58.438 58.438 0 0 1-31.85-37.28 58.41 58.41 0 0 1 7.8-48.42 58.354 58.354 0 0 1 41.93-25.4 58.4 58.4 0 0 1 46.52 15.5 286.795 286.795 0 0 1 35.89-20.71c12.45-6.02 25.32-11.14 38.51-15.3s26.67-7.35 40.32-9.56 27.45-3.42 41.28-3.63L418 169.6c.33-1.61.98-3.13 1.91-4.49.92-1.35 2.11-2.51 3.48-3.4 1.38-.89 2.92-1.5 4.54-1.8 1.61-.29 3.27-.26 4.87.09l98 19.6c9.89-16.99 30.65-24.27 48.98-17.19s28.81 26.43 24.71 45.65c-4.09 19.22-21.55 32.62-41.17 31.61-19.63-1.01-35.62-16.13-37.72-35.67L440 186l-26 124.8c13.66.29 27.29 1.57 40.77 3.82a284.358 284.358 0 0 1 77.8 24.86A284.412 284.412 0 0 1 568 360a58.345 58.345 0 0 1 29.4-15.21 58.361 58.361 0 0 1 32.95 3.21 58.384 58.384 0 0 1 25.91 20.61A58.384 58.384 0 0 1 666.8 400zm-396.96 55.31c2.02 4.85 4.96 9.26 8.68 12.97 3.71 3.72 8.12 6.66 12.97 8.68A40.049 40.049 0 0 0 306.8 480c16.18 0 30.76-9.75 36.96-24.69 6.19-14.95 2.76-32.15-8.68-43.59s-28.64-14.87-43.59-8.68c-14.94 6.2-24.69 20.78-24.69 36.96 0 5.25 1.03 10.45 3.04 15.31zm229.1 96.02c2.05-2 3.22-4.73 3.26-7.59.04-2.87-1.07-5.63-3.07-7.68s-4.73-3.22-7.59-3.26c-2.87-.04-5.63 1.07-7.94 2.8a131.06 131.06 0 0 1-19.04 11.35 131.53 131.53 0 0 1-20.68 7.99c-7.1 2.07-14.37 3.54-21.72 4.39-7.36.85-14.77 1.07-22.16.67-7.38.33-14.78.03-22.11-.89a129.01 129.01 0 0 1-21.64-4.6c-7.08-2.14-13.95-4.88-20.56-8.18s-12.93-7.16-18.89-11.53c-2.07-1.7-4.7-2.57-7.38-2.44s-5.21 1.26-7.11 3.15c-1.89 1.9-3.02 4.43-3.15 7.11s.74 5.31 2.44 7.38c7.03 5.3 14.5 9.98 22.33 14s16 7.35 24.4 9.97 17.01 4.51 25.74 5.66c8.73 1.14 17.54 1.53 26.33 1.17 8.79.36 17.6-.03 26.33-1.17A153.961 153.961 0 0 0 476.87 564c7.83-4.02 15.3-8.7 22.33-14zm-7.34-68.13c5.42.06 10.8-.99 15.81-3.07 5.01-2.09 9.54-5.17 13.32-9.06s6.72-8.51 8.66-13.58A39.882 39.882 0 0 0 532 441.6c0-16.18-9.75-30.76-24.69-36.96-14.95-6.19-32.15-2.76-43.59 8.68s-14.87 28.64-8.68 43.59c6.2 14.94 20.78 24.69 36.96 24.69z" fill="#fff"></path></svg> <span class="sr-only">Reddit</span></a></li> <li class="ml-4 lg:ml-6"><a href="https://t.me/share/url?url=https://allisraelnews.com/blog/the-ongoing-blockade-of-iran-time-is-ticking?utm_source=telegram%26utm_medium=social | entities}}&amp;text=The ongoing blockade of Iran: Time is ticking" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark hover:text-opacity-100"><svg fill="none" width="30" height="30" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250 500c138.071 0 250-111.929 250-250S388.071 0 250 0 0 111.929 0 250s111.929 250 250 250z" fill="#34aadf"></path><path d="M104.047 247.832s125-51.3 168.352-69.364c16.619-7.225 72.977-30.347 72.977-30.347s26.012-10.115 23.844 14.451c-.723 10.116-6.503 45.52-12.283 83.815-8.671 54.191-18.064 113.439-18.064 113.439s-1.445 16.619-13.728 19.509-32.515-10.115-36.127-13.006c-2.891-2.167-54.191-34.682-72.977-50.578-5.058-4.335-10.838-13.005.722-23.121 26.012-23.844 57.081-53.468 75.867-72.254 8.671-8.671 17.341-28.902-18.786-4.336-51.3 35.405-101.878 68.642-101.878 68.642s-11.561 7.225-33.237.722c-21.677-6.502-46.966-15.173-46.966-15.173s-17.34-10.838 12.284-22.399z" fill="#fff"></path></svg> <span class="sr-only">Telegram</span></a></li> <li class="ml-4 lg:ml-6"><a href="javascript:window.print();" class="inline-block text-opacity-75 transition duration-300 ico ico--print text-dark hover:text-opacity-100"><span class="sr-only">Print</span></a></li></ul></div></div> <div class="border-b border-gray-600 bg-white pb-10"><h2 class="text-base font-semibold leading-6 text-gray-600 pb-3">You might also like to read this:</h2> <article class="max-w-sm w-full lg:max-w-full lg:flex"><div class="flex-none text-center overflow-hidden" style="width: 25%; float: left;"><a href="/trump-netanyahu-stopped-iran-from-carrying-out-second-holocaust-israeli-minister-amichai-chikli-tells-all-israel-news-now-israel-needs-a-stronger-alliance-with-christians" class="block lg:mr-5 -mx-4 lg:ml-0 mr-5"><img width="300" src="https://cdn.allisraelnews.com/containers/digitalocean/screenshot-2026-05-01-at-14.07.47.png/c9860336865a960de501c1c6b12dd5ef/screenshot-2026-05-01-at-14.07.47.webp" alt="" loading="lazy" title="(Photo: Screenshot/TBN's The Rosenberg Report)" class="mb-3 align-top mt-0"></a></div> <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col leading-normal"><div class="mb-1"><div class="text-gray-900 font-bold text-xl"><a href="/trump-netanyahu-stopped-iran-from-carrying-out-second-holocaust-israeli-minister-amichai-chikli-tells-all-israel-news-now-israel-needs-a-stronger-alliance-with-christians">
+            Trump &amp; Netanyahu stopped Iran from carrying out ‘Second Holocaust,’ Israeli Minister Amichai Chikli tells ALL ISRAEL NEWS – now Israel needs a stronger alliance with Christians
+          </a></div></div> <div class="flex items-center mb-2"><div class="text-sm"><div class="text-gray-900 leading-none"><span class="rssauthor"><a title="Joel C. Rosenberg" href="/writer/joel-rosenberg" class="font-bold inline-block mt-1 text-sm text-new_primary">Joel C. Rosenberg</a></span></div></div></div></div></article> <article class="max-w-sm w-full lg:max-w-full lg:flex"><div class="flex-none text-center overflow-hidden" style="width: 25%; float: left;"><a href="/outgoing-iaf-chief-tomer-bar-concludes-39-year-career-warns-no-iran-nuclear-deal-would-be-major-failure" class="block lg:mr-5 -mx-4 lg:ml-0 mr-5"><img width="300" src="https://cdn.allisraelnews.com/containers/digitalocean/5996617495000845357.jpg/73ebcdff449a1423a8e0d2b6322e0a18/5996617495000845357.webp" alt="" loading="lazy" title="Israeli Air Force Commander Maj. Gen. Tomer Bar speaking during a Memorial Day ceremony, April 21, 2026. (Photo: IDF)" class="mb-3 align-top mt-0"></a></div> <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col leading-normal"><div class="mb-1"><div class="text-gray-900 font-bold text-xl"><a href="/outgoing-iaf-chief-tomer-bar-concludes-39-year-career-warns-no-iran-nuclear-deal-would-be-major-failure">
+            Outgoing IAF Chief Tomer Bar concludes 39-year career, warns the absence of an Iran nuclear deal would be 'major failure'
+          </a></div></div> <div class="flex items-center mb-2"><div class="text-sm"><div class="text-gray-900 leading-none"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></div></div></div></div></article> <article class="max-w-sm w-full lg:max-w-full lg:flex"><div class="flex-none text-center overflow-hidden" style="width: 25%; float: left;"><a href="/edu/from-ozirak-to-tehran-how-a-failed-strike-reshaped-nuclear-strategy-in-the-middle-east" class="block lg:mr-5 -mx-4 lg:ml-0 mr-5"><img width="300" src="https://cdn.allisraelnews.com/containers/digitalocean/screenshot-2026-04-25-at-20.29.02.png/2ebf64f1da8d2295e03249501b6c32a2/screenshot-2026-04-25-at-20.29.02.webp" alt="" loading="lazy" title="Iranian F4 Phantom (Photo: Tasnim News Agency)" class="mb-3 align-top mt-0"></a></div> <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col leading-normal"><div class="mb-1"><div class="text-gray-900 font-bold text-xl"><a href="/edu/from-ozirak-to-tehran-how-a-failed-strike-reshaped-nuclear-strategy-in-the-middle-east">
+            From Osirak to Tehran: how a failed air strike reshaped nuclear strategy in the Middle East
+          </a></div></div> <div class="flex items-center mb-2"><div class="text-sm"><div class="text-gray-900 leading-none"><span class="rssauthor"><a title="Tuvia Pollack" href="/writer/tuvia-pollack" class="font-bold inline-block mt-1 text-sm text-new_primary">Tuvia Pollack</a></span></div></div></div></div></article> <article class="max-w-sm w-full lg:max-w-full lg:flex"><div class="flex-none text-center overflow-hidden" style="width: 25%; float: left;"><a href="/australian-jewish-group-reportedly-warned-police-ahead-of-the-bondi-beach-massacre" class="block lg:mr-5 -mx-4 lg:ml-0 mr-5"><img width="300" src="https://cdn.allisraelnews.com/containers/digitalocean/AIN/2025-12-15T060326Z_935904464_RC2RGIAJPPAR_RTRMADP_3_AUSTRALIA-CRIME.jpg/7e1980d0796281339c940ee91ab701bb/2025-12-15T060326Z_935904464_RC2RGIAJPPAR_RTRMADP_3_AUSTRALIA-CRIME.webp" alt="" loading="lazy" title="People react in front of a flower tribute near Bondi Pavilion following a shooting incident at Bondi Beach in Sydney, Australia, December 15, 2025. (Photo: REUTERS/Flavio Brancaleone)" class="mb-3 align-top mt-0"></a></div> <div class="bg-white rounded-b lg:rounded-b-none lg:rounded-r flex flex-col leading-normal"><div class="mb-1"><div class="text-gray-900 font-bold text-xl"><a href="/australian-jewish-group-reportedly-warned-police-ahead-of-the-bondi-beach-massacre">
+            Jewish group warned police days before Bondi Beach massacre, inquiry reveals
+          </a></div></div> <div class="flex items-center mb-2"><div class="text-sm"><div class="text-gray-900 leading-none"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></div></div></div></div></article></div> <script async="async" src="https://talk.hyvor.com/embed/embed.js" type="module"></script> <hyvor-talk-comments website-id="2857" page-id="8fc7474e-63ef-49cf-b4ff-36add1137646" settings="{
+                    &quot;upload_images&quot;: false
+                }" id="hyvor-talk-comments-381604111"></hyvor-talk-comments> <div class="mt-8 text-center"><iframe title="Impact Slider" src="about:blank" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="478px" id="XVAKXNAT" scrolling="no" style="visibility: visible !important; position: static !important; display: inline-block !important; vertical-align: middle !important; height: 478px !important; min-height: 478px !important; max-height: 478px !important; width: 100% !important; min-width: 300px !important; max-width: 600px !important;"></iframe></div> <div class="text-xl text-black uppercase">Popular Articles</div> <div class="relative bg-gray-50 sm:px-4"><div class="relative max-w-7xl mx-auto"><div class="mt-5 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"><div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/trump-netanyahu-stopped-iran-from-carrying-out-second-holocaust-israeli-minister-amichai-chikli-tells-all-israel-news-now-israel-needs-a-stronger-alliance-with-christians" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/screenshot-2026-05-01-at-14.07.47.png/485f78735ab9aa2f1cefecdc08bf7b86/screenshot-2026-05-01-at-14.07.47.webp" alt="" loading="lazy" title="(Photo: Screenshot/TBN's The Rosenberg Report)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/trump-netanyahu-stopped-iran-from-carrying-out-second-holocaust-israeli-minister-amichai-chikli-tells-all-israel-news-now-israel-needs-a-stronger-alliance-with-christians">
+                        Trump &amp; Netanyahu stopped Iran from carrying out ‘Second Holocaust,’ Israeli Minister Amichai Chikli tells ALL ISRAEL NEWS – now Israel needs a stronger alliance with Christians
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="Joel C. Rosenberg" href="/writer/joel-rosenberg" class="font-bold inline-block mt-1 text-sm text-new_primary">Joel C. Rosenberg</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/young-men-are-coming-back-to-church-what-do-they-believe-about-israel" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/shutterstock_1615084897.jpg/2cc065ecec1850a6769b2a76ecc1f45a/shutterstock_1615084897.webp" alt="" loading="lazy" title="Illustrative - A young man in church (Photo: Shutterstock)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/young-men-are-coming-back-to-church-what-do-they-believe-about-israel">
+                        Young men are coming back to church – What do they believe about Israel?
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/police-arrest-man-who-assaulted-nun-in-jerusalem-an-attack-condemned-by-foreign-ministry-and-hebrew-university-officials" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/screenshot-2026-05-01-at-12.21.56.png/0c5db897d452b86cae75dafd0bc873ca/screenshot-2026-05-01-at-12.21.56.webp" alt="" loading="lazy" title="A nun was assaulted near in Jerusalem, April 28, 2026. (Photo: Police Spokesperson's Unit)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/police-arrest-man-who-assaulted-nun-in-jerusalem-an-attack-condemned-by-foreign-ministry-and-hebrew-university-officials">
+                        Police arrest man who assaulted nun in Jerusalem; attack condemned by Foreign Ministry, Hebrew University officials
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/tensions-escalate-as-mayor-mamdani-wont-march-in-nyc-israel-parade" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/2026-04-28t094547z_247041233_mt1zuma000akt0g9_rtrmadp_3_zuma.jpg/9fa31f39b2db42396240677e9dc08142/2026-04-28t094547z_247041233_mt1zuma000akt0g9_rtrmadp_3_zuma.webp" alt="" loading="lazy" title="Mayor Zohran Mamdani listens as City Council Speaker Julie Menin speaks at jointly announcement an agreement to extend the city's executive budget deadline at City Hall in New York, April 28, 2026. (Photo: Lev Radin/ZUMA Press Wire)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/tensions-escalate-as-mayor-mamdani-wont-march-in-nyc-israel-parade">
+                        Tensions escalate as Mayor Mamdani won't march in annual NYC Israel Parade
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="David Brody" href="/writer/david-brody" class="font-bold inline-block mt-1 text-sm text-new_primary">David Brody</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/naftali-bennett-hits-bibi-from-right-in-interview-with-all-israel-news-blasts-netanyahu-for-giving-hamas-suitcases-of-cash-from-qatar" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/whatsapp-image-2026-04-30-at-16.03.03.jpeg/131b615cf77bcbb3110b172bdf2e203c/whatsapp-image-2026-04-30-at-16.03.03.webp" alt="" loading="lazy" title="Joel C. Rosenberg interviews Former Israeli PM Naftali Bennett (Photo: ALL ISRAEL NEWS)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/naftali-bennett-hits-bibi-from-right-in-interview-with-all-israel-news-blasts-netanyahu-for-giving-hamas-suitcases-of-cash-from-qatar">
+                        Former Israeli PM Naftali Bennett hits Bibi from 'right' in interview with ALL ISRAEL NEWS, blasts Netanyahu for giving Hamas ‘suitcases of cash’ from Qatar
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="Joel C. Rosenberg" href="/writer/joel-rosenberg" class="font-bold inline-block mt-1 text-sm text-new_primary">Joel C. Rosenberg</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/israel-prepares-for-iran-war-to-resume-as-early-as-next-week-as-trump-briefed-on-military-options" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/mod-still-april-30.jpg/4d2963e5cb9c12ce6ad307708367fee4/mod-still-april-30.webp" alt="" loading="lazy" title="Still image from footage of unloading of 6,500 tons of munitions and military equipment delivered to Israel. (Credit: Israel Ministry of Defense)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/israel-prepares-for-iran-war-to-resume-as-early-as-next-week-as-trump-briefed-on-military-options">
+                        Israel prepares for Iran war to resume as early as next week, President Trump briefed on military options
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div></div></div></div> <div class="py-6 mb-8 border-t border-b border-solid border-dark"><div class="flex items-end mb-4"><img src="/img/allisrael-symbol.svg" alt="All Israel" class="w-16 mb-1 mr-4 align-top"> <div class="text-2xl text-3xl font-extrabold leading-tight tracking-tight">Receive latest news &amp; updates
+                </div></div> <div class="lg:ml-20"><form action="https://app.convertkit.com/forms/6143774/subscriptions" method="post" data-sv-form="6143774" data-uid="14a34beaf5" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email and confirm your subscription!&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500" class="flex mb-4"><ul data-element="errors" data-group="alert" class="formkit-alert formkit-alert-error"></ul> <span class="formkit-field"><input name="email_address" aria-label="Email Address" placeholder="Enter your Email" required="required" type="email" class="flex-grow h-10 px-3 border placeholder-gray-300 border-r-0 border-gray-200 w-full" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></span> <button data-element="submit" class="inline-flex items-center justify-center h-10 px-3 text-xs font-medium tracking-widest text-white uppercase transition duration-300 bg-new_dark min-w-25 hover:bg-gray-100"><div class="formkit-spinner"><div></div> <div></div> <div></div></div> <span>Sign up</span></button></form></div></div> <div class="text-xl text-black uppercase">Latest Stories</div> <div class="relative bg-gray-50 sm:px-4"><div class="relative max-w-7xl mx-auto"><div class="mt-5 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none"><div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/trump-says-iran-has-not-paid-big-enough-price-after-tehran-submits-new-proposal-to-end-war" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/2026-05-02t223408z_505245882_rc2a1laq5cfh_rtrmadp_3_usa-trump.jpg/bdfbdeb542775e56b59d762a93b651c0/2026-05-02t223408z_505245882_rc2a1laq5cfh_rtrmadp_3_usa-trump.webp" alt="" loading="lazy" title="U.S. President Donald Trump speaks to the media before boarding Air Force One for departure to Miami, Florida, at Palm Beach International Airport in West Palm Beach, Florida, U.S., May 2, 2026. Photo: Reuters Connect" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/trump-says-iran-has-not-paid-big-enough-price-after-tehran-submits-new-proposal-to-end-war">
+                        Trump says Iran 'has not paid big enough price,' after Tehran submits new proposal to end war
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/experts-doubt-israels-quadrupled-pr-budget-will-improve-countrys-image" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/2025-11-29t152929z_1197444118_mt1zuma0007nvbh3_rtrmadp_3_zuma.jpg/e200c5cc926769d4aa3f9e4a4ed421c7/2025-11-29t152929z_1197444118_mt1zuma0007nvbh3_rtrmadp_3_zuma.webp" alt="" loading="lazy" title="Pro-Palestinian protesters holding signs march past City Hall during an anti-Israel rally in downtown Los Angeles, November 29, 2025.(Photo: Ghawam Kouchaki/ZUMA Press Wire via Reuters)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/experts-doubt-israels-quadrupled-pr-budget-will-improve-countrys-image">
+                        Experts skeptical Israel’s PR surge will improve its image
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/upcoming-lag-bomer-bonfires-raise-wildfire-concerns-as-israel-braces-for-summer-fire-season" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/f250430yz57.jpg/b00eaaa7795f721238de3e55809ef237/f250430yz57.webp" alt="" loading="lazy" title="Illustrative - A wildfire near Latrun outside of Jerusalem, April 30, 2025. (Photo: Yossi Zamir/Flash90)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/upcoming-lag-bomer-bonfires-raise-wildfire-concerns-as-israel-braces-for-summer-fire-season">
+                        Lag B’Omer bonfires raise wildfire concerns as Israel braces for summer fire season
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/dearborn-michigan-the-anti-israel-epicenter-in-the-us" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/2024-05-19t200332z_2003288906_rc2vt7al03rl_rtrmadp_3_israel-palestinians-usa-protests.jpg/53cb40eea46f3c09c1e3c617cb1dffdf/2024-05-19t200332z_2003288906_rc2vt7al03rl_rtrmadp_3_israel-palestinians-usa-protests.webp" alt="" loading="lazy" title="Pro-Palestinian rally for a ceasefire in Gaza during the conflict between Israel and Hamas in Dearborn, Michigan, May 19, 2024. (Photo: REUTERS/Rebecca Cook)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/dearborn-michigan-the-anti-israel-epicenter-in-the-us">
+                        Dearborn Michigan: The anti-Israel epicenter of the United States?
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="David Brody" href="/writer/david-brody" class="font-bold inline-block mt-1 text-sm text-new_primary">David Brody</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/outgoing-iaf-chief-tomer-bar-concludes-39-year-career-warns-no-iran-nuclear-deal-would-be-major-failure" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/5996617495000845357.jpg/709e678ecd5793bbbe2b15e7f192daea/5996617495000845357.webp" alt="" loading="lazy" title="Israeli Air Force Commander Maj. Gen. Tomer Bar speaking during a Memorial Day ceremony, April 21, 2026. (Photo: IDF)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/outgoing-iaf-chief-tomer-bar-concludes-39-year-career-warns-no-iran-nuclear-deal-would-be-major-failure">
+                        Outgoing IAF Chief Tomer Bar concludes 39-year career, warns the absence of an Iran nuclear deal would be 'major failure'
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div> <div class="flex flex-col rounded-lg overflow-hidden mb-4"><div class="flex-shrink-0"><a href="/eu-denounces-antisemitism-and-glorification-of-jihad-in-palestinian-schoolbooks-report" class="block lg:mr-5 -mx-4 lg:ml-0"><img width="300" height="150" src="https://cdn.allisraelnews.com/containers/digitalocean/f240130ja10.jpg/54fe06b3c592568162c0bfbf65db84c6/f240130ja10.webp" alt="" loading="lazy" title="A UNRWA-funded school in the east Jerusalem neighborhood of Silwan, January 30, 2024. (Photo: Jamal Awad/Flash90)" class="mb-3 align-top w-full object-cover rounded"></a></div> <div class="flex-1 bg-white flex flex-col justify-between"><div class="flex-1"><a href="#" class="block"></a><p class="text-md font-semibold text-gray-900"><a href="#" class="block"></a><a href="/eu-denounces-antisemitism-and-glorification-of-jihad-in-palestinian-schoolbooks-report">
+                        EU denounces 'antisemitism' and 'glorification of jihad' in Palestinian schoolbooks – report
+                    </a></p></div> <p class="text-sm font-medium text-indigo-600 mb-2"><span class="rssauthor"><a title="All Israel News Staff" href="/writer/all-israel-news-staff" class="font-bold inline-block mt-1 text-sm text-new_primary">All Israel News Staff</a></span></p></div></div></div></div></div></div> <div class="h-screen top-20 sticky p-4 hidden w-18 lg:block"><aside class="flex-shrink-0"><aside class="flex-shrink-0"><div data-v-da55022a="" position="sidebar"><aside data-v-da55022a="" class="flex-shrink-0 hidden w-18 lg:block"><div data-v-da55022a="" class="mb-10 p-4 bg-new_primary mr-3"><div data-v-da55022a="" class="flex" data-gtm-vis-recent-on-screen32458470_77="1056" data-gtm-vis-first-on-screen32458470_77="1056" data-gtm-vis-total-visible-time32458470_77="100" data-gtm-vis-has-fired32458470_77="1"><img data-v-da55022a="" src="/img/allisrael-symbol.svg" alt="All Israel" class="w-10 mb-4 align-top"> <div data-v-da55022a="" class="mb-3 ml-2 text-xl font-bold leading-tight text-white" style="margin: auto;">
+                        Get our Free <br data-v-da55022a=""> <span data-v-da55022a="" class="font-extrabold">NEWS UPDATES</span></div></div> <form action="https://app.convertkit.com/forms/6143774/subscriptions" method="post" data-sv-form="6143774" data-uid="14a34beaf5" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email and confirm your subscription!&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800" class="flex mb-5"><ul data-element="errors" data-group="alert" class="formkit-alert formkit-alert-error"></ul> <span class="formkit-field"><input name="email_address" aria-label="Email Address" placeholder="Enter your Email" required="required" type="email" class="formkit-input w-full h-10 px-3 placeholder-gray-300 border border-r-0 border-gray-200" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;"></span> <button data-element="submit" class="inline-flex items-center justify-center flex-shrink-0 h-10 px-3 text-xs font-medium tracking-widest text-white uppercase transition duration-300 bg-new_dark min-w-25 hover:bg-gray-100"><div class="formkit-spinner"><div></div> <div></div> <div></div></div> <span>Sign up</span></button></form></div></aside></div> <div class="mb-6"><div data-onpage="true" data-adpath="/21829443365/All_Israel_News/D_Side"></div></div></aside> <center><div class="relative slide pb-5"><div class="carousel-inner relative overflow-hidden w-full"><div id="slide-0" class="carousel-item inset-0 relative w-full transform transition-all duration-500 ease-in-out active"><a href="https://allisraelnews.com/blog/israel-in-the-time-of-jesus" target="_blank"><img src="https://cdn.allisraelnews.com/containers/digitalocean/4ca2b14d-79a9-431b-a906-87d403979ddc_olv2ix.jpg/720611c9c2ebccdbb58ed5c3ba5460e6/4ca2b14d-79a9-431b-a906-87d403979ddc_olv2ix.webp" class="block w-full"></a></div><div id="slide-1" class="carousel-item inset-0 relative w-full transform transition-all duration-500 ease-in-out left-full"><a href="https://www.joshuafund.com/give/donate" target="_blank"><img src="https://cdn.allisraelnews.com/containers/digitalocean/epicenter-allies-web-ad-300-x-250px-cta6.png/4a22ae92a70e84993f53169c7defd7e8/epicenter-allies-web-ad-300-x-250px-cta6.webp" class="block w-full"></a></div></div></div></center> <a href="https://biblesocietyinisrael.com/product/hebrew-english-bible-nasb-hardcover-leather-leatherzipper/?utm_source=allisraelnews&amp;utm_medium=square_banner&amp;utm_campaign=biblesocietyinisrael&amp;utm_content=bsi_NASB"><img src="https://cdn.allisraelnews.com/containers/digitalocean/The_Illustrated_Hebrew_English_Jerusalem_Family_Bible_250_x_250_px_Facebook_Post_p7cf05.png/80d4b1b18fea7d9ce7b1302d8434bb21/The_Illustrated_Hebrew_English_Jerusalem_Family_Bible_250_x_250_px_Facebook_Post_p7cf05.webp" alt="BSI Sidebar Banner" class="mt-1 rounded mb-4"></a></aside></div></div> <div class="flex items-center justify-between md:hidden"><div class="flex items-center justify-between"><time class="mt-0 text-gray-200 text-xs-bottom-2 divide-gray-300"><small class="mr-6">Read this article in: </small></time>&nbsp;
+            <ul class="flex text-3xl leading-none"><li class="ml-2 lg:ml-3 pt-3 md:pt-2"><a href="https://allisraelnews.com/fr/blog/le-blocus-actuel-de-liran-le-temps-presse"><img src="/img/flags/fr_flag.png" title="fr" alt="fr" width="35" class="lg:mb-2 mb-4"></a></li> <li class="ml-2 lg:ml-3 pt-3 md:pt-2"><a href="https://allisraelnews.com/kr/blog/the-ongoing-blockade-of-iran-time-is-ticking"><img src="/img/flags/kr_flag.png" title="kr" alt="kr" width="35" class="lg:mb-2 mb-4"></a></li></ul></div></div></article></div></div></div></div></div>
+        
+        <footer class="bg-new_dark  lg:py-16 py-5" style="z-index:99999; position:relative; background-color:#0D1F35">
+  <div class="px-4 mx-auto max-w-screen-xl">
+    <div class="flex flex-col md:flex-row md:-mx-5">
+      <div class="block w-full md:w-1/2 lg:w-1/3 md:px-5">
+        <a href="/" class="inline-block mb-1">
+          <img src="/img/logo.svg" alt="All Israel News" width="288" class="max-w-72">
+        </a>
+        <div class="text-sm font-medium text-white leading-none mb-10">
+          Covering news and events impacting Israel &amp; the Middle East for the Evangelical world
+        </div>
+
+        <div class="uppercase text-xs text-white leading-none mb-4">Follow us on social media</div>
+        <ul class="flex text-lg leading-none mr-4 bg-w">
+            <li>
+                <a href="https://www.facebook.com/allisraelnewscom/" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 hover:text-opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="#3b5998" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-3 7h-1.924c-.615 0-1.076.252-1.076.889v1.111h3l-.238 3h-2.762v8h-3v-8h-2v-3h2v-1.923c0-2.022 1.064-3.077 3.461-3.077h2.539v3z"></path></svg>             <span class="sr-only">Facebook</span></a>
+            </li>
+            <li class="ml-2 lg:ml-3">
+                <a href="https://www.youtube.com/channel/UCu6O9MhKi6m7pgJcchrkxjA?sub_confirmation=1" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 bg-white rounded py-1 px-1 hover:text-opacity-100">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="#ff0000" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path></svg>
+                <span class="sr-only">Youtube</span></a>
+            </li>
+            <li class="ml-2 lg:ml-3">
+              <a href="https://twitter.com/all_israel_news" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 bg-white rounded py-1 px-1 hover:text-opacity-100">
+               <svg fill="none" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0.254 0.25 500 451.95400000000006"><path d="M394.033.25h76.67L303.202 191.693l197.052 260.511h-154.29L225.118 294.205 86.844 452.204H10.127l179.16-204.77L.254.25H158.46l109.234 144.417zm-26.908 406.063h42.483L135.377 43.73h-45.59z" fill="#000"></path></svg>
+               <span class="sr-only">Twitter (X)</span></a>
+            </li>
+            <li class="ml-2 lg:ml-3">
+              <a href="https://t.me/allisrael" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 hover:text-opacity-100">
+               <svg fill="none" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500"><path d="M250 500c138.071 0 250-111.929 250-250S388.071 0 250 0 0 111.929 0 250s111.929 250 250 250z" fill="#34aadf"></path><path d="M104.047 247.832s125-51.3 168.352-69.364c16.619-7.225 72.977-30.347 72.977-30.347s26.012-10.115 23.844 14.451c-.723 10.116-6.503 45.52-12.283 83.815-8.671 54.191-18.064 113.439-18.064 113.439s-1.445 16.619-13.728 19.509-32.515-10.115-36.127-13.006c-2.891-2.167-54.191-34.682-72.977-50.578-5.058-4.335-10.838-13.005.722-23.121 26.012-23.844 57.081-53.468 75.867-72.254 8.671-8.671 17.341-28.902-18.786-4.336-51.3 35.405-101.878 68.642-101.878 68.642s-11.561 7.225-33.237.722c-21.677-6.502-46.966-15.173-46.966-15.173s-17.34-10.838 12.284-22.399z" fill="#fff"></path></svg>
+               <span class="sr-only">Telegram</span></a>
+            </li>
+            <li class="ml-2 lg:ml-3">
+              <a href="https://www.instagram.com/allisraelnews/" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 hover:text-opacity-100">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 2499.899999999999 2500"><defs><radialGradient id="a" cx="332.14" cy="2511.81" r="3263.54" gradientUnits="userSpaceOnUse"><stop offset=".09" stop-color="#fa8f21"></stop><stop offset=".78" stop-color="#d82d7e"></stop></radialGradient><radialGradient id="b" cx="1516.14" cy="2623.81" r="2572.12" gradientUnits="userSpaceOnUse"><stop offset=".64" stop-color="#8c3aaa" stop-opacity="0"></stop><stop offset="1" stop-color="#8c3aaa"></stop></radialGradient></defs><path d="M833.4 1250c0-230.11 186.49-416.7 416.6-416.7s416.7 186.59 416.7 416.7-186.59 416.7-416.7 416.7-416.6-186.59-416.6-416.7m-225.26 0c0 354.5 287.36 641.86 641.86 641.86s641.86-287.36 641.86-641.86S1604.5 608.14 1250 608.14 608.14 895.5 608.14 1250m1159.13-667.31a150 150 0 1 0 150.06-149.94h-.06a150.07 150.07 0 0 0-150 149.94M745 2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28 7.27-505.15c5.55-121.87 26-188 43-232.13 22.72-58.36 49.78-100 93.5-143.78s85.32-70.88 143.78-93.5c44-17.16 110.26-37.46 232.13-43 131.76-6.06 171.34-7.27 505-7.27s373.28 1.31 505.15 7.27c121.87 5.55 188 26 232.13 43 58.36 22.62 100 49.78 143.78 93.5s70.78 85.42 93.5 143.78c17.16 44 37.46 110.26 43 232.13 6.06 131.87 7.27 171.34 7.27 505.15s-1.21 373.28-7.27 505.15c-5.55 121.87-25.95 188.11-43 232.13-22.72 58.36-49.78 100-93.5 143.68s-85.42 70.78-143.78 93.5c-44 17.16-110.26 37.46-232.13 43-131.76 6.06-171.34 7.27-505.15 7.27s-373.28-1.21-505-7.27M734.65 7.57c-133.07 6.06-224 27.16-303.41 58.06C349 97.54 279.38 140.35 209.81 209.81S97.54 349 65.63 431.24c-30.9 79.46-52 170.34-58.06 303.41C1.41 867.93 0 910.54 0 1250s1.41 382.07 7.57 515.35c6.06 133.08 27.16 223.95 58.06 303.41 31.91 82.19 74.62 152 144.18 221.43S349 2402.37 431.24 2434.37c79.56 30.9 170.34 52 303.41 58.06C868 2498.49 910.54 2500 1250 2500s382.07-1.41 515.35-7.57c133.08-6.06 223.95-27.16 303.41-58.06 82.19-32 151.86-74.72 221.43-144.18s112.18-139.24 144.18-221.43c30.9-79.46 52.1-170.34 58.06-303.41 6.06-133.38 7.47-175.89 7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95 97.54 2068.86 65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17 1.51 1589.56 0 1250.1 0S868 1.41 734.65 7.57" fill="url(#a)"></path><path d="M833.4 1250c0-230.11 186.49-416.7 416.6-416.7s416.7 186.59 416.7 416.7-186.59 416.7-416.7 416.7-416.6-186.59-416.6-416.7m-225.26 0c0 354.5 287.36 641.86 641.86 641.86s641.86-287.36 641.86-641.86S1604.5 608.14 1250 608.14 608.14 895.5 608.14 1250m1159.13-667.31a150 150 0 1 0 150.06-149.94h-.06a150.07 150.07 0 0 0-150 149.94M745 2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28 7.27-505.15c5.55-121.87 26-188 43-232.13 22.72-58.36 49.78-100 93.5-143.78s85.32-70.88 143.78-93.5c44-17.16 110.26-37.46 232.13-43 131.76-6.06 171.34-7.27 505-7.27s373.28 1.31 505.15 7.27c121.87 5.55 188 26 232.13 43 58.36 22.62 100 49.78 143.78 93.5s70.78 85.42 93.5 143.78c17.16 44 37.46 110.26 43 232.13 6.06 131.87 7.27 171.34 7.27 505.15s-1.21 373.28-7.27 505.15c-5.55 121.87-25.95 188.11-43 232.13-22.72 58.36-49.78 100-93.5 143.68s-85.42 70.78-143.78 93.5c-44 17.16-110.26 37.46-232.13 43-131.76 6.06-171.34 7.27-505.15 7.27s-373.28-1.21-505-7.27M734.65 7.57c-133.07 6.06-224 27.16-303.41 58.06C349 97.54 279.38 140.35 209.81 209.81S97.54 349 65.63 431.24c-30.9 79.46-52 170.34-58.06 303.41C1.41 867.93 0 910.54 0 1250s1.41 382.07 7.57 515.35c6.06 133.08 27.16 223.95 58.06 303.41 31.91 82.19 74.62 152 144.18 221.43S349 2402.37 431.24 2434.37c79.56 30.9 170.34 52 303.41 58.06C868 2498.49 910.54 2500 1250 2500s382.07-1.41 515.35-7.57c133.08-6.06 223.95-27.16 303.41-58.06 82.19-32 151.86-74.72 221.43-144.18s112.18-139.24 144.18-221.43c30.9-79.46 52.1-170.34 58.06-303.41 6.06-133.38 7.47-175.89 7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95 97.54 2068.86 65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17 1.51 1589.56 0 1250.1 0S868 1.41 734.65 7.57" fill="url(#b)"></path></svg>
+               <span class="sr-only">Instagram</span></a>
+            </li>
+            <li class="ml-2 lg:ml-3">
+              <a href="https://whatsapp.com/channel/0029VaGse65Dp2Q6VP71AD3b" target="_blank" class="inline-block text-opacity-75 transition duration-300 text-dark bg-white rounded py-1 px-1 hover:text-opacity-100">
+               <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="green" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm.029 18.88c-1.161 0-2.305-.292-3.318-.844l-3.677.964.984-3.595c-.607-1.052-.927-2.246-.926-3.468.001-3.825 3.113-6.937 6.937-6.937 1.856.001 3.598.723 4.907 2.034 1.31 1.311 2.031 3.054 2.03 4.908-.001 3.825-3.113 6.938-6.937 6.938z"></path></svg>
+               <span class="sr-only">Whatsapp</span></a>
+            </li>
+        </ul>
+<!--         <div class="visible lg:invisible inline-flex shadow mt-10">
+            <a href="/donate" target="_blank" class="inline-flex items-center justify-center h-10 px-3 font-medium tracking-widest text-white
+            uppercase transition duration-300  bg-new_primary hover:bg-white hover:text-new_primary px-4 text-xs">
+                <img src="/img/ain-donate-button.png" class="mr-1" width="30" alt="">
+                Donate
+            </a>
+        </div> -->
+      </div>
+      <div class="lg:w-full md:hidden lg:block lg:w-1/3 md:px-5 md:border-l border-white py-3 my-3 md:py-0 border-t-2 border-b-2 md:border-t-0 md:border-b-0">
+        <ul class="text-white text-xs font-bold">
+          <li class="py-2 uppercase"><a href="/about-joel-rosenberg" class="text-white">About Joel C. Rosenberg, Editor-in-Chief</a></li>
+          <li class="py-2 uppercase"><a href="/about" class="text-white">About ALL ISRAEL NEWS</a></li>
+          <li class="py-2 uppercase"><a href="/team" class="text-white">Team</a></li>
+          <li class="py-2 uppercase"><a href="/board" class="text-white">Board of Directors</a></li>
+          <li class="py-2 uppercase"><a href="/advisors" class="text-white">Advisory Board</a></li>
+          <li class="py-2 uppercase"><a href="/book-club" class="text-white">Book Club</a></li>
+          <li class="py-2 uppercase"><a href="/?form=FUNKNZVGXVY" target="_blank" class="text-white">Donate</a></li>
+          <li class="py-2 uppercase"><a href="/terms" target="_blank" class="text-white">Terms of Use</a></li>
+          <li class="py-2 uppercase"><a href="/privacy-policy" target="_blank" class="text-white">Privacy Policy</a></li>
+          <li class="py-2 uppercase"><a href="/contact" class="text-white">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="p-6 h-8 md:hidden">
+        <div class="flex items-center justify-between p-3 bg-new_dark h-8">
+
+            <ul class="flex md:hidden text-xl leading-none -mt-8" style="margin:auto">
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/fr">
+                  <img src="/img/flags/french_flag.png" title="French" alt="French" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/es">
+                    <img src="/img/flags/spanish_flag.png" title="Spanish" alt="Spanish" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/de">
+                  <img src="/img/flags/german_flag.png" title="German" alt="German" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/pt">
+                  <img src="/img/flags/portuguese_flag.jpg" title="Portuguese" alt="Portuguese" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/ru">
+                  <img src="/img/flags/russian_flag.png" title="Russian" alt="Russian" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/kr">
+                  <img src="/img/flags/korean_flag.png" title="Korean" alt="Korean" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+                <li class="ml-1 lg:ml-3 pt-3 md:pt-2">
+                  <a href="/cn">
+                  <img src="/img/flags/chinese_flag.png" title="Chinese" alt="Chinese" width="30" class="lg:mb-2 mb-4">
+                  </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+      <div class="hidden md:block w-full md:w-1/2 lg:w-1/3 lg:px-5 lg:border-l border-white">
+        <div class="text-white tracking-tighter text-3xl leading-tight font-bold mb-12">Receive latest news and updates from <br> All Israel News</div>
+
+        
+          <!--
+<form data-v-3befe51c="" class="hidden lg:flex max-w-sm w-full">
+<input data-v-3befe51c="" type="text" placeholder="Receive latest news &amp; updates from All Israel" class="flex-grow h-8 px-3 placeholder-gray-300 border border-gray-200 text-2xs">
+<button data-v-3befe51c="" native-type="submit" class="inline-flex ml-1 items-center justify-center h-8 px-3 font-medium tracking-widest text-white
+        uppercase transition duration-300 bg-light hover:bg-gray-100 text-xxs bg-light">
+        subscribe
+      </button>
+</form>
+-->
+
+<form action="https://app.convertkit.com/forms/6143774/subscriptions" class="hidden lg:flex max-w-sm w-full" method="post" data-sv-form="6143774" data-uid="14a34beaf5" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success! Check your email and confirm your subscription!&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://convertkit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800">
+
+                  <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                  <span class="formkit-field">
+                        <input class="flex-grow h-8 px-3 placeholder-gray-300 border border-gray-200 text-2xs" name="email_address" aria-label="Email Address" placeholder="Receive latest news &amp; updates" required="" type="email" style="color: rgb(0, 0, 0); border-color: rgb(227, 227, 227); border-radius: 4px; font-weight: 400;">
+                  </span>
+                  <button data-element="submit" class="inline-flex ml-1 items-center justify-center h-8 px-3 font-medium tracking-widest text-white
+        uppercase transition duration-300 bg-light hover:bg-gray-100 text-xxs bg-light" style="color: rgb(255, 255, 255); background-color: rgb(22, 119, 190); border-radius: 4px; font-weight: 400;">
+                        <div class="formkit-spinner">
+                              <div></div>
+                              <div></div>
+                              <div></div>
+                        </div>
+                        <span class="">Subscribe</span>
+                  </button>
+</form>
+
+        
+        <div class="inline-flex shadow mt-15">
+            
+            <iframe title="Donate Button" src="about:blank" frameborder="0" marginheight="0" marginwidth="0" width="108px" height="46px" id="XECSKRJC" scrolling="no" style="visibility: visible !important; position: static !important; display: inline-block !important; vertical-align: middle !important; height: 46px !important; min-height: 46px !important; max-height: 46px !important; width: 108px !important; min-width: 108px !important; max-width: 108px !important;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+        <footer class="bg-white py-3" style="z-index:99999; position:relative">
+  <div class="px-4 mx-auto max-w-screen-lg">
+    <div class="flex justify-between leading-none items-center">
+      <div class="text-xs text-dark text-opacity-85 hidden lg:inline-block">©2020-2026 Near East Media - all rights reserved</div>
+      <div class="text-xs text-dark text-opacity-85 hidden lg:inline-block">
+        <!-- <a href="/terms">Terms</a> | -->
+        <a href="/privacy-policy">Privacy Policy</a></div>
+      <div class="text-xs text-dark text-opacity-85 hidden lg:inline-block">
+        <!-- <a href="/terms">Terms</a> | -->
+        <a href="/terms">Terms of Use</a></div>
+      <div class="text-xs text-dark text-opacity-85 hidden lg:inline-block">
+          <!-- <a href="/terms">Terms</a> | -->
+          <a href="/contact">Contact Us</a></div>
+      <div class="text-xxs lg:text-xs text-dark  text-opacity-85 flex items-center justify-center w-full
+      lg:w-auto">
+
+      </div>
+    </div>
+  </div>
+</footer>
+
+        
+
+        <!--        <script src="/js/site.js?id=0b2ffc3c9838592967aa66f38c3d653f"></script>-->
+        <script>
+            function openPage(pageName,elmnt,color) {
+              var i, tabcontent, tablinks;
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+              tablinks = document.getElementsByClassName("tablink");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+              }
+              document.getElementById(pageName).style.display = "block";
+              elmnt.style.backgroundColor = color;
+            }
+
+            //Get the element with id="defaultOpen" and click on it
+            if(document.getElementById("defaultOpen")) {
+                document.getElementById("defaultOpen").click();
+            }
+
+            function injectArticleAds() {
+                const articleBody = document.getElementById('article-main')
+                if (!articleBody) return;
+
+                const paragraphs = articleBody.querySelectorAll('p');
+
+                paragraphs.forEach((p, index) => {
+                    if (index === 1) {
+                        const ad1 = document.createElement('div');
+                        ad1.id = 'div-gpt-ad-art-300x250_1';
+                        ad1.style = "margin: 20px auto; text-align: center;";
+                        p.parentNode.insertBefore(ad1, p.nextSibling);
+                        googletag.cmd.push(function() {
+                            googletag.display('div-gpt-ad-art-300x250_1');
+                        });
+                    }
+                    else if (index === 4) {
+                        const ad2 = document.createElement('div');
+                        ad2.id = 'div-gpt-ad-art-300x250_2';
+                        ad2.style = "margin: 20px auto; text-align: center;";
+                        p.parentNode.insertBefore(ad2, p.nextSibling);
+                        googletag.cmd.push(function() {
+                            googletag.display('div-gpt-ad-art-300x250_2');
+                        });
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', injectArticleAds);
+        </script>
+
+
+
+        
+
+                
+
+
+        
+    <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f040ecf1d68447069e7b13215e8bc417&quot;,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe id="_hjSafeContext_42256277" title="_hjSafeContext" tabindex="-1" aria-hidden="true" src="about:blank" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body><script type="text/javascript" charset="UTF-8" async="" src="https://static.fundraiseup.com/elementsApi.0f26736d807c76aa.js"></script><script type="text/javascript" charset="UTF-8" async="" src="https://static.fundraiseup.com/checkout.6c0c3cb04540095f.js"></script><script type="text/javascript" charset="UTF-8" async="" src="https://static.fundraiseup.com/checkout-vendors.25a5fd7a09a675a3.js"></script><script type="text/javascript" charset="UTF-8" async="" src="https://static.fundraiseup.com/checkout-styles.06b5bee3089cb055.js"></script><script type="text/javascript" charset="UTF-8" async="" src="https://static.fundraiseup.com/checkout-sentry-vendor.dda4c7629502a974.js"></script></html>
