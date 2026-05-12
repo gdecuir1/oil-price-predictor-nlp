@@ -1,0 +1,19 @@
+# =============================================================================
+# Oil Market Prediction Transformer — Python Dependencies
+# =============================================================================
+# Install with:  pip install -r ml_model/requirements.txt
+# =============================================================================
+
+# --- Core ML framework ---
+torch>=2.0.0
+transformers>=4.30.0
+
+# --- Data processing ---
+numpy>=1.24.0
+beautifulsoup4>=4.12.0
+trafilatura>=1.6.0
+readability-lxml>=0.8.1
+lxml>=4.9.0
+
+# --- Utilities ---
+tqdm>=4.65.0
