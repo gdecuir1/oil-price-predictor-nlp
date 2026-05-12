@@ -7,7 +7,7 @@
     "description": null,
     "language": "en",
     "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:15:27.615550+00:00"
+    "scrapedAt": "2026-05-12T17:26:25.039619+00:00"
   },
   "count": 10,
   "articles": [

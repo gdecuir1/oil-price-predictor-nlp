@@ -7,7 +7,7 @@
     "description": null,
     "language": "en",
     "query": "US shale oil OR Permian Basin production OR fracking OR rig count after:2026-04-29 before:2026-05-01",
-    "scrapedAt": "2026-05-12T17:15:31.728145+00:00"
+    "scrapedAt": "2026-05-12T17:26:29.496315+00:00"
   },
   "count": 11,
   "articles": [
