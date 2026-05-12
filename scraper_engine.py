@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import json
 import time
 import random
@@ -30,12 +31,7 @@ from config import (
     CAPTCHA_API_KEY,
     DEFAULT_PROXY,
     GOLOGIN_API_TOKEN,
-    build_gologin_smartproxy_payload,
 )
-
-# Setup Cache Directory for Harmonic Writes
-CACHE_DIR = RAW_HTML_DIR.parent / "cache"
-CACHE_DIR.mkdir(exist_ok=True)
 
 
 # ==============================================================================
@@ -125,18 +121,31 @@ class CaptchaManager:
 
             # Safely inject value and wait for DOM registration
             page.evaluate(
-                f"document.getElementById('g-recaptcha-response').value = '{token}';"
+                f"""
+                (token) => {{
+                    const el = document.getElementById('g-recaptcha-response');
+                    if (el) {{
+                        el.value = token;
+                        el.dispatchEvent(new Event('input', {{ bubbles: true }}));
+                        el.dispatchEvent(new Event('change', {{ bubbles: true }}));
+                    }}
+                }}
+                """,
+                token,
             )
-            time.sleep(1)
+            time.sleep(2)
 
             try:
-                # Target Google's exact CAPTCHA form ID first
-                page.evaluate("document.getElementById('captcha-form').submit();")
-            except Exception:
-                try:
+                # Try clicking the submit button first (more human-like)
+                submit_button = page.locator(
+                    "#captcha-form input[type='submit'], #captcha-form button[type='submit'], input[type='submit'], #submit"
+                ).first
+                if submit_button.is_visible():
+                    submit_button.click()
+                else:
                     page.evaluate("document.forms[0].submit();")
-                except Exception:
-                    page.click("#submit")
+            except Exception:
+                page.evaluate("document.forms[0].submit();")
 
             logger.info("Successfully submitted CAPTCHA token.")
             return True
@@ -163,7 +172,14 @@ class ScraperEngine:
         node_index: int = 0,
         mean_tasks_per_session: int = 5,
         std_dev_tasks: int = 2,
+        output_dir: Optional[Path] = None,
     ):
+        target_output_dir = output_dir or RAW_HTML_DIR
+        target_output_dir.mkdir(parents=True, exist_ok=True)
+
+        cache_dir = target_output_dir.parent / "cache"
+        cache_dir.mkdir(exist_ok=True)
+
         with open(input_file, "r", encoding="utf-8") as f:
             all_tasks = json.load(f)
 
@@ -176,16 +192,16 @@ class ScraperEngine:
                 f"Node {node_index} initialized. Processing {len(tasks)} tasks."
             )
             manifest_path = (
-                RAW_HTML_DIR
+                target_output_dir
                 / f"{manifest_file.replace('.json', '')}_node_{node_index}.json"
             )
         else:
             tasks = all_tasks
             logger.info(f"Running single node. Processing all {len(tasks)} tasks.")
-            manifest_path = RAW_HTML_DIR / manifest_file
+            manifest_path = target_output_dir / manifest_file
 
         seen_hashes = set()
-        for cache_file in CACHE_DIR.glob("scraped_hashes_*.txt"):
+        for cache_file in cache_dir.glob("scraped_hashes_*.txt"):
             with open(cache_file, "r", encoding="utf-8") as f:
                 seen_hashes.update(line.strip() for line in f if line.strip())
 
@@ -197,8 +213,6 @@ class ScraperEngine:
         task_count = 0
         current_batch_limit = 0
         gl_sdk = None
-        gologin_boot_id = 0
-        ws_endpoint = None
 
         for i, task in enumerate(tasks):
             url_hash = hashlib.md5(task["url"].encode("utf-8")).hexdigest()
@@ -226,7 +240,6 @@ class ScraperEngine:
                         pass  # Ignore FileNotFoundError if proxy crashed
                     time.sleep(5)
 
-                gologin_boot_id += 1
                 max_boot_retries = 3
                 raw_endpoint = None
 
@@ -242,29 +255,6 @@ class ScraperEngine:
                                 "extra_params": ["--headless", "--disable-gpu"],
                             }
                         )
-
-                        sp_payload = build_gologin_smartproxy_payload(
-                            node_index, gologin_boot_id
-                        )
-                        if sp_payload:
-                            try:
-                                st = gl_sdk.changeProfileProxy(
-                                    base_profile_id, sp_payload
-                                )
-                            except Exception as e:
-                                logger.error(
-                                    f"changeProfileProxy failed (check SMARTPROXY_* / token): {e}"
-                                )
-                                raise
-                            if st is not None and st >= 400:
-                                raise RuntimeError(
-                                    f"GoLogin rejected proxy update (HTTP {st}). "
-                                    "Verify token and profile id."
-                                )
-                            logger.info(
-                                "Updated GoLogin profile with Smartproxy session "
-                                f"(boot {gologin_boot_id}, node {node_index})"
-                            )
 
                         raw_endpoint = gl_sdk.start()
                         if raw_endpoint:
@@ -326,19 +316,12 @@ class ScraperEngine:
                         });
                     """)
 
-                    logger.info("Initializing Google Mimicry Strategy...")
-                    page.goto("https://www.google.com", referer="https://www.bing.com/")
-
-                    search_input = page.locator("[name='q']")
-                    search_input.type(task["query"], delay=random.randint(40, 150))
-
-                    # AJAX TIMEOUT SOLUTION
-                    # Press enter, and wait for either the search results OR a captcha to render in the DOM.
-                    page.keyboard.press("Enter")
+                    logger.info(f"Navigating to task URL: {task['url']}")
+                    page.goto(task["url"], wait_until="domcontentloaded")
 
                     try:
                         page.wait_for_selector(
-                            "h3.LC20lb, .g-recaptcha, #captcha-form",
+                            "h3, .g-recaptcha, #captcha-form",
                             state="visible",
                             timeout=PAGE_TIMEOUT_MS,
                         )
@@ -362,8 +345,9 @@ class ScraperEngine:
                             "CAPTCHA bypassed. Waiting for results page stability..."
                         )
                         try:
+                            # Wait for any h3 (result title) or the search results container
                             page.wait_for_selector(
-                                "h3.LC20lb", state="visible", timeout=30000
+                                "h3, #res, #search", state="visible", timeout=30000
                             )
                             page.wait_for_load_state("networkidle", timeout=30000)
                             logger.info("✓ Results page stabilized!")
@@ -381,7 +365,7 @@ class ScraperEngine:
 
                     html_content = page.content()
                     file_name = f"{url_hash}.html"
-                    file_path = RAW_HTML_DIR / file_name
+                    file_path = target_output_dir / file_name
 
                     with open(file_path, "w", encoding="utf-8") as f:
                         f.write(html_content)
@@ -395,7 +379,7 @@ class ScraperEngine:
                     )
                     logger.info(f"✓ Saved results to {file_name}")
 
-                    hash_file_path = CACHE_DIR / f"scraped_hashes_node_{node_index}.txt"
+                    hash_file_path = cache_dir / f"scraped_hashes_node_{node_index}.txt"
                     with open(hash_file_path, "a", encoding="utf-8") as f:
                         f.write(url_hash + "\n")
 
@@ -452,6 +436,13 @@ def parse_args():
         help="Output manifest JSON",
     )
     parser.add_argument(
+        "--output-dir",
+        "-o",
+        type=Path,
+        default=None,
+        help="Directory to save scraped HTML files (Defaults to RAW_HTML_DIR in config.py)",
+    )
+    parser.add_argument(
         "--proxy", "-p", type=str, default=None, help="Proxy URL (Overrides .env)"
     )
 
@@ -487,5 +478,10 @@ if __name__ == "__main__":
 
     if args.gologin:
         engine.fetch_pages_gologin(
-            args.input, args.manifest, args.gologin, args.total_nodes, args.node_index
+            args.input,
+            args.manifest,
+            args.gologin,
+            args.total_nodes,
+            args.node_index,
+            output_dir=args.output_dir,
         )
