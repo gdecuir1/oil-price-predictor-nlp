@@ -1,5 +1,6 @@
 .env
 raw_html/
+raw_articles/
 __pycache__/
 search_results/
 current_outputs.txt
