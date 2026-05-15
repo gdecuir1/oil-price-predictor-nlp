@@ -33,8 +33,9 @@ DOM HTML of news/article pages and persists it under ``raw_articles/`` using a
      non-target hosts (Google redirect/cache domains), and builds in-memory task
      dicts enriched with provenance (which JSON file, ``searchDate``, etc.).
      ``ArticleScraper.fetch_from_parsed`` then scrapes those URLs, supports
-     **skip-if-file-exists** idempotency, optional ``--limit``, and ``--force``
-     re-download.
+     **skip-if-file-exists** idempotency, optional ``--limit``, optional
+     **``--shard`` / ``--shards``** disjoint partitioning for parallel terminals,
+     and ``--force`` re-download.
 
 4. **Per-request browser hygiene** — For each URL (or retry attempt), a **fresh**
    ``BrowserContext`` is created and closed in a ``finally`` block. Rationale:
@@ -278,6 +279,38 @@ def load_tasks_from_parsed(parsed_dir: Path) -> list[dict[str, Any]]:
     return tasks
 
 
+def slice_tasks_for_shard(
+    tasks: list[dict[str, Any]], shard_index: int, num_shards: int
+) -> tuple[list[dict[str, Any]], int, int]:
+    """Return the sub-list for *shard_index* of *num_shards* disjoint partitions.
+
+    Partitions preserve the stable order produced by ``load_tasks_from_parsed``.
+    Remainder tasks (when ``len(tasks)`` is not divisible by *num_shards*) are
+    assigned one each to the lowest-indexed shards so sizes differ by at most one.
+
+    Returns:
+        (sliced_tasks, global_start, global_end) where *global_start* is the
+        inclusive index in the full list and *global_end* is the exclusive end
+        index (Python slice semantics).
+    """
+    if num_shards < 1:
+        raise ValueError("num_shards must be >= 1")
+    if not (0 <= shard_index < num_shards):
+        raise ValueError(f"shard_index must be in [0, {num_shards}), got {shard_index}")
+    n = len(tasks)
+    if n == 0:
+        return [], 0, 0
+    base = n // num_shards
+    rem = n % num_shards
+    if shard_index < rem:
+        start = shard_index * (base + 1)
+        end = start + base + 1
+    else:
+        start = rem * (base + 1) + (shard_index - rem) * base
+        end = start + base
+    return tasks[start:end], start, end
+
+
 class ArticleScraper:
     """Coordinates Playwright-based article HTML capture.
 
@@ -294,7 +327,8 @@ class ArticleScraper:
     **Typical usage**
 
     * ``ArticleScraper(headless=True, no_proxy=False).fetch_articles("final_data.csv", "article_manifest.json")``
-    * ``ArticleScraper().fetch_from_parsed(Path("parsed_articles"), "manifest.json", force=False, limit=0)``
+    * ``ArticleScraper().fetch_from_parsed(..., shard_index=0, num_shards=5)`` for
+      parallel terminals (disjoint URL ranges; unique manifest per process).
     """
 
     def __init__(
@@ -557,14 +591,17 @@ class ArticleScraper:
         *,
         force: bool = False,
         limit: int = 0,
+        shard_index: Optional[int] = None,
+        num_shards: Optional[int] = None,
     ) -> dict[str, int]:
         """JSON pipeline: scrape URLs discovered under *parsed_dir*.
 
         **Task sourcing**
 
         Delegates to ``load_tasks_from_parsed`` for globbing, validation, dedupe,
-        and field normalization. Optional *limit* truncates the in-memory list
-        **after** dedupe — useful for smoke tests without editing JSON files.
+        and field normalization. Optional *shard_index* / *num_shards* restrict
+        processing to a disjoint index range (for parallel processes). Optional
+        *limit* truncates **after** any shard slice — useful for smoke tests.
 
         **Idempotency**
 
@@ -597,6 +634,8 @@ class ArticleScraper:
             manifest_name: Output filename within ``RAW_ARTICLES_DIR``.
             force: When True, ignores existing HTML files and re-fetches every URL.
             limit: Maximum number of tasks to process after dedupe; ``0`` means all.
+            shard_index: When set with *num_shards*, 0-based shard to run.
+            num_shards: Total shard count; must be given with *shard_index*.
 
         Returns:
             Dict with keys ``total``, ``downloaded``, ``skipped``, ``failed`` —
@@ -607,6 +646,27 @@ class ArticleScraper:
             Creates/overwrites HTML and manifest JSON; structured INFO logs.
         """
         tasks = load_tasks_from_parsed(parsed_dir)
+        full_count = len(tasks)
+
+        if (shard_index is None) ^ (num_shards is None):
+            logger.error("shard_index and num_shards must both be set or both omitted")
+            return {"total": 0, "downloaded": 0, "skipped": 0, "failed": 0}
+        if shard_index is not None and num_shards is not None:
+            try:
+                tasks, g0, g1 = slice_tasks_for_shard(tasks, shard_index, num_shards)
+            except ValueError as e:
+                logger.error("Invalid shard parameters: %s", e)
+                return {"total": 0, "downloaded": 0, "skipped": 0, "failed": 0}
+            logger.info(
+                "Shard --shard=%d of %d: global URL indices [%d:%d) (%d of %d deduped task(s))",
+                shard_index,
+                num_shards,
+                g0,
+                g1,
+                len(tasks),
+                full_count,
+            )
+
         if limit > 0:
             tasks = tasks[:limit]
             logger.info("Applied --limit=%d → %d task(s)", limit, len(tasks))
@@ -734,7 +794,9 @@ def parse_args():
     **Operational flags**
 
     * ``--force`` — only affects parsed mode; re-downloads even when HTML exists.
-    * ``--limit`` — parsed mode only; caps task count after dedupe.
+    * ``--limit`` — parsed mode only; caps tasks after any shard slice.
+    * ``--shard`` / ``--shards`` — parsed mode only; disjoint partition for
+      parallel runs (each process needs a distinct ``--manifest`` name).
     * ``--no-proxy`` — constructs ``ArticleScraper(no_proxy=True)``.
     * ``--install-browsers`` — before scraping, invokes
       ``<sys.executable> -m playwright install chromium`` with ``check=True`` so
@@ -775,6 +837,20 @@ def parse_args():
         help="Max articles to process in --from-parsed mode (0 = all)",
     )
     parser.add_argument(
+        "--shard",
+        type=int,
+        default=None,
+        metavar="I",
+        help="0-based shard index for --from-parsed (use with --shards); pair with a unique --manifest",
+    )
+    parser.add_argument(
+        "--shards",
+        type=int,
+        default=None,
+        metavar="N",
+        help="Number of disjoint shards over the deduped URL list (use with --shard)",
+    )
+    parser.add_argument(
         "--no-proxy",
         action="store_true",
         help="Do not use DEFAULT_PROXY / residential proxy",
@@ -784,7 +860,17 @@ def parse_args():
         action="store_true",
         help="Run `python -m playwright install chromium` for this interpreter, then continue",
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    if (args.shard is None) ^ (args.shards is None):
+        parser.error("--shard and --shards must be given together")
+    if args.shard is not None:
+        if args.shards < 1:
+            parser.error("--shards must be >= 1")
+        if args.shard < 0 or args.shard >= args.shards:
+            parser.error("--shard must satisfy 0 <= --shard < --shards")
+        if not args.from_parsed:
+            parser.error("--shard/--shards are only valid with --from-parsed")
+    return args
 
 
 if __name__ == "__main__":
@@ -807,6 +893,8 @@ if __name__ == "__main__":
             args.manifest,
             force=args.force,
             limit=args.limit,
+            shard_index=args.shard,
+            num_shards=args.shards,
         )
     else:
         scraper.fetch_articles(args.input, args.manifest)

@@ -1,0 +1,1835 @@
+<!DOCTYPE html><html lang="en-US"><head><style>@keyframes pulsate{0%,to{opacity:1}50%{opacity:.2}}#spotlight{position:fixed;top:-1px;bottom:-1px;width:100%;z-index:99999;color:#fff;background-color:#000;opacity:0;overflow:hidden;-webkit-user-select:none;-ms-user-select:none;user-select:none;transition:opacity .2s ease-out;font-family:Arial,sans-serif;font-size:16px;font-weight:400;contain:strict;touch-action:none;pointer-events:none}#spotlight.show{opacity:1;transition:none;pointer-events:auto}#spotlight.white{color:#212529;background-color:#fff}#spotlight.white .spl-next,#spotlight.white .spl-page~*,#spotlight.white .spl-prev,#spotlight.white .spl-spinner{filter:invert(1)}#spotlight.white .spl-progress{background-color:rgba(0,0,0,.35)}#spotlight.white .spl-footer,#spotlight.white .spl-header{background-color:rgba(255,255,255,.65)}#spotlight.white .spl-button{background:#212529;color:#fff}.spl-footer,.spl-header{background-color:rgba(0,0,0,.45)}#spotlight .contain,#spotlight .cover{object-fit:cover;height:100%;width:100%}#spotlight .contain{object-fit:contain}#spotlight .autofit{object-fit:none;width:auto;height:auto;max-height:none;max-width:none;transition:none}.spl-scene,.spl-spinner,.spl-track{width:100%;height:100%;position:absolute}.spl-track{contain:strict}.spl-spinner{background-position:center;background-repeat:no-repeat;background-size:42px;opacity:0}.spl-spinner.spin{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzgiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAzOCAzOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHJva2U9IiNmZmYiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2Utb3BhY2l0eT0iLjY1Ij48Y2lyY2xlIHN0cm9rZS1vcGFjaXR5PSIuMTUiIGN4PSIxOCIgY3k9IjE4IiByPSIxOCIvPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjAgMTggMTgiIHRvPSIzNjAgMTggMTgiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9wYXRoPjwvZz48L2c+PC9zdmc+);transition:opacity .2s linear .25s;opacity:1}.spl-spinner.error{background-image:url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTYsMUExNSwxNSwwLDEsMCwzMSwxNiwxNSwxNSwwLDAsMCwxNiwxWm0wLDJhMTMsMTMsMCwwLDEsOC40NSwzLjE0TDYuMTQsMjQuNDVBMTMsMTMsMCwwLDEsMTYsM1ptMCwyNmExMywxMywwLDAsMS04LjQ1LTMuMTRMMjUuODYsNy41NUExMywxMywwLDAsMSwxNiwyOVoiIGlkPSJiYW5fc2lnbl9jcm9zc2VkX2NpcmNsZSIvPjwvc3ZnPg==);background-size:128px;transition:none;opacity:.5}.spl-scene{transition:transform .65s cubic-bezier(.1,1,.1,1);contain:layout size;will-change:transform}.spl-pane>*{position:absolute;width:auto;height:auto;max-width:100%;max-height:100%;left:50%;top:50%;margin:0;padding:0;border:0;transform:translate(-50%,-50%) scale(1);transition:transform .65s cubic-bezier(.3,1,.3,1),opacity .65s ease;contain:layout style;will-change:transform,opacity;visibility:hidden}.spl-header,.spl-pane,.spl-progress{position:absolute;top:0}.spl-pane{width:100%;height:100%;transition:transform .65s cubic-bezier(.3,1,.3,1);contain:layout size;will-change:transform,contents}.spl-header{width:100%;height:50px;text-align:right;transform:translateY(-100px);transition:transform .35s ease;overflow:hidden;will-change:transform}#spotlight.menu .spl-footer,#spotlight.menu .spl-header,.spl-footer:hover,.spl-header:hover{transform:translateY(0)}.spl-header div{display:inline-block;vertical-align:middle;white-space:nowrap;width:50px;height:50px;opacity:.5}.spl-progress{width:100%;height:3px;background-color:rgba(255,255,255,.45);transform:translateX(-100%);transition:transform linear}.spl-footer,.spl-next,.spl-prev{position:absolute;transition:transform .35s ease;will-change:transform}.spl-footer{left:0;right:0;bottom:0;line-height:20px;padding:20px 20px 0;padding-bottom:env(safe-area-inset-bottom,0);text-align:left;font-size:15px;font-weight:400;transform:translateY(100%)}.spl-title{font-size:22px}.spl-button,.spl-description,.spl-title{margin-bottom:20px}.spl-button{display:inline-block;background:#fff;color:#000;border-radius:5px;padding:10px 20px;cursor:pointer}.spl-next,.spl-page~*,.spl-prev{background-position:center;background-repeat:no-repeat}.spl-page{float:left;width:auto;line-height:50px}.spl-page~*{background-size:21px;float:right}.spl-fullscreen{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIHZpZXdCb3g9Ii0xIC0xIDI2IDI2IiB3aWR0aD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggM0g1YTIgMiAwIDAgMC0yIDJ2M20xOCAwVjVhMiAyIDAgMCAwLTItMmgtM20wIDE4aDNhMiAyIDAgMCAwIDItMnYtM00zIDE2djNhMiAyIDAgMCAwIDIgMmgzIi8+PC9zdmc+)}.spl-fullscreen.on{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik04IDN2M2EyIDIgMCAwIDEtMiAySDNtMTggMGgtM2EyIDIgMCAwIDEtMi0yVjNtMCAxOHYtM2EyIDIgMCAwIDEgMi0yaDNNMyAxNmgzYTIgMiAwIDAgMSAyIDJ2MyIvPjwvc3ZnPg==)}.spl-autofit{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBoZWlnaHQ9Ijk2cHgiIHZpZXdCb3g9IjAgMCA5NiA5NiIgd2lkdGg9Ijk2cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoOTAgNTAgNTApIiBmaWxsPSIjZmZmIiBkPSJNNzEuMzExLDgwQzY5LjY3LDg0LjY2LDY1LjIzLDg4LDYwLDg4SDIwYy02LjYzLDAtMTItNS4zNy0xMi0xMlYzNmMwLTUuMjMsMy4zNC05LjY3LDgtMTEuMzExVjc2YzAsMi4yMSwxLjc5LDQsNCw0SDcxLjMxMSAgeiIvPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDkwIDUwIDUwKSIgZmlsbD0iI2ZmZiIgZD0iTTc2LDhIMzZjLTYuNjMsMC0xMiw1LjM3LTEyLDEydjQwYzAsNi42Myw1LjM3LDEyLDEyLDEyaDQwYzYuNjMsMCwxMi01LjM3LDEyLTEyVjIwQzg4LDEzLjM3LDgyLjYzLDgsNzYsOHogTTgwLDYwICBjMCwyLjIxLTEuNzksNC00LDRIMzZjLTIuMjEsMC00LTEuNzktNC00VjIwYzAtMi4yMSwxLjc5LTQsNC00aDQwYzIuMjEsMCw0LDEuNzksNCw0VjYweiIvPjwvc3ZnPg==)}.spl-zoom-in,.spl-zoom-out{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iMTYuNjUiIHkxPSIyMSIgeTI9IjE2LjY1Ii8+PGxpbmUgeDE9IjgiIHgyPSIxNCIgeTE9IjExIiB5Mj0iMTEiLz48L3N2Zz4=);background-size:22px}.spl-zoom-in{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iMTYuNjUiIHkxPSIyMSIgeTI9IjE2LjY1Ii8+PGxpbmUgeDE9IjExIiB4Mj0iMTEiIHkxPSI4IiB5Mj0iMTQiLz48bGluZSB4MT0iOCIgeDI9IjE0IiB5MT0iMTEiIHkyPSIxMSIvPjwvc3ZnPg==)}.spl-download{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNDEuNzMycHgiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE0MS43MzIgMTQxLjczMiIgd2lkdGg9IjE0MS43MzJweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTIwLjY3NCwxMjUuMTM4SDIwLjc5M3YxNi41OTRoOTkuODgxVjEyNS4xMzh6IE0xMTkuMDE5LDU4Ljc3NmMtMi41NjEtMi41NjItNi43MTYtMi41NjItOS4yNzUsMEw3Ny4yMSw5MS4zMTJWNi41NjIgICBDNzcuMjEsMi45MzYsNzQuMjY5LDAsNzAuNjQ4LDBjLTMuNjI0LDAtNi41NiwyLjkzNy02LjU2LDYuNTYzdjg0Ljc1TDMxLjk5Miw1OS4yMThjLTIuNTYyLTIuNTY0LTYuNzE1LTIuNTY0LTkuMjc3LDAgICBjLTIuNTY1LDIuNTYyLTIuNTY1LDYuNzE2LDAsOS4yNzlsNDMuMjk0LDQzLjI5M2MwLjE1LDAuMTU0LDAuMzE0LDAuMjk5LDAuNDgxLDAuNDM4YzAuMDc2LDAuMDYyLDAuMTU1LDAuMTEzLDAuMjM0LDAuMTc2ICAgYzAuMDk0LDAuMDY1LDAuMTg2LDAuMTQyLDAuMjc5LDAuMjA2YzAuMDk3LDAuMDYzLDAuMTkyLDAuMTE0LDAuMjg2LDAuMTc0YzAuMDg4LDAuMDU0LDAuMTc0LDAuMTA1LDAuMjY1LDAuMTUzICAgYzAuMSwwLjA1NiwwLjE5OSwwLjEsMC4yOTgsMC4xNDdjMC4wOTcsMC4wNDUsMC4xOSwwLjA5MSwwLjI4MywwLjEzMmMwLjA5OCwwLjA0LDAuMTk2LDAuMDcyLDAuMjk1LDAuMTA1ICAgYzAuMTA0LDAuMDM4LDAuMjA3LDAuMDc4LDAuMzEyLDAuMTA5YzAuMTAxLDAuMDMsMC4xOTcsMC4wNTIsMC4yOTcsMC4wNzdjMC4xMDgsMC4wMjMsMC4yMTQsMC4wNTgsMC4zMjQsMC4wNzggICBjMC4xMTUsMC4wMjEsMC4yMzEsMC4wMzMsMC4zNDYsMC4wNTRjMC4wOTcsMC4wMTUsMC4xOTIsMC4wMzIsMC4yODksMC4wNDJjMC40MywwLjA0MiwwLjg2NSwwLjA0MiwxLjI5NSwwICAgYzAuMS0wLjAxLDAuMTkxLTAuMDI3LDAuMjg5LTAuMDQyYzAuMTE0LTAuMDIxLDAuMjMzLTAuMDI5LDAuMzQ0LTAuMDU0YzAuMTA5LTAuMDIxLDAuMjE3LTAuMDU1LDAuMzI0LTAuMDc4ICAgYzAuMTAyLTAuMDI1LDAuMTk5LTAuMDQ3LDAuMjk5LTAuMDc3YzAuMTA1LTAuMDMxLDAuMjA3LTAuMDcxLDAuMzEyLTAuMTA5YzAuMTAyLTAuMDMsMC4xOTUtMC4wNjIsMC4yOTUtMC4xMDUgICBjMC4wOTYtMC4wNDEsMC4xOTEtMC4wODcsMC4yODMtMC4xMzJjMC4xLTAuMDQ4LDAuMTk5LTAuMDkyLDAuMjk3LTAuMTQ3YzAuMDkxLTAuMDQ4LDAuMTc3LTAuMTA0LDAuMjY0LTAuMTUzICAgYzAuMDk4LTAuMDYsMC4xOTMtMC4xMSwwLjI4Ny0wLjE3NGMwLjA5Ni0wLjA2NCwwLjE4OS0wLjE0MSwwLjI4MS0wLjIwNmMwLjA3Ni0wLjA2MiwwLjE1Ni0wLjExMywwLjIzMy0wLjE3NiAgIGMwLjI0OS0wLjIwNCwwLjQ3OS0wLjQzNywwLjY5NC0wLjY3YzAuMDc2LTAuMDY3LDAuMTU0LTAuMTMxLDAuMjI5LTAuMjAzbDQzLjI5NC00My4yOTYgICBDMTIxLjU4MSw2NS40OTEsMTIxLjU4MSw2MS4zMzcsMTE5LjAxOSw1OC43NzYiLz48L2c+PC9zdmc+);background-size:20px}.spl-theme{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBoZWlnaHQ9IjI0cHgiIHZlcnNpb249IjEuMiIgdmlld0JveD0iMiAyIDIwIDIwIiB3aWR0aD0iMjRweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTIsNGMtNC40MTgsMC04LDMuNTgyLTgsOHMzLjU4Miw4LDgsOHM4LTMuNTgyLDgtOFMxNi40MTgsNCwxMiw0eiBNMTIsMThjLTMuMzE0LDAtNi0yLjY4Ni02LTZzMi42ODYtNiw2LTZzNiwyLjY4Niw2LDYgUzE1LjMxNCwxOCwxMiwxOHoiLz48cGF0aCBkPSJNMTIsN3YxMGMyLjc1NywwLDUtMi4yNDMsNS01UzE0Ljc1Nyw3LDEyLDd6Ii8+PC9nPjwvc3ZnPg==)}.spl-play{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSItMC41IC0wLjUgMjUgMjUiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwb2x5Z29uIGZpbGw9IiNmZmYiIHBvaW50cz0iMTAgOCAxNiAxMiAxMCAxNiAxMCA4Ii8+PC9zdmc+)}.spl-play.on{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSItMC41IC0wLjUgMjUgMjUiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxsaW5lIHgxPSIxMCIgeDI9IjEwIiB5MT0iMTUiIHkyPSI5Ii8+PGxpbmUgeDE9IjE0IiB4Mj0iMTQiIHkxPSIxNSIgeTI9IjkiLz48L3N2Zz4=);animation:pulsate 1s ease infinite}.spl-close{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIyIDIgMjAgMjAiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZSB4MT0iMTgiIHgyPSI2IiB5MT0iNiIgeTI9IjE4Ii8+PGxpbmUgeDE9IjYiIHgyPSIxOCIgeTE9IjYiIHkyPSIxOCIvPjwvc3ZnPg==)}.spl-next,.spl-prev{top:50%;width:50px;height:50px;opacity:.65;background-color:rgba(0,0,0,.45);border-radius:100%;cursor:pointer;margin-top:-25px;transform:translateX(-100px);background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cG9seWxpbmUgcG9pbnRzPSIxNSAxOCA5IDEyIDE1IDYiLz48L3N2Zz4=);background-size:30px}.spl-prev{left:20px}.spl-next{left:auto;right:20px;transform:translateX(100px) scaleX(-1)}#spotlight.menu .spl-prev{transform:translateX(0)}#spotlight.menu .spl-next{transform:translateX(0) scaleX(-1)}@media (hover:hover){.spl-page~div{cursor:pointer;transition:opacity .2s ease}.spl-next:hover,.spl-page~div:hover,.spl-prev:hover{opacity:1}}@media (max-width:500px){.spl-header div{width:44px}.spl-footer .spl-title{font-size:20px}.spl-footer{font-size:14px}.spl-next,.spl-prev{width:35px;height:35px;margin-top:-17.5px;background-size:15px 15px}.spl-spinner{background-size:30px 30px}}.hide-scrollbars{overflow:hidden!important}</style>
+    <link rel="dns-prefetch" href="//www.harianbasis.co">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <title>Suriname Emerging Oil Province Reality</title>
+    
+                    <meta name="description" content="Suriname has been one of the most talked-about emerging oil provinces in recent years, often mentioned alongside Guyana as part of the same basin.">
+
+                    <meta name="keywords" content="suriname oil, block 58, totalenergies, apa corporation, offshore drilling, oil development">
+        
+    
+    <meta name="author" content="Oduu">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="Oduu">
+
+            <meta property="og:type" content="article">
+        <meta property="og:title" content="Suriname Emerging Oil Province Reality">
+        <meta property="og:description" content="Suriname has been one of the most talked-about emerging oil provinces in recent years, often mentioned alongside Guyana as part of the same basin.">
+        <meta property="og:url" content="https://www.harianbasis.co/en/suriname-emerging-oil-province-development">
+        <meta property="og:image" content="https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&amp;width=1200&amp;height=674&amp;quality=80&amp;watermark=1">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="674">
+        <meta property="og:image" content="https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&amp;width=650&amp;height=366&amp;quality=80&amp;watermark=1">
+        <meta property="og:image:width" content="650">
+        <meta property="og:image:height" content="366">
+        <meta property="article:section" content="Finance &amp; Insurance">
+        <meta property="article:author" content="Emily Johnson">
+        <meta property="article:published_time" content="2026-05-03T02:34:39+00:00">
+        <meta property="article:modified_time" content="2026-05-03T02:34:39+00:00">
+                    <meta property="article:tag" content="Energy">
+                    <meta property="article:tag" content="Oil and Gas">
+                    <meta property="article:tag" content="Suriname Economy">
+                <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Suriname Emerging Oil Province Reality">
+        <meta name="twitter:description" content="Suriname has been one of the most talked-about emerging oil provinces in recent years, often mentioned alongside Guyana as part of the same basin.">
+        <meta name="twitter:image" content="https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&amp;width=1200&amp;height=674&amp;quality=80&amp;watermark=1">
+    
+    
+            <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Oduu">
+        <meta name="msapplication-TileImage" content="https://cdn.harianbasis.co/media/images/2026/02/116983acccc5f51..png?location=1&amp;width=144&amp;height=144&amp;quality=100&amp;fit=">
+        <meta name="msapplication-TileColor" content="#cc181f">
+        <link rel="manifest" href="https://www.harianbasis.co/manifest.json">
+        <link rel="apple-touch-icon" href="https://cdn.harianbasis.co/media/images/2026/02/116983acccc5f51..png?location=1&amp;width=144&amp;height=144&amp;quality=100&amp;fit=">
+    
+    <meta name="theme-color" content="#cc181f">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.harianbasis.co/favicon.ico">
+            <link rel="canonical" href="https://www.harianbasis.co/en/suriname-emerging-oil-province-development">
+                <link rel="alternate" hreflang="en-US" href="https://www.harianbasis.co/en/suriname-emerging-oil-province-development">
+    
+            <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+        <meta name="googlebot-news" content="index, follow">
+        <meta name="googlebot" content="index, follow">
+
+            
+<link rel="stylesheet" type="text/css" href="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/css/style.css?v=1.0.0.0">
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202605140101/show_ads_impl_fy2021.js?bust=31098593"></script><script src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/js/jquery.min.js?v=1.0.0.0" defer=""></script>
+<script src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/js/swiper.min.js?v=1.0.0.0"></script>
+<script src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/js/ajax-script.js?v=1.0.0.0" defer=""></script>
+
+<script>
+    const base_url = 'https://www.harianbasis.co/';
+    const sys_lang_id = '2';
+    const fb_app_id = '';
+    const csfr_token_name = 'Oduu_csrf_token';
+    const csfr_cookie_name = 'Oduu_csrf_cookie';
+    const is_recaptcha_enabled = false;
+    const oduuTextOk = 'OK';
+    const oduuTextCancle = 'Cancel';
+    const oduuTextShare = 'Share';
+    const oduuTextReport = 'Report';
+    const oduuTextShareDescription = 'Share this via';
+
+    const inputLang = document.createElement('input');
+    inputLang.type = 'hidden';
+    inputLang.name = 'sys_lang_id';
+    inputLang.value = sys_lang_id;
+    const formElement = document.querySelector('form');
+    if (formElement) {
+        formElement.appendChild(inputLang);
+    }
+</script>
+
+<style>
+    :root {
+        --oduu-primary: #cc181f;
+        --oduu-primary-transparent-80: #cc181f1a;
+        --oduu-secondary: #cc181f;
+        --oduu-gradient-one: #cc181f;
+        --oduu-gradient-two: #cc181f;
+        --oduu-link-hover: #fcc43f;
+        --oduu-description-parallax-mobile: 'Scroll untuk lanjut membaca';
+        --oduu-widget-description-background: #cc181f0f;
+        --oduu-widget-description-border: #cc181f26;
+        --oduu-widget-description-color: #cc181f;
+        --oduu-poll-progress-full: #cc181f0f;
+        --oduu-favicon: url('https://www.harianbasis.co/favicon.ico') #f8f8f8;
+        --oduu-favicon-no-background: url('https://www.harianbasis.co/favicon.ico');
+        --oduu-shadow-rank-number: #cc181f80;
+        --oduu-background-footer: #cc181f0d;
+        --oduu-search-highlight: #fcc43f4d;
+        --oduu-color-service-menu-icon: #cc181f60;
+    }
+</style>
+
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3867779727604775" crossorigin="anonymous" data-checked-head="true"></script>
+<style>
+	.oduu-brand-image a img {
+		max-height: 47px;
+	}
+	.oduu-content figure {
+		text-align: center;
+	}
+	.oduu-content figure img {
+		width: 100%;
+	}
+	.oduu-change-font-size {
+		line-height: 110%;
+	}
+</style>
+<meta name="google-site-verification" content="UTdfor0-mv8pje_YBDoLkX_StBEAZPhfJped-QmuOBQ">
+<script src="https://jsc.mgid.com/site/1086828.js" async="">
+</script>
+<meta name="yandex-verification" content="39225b4494913e49">
+<script src="https://jsc.mgid.com/site/1086826.js" async=""></script><script src="https://jsc.mgid.com/site/1086826.js" async=""></script>
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+
+    
+
+<script type="application/ld+json">
+    [{"@context":"https://schema.org","@type":"Organization","url":"https://www.harianbasis.co/en/","logo":{"@type":"ImageObject","width":600,"height":60,"url":"https://www.harianbasis.co/logo.png"},"sameAs":[]},{"@context":"https://schema.org","@type":"WebSite","name":"Oduu","url":"https://www.harianbasis.co/en/","potentialAction":{"@type":"SearchAction","target":"https://www.harianbasis.co/en/search?q={search_term_string}","query-input":"required name=search_term_string"}}]</script>
+
+    
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.harianbasis.co/en/suriname-emerging-oil-province-development"},"headline":"Suriname Emerging Oil Province Reality","name":"Suriname Emerging Oil Province Reality","isAccessibleForFree":true,"articleBody":"(By Oil & Gas 360) – Suriname has been one of the most talked-about emerging oil provinces in recent years, often mentioned alongside Guyana as part of the same transformational offshore basin. Early discoveries in Block 58, led by TotalEnergies and APA Corporation, confirmed a working petroleum system and pointed to hundreds of millions of barrels of recoverable resources, quickly putting the country on the map for global investors. But as the basin moves from discovery toward development, a more measured reality is beginning to take shape. The initial wave of optimism was driven by a string of successful wells, including Sapakara and Krabdagu, which established the foundation for Suriname’s first major offshore project. That momentum ultimately led to a final investment decision on the GranMorgu development, expected to produce roughly 200,000 barrels per day by the latter part of the decade. The presence of TotalEnergies as operator, alongside APA and state oil company Staatsolie, reinforced confidence that the project could move forward and that Suriname could follow a similar path to Guyana. But the comparison has always had limits. While the geology is related, Suriname’s reservoirs have proven to be more complex, requiring additional appraisal, tighter well spacing, and more careful development planning. Discoveries have been meaningful, but not as consistently large or as straightforward to develop as those in Guyana’s Stabroek Block. That has translated into longer timelines, higher development costs, and a more cautious pace of investment. At the same time, other operators have moved into the basin, expanding the scope of activity beyond a single block. QatarEnergy has partnered with TotalEnergies in additional offshore acreage, while Petronas has advanced exploration and gas-focused developments in other parts of the country. These moves signal that Suriname is still viewed as a viable long-term play, but not one without risk. That distinction matters for capital. Suriname is no longer being viewed purely as a high-impact exploration story. It is becoming a more traditional development case, where returns depend on execution, cost control, and the ability to navigate geological complexity. Investors are still interested, but expectations are adjusting. The upside remains significant, but it is no longer assumed to be immediate or easily repeatable. Infrastructure and institutional capacity also remain part of the equation. Suriname is building its regulatory framework, local content strategy, and revenue management systems in parallel with project development. That adds another layer of execution risk, even as it creates long-term opportunity for the country.","articleSection":"Finance & Insurance","image":[{"@type":"ImageObject","url":"https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&width=1200&height=1200&quality=100","width":1200,"height":1200},{"@type":"ImageObject","url":"https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&width=1200&height=900&quality=100","width":1200,"height":900},{"@type":"ImageObject","url":"https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&width=1200&height=674&quality=100","width":1200,"height":674}],"datePublished":"2026-05-03T02:34:39+00:00","dateModified":"2026-05-03T02:34:39+00:00","inLanguage":"en-US","keywords":"suriname oil, block 58, totalenergies, apa corporation, offshore drilling, oil development","author":{"@type":"Person","name":"Emily Johnson","url":"https://www.harianbasis.co/en/profile/emily-johnson"},"publisher":{"@type":"Organization","name":"Oduu","logo":{"@type":"ImageObject","width":600,"height":60,"url":"https://www.harianbasis.co/logo.png"}},"description":"Suriname has been one of the most talked-about emerging oil provinces in recent years, often mentioned alongside Guyana as part of the same basin.","isBasedOn":"https://finance.yahoo.com/sectors/energy/articles/suriname-oil-reality-check-203054519.html"}    </script>
+
+
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.harianbasis.co/en/"},{"@type":"ListItem","position":2,"name":"Finance &amp; Insurance","item":"https://www.harianbasis.co/en/finance-insurance"},{"@type":"ListItem","position":3,"name":"Suriname Emerging Oil Province Reality","item":"https://www.harianbasis.co/en/suriname-emerging-oil-province-development"}]}    </script>
+<link rel="preconnect" href="https://servicer.mgid.com"><link rel="preconnect" href="https://servicer.mgid.com"><script type="text/javascript" charset="utf-8" referrerpolicy="strict-origin-when-cross-origin" src="https://servicer.mgid.com/1980938/1?nocmp=1&amp;tcfV2=1&amp;sessionId=6a06add1-13169&amp;sessionPage=1&amp;sessionNumberWeek=1&amp;sessionNumber=1&amp;cpicon=1&amp;scale_metric_1=64.00&amp;scale_metric_2=256.00&amp;scale_metric_3=100.00&amp;cbuster=1778822609284763171869&amp;pvid=95f0b358-f111-44de-a966-e9c09b8ae98c&amp;implVersion=17&amp;lct=1778816820&amp;scua=%22x86%22&amp;scub=%2264%22&amp;scu=%22Chromium%22%3Bv%3D%22148%22%2C%20%22Google%20Chrome%22%3Bv%3D%22148%22%2C%20%22Not%2FA)Brand%22%3Bv%3D%2299%22&amp;scufvl=%22Chromium%22%3Bv%3D%22148.0.7778.168%22%2C%20%22Google%20Chrome%22%3Bv%3D%22148.0.7778.168%22%2C%20%22Not%2FA)Brand%22%3Bv%3D%2299.0.0.0%22&amp;scum=%3F0&amp;scup=%22Windows%22&amp;scupv=%2210.0%22&amp;scufv=%22148.0.7778.168%22&amp;scuw=%3F0&amp;mp4=1&amp;ap=1&amp;gdpr_consent=&amp;gdpr=0&amp;consentOrigin=cmp&amp;wlid=a0bb3431-3e46-43a5-9460-faf1e9990d0f&amp;pageview_widget_list=1980937,1980938&amp;uniqId=0e411&amp;niet=3g&amp;nisd=false&amp;jsp=head&amp;evt=%5B%7B%22event%22%3A1%2C%22methods%22%3A%5B1%2C2%5D%7D%2C%7B%22event%22%3A2%2C%22methods%22%3A%5B1%2C2%5D%7D%5D&amp;pv=5&amp;jsv=es6&amp;dpr=1&amp;hashCommit=8e7d1f37&amp;apt=2026-05-03T02%3A34%3A39%2B00%3A00&amp;schemaUrl=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development&amp;articleUrl=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development&amp;tfre=4038&amp;w=688&amp;h=975&amp;tl=150&amp;tlp=1,2,3,4,5,6,7,8,9&amp;sz=223x302&amp;szp=1,2,3,4,5,6,7,8,9&amp;szl=1,2,3;4,5,6;7,8,9&amp;cxurl=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development&amp;ref=&amp;lu=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development"></script><script type="text/javascript" charset="utf-8" referrerpolicy="strict-origin-when-cross-origin" src="https://servicer.mgid.com/1980937/1?nocmp=1&amp;tcfV2=1&amp;sessionId=6a06add1-13169&amp;sessionPage=1&amp;sessionNumberWeek=1&amp;sessionNumber=1&amp;cpicon=1&amp;scale_metric_1=64.00&amp;scale_metric_2=256.00&amp;scale_metric_3=100.00&amp;cbuster=1778822609284607460302&amp;pvid=95f0b358-f111-44de-a966-e9c09b8ae98c&amp;implVersion=17&amp;lct=1778816820&amp;scua=%22x86%22&amp;scub=%2264%22&amp;scu=%22Chromium%22%3Bv%3D%22148%22%2C%20%22Google%20Chrome%22%3Bv%3D%22148%22%2C%20%22Not%2FA)Brand%22%3Bv%3D%2299%22&amp;scufvl=%22Chromium%22%3Bv%3D%22148.0.7778.168%22%2C%20%22Google%20Chrome%22%3Bv%3D%22148.0.7778.168%22%2C%20%22Not%2FA)Brand%22%3Bv%3D%2299.0.0.0%22&amp;scum=%3F0&amp;scup=%22Windows%22&amp;scupv=%2210.0%22&amp;scufv=%22148.0.7778.168%22&amp;scuw=%3F0&amp;mp4=1&amp;ap=1&amp;gdpr_consent=&amp;gdpr=0&amp;consentOrigin=cmp&amp;wlid=faf527d0-3f7b-4fba-ac77-a7d8a72a3e30&amp;pageview_widget_list=1980937,1980938&amp;uniqId=017bb&amp;niet=3g&amp;nisd=false&amp;jsp=head&amp;evt=%5B%7B%22event%22%3A1%2C%22methods%22%3A%5B1%2C2%5D%7D%2C%7B%22event%22%3A2%2C%22methods%22%3A%5B1%2C2%5D%7D%5D&amp;pv=5&amp;jsv=es6&amp;dpr=1&amp;hashCommit=8e7d1f37&amp;apt=2026-05-03T02%3A34%3A39%2B00%3A00&amp;schemaUrl=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development&amp;articleUrl=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development&amp;tfre=4039&amp;w=5343&amp;h=250&amp;tl=114&amp;tlp=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25&amp;sz=200x250&amp;szp=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25&amp;szl=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25&amp;cxurl=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development&amp;ref=&amp;lu=https%3A%2F%2Fwww.harianbasis.co%2Fen%2Fsuriname-emerging-oil-province-development"></script><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"></head>
+
+
+
+<body class="oduu oduu-desktop oduu-article">
+    <div class="oduu-box">
+                        <header class="oduu-header-top">
+            <div class="oduu-navigation-top">
+                <div class="oduu-container oduu-navigation-content">
+                    <div class="oduu-navigation-top-left">
+                        <div class="oduu-button-menu">
+                            <button class="oduu-hamburger" title="menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <div id="oduu-hamburger-open" class="oduu-hamburger-text open">
+                                Menu                            </div>
+                            <div id="oduu-hamburger-close" class="oduu-hamburger-text close d-none">
+                                Close                            </div>
+                        </div>
+                        
+<div class="oduu-menu-sidebar">
+    <div class="oduu-menu-sidebar-content">
+        <div class="oduu-sidebar-search">
+            <form action="https://www.harianbasis.co/en/search" method="get" accept-charset="utf-8">
+            <button type="text" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-label="Search">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                </svg>
+            </button>
+            <input type="text" name="q" maxlength="300" pattern=".*\S+.*" class="" placeholder="Search..." autocomplete="off" required="">
+            </form>        </div>
+                    <ul class="oduu-menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+            </div>
+</div>                    </div>
+                    <div class="oduu-navigation-top-center">
+                        <div class="oduu-brand-image">
+                            <a href="https://www.harianbasis.co/en/" class="brand-link" rel="Home" aria-current="page">
+                                <img width="60px" height="auto" src="https://cdn.harianbasis.co/media/images/2026/02/116983acd04dde8..png?location=1&amp;fit=1" decoding="async" loading="lazy" class="brand-logo-desktop-oduu" alt="HarianBasis.co">
+                            </a>
+                                                        <p>Focused on Facts, Not Opinions</p>
+                        </div>
+                    </div>
+                    <div class="oduu-navigation-top-right">
+                        <div class="oduu-navigation-search">
+                            <form action="https://www.harianbasis.co/en/search" method="get" accept-charset="utf-8">
+                            <button type="text" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-label="Search">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                                </svg>
+                            </button>
+                            <input type="text" name="q" maxlength="300" pattern=".*\S+.*" class="" placeholder="Search..." autocomplete="off" required="">
+                            </form>                        </div>
+                                                
+    <div class="oduu-navigation-social oduu-navigation-social-header">
+                <ul>
+                                                                                                                                                    <li>
+                    <a href="https://www.harianbasis.co/en/rss-feeds" class="oduu-social-icon rss" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-label="RSS">
+                            <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"></path>
+                        </svg>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+                    </div>
+                </div>
+            </div>
+            
+<div class="oduu-navigation-middle">
+    <div class="oduu-container">
+        <div class="oduu-navigation-primary-menu">
+                                                <ul class="oduu-menu">
+                                                            <li class="oduu-menu-item">
+                            <a href="https://www.harianbasis.co/en/" class="oduu-menu-item-link ">
+                                Home                            </a>
+                        </li>
+                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/apps" class="oduu-menu-item-link ">
+                                        Apps                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/games" class="oduu-menu-item-link ">
+                                        Games                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/world" class="oduu-menu-item-link ">
+                                        World                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/tech-software" class="oduu-menu-item-link ">
+                                        Tech &amp; Software                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/sport-31" class="oduu-menu-item-link ">
+                                        Sport                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/politics-30" class="oduu-menu-item-link ">
+                                        Politics                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/news" class="oduu-menu-item-link ">
+                                        News                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/lifestyle" class="oduu-menu-item-link ">
+                                        Lifestyle                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/health-medical" class="oduu-menu-item-link ">
+                                        Health &amp; Medical                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://www.harianbasis.co/en/finance-insurance" class="oduu-menu-item-link ">
+                                        Finance &amp; Insurance                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </div>
+    </div>
+</div>            
+        </header>
+                            <div class="oduu-banner-billboard">
+                <div class="oduu-container">
+                    <div class="oduu-ads oduu-ads-970x250 margin-auto">
+                        <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3867779727604775" crossorigin="anonymous"></script>
+<!-- bawah menu harianbasis -->
+<ins class="adsbygoogle" style="display: block; height: 280px;" data-ad-client="ca-pub-3867779727604775" data-ad-slot="8585565707" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done"><div id="aswift_1_host" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; height: 280px; width: 970px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>                    </div>
+                </div>
+            </div>
+        
+<div class="oduu-container">
+    <div class="oduu-main-content ">
+        <main class="oduu-main">
+            <article id="oduu-post-155421" class="oduu-single-article">
+                
+<nav aria-label="Breadcrumb" class="oduu-breadcrumbs">
+    <ol itemscope="" itemtype="https://schema.org/BreadcrumbList">
+        <li class="oduu-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <a href="https://www.harianbasis.co/en/" itemprop="item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"></path>
+                </svg>
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1">
+        </li>
+                                                                <li class="oduu-item-navigation" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"></path>
+                        </svg>
+                    </li>
+                    <li class="oduu-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                        <a href="https://www.harianbasis.co/en/finance-insurance" itemprop="item">
+                            <span itemprop="name">Finance &amp; Insurance</span>
+                        </a>
+                        <meta itemprop="position" content="2">
+                    </li>
+                                                                <li class="oduu-item-navigation" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"></path>
+            </svg>
+        </li>
+        <li class="oduu-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <span itemprop="name" aria-current="page">Suriname Emerging Oil Province Reality</span>
+            <meta itemprop="position" content="3">
+        </li>
+    </ol>
+</nav>                
+<h1 class="oduu-article-title">
+    Suriname Emerging Oil Province Reality</h1>
+<div class="oduu-article-info">
+    <div class="oduu-block-article-info">
+        <div class="oduu-article-author-image">
+            <img src="https://cdn.harianbasis.co/media/profile/699b8ac3b4307.jpeg?location=1&amp;width=40&amp;height=40&amp;quality=90" decoding="async" loading="lazy" alt="Efri Yano" width="40px" height="40px">
+        </div>
+        <div class="oduu-article-author-box">
+            <div class="oduu-article-author-name oduu-text-bolder">
+                Emily Johnson                            </div>
+                            <div class="oduu-published-box">
+                    <div class="oduu-published-on">
+                        <div>
+                            Published                            <time class="oduu-text-bolder" datetime="2026-05-03T02:34:39+00:00">
+                                May 3, 2026&nbsp;-&nbsp;09:34                            </time>
+                        </div>
+                                            </div>
+                                            <div class="oduu-updated-on">
+                            Last Update                            <time class="oduu-text-bolder" datetime="2026-05-03T02:34:39+00:00">
+                                May 3, 2026&nbsp;-&nbsp;09:34                            </time>
+                        </div>
+                                    </div>
+                    </div>
+    </div>
+    
+<div class="oduu-block-article-share">
+    <span class="oduu-share-text">
+        Share    </span>
+    <ul class="oduu-block-share-list">
+        <li>
+            <a href="//api.whatsapp.com/send/?text=*Suriname Emerging Oil Province Reality* | https://www.harianbasis.co/en/suriname-emerging-oil-province-development" class="oduu-button-share-post-article whatsapp" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+                </svg>
+                WhatsApp
+            </a>
+        </li>
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https://www.harianbasis.co/en/suriname-emerging-oil-province-development" class="oduu-button-share-post-article facebook" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 320 512" fill="currentColor" aria-label="Facebook">
+                    <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <span class="oduu-button-share-post-article oduu-copy-link" data-url="https://www.harianbasis.co/en/suriname-emerging-oil-province-development" data-title="URL Successfully copied">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"></path>
+                    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"></path>
+                </svg>
+            </span>
+        </li>
+        <li>
+            <span class="oduu-button-share-post-article oduu-share-modal" onclick="OduuShare(`https://www.harianbasis.co/en/suriname-emerging-oil-province-development`, `Suriname Emerging Oil Province Reality`, `https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&amp;width=&amp;height=&amp;quality=90&amp;fit=1`)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"></path>
+                </svg>
+            </span>
+        </li>
+    </ul>
+</div></div>                                    
+
+<div class="oduu-featured-images">
+                        <figure>
+                <a class="spotlight" href="https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&amp;width=&amp;height=&amp;quality=90&amp;fit=1" data-description="offshore oil rig in ocean (Foto: Guim)">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/5VVVurr7aN.jpeg?location=1&amp;width=&amp;height=&amp;quality=90&amp;fit=1" alt="Suriname Emerging Oil Province Reality" title="Suriname Emerging Oil Province Reality" decoding="async" fetchpriority="high" width="100%">
+                </a>
+                                    <figcaption>offshore oil rig in ocean (Foto: Guim)</figcaption>
+                            </figure>
+            </div>
+<div class="oduu-flex-content">
+    <div class="oduu-flex-content-left">
+                            
+<div class="d-flex align-items-center justify-content-center">
+    <div class="oduu-change-font-size">
+        <div>Smallest Font</div>
+        <input type="range" class="oduu-input-font-size" value="100" min="100" max="140" step="1">
+        <div>Largest Font</div>
+    </div>
+</div>            <div class="oduu-content">
+                
+<p>(By Oil &amp; Gas 360) – Suriname has been one of the most talked-about emerging oil provinces in recent years, often mentioned alongside Guyana as part of the same transformational offshore basin.</p><p>Early discoveries in Block 58, led by TotalEnergies and APA Corporation, confirmed a working petroleum system and pointed to hundreds of millions of barrels of recoverable resources, quickly putting the country on the map for global investors. But as the basin moves from discovery toward development, a more measured reality is beginning to take shape.</p><p>The initial wave of optimism was driven by a string of successful wells, including Sapakara and Krabdagu, which established the foundation for Suriname’s first major offshore project. That momentum ultimately led to a final investment decision on the GranMorgu development, expected to produce roughly 200,000 barrels per day by the latter part of the decade.</p>            <aside class="oduu-widget oduu-posts-related" role="complementary" aria-label="Also Read">
+                <div class="oduu-widget-content">
+                    <div class="oduu-article-item">
+                        <div class="oduu-article-text">
+                            <span class="oduu-text-read">
+                                Also Read                            </span>
+                            <h2 class="oduu-article-title">
+                                <a href="https://www.harianbasis.co/en/nnpc-chinese-partnership-refinery-rehab" title="NNPC Signs Chinese Partnership for Nigerian Refinery Rehabilitation">
+                                    NNPC Signs Chinese Partnership for Nigerian Refinery Rehabilitation                                </a>
+                            </h2>
+                        </div>
+                        <div class="oduu-article-image">
+                            <img src="https://cdn.harianbasis.co/media/images/2026/05/RIP0djbcQ8.jpeg?location=1&amp;width=75&amp;height=75&amp;quality=90" alt="NNPC Signs Chinese Partnership for Nigerian Refinery Rehabilitation" width="75" height="75" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+<p>The presence of TotalEnergies as operator, alongside APA and state oil company Staatsolie, reinforced confidence that the project could move forward and that Suriname could follow a similar path to Guyana.</p>                            <aside class="oduu-ads oduu-ads-scroll" role="complementary" aria-label="Advertisement">
+                    <div class="oduu-ads-scroll-text oduu-ads-scroll-text-top">
+                        Advertisement                    </div>
+                    <div class="oduu-ads-scroll-content">
+                        <div data-type="_mgwidget" data-widget-id="1980937" data-uid="017bb"></div>
+<script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>                    </div>
+                    <div class="oduu-ads-scroll-text oduu-ads-scroll-text-bottom">
+                        Scroll To Continue with Content                    </div>
+                </aside>
+                    <p>But the comparison has always had limits.</p><p>While the geology is related, Suriname’s reservoirs have proven to be more complex, requiring additional appraisal, tighter well spacing, and more careful development planning. Discoveries have been meaningful, but not as consistently large or as straightforward to develop as those in Guyana’s Stabroek Block. That has translated into longer timelines, higher development costs, and a more cautious pace of investment.</p>            <aside class="oduu-widget oduu-posts-related" role="complementary" aria-label="Also Read">
+                <div class="oduu-widget-content">
+                    <div class="oduu-article-item">
+                        <div class="oduu-article-text">
+                            <span class="oduu-text-read">
+                                Also Read                            </span>
+                            <h2 class="oduu-article-title">
+                                <a href="https://www.harianbasis.co/en/oil-gas-operators-grid-reliability" title="The Evolving Role of Oil and Gas in Grid Reliability">
+                                    The Evolving Role of Oil and Gas in Grid Reliability                                </a>
+                            </h2>
+                        </div>
+                        <div class="oduu-article-image">
+                            <img src="https://cdn.harianbasis.co/media/images/2026/05/tZNDisRSy7.jpeg?location=1&amp;width=75&amp;height=75&amp;quality=90" alt="The Evolving Role of Oil and Gas in Grid Reliability" width="75" height="75" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+<p>At the same time, other operators have moved into the basin, expanding the scope of activity beyond a single block. QatarEnergy has partnered with TotalEnergies in additional offshore acreage, while Petronas has advanced exploration and gas-focused developments in other parts of the country. These moves signal that Suriname is still viewed as a viable long-term play, but not one without risk.</p><p>That distinction matters for capital.</p><p>Suriname is no longer being viewed purely as a high-impact exploration story. It is becoming a more traditional development case, where returns depend on execution, cost control, and the ability to navigate geological complexity. Investors are still interested, but expectations are adjusting. The upside remains significant, but it is no longer assumed to be immediate or easily repeatable.</p>            <aside class="oduu-widget oduu-posts-related" role="complementary" aria-label="Also Read">
+                <div class="oduu-widget-content">
+                    <div class="oduu-article-item">
+                        <div class="oduu-article-text">
+                            <span class="oduu-text-read">
+                                Also Read                            </span>
+                            <h2 class="oduu-article-title">
+                                <a href="https://www.harianbasis.co/en/chevron-explores-oil-gas-malta-offshore" title="Chevron Explores Oil and Gas Potential in Malta Offshore Regions">
+                                    Chevron Explores Oil and Gas Potential in Malta Offshore Regions                                </a>
+                            </h2>
+                        </div>
+                        <div class="oduu-article-image">
+                            <img src="https://cdn.harianbasis.co/media/images/2026/05/doQLfKV3e0.jpeg?location=1&amp;width=75&amp;height=75&amp;quality=90" alt="Chevron Explores Oil and Gas Potential in Malta Offshore Regions" width="75" height="75" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+<p>Infrastructure and institutional capacity also remain part of the equation. Suriname is building its regulatory framework, local content strategy, and revenue management systems in parallel with project development. That adds another layer of execution risk, even as it creates long-term opportunity for the country.</p>
+                <!-- AdSpaces - Post Content Sticky (After Content) -->
+                                                    <div class="oduu-ads oduu-ads-scroll">
+                        <div class="oduu-ads-scroll-text oduu-ads-scroll-text-top">Advertisement</div>
+                        <div class="oduu-ads-scroll-content">
+                            <div data-type="_mgwidget" data-widget-id="1980938" data-uid="0e411"></div>
+<script>(function(w,q){w[q]=w[q]||[];w[q].push(["_mgc.load"])})(window,"_mgq");</script>                        </div>
+                        <div class="oduu-ads-scroll-text oduu-ads-scroll-text-bottom">Scroll To Continue with Content</div>
+                    </div>
+                            </div>
+                                        <footer class="oduu-source" role="doc-footnote">
+                    <p>Disclaimer</p>
+                    <span>
+                        This article was automatically rewritten by AI based on source: <cite itemprop="citation"><span role="link" tabindex="0" style="cursor:pointer;" onclick="window.open('https://finance.yahoo.com/sectors/energy/articles/suriname-oil-reality-check-203054519.html', '_blank', 'noopener,noreferrer')" onkeydown="if(event.key === 'Enter'){window.open('https://finance.yahoo.com/sectors/energy/articles/suriname-oil-reality-check-203054519.html', '_blank', 'noopener,noreferrer')}">finance.yahoo.com</span></cite> without altering the facts of the original article.                    </span>
+                </footer>
+                            
+    <div class="oduu-box-tags" aria-label="Topik Terkait">
+        <ul class="oduu-tags-lists">
+                            <li class="oduu-tags-item">
+                    <a href="https://www.harianbasis.co/en/tag/energy" class="oduu-tags-link" rel="tag">
+                        <span>Energy</span>
+                                            </a>
+                                    </li>
+                            <li class="oduu-tags-item">
+                    <a href="https://www.harianbasis.co/en/tag/oil-and-gas" class="oduu-tags-link" rel="tag">
+                        <span>Oil and Gas</span>
+                                            </a>
+                                    </li>
+                            <li class="oduu-tags-item">
+                    <a href="https://www.harianbasis.co/en/tag/suriname-economy" class="oduu-tags-link" rel="tag">
+                        <span>Suriname Economy</span>
+                                            </a>
+                                    </li>
+                    </ul>
+    </div>
+        
+<div class="oduu-box-editors">
+    <div class="oduu-box-editors-left">
+        Editors Team        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"></path>
+        </svg>
+    </div>
+    <div class="oduu-box-editors-right">
+        <div class="oduu-editor-image">
+            <img src="https://cdn.harianbasis.co/media/profile/699b8ac3b4307.jpeg?location=1&amp;width=40&amp;height=40&amp;quality=90" decoding="async" loading="lazy" alt="Daisy Floren" width="30px" height="30px">
+            <div class="oduu-editor-box">
+                <div class="oduu-editor-bio">
+                    <div class="oduu-editor-profile">
+                        <img src="https://cdn.harianbasis.co/media/profile/699b8ac3b4307.jpeg?location=1&amp;width=40&amp;height=40&amp;quality=90" decoding="async" loading="lazy" alt="Daisy Floren" width="40px" height="40px">
+                        <div class="oduu-editor-name">
+                            <a href="https://www.harianbasis.co/en/profile/emily-johnson" class="oduu-editor-url">
+                                Emily Johnson                                                            </a>
+                            <span class="oduu-editor-type">
+                                Author                            </span>
+                        </div>
+                    </div>
+                                            <button onclick="window.location.href = 'https://www.harianbasis.co/app/login'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
+                            </svg>
+                            Follow                        </button>
+                                    </div>
+            </div>
+        </div>
+                    </div>
+</div>                    <div class="oduu-box-form oduu-mt-20" id="reactions_result">
+                
+<div class="oduu-box-form-header oduu-mt-10">
+    <h3>What's Your Reaction?</h3>
+</div>
+<div class="oduu-box-content">
+    <div class="oduu-reaction">
+        <ul>
+            
+    <li class="oduu-reaction-item" onclick="add_reaction('1','155421', 'like');">
+        <div class="oduu-reaction-image">
+            <img src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/img/reactions/like.png" alt="Like">
+        </div>
+        <span class="oduu-reaction-count">0</span>
+        <div class="oduu-reaction-type oduu-like">Like</div>
+    </li>
+
+    <li class="oduu-reaction-item" onclick="add_reaction('1','155421', 'dislike');">
+        <div class="oduu-reaction-image">
+            <img src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/img/reactions/dislike.png" alt="Dislike">
+        </div>
+        <span class="oduu-reaction-count">0</span>
+        <div class="oduu-reaction-type oduu-dislike">Dislike</div>
+    </li>
+
+    <li class="oduu-reaction-item" onclick="add_reaction('1','155421', 'funny');">
+        <div class="oduu-reaction-image">
+            <img src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/img/reactions/funny.png" alt="Funny">
+        </div>
+        <span class="oduu-reaction-count">0</span>
+        <div class="oduu-reaction-type oduu-funny">Funny</div>
+    </li>
+
+    <li class="oduu-reaction-item" onclick="add_reaction('1','155421', 'angry');">
+        <div class="oduu-reaction-image">
+            <img src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/img/reactions/angry.png" alt="Angry">
+        </div>
+        <span class="oduu-reaction-count">0</span>
+        <div class="oduu-reaction-type oduu-angry">Angry</div>
+    </li>
+
+    <li class="oduu-reaction-item" onclick="add_reaction('1','155421', 'sad');">
+        <div class="oduu-reaction-image">
+            <img src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/img/reactions/sad.png" alt="Sad">
+        </div>
+        <span class="oduu-reaction-count">0</span>
+        <div class="oduu-reaction-type oduu-sad">Sad</div>
+    </li>
+
+    <li class="oduu-reaction-item" onclick="add_reaction('1','155421', 'wow');">
+        <div class="oduu-reaction-image">
+            <img src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/img/reactions/wow.png" alt="Wow">
+        </div>
+        <span class="oduu-reaction-count">0</span>
+        <div class="oduu-reaction-type oduu-wow">Wow</div>
+    </li>
+        </ul>
+    </div>
+</div>            </div>
+            </div>
+        </div>                            </article>
+            
+
+    <div class="oduu-widget oduu-posts-recommended oduu-posts-recommended-id-44">
+        <div class="oduu-widget-header">
+            <h3 class="oduu-widget-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"></path>
+                    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"></path>
+                </svg>
+                <span>
+                    Recommended                </span>
+            </h3>
+        </div>
+        
+        <div class="oduu-widget-content oduu-widget-content-id-44">
+            <div class="oduu-posts-recommended-wrapper oduu-posts-recommended-wrapper-id-44 swiper-initialized swiper-horizontal">
+                <div class="oduu-posts-recommended-content swiper-wrapper" id="swiper-wrapper-cf4c65c0a916d053" aria-live="off" style="transition-duration: 0ms; transform: translate3d(-221px, 0px, 0px); transition-delay: 0ms;">
+                                            <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/BQbT8UTfuY.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/ionis-pharmaceuticals-revenue-guidance-growth" title="Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter">
+                Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                1 minute ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/Eam6sB96Ao.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/nasdaq-rises-alibaba-earnings-surge" title="Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results">
+                Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                3 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/TYLVuyrcEO.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/sandisk-stock-tumbles-inflation-tech-selloff" title="SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff">
+                SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                4 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="4 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/geLOsJRl7I.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sport                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/vegas-buffalo-nhl-playoff-battles" title="Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results">
+                Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                4 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="5 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/nMMGUOxICo.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/vci-global-investment-brazilian-gold-mining" title="VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset">
+                VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                4 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="6 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/dxWsQzAsMx.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Fitness Champs Holdings Raises $5 Million via Public Offering" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/fitness-champs-raises-five-million" title="Fitness Champs Holdings Raises $5 Million via Public Offering">
+                Fitness Champs Holdings Raises $5 Million via Public Offering            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                6 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="7 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/96CPNs7TV5.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/cmct-records-first-quarter-loss" title="CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026">
+                CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                10 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="8 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/fOmkzF6NIZ.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Under Armour Shares Rebound Slightly Amid Analyst Downgrades" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/under-armour-shares-analyst-downgrades" title="Under Armour Shares Rebound Slightly Amid Analyst Downgrades">
+                Under Armour Shares Rebound Slightly Amid Analyst Downgrades            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                11 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="9 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/BQVZ6xzJZD.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Cheetah Net Acquires Super International Trading for 4.98 Million Dollars" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/cheetah-net-acquires-super-international" title="Cheetah Net Acquires Super International Trading for 4.98 Million Dollars">
+                Cheetah Net Acquires Super International Trading for 4.98 Million Dollars            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                14 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="10 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/LquXShltTg.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Evercore ISI Maintains Outperform Rating for Block Inc Stocks" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/evercore-isi-reiterates-block-rating" title="Evercore ISI Maintains Outperform Rating for Block Inc Stocks">
+                Evercore ISI Maintains Outperform Rating for Block Inc Stocks            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                15 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="11 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/wmMOcD6hBT.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="JD.Com Stock Surges Following Strong First Quarter Earnings Report" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/jd-com-stock-surges-earnings" title="JD.Com Stock Surges Following Strong First Quarter Earnings Report">
+                JD.Com Stock Surges Following Strong First Quarter Earnings Report            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                17 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="12 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/ABQdQWvyjQ.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Donald Trump Secures Boeing Jet Deal During Visit to China" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Politics                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/trump-china-boeing-jet-deal" title="Donald Trump Secures Boeing Jet Deal During Visit to China">
+                Donald Trump Secures Boeing Jet Deal During Visit to China            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                17 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="13 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/lek0vP77ub.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="PayPal Exceeds Q1 Earnings Forecasts Amid Strategic Restructuring" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/paypal-q1-earnings-crypto-restructure" title="PayPal Exceeds Q1 Earnings Forecasts Amid Strategic Restructuring">
+                PayPal Exceeds Q1 Earnings Forecasts Amid Strategic Restructuring            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                18 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="14 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/wr2odIMYu3.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="BlackRock BUIDL Fund Expands Through New OKX and Standard Chartered Partnership" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/blackrock-buidl-fund-okx-standard-chartered-partnership" title="BlackRock BUIDL Fund Expands Through New OKX and Standard Chartered Partnership">
+                BlackRock BUIDL Fund Expands Through New OKX and Standard Chartered Partnership            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                19 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="15 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/gCXVeg0lt6.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Accenture Joins Hedera Council to Enhance Enterprise AI Security" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Tech &amp; Software                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/accenture-joins-hedera-council-blockchain" title="Accenture Joins Hedera Council to Enhance Enterprise AI Security">
+                Accenture Joins Hedera Council to Enhance Enterprise AI Security            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                20 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="16 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/Y7GpO2Qxwj.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="ASML Urges European Governments to Support Technology Competitiveness" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Tech &amp; Software                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/asml-urges-european-governments-to-support-technology-competitiveness" title="ASML Urges European Governments to Support Technology Competitiveness">
+                ASML Urges European Governments to Support Technology Competitiveness            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                21 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                    </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            <a href="javascript:void(0);" class="swiper-button swiper-button-prev swiper-button-prev-id-44 oduu-swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-cf4c65c0a916d053" aria-disabled="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
+                </svg>
+            </a>
+            <a href="javascript:void(0);" class="swiper-button swiper-button-next swiper-button-next-id-44 oduu-swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-cf4c65c0a916d053" aria-disabled="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                </svg>
+            </a>
+        </div>
+        <script>
+            new Swiper('.oduu-desktop .oduu-posts-recommended-wrapper.oduu-posts-recommended-wrapper-id-44', {
+                slidesPerView: 3,
+                spaceBetween: 15,
+                navigation: {
+                    nextEl: '.swiper-button-next.swiper-button-next-id-44',
+                    prevEl: '.swiper-button-prev.swiper-button-prev-id-44'
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                }
+            });
+        </script>
+    </div>
+
+
+    <div class="oduu-widget oduu-posts-lists-small oduu-posts-lists-small-2-column oduu-posts-lists-small-2-column-id-46">
+        
+    <div class="oduu-widget-header">
+        <h3 class="oduu-widget-title">
+            <span>
+                Other Latest            </span>
+        </h3>
+            </div>
+        
+        <div class="oduu-widget-content oduu-widget-content-id-46">
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/citi-raises-applied-materials-target" title="Citi Raises Applied Materials Price Target Following Chip Demand Surge">
+                Citi Raises Applied Materials Price Target Following Chip Demand Surge            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/ionis-pharmaceuticals-revenue-guidance-growth" title="Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter">
+                Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/nasdaq-rises-alibaba-earnings-surge" title="Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results">
+                Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/sandisk-stock-tumbles-inflation-tech-selloff" title="SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff">
+                SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/vegas-buffalo-nhl-playoff-battles" title="Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results">
+                Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/vci-global-investment-brazilian-gold-mining" title="VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset">
+                VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/fitness-champs-raises-five-million" title="Fitness Champs Holdings Raises $5 Million via Public Offering">
+                Fitness Champs Holdings Raises $5 Million via Public Offering            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/cmct-records-first-quarter-loss" title="CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026">
+                CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/under-armour-shares-analyst-downgrades" title="Under Armour Shares Rebound Slightly Amid Analyst Downgrades">
+                Under Armour Shares Rebound Slightly Amid Analyst Downgrades            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/cheetah-net-acquires-super-international" title="Cheetah Net Acquires Super International Trading for 4.98 Million Dollars">
+                Cheetah Net Acquires Super International Trading for 4.98 Million Dollars            </a>
+        </h2>
+            </div>
+                </div>
+                    </div>
+    </div>
+
+
+    <div class="oduu-widget oduu-posts-grid oduu-posts-grid-id-47">
+        <style>
+            .oduu-desktop .oduu-widget.oduu-posts-grid.oduu-posts-grid-id-47>.oduu-widget-content {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        </style>
+        
+    <div class="oduu-widget-header">
+        <h3 class="oduu-widget-title">
+            <span>
+                Most viewed            </span>
+        </h3>
+            </div>
+        
+        <div class="oduu-widget-content oduu-widget-content-id-47">
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/3h3HPBjy4P.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Citi Raises Applied Materials Price Target Following Chip Demand Surge" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/citi-raises-applied-materials-target" title="Citi Raises Applied Materials Price Target Following Chip Demand Surge">
+                Citi Raises Applied Materials Price Target Following Chip Demand Surge            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                Just Now                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/BQbT8UTfuY.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/ionis-pharmaceuticals-revenue-guidance-growth" title="Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter">
+                Ionis Pharmaceuticals Raises Revenue Guidance Following Strong First Quarter            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                1 minute ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/Eam6sB96Ao.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/nasdaq-rises-alibaba-earnings-surge" title="Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results">
+                Nasdaq Rises as Alibaba Shares Surge Following Quarterly Results            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                3 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/TYLVuyrcEO.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/sandisk-stock-tumbles-inflation-tech-selloff" title="SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff">
+                SanDisk Stock Tumbles as Higher Inflation Concerns Trigger Tech Selloff            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                4 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/geLOsJRl7I.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sport                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/vegas-buffalo-nhl-playoff-battles" title="Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results">
+                Vegas and Buffalo Face Pivotal Playoff Tests Following Game 4 Results            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                4 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/nMMGUOxICo.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/vci-global-investment-brazilian-gold-mining" title="VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset">
+                VCI Global Secures Strategic Investment in Brazilian Gold Mining Asset            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                4 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/dxWsQzAsMx.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Fitness Champs Holdings Raises $5 Million via Public Offering" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/fitness-champs-raises-five-million" title="Fitness Champs Holdings Raises $5 Million via Public Offering">
+                Fitness Champs Holdings Raises $5 Million via Public Offering            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                6 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/96CPNs7TV5.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/cmct-records-first-quarter-loss" title="CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026">
+                CMCT Records 34.7 Million Dollar Net Loss in First Quarter 2026            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                10 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/05/fOmkzF6NIZ.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Under Armour Shares Rebound Slightly Amid Analyst Downgrades" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Finance &amp; Insurance                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://www.harianbasis.co/en/under-armour-shares-analyst-downgrades" title="Under Armour Shares Rebound Slightly Amid Analyst Downgrades">
+                Under Armour Shares Rebound Slightly Amid Analyst Downgrades            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                11 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                    </div>
+    </div>
+        </main>
+        
+<aside class="oduu-aside">
+    <div class="oduu-sidebar">
+                        
+
+
+
+    <div class="oduu-widget oduu-posts-popular">
+        <div class="oduu-widget-header">
+            <h3 class="oduu-widget-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"></path>
+                </svg>
+                <span>
+                    Popular                </span>
+            </h3>
+        </div>
+        
+        <div class="oduu-widget-content">
+                                        <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">1</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/sandisk-stock-declines-semiconductor-selloff" title="SanDisk Stock Tumbles Following Sector Selloff and Inflation Data">
+                                SanDisk Stock Tumbles Following Sector Selloff and Inflation Data                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Finance &amp; Insurance                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                20 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">2</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/tesla-financial-valuation-competitor-analysis" title="Tesla Financial Performance vs Competitors Shows Significant Valuation Premium">
+                                Tesla Financial Performance vs Competitors Shows Significant Valuation Premium                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Finance &amp; Insurance                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                9 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">3</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/dhurandhar-two-international-streaming-release" title="Dhurandhar 2 Streams Internationally on Netflix with Extended Uncut Version">
+                                Dhurandhar 2 Streams Internationally on Netflix with Extended Uncut Version                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                News                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                5 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">4</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/angelina-pivarnick-pregnancy-announcement" title="Angelina Pivarnick Announces Pregnancy During Jersey Shore Family Vacation">
+                                Angelina Pivarnick Announces Pregnancy During Jersey Shore Family Vacation                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Lifestyle                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                2 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">5</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/supreme-court-broker-liability-ruling" title="US Supreme Court Rules Against C.H. Robinson in Liability Case">
+                                US Supreme Court Rules Against C.H. Robinson in Liability Case                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                News                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                14 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">6</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/alphabet-meta-advertising-stock-comparison" title="Alphabet vs. Meta: Which Advertising Giant Is the Better Buy?">
+                                Alphabet vs. Meta: Which Advertising Giant Is the Better Buy?                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Finance &amp; Insurance                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                7 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">7</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/chiefs-monitor-tyreek-hill-recovery" title="Kansas City Chiefs Monitor Tyreek Hill Recovery for Potential Reunion">
+                                Kansas City Chiefs Monitor Tyreek Hill Recovery for Potential Reunion                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Sport                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                4 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">8</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/applied-materials-amat-stock-earnings-report" title="Applied Materials Stock Eyes Record Highs Ahead of Earnings Report">
+                                Applied Materials Stock Eyes Record Highs Ahead of Earnings Report                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Finance &amp; Insurance                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                22 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">9</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/amd-stock-surges-ai-demand" title="AMD Stock Surges 115 Percent on Artificial Intelligence Chip Demand">
+                                AMD Stock Surges 115 Percent on Artificial Intelligence Chip Demand                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Finance &amp; Insurance                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                10 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">10</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://www.harianbasis.co/en/cooper-flagg-arianna-roberson-relationship" title="Cooper Flagg Confirms Relationship With Arianna Roberson Following Debut">
+                                Cooper Flagg Confirms Relationship With Arianna Roberson Following Debut                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Sport                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                2 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    </div>
+    </div>
+                    </div>
+</aside>    </div>
+</div>
+<footer class="oduu-footer">
+    <div class="oduu-footer-line"></div>
+    <div class="oduu-container">
+        <div class="oduu-footer-content">
+            <div class="oduu-footer-logo">
+                <div class="oduu-footer-logo">
+                    <img src="https://cdn.harianbasis.co/media/images/2026/02/116983acd04dde8..png?location=1&amp;fit=1" alt="" decoding="async" loading="lazy">
+                </div>
+                
+    <div class="oduu-navigation-social oduu-navigation-social-footer">
+                    <div class="oduu-navigation-title">
+                Social Media            </div>
+                <ul>
+                                                                                                                                                    <li>
+                    <a href="https://www.harianbasis.co/en/rss-feeds" class="oduu-social-icon rss" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-label="RSS">
+                            <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"></path>
+                        </svg>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+                <div class="oduu-footer-copyright">Copyright 2026 Harianbasis - All Rights Reserved.</div>
+            </div>
+            <div class="oduu-grid">
+                                                                                                                                                    <nav class="oduu-grid-column-auto">
+                                    <div class="oduu-footer-title ">
+                                        Categories                                    </div>
+                                    <ul class="oduu-footer-menu">
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/apps">
+                                                    Apps                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/finance-insurance">
+                                                    Finance &amp; Insurance                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/games">
+                                                    Games                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/health-medical">
+                                                    Health &amp; Medical                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/lifestyle">
+                                                    Lifestyle                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/news">
+                                                    News                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/politics-30">
+                                                    Politics                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/sport-31">
+                                                    Sport                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/tech-software">
+                                                    Tech &amp; Software                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://www.harianbasis.co/en/world">
+                                                    World                                                </a>
+                                                                                            </li>
+                                                                            </ul>
+                                </nav>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <nav class="oduu-grid-column-auto">
+                                    <div class="oduu-footer-title ">
+                                        Pages                                    </div>
+                                    <ul class="oduu-footer-menu">
+                                                                                    <li>
+                                                <a href="https://world.harianbasis.co/about-us">
+                                                    About Us                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.harianbasis.co/privacy-policy">
+                                                    Privacy Policy                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.harianbasis.co/terms-and-conditions">
+                                                    Terms and Conditions                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.harianbasis.co/denial">
+                                                    Denial                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.harianbasis.co/dmca">
+                                                    Digital Millennium Copyright Act - DMCA                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.harianbasis.co/contact">
+                                                    Contact                                                </a>
+                                                                                            </li>
+                                                                            </ul>
+                                </nav>
+                                                                                                                                                                                                                                                                                                                                                                            </div>
+        </div>
+    </div>
+</footer>
+</div>
+
+
+    <script src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/js/modal.js?v=1.0.0.0" defer=""></script>
+<script src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/js/spotlight.js?v=1.0.0.0" defer=""></script>
+<script src="https://www.harianbasis.co/assets/themes/oduu-interactive/desktop/js/jquery-cookie.js?v=1.0.0.0" defer=""></script>
+
+<script>
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('https://www.harianbasis.co/pwa-sw.js').then(function(registration) {}, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                }).catch(function(err) {
+                    console.log(err);
+                });
+            });
+        } else {
+            console.log('service worker is not supported');
+        }
+    
+    function oduuTab(e, tabName, classLinks, classContent, classStyle) {
+        var i, oduuTabContent, tablinks;
+        oduuTabContent = document.getElementsByClassName(classContent);
+        for (i = 0; i < oduuTabContent.length; i++) {
+            oduuTabContent[i].style.display = 'none';
+        }
+        oduuTabLinks = document.getElementsByClassName(classLinks);
+        for (i = 0; i < oduuTabLinks.length; i++) {
+            oduuTabLinks[i].className = oduuTabLinks[i].className.replace(' oduu-tab-active', '');
+        }
+        document.getElementById(tabName).style.display = classStyle;
+        e.currentTarget.className += ' oduu-tab-active';
+    }
+
+    function oduuDetectPixel(oduuElement, oduuType) {
+        if ('w' == oduuType) {
+            return document.getElementsByClassName(oduuElement)[0].offsetWidth
+        } else if ('h' == oduuType) {
+            return document.getElementsByClassName(oduuElement)[0].offsetHeight
+        };
+        return null
+    };
+
+    document.addEventListener("DOMContentLoaded", function() {
+                    document.addEventListener("DOMContentLoaded", function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://www.harianbasis.co/run-cron'
+                });
+            });
+        
+        $(document).ready(function() {
+            $('a[href*="#"]').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 170
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            const $iframes = $('.oduu-content iframe').not('.oduu-iframe').filter(function() {
+                return $(this).closest('.oduu-ads.oduu-ads-scroll').length === 0;
+            });
+            if ($iframes.length) {
+                $iframes.addClass('oduu-iframe d-block').wrap('<div class="oduu-box-iframe"></div>');
+            }
+            const $tables = $('.oduu-content table');
+            if ($tables.length) {
+                $tables.wrap('<div class="oduu-box-table"/>');
+            }
+            if ($('.oduu-flex-content-right').length) {
+                $('.oduu-flex-content-left').css('max-width', '518px');
+            }
+        });
+
+        $(window).on('load', function() {
+            const oduuHeight = oduuDetectPixel('oduu-header-top', 'h') + 19;
+            const $stickyLeft = $('.oduu-ads-sticky-left');
+            const $stickyRight = $('.oduu-ads-sticky-right');
+            const $stickyContent = $('.oduu-ads-sticky-content-left');
+            const $sidebar = $('.oduu-sidebar');
+            const $scrollContent = $('.oduu-ads-sticky-scroll-content');
+            const $parallax = $('.oduu-banner-billboard-parallax');
+
+            if ($parallax.length > 0) {
+                $stickyLeft.css('top', 0);
+                $stickyRight.css('top', 0);
+
+                let isSticky = false;
+
+                $(window).on('scroll', function() {
+                    const scrollTop = $(this).scrollTop();
+
+                    if (scrollTop >= 250 && !isSticky) {
+                        $stickyLeft.css('top', oduuHeight);
+                        $stickyRight.css('top', oduuHeight);
+                        isSticky = true;
+                    } else if (scrollTop < 250 && isSticky) {
+                        $stickyLeft.css('top', 0);
+                        $stickyRight.css('top', 0);
+                        isSticky = false;
+                    }
+                });
+            } else {
+                if ($stickyLeft.length) $stickyLeft.css('top', oduuHeight);
+                if ($stickyRight.length) $stickyRight.css('top', oduuHeight);
+            }
+
+            if ($stickyContent.length) {
+                $stickyContent.css('top', oduuHeight);
+            } else {
+                $('.oduu-reaction-image img').css('width', '100%');
+            }
+
+            if ($sidebar.length) $sidebar.css('top', oduuHeight);
+
+            if ($('.oduu-ads-scroll-content').length) {
+                $('.oduu-ads-scroll-content').css('top', oduuHeight);
+            }
+        });
+
+
+        // When the top Menu Button is Clicked
+        $('.oduu-button-menu').click(function() {
+            $('.oduu-hamburger').toggleClass('open');
+            $('.oduu-hamburger-text.open').toggleClass('d-none');
+            $('.oduu-hamburger-text.close').toggleClass('d-none');
+            $('.oduu-menu-sidebar').toggleClass('d-block');
+        });
+
+        // When the top Menu Network is Clicked
+        $('.oduu-navigation-network').click(function() {
+            $('.oduu-list-network').toggleClass('oduu-open');
+        });
+
+        // Slider Font Size
+        const oduuFontSize = localStorage.getItem('oduu-font-size-content');
+        $('.oduu-input-font-size').val(oduuFontSize);
+        $('.oduu-content').css('font-size', oduuFontSize + '%');
+        $('.oduu-input-font-size').on('input', function() {
+            $('.oduu-content').css('font-size', $(this).val() + '%');
+            localStorage.setItem('oduu-font-size-content', $(this).val());
+        });
+
+        const screen_width = window.screen.width;
+        const screen_height = window.screen.height;
+
+                    $('.oduu-copy-link').click(function(e) {
+                e.preventDefault();
+                const oduuGetURL = $(this).attr('data-url');
+                document.addEventListener('copy', function(oduu) {
+                    oduu.clipboardData.setData('text/plain', oduuGetURL);
+                    oduu.preventDefault();
+                }, true);
+                document.execCommand('copy');
+                const oduuStartClass = $('.oduu-copy-link');
+                oduuStartClass.addClass('oduu-copy-link-success');
+                setTimeout(function() {
+                    oduuStartClass.removeClass('oduu-copy-link-success');
+                }, 2000);
+            });
+
+            $('#oduu-show-hide-toc').on('click', function() {
+                const oduuTOCBody = $('.oduu-toc-content');
+                const oduuIsVisible = oduuTOCBody.is(':visible');
+
+                if (oduuIsVisible) {
+                    oduuTOCBody.slideUp();
+                    $(this).text('[ Show ]');
+                } else {
+                    oduuTOCBody.slideDown();
+                    $(this).text('[ Hide ]');
+                }
+            });
+
+                            $.ajax({
+                    type: 'POST',
+                    url: base_url + 'front/increase-page-views',
+                    data: {
+                        'oduuPath': `/en/suriname-emerging-oil-province-development`,
+                        'oduuReferrer': ``,
+                        'oduuScreenWidth': screen_width,
+                        'oduuScreenHeight': screen_height,
+                        'oduuPostId': 155421,
+                        'oduuCategoryId': 0,
+                        'oduuTagId': 0
+                    }
+                });
+                        });
+</script>
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-691JMEW350"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-691JMEW350');
+</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fbfb5b85a18a3e0',t:'MTc3ODgyMjU5OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe><script defer="" src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;1d2ffea641414af48865e0dc6bd0404d&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
+
+
+<ins class="adsbygoogle adsbygoogle-noablate" data-ad-hi="true" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"></div></ins></body></html>

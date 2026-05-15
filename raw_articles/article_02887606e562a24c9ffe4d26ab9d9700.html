@@ -1,0 +1,2163 @@
+<!DOCTYPE html><html lang="en-US"><head><style>@keyframes pulsate{0%,to{opacity:1}50%{opacity:.2}}#spotlight{position:fixed;top:-1px;bottom:-1px;width:100%;z-index:99999;color:#fff;background-color:#000;opacity:0;overflow:hidden;-webkit-user-select:none;-ms-user-select:none;user-select:none;transition:opacity .2s ease-out;font-family:Arial,sans-serif;font-size:16px;font-weight:400;contain:strict;touch-action:none;pointer-events:none}#spotlight.show{opacity:1;transition:none;pointer-events:auto}#spotlight.white{color:#212529;background-color:#fff}#spotlight.white .spl-next,#spotlight.white .spl-page~*,#spotlight.white .spl-prev,#spotlight.white .spl-spinner{filter:invert(1)}#spotlight.white .spl-progress{background-color:rgba(0,0,0,.35)}#spotlight.white .spl-footer,#spotlight.white .spl-header{background-color:rgba(255,255,255,.65)}#spotlight.white .spl-button{background:#212529;color:#fff}.spl-footer,.spl-header{background-color:rgba(0,0,0,.45)}#spotlight .contain,#spotlight .cover{object-fit:cover;height:100%;width:100%}#spotlight .contain{object-fit:contain}#spotlight .autofit{object-fit:none;width:auto;height:auto;max-height:none;max-width:none;transition:none}.spl-scene,.spl-spinner,.spl-track{width:100%;height:100%;position:absolute}.spl-track{contain:strict}.spl-spinner{background-position:center;background-repeat:no-repeat;background-size:42px;opacity:0}.spl-spinner.spin{background-image:url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzgiIGhlaWdodD0iMzgiIHZpZXdCb3g9IjAgMCAzOCAzOCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBzdHJva2U9IiNmZmYiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMSAxKSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2Utb3BhY2l0eT0iLjY1Ij48Y2lyY2xlIHN0cm9rZS1vcGFjaXR5PSIuMTUiIGN4PSIxOCIgY3k9IjE4IiByPSIxOCIvPjxwYXRoIGQ9Ik0zNiAxOGMwLTkuOTQtOC4wNi0xOC0xOC0xOCI+PGFuaW1hdGVUcmFuc2Zvcm0gYXR0cmlidXRlTmFtZT0idHJhbnNmb3JtIiB0eXBlPSJyb3RhdGUiIGZyb209IjAgMTggMTgiIHRvPSIzNjAgMTggMTgiIGR1cj0iMXMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIi8+PC9wYXRoPjwvZz48L2c+PC9zdmc+);transition:opacity .2s linear .25s;opacity:1}.spl-spinner.error{background-image:url(data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMyIiB3aWR0aD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjZmZmIiBkPSJNMTYsMUExNSwxNSwwLDEsMCwzMSwxNiwxNSwxNSwwLDAsMCwxNiwxWm0wLDJhMTMsMTMsMCwwLDEsOC40NSwzLjE0TDYuMTQsMjQuNDVBMTMsMTMsMCwwLDEsMTYsM1ptMCwyNmExMywxMywwLDAsMS04LjQ1LTMuMTRMMjUuODYsNy41NUExMywxMywwLDAsMSwxNiwyOVoiIGlkPSJiYW5fc2lnbl9jcm9zc2VkX2NpcmNsZSIvPjwvc3ZnPg==);background-size:128px;transition:none;opacity:.5}.spl-scene{transition:transform .65s cubic-bezier(.1,1,.1,1);contain:layout size;will-change:transform}.spl-pane>*{position:absolute;width:auto;height:auto;max-width:100%;max-height:100%;left:50%;top:50%;margin:0;padding:0;border:0;transform:translate(-50%,-50%) scale(1);transition:transform .65s cubic-bezier(.3,1,.3,1),opacity .65s ease;contain:layout style;will-change:transform,opacity;visibility:hidden}.spl-header,.spl-pane,.spl-progress{position:absolute;top:0}.spl-pane{width:100%;height:100%;transition:transform .65s cubic-bezier(.3,1,.3,1);contain:layout size;will-change:transform,contents}.spl-header{width:100%;height:50px;text-align:right;transform:translateY(-100px);transition:transform .35s ease;overflow:hidden;will-change:transform}#spotlight.menu .spl-footer,#spotlight.menu .spl-header,.spl-footer:hover,.spl-header:hover{transform:translateY(0)}.spl-header div{display:inline-block;vertical-align:middle;white-space:nowrap;width:50px;height:50px;opacity:.5}.spl-progress{width:100%;height:3px;background-color:rgba(255,255,255,.45);transform:translateX(-100%);transition:transform linear}.spl-footer,.spl-next,.spl-prev{position:absolute;transition:transform .35s ease;will-change:transform}.spl-footer{left:0;right:0;bottom:0;line-height:20px;padding:20px 20px 0;padding-bottom:env(safe-area-inset-bottom,0);text-align:left;font-size:15px;font-weight:400;transform:translateY(100%)}.spl-title{font-size:22px}.spl-button,.spl-description,.spl-title{margin-bottom:20px}.spl-button{display:inline-block;background:#fff;color:#000;border-radius:5px;padding:10px 20px;cursor:pointer}.spl-next,.spl-page~*,.spl-prev{background-position:center;background-repeat:no-repeat}.spl-page{float:left;width:auto;line-height:50px}.spl-page~*{background-size:21px;float:right}.spl-fullscreen{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIHZpZXdCb3g9Ii0xIC0xIDI2IDI2IiB3aWR0aD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTggM0g1YTIgMiAwIDAgMC0yIDJ2M20xOCAwVjVhMiAyIDAgMCAwLTItMmgtM20wIDE4aDNhMiAyIDAgMCAwIDItMnYtM00zIDE2djNhMiAyIDAgMCAwIDIgMmgzIi8+PC9zdmc+)}.spl-fullscreen.on{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyLjUiIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik04IDN2M2EyIDIgMCAwIDEtMiAySDNtMTggMGgtM2EyIDIgMCAwIDEtMi0yVjNtMCAxOHYtM2EyIDIgMCAwIDEgMi0yaDNNMyAxNmgzYTIgMiAwIDAgMSAyIDJ2MyIvPjwvc3ZnPg==)}.spl-autofit{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBoZWlnaHQ9Ijk2cHgiIHZpZXdCb3g9IjAgMCA5NiA5NiIgd2lkdGg9Ijk2cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggdHJhbnNmb3JtPSJyb3RhdGUoOTAgNTAgNTApIiBmaWxsPSIjZmZmIiBkPSJNNzEuMzExLDgwQzY5LjY3LDg0LjY2LDY1LjIzLDg4LDYwLDg4SDIwYy02LjYzLDAtMTItNS4zNy0xMi0xMlYzNmMwLTUuMjMsMy4zNC05LjY3LDgtMTEuMzExVjc2YzAsMi4yMSwxLjc5LDQsNCw0SDcxLjMxMSAgeiIvPjxwYXRoIHRyYW5zZm9ybT0icm90YXRlKDkwIDUwIDUwKSIgZmlsbD0iI2ZmZiIgZD0iTTc2LDhIMzZjLTYuNjMsMC0xMiw1LjM3LTEyLDEydjQwYzAsNi42Myw1LjM3LDEyLDEyLDEyaDQwYzYuNjMsMCwxMi01LjM3LDEyLTEyVjIwQzg4LDEzLjM3LDgyLjYzLDgsNzYsOHogTTgwLDYwICBjMCwyLjIxLTEuNzksNC00LDRIMzZjLTIuMjEsMC00LTEuNzktNC00VjIwYzAtMi4yMSwxLjc5LTQsNC00aDQwYzIuMjEsMCw0LDEuNzksNCw0VjYweiIvPjwvc3ZnPg==)}.spl-zoom-in,.spl-zoom-out{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iMTYuNjUiIHkxPSIyMSIgeTI9IjE2LjY1Ii8+PGxpbmUgeDE9IjgiIHgyPSIxNCIgeTE9IjExIiB5Mj0iMTEiLz48L3N2Zz4=);background-size:22px}.spl-zoom-in{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMSIgY3k9IjExIiByPSI4Ii8+PGxpbmUgeDE9IjIxIiB4Mj0iMTYuNjUiIHkxPSIyMSIgeTI9IjE2LjY1Ii8+PGxpbmUgeDE9IjExIiB4Mj0iMTEiIHkxPSI4IiB5Mj0iMTQiLz48bGluZSB4MT0iOCIgeDI9IjE0IiB5MT0iMTEiIHkyPSIxMSIvPjwvc3ZnPg==)}.spl-download{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSIxNDEuNzMycHgiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDE0MS43MzIgMTQxLjczMiIgd2lkdGg9IjE0MS43MzJweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTIwLjY3NCwxMjUuMTM4SDIwLjc5M3YxNi41OTRoOTkuODgxVjEyNS4xMzh6IE0xMTkuMDE5LDU4Ljc3NmMtMi41NjEtMi41NjItNi43MTYtMi41NjItOS4yNzUsMEw3Ny4yMSw5MS4zMTJWNi41NjIgICBDNzcuMjEsMi45MzYsNzQuMjY5LDAsNzAuNjQ4LDBjLTMuNjI0LDAtNi41NiwyLjkzNy02LjU2LDYuNTYzdjg0Ljc1TDMxLjk5Miw1OS4yMThjLTIuNTYyLTIuNTY0LTYuNzE1LTIuNTY0LTkuMjc3LDAgICBjLTIuNTY1LDIuNTYyLTIuNTY1LDYuNzE2LDAsOS4yNzlsNDMuMjk0LDQzLjI5M2MwLjE1LDAuMTU0LDAuMzE0LDAuMjk5LDAuNDgxLDAuNDM4YzAuMDc2LDAuMDYyLDAuMTU1LDAuMTEzLDAuMjM0LDAuMTc2ICAgYzAuMDk0LDAuMDY1LDAuMTg2LDAuMTQyLDAuMjc5LDAuMjA2YzAuMDk3LDAuMDYzLDAuMTkyLDAuMTE0LDAuMjg2LDAuMTc0YzAuMDg4LDAuMDU0LDAuMTc0LDAuMTA1LDAuMjY1LDAuMTUzICAgYzAuMSwwLjA1NiwwLjE5OSwwLjEsMC4yOTgsMC4xNDdjMC4wOTcsMC4wNDUsMC4xOSwwLjA5MSwwLjI4MywwLjEzMmMwLjA5OCwwLjA0LDAuMTk2LDAuMDcyLDAuMjk1LDAuMTA1ICAgYzAuMTA0LDAuMDM4LDAuMjA3LDAuMDc4LDAuMzEyLDAuMTA5YzAuMTAxLDAuMDMsMC4xOTcsMC4wNTIsMC4yOTcsMC4wNzdjMC4xMDgsMC4wMjMsMC4yMTQsMC4wNTgsMC4zMjQsMC4wNzggICBjMC4xMTUsMC4wMjEsMC4yMzEsMC4wMzMsMC4zNDYsMC4wNTRjMC4wOTcsMC4wMTUsMC4xOTIsMC4wMzIsMC4yODksMC4wNDJjMC40MywwLjA0MiwwLjg2NSwwLjA0MiwxLjI5NSwwICAgYzAuMS0wLjAxLDAuMTkxLTAuMDI3LDAuMjg5LTAuMDQyYzAuMTE0LTAuMDIxLDAuMjMzLTAuMDI5LDAuMzQ0LTAuMDU0YzAuMTA5LTAuMDIxLDAuMjE3LTAuMDU1LDAuMzI0LTAuMDc4ICAgYzAuMTAyLTAuMDI1LDAuMTk5LTAuMDQ3LDAuMjk5LTAuMDc3YzAuMTA1LTAuMDMxLDAuMjA3LTAuMDcxLDAuMzEyLTAuMTA5YzAuMTAyLTAuMDMsMC4xOTUtMC4wNjIsMC4yOTUtMC4xMDUgICBjMC4wOTYtMC4wNDEsMC4xOTEtMC4wODcsMC4yODMtMC4xMzJjMC4xLTAuMDQ4LDAuMTk5LTAuMDkyLDAuMjk3LTAuMTQ3YzAuMDkxLTAuMDQ4LDAuMTc3LTAuMTA0LDAuMjY0LTAuMTUzICAgYzAuMDk4LTAuMDYsMC4xOTMtMC4xMSwwLjI4Ny0wLjE3NGMwLjA5Ni0wLjA2NCwwLjE4OS0wLjE0MSwwLjI4MS0wLjIwNmMwLjA3Ni0wLjA2MiwwLjE1Ni0wLjExMywwLjIzMy0wLjE3NiAgIGMwLjI0OS0wLjIwNCwwLjQ3OS0wLjQzNywwLjY5NC0wLjY3YzAuMDc2LTAuMDY3LDAuMTU0LTAuMTMxLDAuMjI5LTAuMjAzbDQzLjI5NC00My4yOTYgICBDMTIxLjU4MSw2NS40OTEsMTIxLjU4MSw2MS4zMzcsMTE5LjAxOSw1OC43NzYiLz48L2c+PC9zdmc+);background-size:20px}.spl-theme{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBoZWlnaHQ9IjI0cHgiIHZlcnNpb249IjEuMiIgdmlld0JveD0iMiAyIDIwIDIwIiB3aWR0aD0iMjRweCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMTIsNGMtNC40MTgsMC04LDMuNTgyLTgsOHMzLjU4Miw4LDgsOHM4LTMuNTgyLDgtOFMxNi40MTgsNCwxMiw0eiBNMTIsMThjLTMuMzE0LDAtNi0yLjY4Ni02LTZzMi42ODYtNiw2LTZzNiwyLjY4Niw2LDYgUzE1LjMxNCwxOCwxMiwxOHoiLz48cGF0aCBkPSJNMTIsN3YxMGMyLjc1NywwLDUtMi4yNDMsNS01UzE0Ljc1Nyw3LDEyLDd6Ii8+PC9nPjwvc3ZnPg==)}.spl-play{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSItMC41IC0wLjUgMjUgMjUiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxwb2x5Z29uIGZpbGw9IiNmZmYiIHBvaW50cz0iMTAgOCAxNiAxMiAxMCAxNiAxMCA4Ii8+PC9zdmc+)}.spl-play.on{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSItMC41IC0wLjUgMjUgMjUiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMCIvPjxsaW5lIHgxPSIxMCIgeDI9IjEwIiB5MT0iMTUiIHkyPSI5Ii8+PGxpbmUgeDE9IjE0IiB4Mj0iMTQiIHkxPSIxNSIgeTI9IjkiLz48L3N2Zz4=);animation:pulsate 1s ease infinite}.spl-close{background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIyIDIgMjAgMjAiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZSB4MT0iMTgiIHgyPSI2IiB5MT0iNiIgeTI9IjE4Ii8+PGxpbmUgeDE9IjYiIHgyPSIxOCIgeTE9IjYiIHkyPSIxOCIvPjwvc3ZnPg==)}.spl-next,.spl-prev{top:50%;width:50px;height:50px;opacity:.65;background-color:rgba(0,0,0,.45);border-radius:100%;cursor:pointer;margin-top:-25px;transform:translateX(-100px);background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+PHN2ZyBmaWxsPSJub25lIiBoZWlnaHQ9IjI0IiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cG9seWxpbmUgcG9pbnRzPSIxNSAxOCA5IDEyIDE1IDYiLz48L3N2Zz4=);background-size:30px}.spl-prev{left:20px}.spl-next{left:auto;right:20px;transform:translateX(100px) scaleX(-1)}#spotlight.menu .spl-prev{transform:translateX(0)}#spotlight.menu .spl-next{transform:translateX(0) scaleX(-1)}@media (hover:hover){.spl-page~div{cursor:pointer;transition:opacity .2s ease}.spl-next:hover,.spl-page~div:hover,.spl-prev:hover{opacity:1}}@media (max-width:500px){.spl-header div{width:44px}.spl-footer .spl-title{font-size:20px}.spl-footer{font-size:14px}.spl-next,.spl-prev{width:35px;height:35px;margin-top:-17.5px;background-size:15px 15px}.spl-spinner{background-size:30px 30px}}.hide-scrollbars{overflow:hidden!important}</style>
+    <link rel="dns-prefetch" href="//www.infonasional.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <title>Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins</title>
+    
+                    <meta name="description" content="Independent refiners in Shandong province reduce output to roughly 50 percent as crude costs rise and domestic fuel demand remains weak.">
+
+                    <meta name="keywords" content="china oil refining, shandong teapots, crude oil prices, fuel production, energy margins">
+        
+    
+    <meta name="author" content="Info Nasional - World">
+    <meta property="og:locale" content="en-US">
+    <meta property="og:site_name" content="Info Nasional - World">
+
+            <meta property="og:type" content="article">
+        <meta property="og:title" content="Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins">
+        <meta property="og:description" content="Independent refiners in Shandong province reduce output to roughly 50 percent as crude costs rise and domestic fuel demand remains weak.">
+        <meta property="og:url" content="https://world.infonasional.com/chinese-refiners-slash-fuel-production">
+        <meta property="og:image" content="https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&amp;width=1200&amp;height=674&amp;quality=80&amp;watermark=1">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="674">
+        <meta property="og:image" content="https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&amp;width=650&amp;height=366&amp;quality=80&amp;watermark=1">
+        <meta property="og:image:width" content="650">
+        <meta property="og:image:height" content="366">
+        <meta property="article:section" content="Business">
+        <meta property="article:author" content="Lucas James">
+        <meta property="article:published_time" content="2026-05-12T05:14:50+00:00">
+        <meta property="article:modified_time" content="2026-05-12T05:14:50+00:00">
+                    <meta property="article:tag" content="China economy">
+                    <meta property="article:tag" content="oil industry">
+                    <meta property="article:tag" content="energy supply">
+                <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins">
+        <meta name="twitter:description" content="Independent refiners in Shandong province reduce output to roughly 50 percent as crude costs rise and domestic fuel demand remains weak.">
+        <meta name="twitter:image" content="https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&amp;width=1200&amp;height=674&amp;quality=80&amp;watermark=1">
+    
+    
+            <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="Info Nasional - World">
+        <meta name="msapplication-TileImage" content="https://cdn.infonasional.com/media/images/2023/11/1165414ec41fb56.png?location=1&amp;width=144&amp;height=144&amp;quality=100&amp;fit=">
+        <meta name="msapplication-TileColor" content="#ec1b24">
+        <link rel="manifest" href="https://world.infonasional.com/manifest.json">
+        <link rel="apple-touch-icon" href="https://cdn.infonasional.com/media/images/2023/11/1165414ec41fb56.png?location=1&amp;width=144&amp;height=144&amp;quality=100&amp;fit=">
+    
+    <meta name="theme-color" content="#ec1b24">
+    <link rel="shortcut icon" type="image/x-icon" href="https://world.infonasional.com/favicon.ico">
+            <link rel="canonical" href="https://world.infonasional.com/chinese-refiners-slash-fuel-production">
+                <link rel="alternate" hreflang="en-US" href="https://world.infonasional.com/chinese-refiners-slash-fuel-production">
+    
+            <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+        <meta name="googlebot-news" content="index, follow">
+        <meta name="googlebot" content="index, follow">
+
+            
+<link rel="stylesheet" type="text/css" href="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/css/style.css?v=1.0.0.0">
+<script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202605130101/show_ads_impl_fy2021.js?bust=31098563"></script><script src="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/js/jquery.min.js?v=1.0.0.0" defer=""></script>
+<script src="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/js/swiper.min.js?v=1.0.0.0"></script>
+<script src="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/js/ajax-script.js?v=1.0.0.0" defer=""></script>
+
+<script>
+    const base_url = 'https://world.infonasional.com/';
+    const sys_lang_id = '9';
+    const fb_app_id = '';
+    const csfr_token_name = 'Oduu_csrf_token';
+    const csfr_cookie_name = 'Oduu_csrf_cookie';
+    const is_recaptcha_enabled = false;
+    const oduuTextOk = 'OK';
+    const oduuTextCancle = 'Cancel';
+    const oduuTextShare = 'Share';
+    const oduuTextReport = 'Report';
+    const oduuTextShareDescription = 'Share this via';
+
+    const inputLang = document.createElement('input');
+    inputLang.type = 'hidden';
+    inputLang.name = 'sys_lang_id';
+    inputLang.value = sys_lang_id;
+    const formElement = document.querySelector('form');
+    if (formElement) {
+        formElement.appendChild(inputLang);
+    }
+</script>
+
+<style>
+    :root {
+        --oduu-primary: #ec1b24;
+        --oduu-primary-transparent-80: #ec1b241a;
+        --oduu-secondary: #ec1b24;
+        --oduu-gradient-one: #ec1b24;
+        --oduu-gradient-two: #a50007;
+        --oduu-link-hover: #fcc43f;
+        --oduu-description-parallax-mobile: 'Scroll untuk lanjut membaca';
+        --oduu-widget-description-background: #ec1b240f;
+        --oduu-widget-description-border: #ec1b2426;
+        --oduu-widget-description-color: #ec1b24;
+        --oduu-poll-progress-full: #ec1b240f;
+        --oduu-favicon: url('https://world.infonasional.com/favicon.ico') #f8f8f8;
+        --oduu-favicon-no-background: url('https://world.infonasional.com/favicon.ico');
+        --oduu-shadow-rank-number: #ec1b2480;
+        --oduu-background-footer: #ec1b240d;
+        --oduu-search-highlight: #fcc43f4d;
+        --oduu-color-service-menu-icon: #ec1b2460;
+    }
+</style>
+
+<style>
+	.oduu-navigation-middle {
+		background: linear-gradient(180deg, var(--oduu-gradient-one) 0%, var(--oduu-gradient-two) 100%)
+	}
+	.oduu-desktop .oduu-brand-image a img {
+		max-height: 53px;
+	}
+	.oduu-mobile .oduu-brand-image a img {
+		max-height: 57px;
+	}
+	.oduu-mobile .oduu-ads.oduu-ads-scroll {
+		height:100%!important;
+		min-height: 660px!important;
+	}
+	.oduu-content figure {
+		text-align: center;
+	}
+	.oduu-content figure img {
+		width: 100%;
+	}
+	.oduu-change-font-size {
+		line-height: 110%;
+	}
+	.oduu-change-font-size div {
+		text-align: center;
+	}
+</style>
+
+<!-- Google AdSense Rafi -->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9394906899280517" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- Google AdSense Nurkadi -->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1818142563866837" crossorigin="anonymous"></script>
+
+<!-- Sticky AdSense Header After Bottom Menu -->
+<style>
+.oduu-mobile .oduu-banner-billboard {
+    display: block;
+	padding: 0;
+    transition: height 0.3s ease;
+}
+.oduu-mobile .oduu-banner-billboard.is-sticky {
+    position: sticky;
+    top: 138px;
+    z-index: 9999;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    animation: slideDownAds 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+@keyframes slideDownAds {
+    from { transform: translateY(-1%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.oduu-mobile .oduu-sticky-close {
+    position: absolute;
+    bottom: -22px;
+    right: 0;
+    background: #333;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 0 0 0 5px;
+    cursor: pointer;
+    display: none;
+    font-family: sans-serif;
+    z-index: 10000;
+}
+.oduu-mobile .oduu-banner-billboard.is-sticky .oduu-sticky-close {
+    display: block;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Selector Iklan
+    const banner = document.querySelector('.oduu-mobile .oduu-banner-billboard');
+    if (!banner) return;
+
+    /* ==== CONFIG ==== */
+    const CONFIG = {
+        minScroll: 100,      // Pixel scroll sebelum trigger
+        duration: 15000,     // Durasi sticky 15 Detik
+        minAdHeight: 50,     // Minimal tinggi iklan
+        maxRetries: 5        // Coba cek 5 kali
+    };
+
+    let isSticky = false;
+    let isClosedPermanently = false;
+    let stickyTimer = null;
+    let checkTimer = null;
+    let retryCount = 0;
+
+    /* ==== TOMBOL CLOSE ==== */
+    const closeBtn = document.createElement('div');
+    closeBtn.className = 'oduu-sticky-close';
+    closeBtn.textContent = 'Close'; 
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); 
+        deactivateSticky(true);
+    });
+    banner.appendChild(closeBtn);
+
+    /* ==== VALIDASI IKLAN (UPDATED) ==== */
+    const isAdValid = () => {
+        // 1. Cek Tinggi Dasar (Wajib punya tinggi)
+        //if (banner.offsetHeight < CONFIG.minAdHeight) return false;
+
+        // 2. Cek Status Resmi AdSense
+        const insElement = banner.querySelector('ins.adsbygoogle');
+        if (insElement) {
+            const status = insElement.getAttribute('data-ad-status');
+            
+            // JIKA STATUS KOSONG/UNFILLED -> Tolak
+            if (status === 'unfilled') return false; 
+            
+            // JIKA STATUS ADA (Apapun itu selain unfilled) -> TERIMA
+            // Ini menangani 'done', 'unfill-optimized' (Link Ads), dll.
+            if (status) return true;
+        }
+
+        // 3. Fallback Check (Cek elemen visual jika atribut belum update)
+        // Link ads kadang menggunakan class .google-aluf atau div biasa
+        const iframe = banner.querySelector('iframe');
+        const img = banner.querySelector('img');
+        const linkAd = banner.querySelector('.google-aluf'); // Class khas Link Unit
+        
+        if (iframe || img || linkAd) return true;
+
+        return false;
+    };
+
+    /* ==== ACTIVATE LOGIC ==== */
+    const activateSticky = () => {
+        if (isSticky || isClosedPermanently) return;
+
+        cleanupListeners();
+
+        // Cek Validasi
+        if (!isAdValid()) {
+            retryCount++;
+            if (retryCount <= CONFIG.maxRetries) {
+                checkTimer = setTimeout(activateSticky, 1000);
+            }
+            return;
+        }
+
+        // Aktifkan Sticky
+        isSticky = true;
+        
+        banner.parentElement.style.minHeight = banner.offsetHeight + "px";
+        banner.classList.add('is-sticky');
+
+        stickyTimer = setTimeout(() => {
+            deactivateSticky(false);
+        }, CONFIG.duration);
+    };
+
+    /* ==== DEACTIVATE LOGIC ==== */
+    const deactivateSticky = (permanent = false) => {
+        if (stickyTimer) clearTimeout(stickyTimer);
+        if (checkTimer) clearTimeout(checkTimer);
+
+        if (isSticky) {
+            banner.classList.remove('is-sticky');
+            isSticky = false;
+            banner.parentElement.style.minHeight = "auto";
+        }
+
+        if (permanent) {
+            isClosedPermanently = true;
+            cleanupListeners();
+        }
+    };
+
+    /* ==== SCROLL LISTENER ==== */
+    const onScroll = () => {
+        if (isSticky || isClosedPermanently) return;
+        if (window.scrollY >= CONFIG.minScroll) {
+            activateSticky();
+        }
+    };
+
+    const cleanupListeners = () => {
+        window.removeEventListener('scroll', onScroll);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+});
+</script>
+
+<!-- AdsTerra - Social Bar -->
+<!-- <script src="https://pleasurecommitment.com/55/0f/94/550f94de3bba5443ba78e4d0f5586c51.js"></script> --><style>
+	.oduu-desktop .oduu-navigation-primary-menu .oduu-menu,
+	.oduu-desktop .oduu-navigation-secondary-menu .oduu-menu {
+		justify-content: center
+	}
+
+	.oduu-desktop .oduu-content .oduu-ads.oduu-ads-scroll iframe {
+		margin: inherit;
+	}
+	.oduu-source {
+		display: none
+	}
+</style>    
+
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":["Organization","NewsArticle"],"url":"https://world.infonasional.com/","logo":{"@type":"ImageObject","width":289,"height":60,"url":"https://world.infonasional.com/logo.png"},"sameAs":[],"isAccessibleForFree":true,"isPartOf":{"productID":"CAown5PEDA:openaccess","@type":["Product"]}},{"@context":"https://schema.org","@type":"WebSite","name":"Info Nasional - World","url":"https://world.infonasional.com/","potentialAction":{"@type":"SearchAction","target":"https://world.infonasional.com/search?q={search_term_string}","query-input":"required name=search_term_string"}}]</script>
+
+    
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"https://world.infonasional.com/chinese-refiners-slash-fuel-production"},"headline":"Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins","name":"Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins","isAccessibleForFree":true,"articleBody":"Independent refiners in China's Shandong province are reducing fuel production as processing margins collapse due to rising crude costs and weak domestic demand. The output cuts in the nation's largest independent refining hub occur despite government directives to maintain production levels during global supply disruptions.As reported by Businesstimes, average operating rates at these facilities have dropped to approximately 50 percent, down from 55 percent in April. Industry sources indicate that several smaller plants have initiated maintenance shutdowns to mitigate financial pressure as losses become unsustainable.Refiners in the region faced estimated losses ranging from 500 yuan to 600 yuan for every tonne of crude processed during the final week of April. Data from commodities provider SCI further showed that sector-wide losses reached 649 yuan per tonne in April, a sharp reversal from the 269 yuan profit recorded the previous year.The price of sanctioned crude barrels, which typically trade at a discount, surged to premiums following the closure of the Strait of Hormuz. Consequently, many independent refiners exhausted their stockpiles of cheaper oil in April and have largely avoided purchasing new cargoes at current market rates.Domestic factors have exacerbated the crisis as Beijing's restrictions on fuel exports have led to a supply glut within China. This surplus has suppressed prices for gasoline and diesel, the primary products manufactured by the independent refineries known as teapots.\"Without cutting output, the losses are unbearable,\" said an industry source familiar with the situation.The production slowdown persists despite a mandate from China's state planner in early April prohibiting refiners from dropping run rates below two-year averages. On May 9, several refiners formally requested permission from the Shandong provincial government to further reduce processing rates or suspend specific units.","articleSection":"Business","image":[{"@type":"ImageObject","url":"https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&width=1200&height=1200&quality=100","width":1200,"height":1200},{"@type":"ImageObject","url":"https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&width=1200&height=900&quality=100","width":1200,"height":900},{"@type":"ImageObject","url":"https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&width=1200&height=674&quality=100","width":1200,"height":674}],"datePublished":"2026-05-12T05:14:50+00:00","dateModified":"2026-05-12T05:14:50+00:00","inLanguage":"en-US","keywords":"china oil refining, shandong teapots, crude oil prices, fuel production, energy margins","author":{"@type":"Person","name":"Lucas James","url":"https://world.infonasional.com/profile/lucas-james"},"publisher":{"@type":"Organization","name":"Info Nasional - World","logo":{"@type":"ImageObject","width":289,"height":60,"url":"https://world.infonasional.com/logo.png"}},"description":"Independent refiners in Shandong province reduce output to roughly 50 percent as crude costs rise and domestic fuel demand remains weak.","isBasedOn":"https://www.businesstimes.com.sg/companies-markets/energy-commodities/chinas-independent-refiners-cut-output-may-losses-mount-sources"}    </script>
+
+
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://world.infonasional.com/"},{"@type":"ListItem","position":2,"name":"Business","item":"https://world.infonasional.com/business"},{"@type":"ListItem","position":3,"name":"Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins","item":"https://world.infonasional.com/chinese-refiners-slash-fuel-production"}]}    </script>
+<meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9nrunKdU5m96PSN1XsSGr3qOP0lvPFUB2AiAylCDlN5DTl17uDFkpQuHj1AFtgWLxpLaiBZuhrtb2WOu7ofHwEAAACKeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A93bovR+QVXNx2/38qDbmeYYf1wdte9EO37K9eMq3r+541qo0byhYU899BhPB7Cv9QqD7wIbR1B6OAc9kEfYCA4AAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A1S5fojrAunSDrFbD8OfGmFHdRFZymSM/1ss3G+NEttCLfHkXvlcF6LGLH8Mo5PakLO1sCASXU1/gQf6XGuTBgwAAACQeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXRhZ3NlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElNdWx0aW1vZGFsSW5wdXQiLCJleHBpcnkiOjE3NzQzMTA0MDAsImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script async="" src="//sourshaped.com/1b/50/e5/1b50e57a5911fd0a5b46962ab48ca22b.js"></script><script async="" src="//sourshaped.com/1b/50/e5/1b50e57a5911fd0a5b46962ab48ca22b.js"></script><link rel="preconnect prefetch" href="https://news.google.com/swg/js/v1/loader.svg"><link rel="preconnect" href="https://www.gstatic.com/"><link rel="preconnect" href="https://www.google.com/"><style type="text/css">
+  /** Common styles across all window sizes. */
+  .swg-dialog,
+  .swg-toast {
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 1) !important;
+  }
+
+  .swg-toast {
+    position: fixed !important;
+    bottom: 0 !important;
+    max-height: 46px !important;
+    z-index: 2147483647 !important;
+    border: none !important;
+  }
+
+  /**
+  * Wide desktop screen support, when width is >= 871px and height is >= 641px.
+  */
+  @media (min-width: 871px) and (min-height: 641px) {
+    .swg-dialog.swg-wide-dialog {
+      left: -435px !important;
+    }
+
+    .swg-dialog.swg-wide-dialog,
+    .swg-toast {
+      width: 870px !important;
+    }
+  }
+
+  /** Tablet/Medium screen support, when width OR height is <= 640px. */
+  @media (max-width: 640px), (max-height: 640px) {
+    .swg-dialog,
+    .swg-toast {
+      width: 480px !important;
+      left: -240px !important;
+      margin-inline-start: calc(100vw - 100vw / 2) !important;
+      border-top-left-radius: 8px !important;
+      border-top-right-radius: 8px !important;
+      box-shadow:
+        rgba(60, 64, 67, 0.3) 0 1px 1px,
+        rgba(60, 64, 67, 0.15) 0 1px 4px 1px !important;
+    }
+
+    [dir='rtl'] .swg-dialog,
+    [dir='rtl'] .swg-toast {
+      margin-inline-start: calc(100vw - 100vw / 2 - 240px) !important;
+    }
+  }
+
+  /** Desktop/Large screen support, when width AND height are >= 641px. */
+  @media (min-width: 641px) and (min-height: 641px) {
+    .swg-dialog,
+    .swg-toast {
+      width: 630px !important;
+    }
+
+    .swg-dialog {
+      left: -315px !important;
+      margin-inline-start: calc(100vw - 100vw / 2) !important;
+      background-color: transparent !important;
+      border: none !important;
+    }
+
+    [dir='rtl'] .swg-dialog {
+      margin-inline-start: calc(100vw - 100vw / 2 - 315px) !important;
+    }
+
+    .swg-toast {
+      border-radius: 4px !important;
+      bottom: 8px !important;
+      box-shadow:
+        0 3px 1px -2px rgb(0 0 0 / 20%),
+        0 2px 2px 0 rgb(0 0 0 / 14%),
+        0 1px 5px 0 rgb(0 0 0 / 12%) !important;
+      left: 8px !important;
+    }
+  }
+
+  /** Phone/Small screen support, when width is <= 480px. */
+  @media (max-width: 480px) {
+    .swg-dialog,
+    .swg-toast {
+      width: 100% !important;
+      left: 0 !important;
+      right: 0 !important;
+      margin-inline-start: 0 !important;
+    }
+  }
+
+  /**
+  * Class applied to content page to disable scrolling.
+  */
+  html.swg-disable-scroll,
+  html.swg-disable-scroll * {
+    overflow: hidden !important;
+  }
+</style><link rel="stylesheet" type="text/css" href="https://news.google.com/swg/js/v1/swg-mini-prompt.css"><link rel="stylesheet" type="text/css" href="https://news.google.com/swg/js/v1/swg-button.css"></head>
+
+
+
+<body class="oduu oduu-desktop oduu-article">
+    <div class="oduu-box">
+                        <header class="oduu-header-top">
+            <div class="oduu-navigation-top">
+                <div class="oduu-container oduu-navigation-content">
+                    <div class="oduu-navigation-top-left">
+                        <div class="oduu-button-menu">
+                            <button class="oduu-hamburger" title="menu">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <div id="oduu-hamburger-open" class="oduu-hamburger-text open">
+                                Menu                            </div>
+                            <div id="oduu-hamburger-close" class="oduu-hamburger-text close d-none">
+                                Close                            </div>
+                        </div>
+                        
+<div class="oduu-menu-sidebar">
+    <div class="oduu-menu-sidebar-content">
+        <div class="oduu-sidebar-search">
+            <form action="https://world.infonasional.com/search" method="get" accept-charset="utf-8">
+            <button type="text" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-label="Search">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                </svg>
+            </button>
+            <input type="text" name="q" maxlength="300" pattern=".*\S+.*" class="" placeholder="Search..." autocomplete="off" required="">
+            </form>        </div>
+                    <ul class="oduu-menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="oduu-list-menu">
+                            <h3 class="oduu-menu-title">
+                                Categories                            </h3>
+                            <nav>
+                                <ul class="oduu-sub-menu">
+                                                                                                                                                                                                            <li>
+                                                    <a href="https://world.infonasional.com/politics">
+                                                                                                                <span>
+                                                            Politics                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/business">
+                                                                                                                <span>
+                                                            Business                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/economy">
+                                                                                                                <span>
+                                                            Economy                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/technology">
+                                                                                                                <span>
+                                                            Technology                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/science">
+                                                                                                                <span>
+                                                            Science                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/health">
+                                                                                                                <span>
+                                                            Health                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/climate-environment">
+                                                                                                                <span>
+                                                            Climate &amp; Environment                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/conflict-security">
+                                                                                                                <span>
+                                                            Conflict &amp; Security                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/law-justice">
+                                                                                                                <span>
+                                                            Law &amp; Justice                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/education">
+                                                                                                                <span>
+                                                            Education                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/culture">
+                                                                                                                <span>
+                                                            Culture                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/entertainment">
+                                                                                                                <span>
+                                                            Entertainment                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/lifestyle">
+                                                                                                                <span>
+                                                            Lifestyle                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/sports">
+                                                                                                                <span>
+                                                            Sports                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                                                <li>
+                                                    <a href="https://world.infonasional.com/opinion">
+                                                                                                                <span>
+                                                            Opinion                                                                                                                    </span>
+                                                    </a>
+                                                </li>
+                                                                                                                                                        </ul>
+                            </nav>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+            </div>
+</div>                    </div>
+                    <div class="oduu-navigation-top-center">
+                        <div class="oduu-brand-image">
+                            <a href="https://world.infonasional.com/" class="brand-link" rel="Home" aria-current="page">
+                                <img width="60px" height="auto" src="https://cdn.infonasional.com/media/images/2026/02/156984bd829206e..png?location=1&amp;fit=1" decoding="async" loading="lazy" class="brand-logo-desktop-oduu" alt="World News Today – Global Headlines &amp; Breaking Stories">
+                            </a>
+                                                        <p>Info Nasional - World</p>
+                        </div>
+                    </div>
+                    <div class="oduu-navigation-top-right">
+                        <div class="oduu-navigation-search">
+                            <form action="https://world.infonasional.com/search" method="get" accept-charset="utf-8">
+                            <button type="text" aria-label="Search">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-label="Search">
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                                </svg>
+                            </button>
+                            <input type="text" name="q" maxlength="300" pattern=".*\S+.*" class="" placeholder="Search..." autocomplete="off" required="">
+                            </form>                        </div>
+                                                
+    <div class="oduu-navigation-social oduu-navigation-social-header">
+                <ul>
+                                                                                                                                                    <li>
+                    <a href="https://world.infonasional.com/rss-feeds" class="oduu-social-icon rss" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-label="RSS">
+                            <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"></path>
+                        </svg>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+                    </div>
+                </div>
+            </div>
+            
+<div class="oduu-navigation-middle">
+    <div class="oduu-container">
+        <div class="oduu-navigation-primary-menu">
+                                                <ul class="oduu-menu">
+                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/" class="oduu-menu-item-link ">
+                                        Home                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/politics" class="oduu-menu-item-link ">
+                                        Politics                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/business" class="oduu-menu-item-link ">
+                                        Business                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/economy" class="oduu-menu-item-link ">
+                                        Economy                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/technology" class="oduu-menu-item-link ">
+                                        Technology                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/science" class="oduu-menu-item-link ">
+                                        Science                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/health" class="oduu-menu-item-link ">
+                                        Health                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/climate-environment" class="oduu-menu-item-link ">
+                                        Climate &amp; Environment                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="oduu-menu-item">
+                                                                        <a href="https://world.infonasional.com/conflict-security" class="oduu-menu-item-link ">
+                                        Conflict &amp; Security                                                                                                                    </a>
+
+                                                                                                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </div>
+    </div>
+</div>            
+    <div class="oduu-navigation-bottom">
+        <div class="oduu-container">
+            <div class="oduu-navigation-secondary-menu">
+                <ul class="oduu-menu">
+                                                                                                                    <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/law-justice" class="oduu-menu-item-link">
+                                    Law &amp; Justice                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/education" class="oduu-menu-item-link">
+                                    Education                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/culture" class="oduu-menu-item-link">
+                                    Culture                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/entertainment" class="oduu-menu-item-link">
+                                    Entertainment                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/lifestyle" class="oduu-menu-item-link">
+                                    Lifestyle                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/sports" class="oduu-menu-item-link">
+                                    Sports                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                        <li class="oduu-menu-item">
+                                <a href="https://world.infonasional.com/opinion" class="oduu-menu-item-link">
+                                    Opinion                                                                    </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+            </div>
+        </div>
+    </div>
+        </header>
+                            <div class="oduu-banner-billboard">
+                <div class="oduu-container">
+                    <div class="oduu-ads oduu-ads-970x250 margin-auto">
+                        <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9394906899280517" crossorigin="anonymous"></script>
+
+<ins class="adsbygoogle" style="display:inline-block;width:970px;height:250px" data-ad-client="ca-pub-9394906899280517" data-ad-slot="9721466328" data-adsbygoogle-status="done"><div id="aswift_1_host" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; height: 250px; width: 970px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;border:0;width:970px;height:250px;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="970" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9394906899280517&amp;output=html&amp;h=250&amp;slotname=9721466328&amp;adk=776434934&amp;adf=4134371643&amp;pi=t.ma~as.9721466328&amp;w=970&amp;lmt=1778562890&amp;format=970x250&amp;url=https%3A%2F%2Fworld.infonasional.com%2Fchinese-refiners-slash-fuel-production&amp;asro=0&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0Ny4wLjc3MjcuMTUiLG51bGwsMCxudWxsLCI2NCIsW1siSGVhZGxlc3NDaHJvbWUiLCIxNDcuMC43NzI3LjE1Il0sWyJOb3QuQS9CcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTQ3LjAuNzcyNy4xNSJdXSwwXQ..&amp;abgtt=6&amp;dt=1778819802426&amp;bpp=1&amp;bdt=2029&amp;idt=1656&amp;shv=r20260512&amp;mjsv=m202605130101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=269122059226&amp;frm=20&amp;pv=1&amp;u_tz=-420&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=32&amp;adx=155&amp;ady=169&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=31098358%2C31098563%2C95386338%2C95390680&amp;oid=2&amp;pvsid=2096975121753879&amp;tmod=741369861&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7CpeE%7C&amp;abl=CS&amp;pfx=0&amp;fu=0&amp;bc=31&amp;bz=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=1659" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement"></iframe></div></ins>
+
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>                    </div>
+                </div>
+            </div>
+        
+<div class="oduu-container">
+    <div class="oduu-main-content ">
+        <main class="oduu-main">
+            <article id="oduu-post-318938" class="oduu-single-article">
+                
+<nav aria-label="Breadcrumb" class="oduu-breadcrumbs">
+    <ol itemscope="" itemtype="https://schema.org/BreadcrumbList">
+        <li class="oduu-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <a href="https://world.infonasional.com/" itemprop="item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"></path>
+                </svg>
+                <span itemprop="name">Home</span>
+            </a>
+            <meta itemprop="position" content="1">
+        </li>
+                                                                <li class="oduu-item-navigation" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"></path>
+                        </svg>
+                    </li>
+                    <li class="oduu-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                        <a href="https://world.infonasional.com/business" itemprop="item">
+                            <span itemprop="name">Business</span>
+                        </a>
+                        <meta itemprop="position" content="2">
+                    </li>
+                                                                <li class="oduu-item-navigation" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"></path>
+            </svg>
+        </li>
+        <li class="oduu-item" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+            <span itemprop="name" aria-current="page">Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins</span>
+            <meta itemprop="position" content="3">
+        </li>
+    </ol>
+</nav>                
+<h1 class="oduu-article-title">
+    Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins</h1>
+<div class="oduu-article-info">
+    <div class="oduu-block-article-info">
+        <div class="oduu-article-author-image">
+            <img src="https://cdn.infonasional.com/media/profile/6986934c09083.jpeg?location=1&amp;width=40&amp;height=40&amp;quality=90" decoding="async" loading="lazy" alt="Efri Yano" width="40px" height="40px">
+        </div>
+        <div class="oduu-article-author-box">
+            <div class="oduu-article-author-name oduu-text-bolder">
+                Lucas James                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#4bef2f" viewBox="0 0 16 16" role="img" aria-label="Verified Author">
+                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"></path>
+                    </svg>
+                            </div>
+                            <div class="oduu-published-box">
+                    <div class="oduu-published-on">
+                        <div>
+                            Published                            <time class="oduu-text-bolder" datetime="2026-05-12T05:14:50+00:00">
+                                May 12, 2026&nbsp;-&nbsp;12:14                            </time>
+                        </div>
+                                            </div>
+                                            <div class="oduu-updated-on">
+                            Last Update                            <time class="oduu-text-bolder" datetime="2026-05-12T05:14:50+00:00">
+                                May 12, 2026&nbsp;-&nbsp;12:14                            </time>
+                        </div>
+                                    </div>
+                    </div>
+    </div>
+    
+<div class="oduu-block-article-share">
+    <span class="oduu-share-text">
+        Share    </span>
+    <ul class="oduu-block-share-list">
+        <li>
+            <a href="//api.whatsapp.com/send/?text=*Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins* | https://world.infonasional.com/chinese-refiners-slash-fuel-production" class="oduu-button-share-post-article whatsapp" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"></path>
+                </svg>
+                WhatsApp
+            </a>
+        </li>
+        <li>
+            <a href="//www.facebook.com/sharer/sharer.php?u=https://world.infonasional.com/chinese-refiners-slash-fuel-production" class="oduu-button-share-post-article facebook" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 320 512" fill="currentColor" aria-label="Facebook">
+                    <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <span class="oduu-button-share-post-article oduu-copy-link" data-url="https://world.infonasional.com/chinese-refiners-slash-fuel-production" data-title="URL Successfully copied">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"></path>
+                    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"></path>
+                </svg>
+            </span>
+        </li>
+        <li>
+            <span class="oduu-button-share-post-article oduu-share-modal" onclick="OduuShare(`https://world.infonasional.com/chinese-refiners-slash-fuel-production`, `Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins`, `https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&amp;width=&amp;height=&amp;quality=90&amp;fit=1`)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"></path>
+                </svg>
+            </span>
+        </li>
+    </ul>
+</div></div>                                    
+
+<div class="oduu-featured-images">
+                        <figure>
+                <a class="spotlight" href="https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&amp;width=&amp;height=&amp;quality=90&amp;fit=1" data-description="The independents face an estimated loss of 500 yuan to 600 yuan for each tonne of crude processed in the last week of April, according to a source. PHOTO: REUTERS">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/WAFkyhsVpX.jpeg?location=1&amp;width=&amp;height=&amp;quality=90&amp;fit=1" alt="Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins" title="Chinese Independent Refiners Slash Fuel Production Over Shrinking Margins" decoding="async" fetchpriority="high" width="100%">
+                </a>
+                                    <figcaption>The independents face an estimated loss of 500 yuan to 600 yuan for each tonne of crude processed in the last week of April, according to a source. PHOTO: REUTERS</figcaption>
+                            </figure>
+            </div>
+<div class="oduu-flex-content">
+    <div class="oduu-flex-content-left" style="max-width: 518px;">
+                            
+<div class="d-flex align-items-center justify-content-center">
+    <div class="oduu-change-font-size">
+        <div>Smallest Font</div>
+        <input type="range" class="oduu-input-font-size" value="100" min="100" max="140" step="1">
+        <div>Largest Font</div>
+    </div>
+</div>            <div class="oduu-content">
+                
+<p>Independent refiners in China's Shandong province are reducing fuel production as processing margins collapse due to rising crude costs and weak domestic demand. The output cuts in the nation's largest independent refining hub occur despite government directives to maintain production levels during global supply disruptions.</p><p>As reported by Businesstimes, average operating rates at these facilities have dropped to approximately 50 percent, down from 55 percent in April. Industry sources indicate that several smaller plants have initiated maintenance shutdowns to mitigate financial pressure as losses become unsustainable.</p><p>Refiners in the region faced estimated losses ranging from 500 yuan to 600 yuan for every tonne of crude processed during the final week of April. Data from commodities provider SCI further showed that sector-wide losses reached 649 yuan per tonne in April, a sharp reversal from the 269 yuan profit recorded the previous year.</p>            <aside class="oduu-widget oduu-posts-related" role="complementary" aria-label="Also Read">
+                <div class="oduu-widget-content">
+                    <div class="oduu-article-item">
+                        <div class="oduu-article-text">
+                            <span class="oduu-text-read">
+                                Also Read                            </span>
+                            <h2 class="oduu-article-title">
+                                <a href="https://world.infonasional.com/china-refiners-cut-fuel-production" title="Chinese Independent Refiners Slash Fuel Output Amid Surge in Crude Costs">
+                                    Chinese Independent Refiners Slash Fuel Output Amid Surge in Crude Costs                                </a>
+                            </h2>
+                        </div>
+                        <div class="oduu-article-image">
+                            <img src="https://cdn.infonasional.com/media/images/2026/05/UIIyTb6Qmn.jpeg?location=1&amp;width=75&amp;height=75&amp;quality=90" alt="Chinese Independent Refiners Slash Fuel Output Amid Surge in Crude Costs" width="75" height="75" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+<p>The price of sanctioned crude barrels, which typically trade at a discount, surged to premiums following the closure of the Strait of Hormuz. Consequently, many independent refiners exhausted their stockpiles of cheaper oil in April and have largely avoided purchasing new cargoes at current market rates.</p><p>Domestic factors have exacerbated the crisis as Beijing's restrictions on fuel exports have led to a supply glut within China. This surplus has suppressed prices for gasoline and diesel, the primary products manufactured by the independent refineries known as teapots.</p><p>"Without cutting output, the losses are unbearable," said an industry source familiar with the situation.</p>            <aside class="oduu-widget oduu-posts-related" role="complementary" aria-label="Also Read">
+                <div class="oduu-widget-content">
+                    <div class="oduu-article-item">
+                        <div class="oduu-article-text">
+                            <span class="oduu-text-read">
+                                Also Read                            </span>
+                            <h2 class="oduu-article-title">
+                                <a href="https://world.infonasional.com/iran-seizes-vessel-uae-tensions" title="Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions">
+                                    Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions                                </a>
+                            </h2>
+                        </div>
+                        <div class="oduu-article-image">
+                            <img src="https://cdn.infonasional.com/media/images/2026/05/dpiIEKoFcj.jpeg?location=1&amp;width=75&amp;height=75&amp;quality=90" alt="Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions" width="75" height="75" loading="lazy" decoding="async" fetchpriority="low">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+<p>The production slowdown persists despite a mandate from China's state planner in early April prohibiting refiners from dropping run rates below two-year averages. On May 9, several refiners formally requested permission from the Shandong provincial government to further reduce processing rates or suspend specific units.</p>
+                <!-- AdSpaces - Post Content Sticky (After Content) -->
+                                            </div>
+                                        <footer class="oduu-source" role="doc-footnote">
+                    <p>Disclaimer</p>
+                    <span>
+                        This article was automatically rewritten by AI based on source: <cite itemprop="citation"><span role="link" tabindex="0" style="cursor:pointer;" onclick="window.open('https://www.businesstimes.com.sg/companies-markets/energy-commodities/chinas-independent-refiners-cut-output-may-losses-mount-sources', '_blank', 'noopener,noreferrer')" onkeydown="if(event.key === 'Enter'){window.open('https://www.businesstimes.com.sg/companies-markets/energy-commodities/chinas-independent-refiners-cut-output-may-losses-mount-sources', '_blank', 'noopener,noreferrer')}">businesstimes.com.sg</span></cite> without altering the facts of the original article.                    </span>
+                </footer>
+                            
+    <div class="oduu-box-tags" aria-label="Topik Terkait">
+        <ul class="oduu-tags-lists">
+                            <li class="oduu-tags-item">
+                    <a href="https://world.infonasional.com/tag/china-economy" class="oduu-tags-link" rel="tag">
+                        <span>China economy</span>
+                                            </a>
+                                    </li>
+                            <li class="oduu-tags-item">
+                    <a href="https://world.infonasional.com/tag/oil-industry" class="oduu-tags-link" rel="tag">
+                        <span>oil industry</span>
+                                            </a>
+                                    </li>
+                            <li class="oduu-tags-item">
+                    <a href="https://world.infonasional.com/tag/energy-supply" class="oduu-tags-link" rel="tag">
+                        <span>energy supply</span>
+                                            </a>
+                                    </li>
+                    </ul>
+    </div>
+        
+<div class="oduu-box-editors">
+    <div class="oduu-box-editors-left">
+        Editors Team        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"></path>
+        </svg>
+    </div>
+    <div class="oduu-box-editors-right">
+        <div class="oduu-editor-image">
+            <img src="https://cdn.infonasional.com/media/profile/6986934c09083.jpeg?location=1&amp;width=40&amp;height=40&amp;quality=90" decoding="async" loading="lazy" alt="Daisy Floren" width="30px" height="30px">
+            <div class="oduu-editor-box">
+                <div class="oduu-editor-bio">
+                    <div class="oduu-editor-profile">
+                        <img src="https://cdn.infonasional.com/media/profile/6986934c09083.jpeg?location=1&amp;width=40&amp;height=40&amp;quality=90" decoding="async" loading="lazy" alt="Daisy Floren" width="40px" height="40px">
+                        <div class="oduu-editor-name">
+                            <a href="https://world.infonasional.com/profile/lucas-james" class="oduu-editor-url">
+                                Lucas James                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#4bef2f" viewBox="0 0 16 16">
+                                        <path d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708"></path>
+                                    </svg>
+                                                            </a>
+                            <span class="oduu-editor-type">
+                                Author                            </span>
+                        </div>
+                    </div>
+                                            <button onclick="window.location.href = 'https://world.infonasional.com/app/login'">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"></path>
+                            </svg>
+                            Follow                        </button>
+                                    </div>
+            </div>
+        </div>
+                    </div>
+</div>            </div>
+                <div class="oduu-flex-content-right">
+            <div class="oduu-ads oduu-ads-sticky-content-left oduu-ads-160x600">
+                <script>
+  atOptions = {
+    'key' : 'b281f6dd02a254373111029146e76563',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://pleasurecommitment.com/b281f6dd02a254373111029146e76563/invoke.js" class="atScriptb281f6dd02a254373111029146e76563_0"></script>            </div>
+        </div>
+    </div>                            </article>
+            
+
+    <div class="oduu-widget oduu-posts-recommended oduu-posts-recommended-id-48">
+        <div class="oduu-widget-header">
+            <h3 class="oduu-widget-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M9.669.864 8 0 6.331.864l-1.858.282-.842 1.68-1.337 1.32L2.6 6l-.306 1.854 1.337 1.32.842 1.68 1.858.282L8 12l1.669-.864 1.858-.282.842-1.68 1.337-1.32L13.4 6l.306-1.854-1.337-1.32-.842-1.68zm1.196 1.193.684 1.365 1.086 1.072L12.387 6l.248 1.506-1.086 1.072-.684 1.365-1.51.229L8 10.874l-1.355-.702-1.51-.229-.684-1.365-1.086-1.072L3.614 6l-.25-1.506 1.087-1.072.684-1.365 1.51-.229L8 1.126l1.356.702z"></path>
+                    <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1z"></path>
+                </svg>
+                <span>
+                    Recommended                </span>
+            </h3>
+        </div>
+        
+        <div class="oduu-widget-content oduu-widget-content-id-48">
+            <div class="oduu-posts-recommended-wrapper oduu-posts-recommended-wrapper-id-48 swiper-initialized swiper-horizontal">
+                <div class="oduu-posts-recommended-content swiper-wrapper" id="swiper-wrapper-2cf8490374e8b3e4" aria-live="off" style="transition-duration: 300ms; transform: translate3d(-221px, 0px, 0px);">
+                                            <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/CGerKuHU9p.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="India Fowler Joins Off Campus Season 2 Cast as Grace Ivers" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/india-fowler-off-campus-casting" title="India Fowler Joins Off Campus Season 2 Cast as Grace Ivers">
+                India Fowler Joins Off Campus Season 2 Cast as Grace Ivers            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                6 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/YONFnjFQeJ.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Drake Reveals Father Dennis Graham Battles Cancer in New Album" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/drake-father-dennis-graham-cancer" title="Drake Reveals Father Dennis Graham Battles Cancer in New Album">
+                Drake Reveals Father Dennis Graham Battles Cancer in New Album            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                6 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/zSDABgd2f8.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Richard Gadd Explains Narrative Reveal in Half Man Episode Four" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/richard-gadd-half-man-reveal" title="Richard Gadd Explains Narrative Reveal in Half Man Episode Four">
+                Richard Gadd Explains Narrative Reveal in Half Man Episode Four            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                6 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="4 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/bnjPCBUBPX.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Dodgers and Angels Open Freeway Series Friday in Anaheim" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sports                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/dodgers-angels-freeway-series-anaheim" title="Dodgers and Angels Open Freeway Series Friday in Anaheim">
+                Dodgers and Angels Open Freeway Series Friday in Anaheim            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                6 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="5 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/bdlzhtDAbW.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="China Industrial Output Forecast Signals Divergent Economic Recovery" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Economy                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/china-industrial-output-economic-divergence" title="China Industrial Output Forecast Signals Divergent Economic Recovery">
+                China Industrial Output Forecast Signals Divergent Economic Recovery            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                14 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="6 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/XG3aIxtdKT.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Prime Video Casts India Fowler and Phillipa Soo in Off Campus" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/off-campus-season-two-casting" title="Prime Video Casts India Fowler and Phillipa Soo in Off Campus">
+                Prime Video Casts India Fowler and Phillipa Soo in Off Campus            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                15 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="7 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/3xAIMnkibv.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Drake Criticizes DJ Khaled Over Palestine During Iceman Livestream" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/drake-criticizes-khaled-iceman-album" title="Drake Criticizes DJ Khaled Over Palestine During Iceman Livestream">
+                Drake Criticizes DJ Khaled Over Palestine During Iceman Livestream            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                15 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="8 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/As5ILsr6uW.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Couric and Munn Advocate for Cancer Screening at PatientPoint Event" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Health                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/couric-munn-cancer-screening-advocacy" title="Couric and Munn Advocate for Cancer Screening at PatientPoint Event">
+                Couric and Munn Advocate for Cancer Screening at PatientPoint Event            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                16 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="9 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/aoEucMI2pO.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="David Letterman Returns to Late Show as Series Conclusion Nears" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/letterman-returns-colbert-late-show" title="David Letterman Returns to Late Show as Series Conclusion Nears">
+                David Letterman Returns to Late Show as Series Conclusion Nears            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                16 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="10 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/Qu9oOUBjki.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="NFL Excludes Five Rebuilding Teams From 2026 Prime Time Schedule" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sports                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/nfl-prime-time-schedule-rebuilds" title="NFL Excludes Five Rebuilding Teams From 2026 Prime Time Schedule">
+                NFL Excludes Five Rebuilding Teams From 2026 Prime Time Schedule            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                16 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="11 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/jaEGjT6aWy.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Lee Jung Hoo Leads Giants Over Dodgers at Dodger Stadium" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sports                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/lee-jung-hoo-giants-victory" title="Lee Jung Hoo Leads Giants Over Dodgers at Dodger Stadium">
+                Lee Jung Hoo Leads Giants Over Dodgers at Dodger Stadium            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                16 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="12 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/Cbl9SCJxQu.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Horizon Quantum Prepares Software Tools for Commercial Computing Shift" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Technology                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/horizon-quantum-commercial-software-tools" title="Horizon Quantum Prepares Software Tools for Commercial Computing Shift">
+                Horizon Quantum Prepares Software Tools for Commercial Computing Shift            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                20 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="13 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/I6RF1cRDGM.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Government Designates New River Bathing Sites Amid Water Quality Alerts" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Climate &amp; Environment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/england-river-bathing-water-quality" title="Government Designates New River Bathing Sites Amid Water Quality Alerts">
+                Government Designates New River Bathing Sites Amid Water Quality Alerts            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                20 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="14 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/BblWuWKYGk.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Netflix Expands MMA Coverage with Rousey vs Carano Preliminaries" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sports                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/netflix-mma-rousey-carano-prelims" title="Netflix Expands MMA Coverage with Rousey vs Carano Preliminaries">
+                Netflix Expands MMA Coverage with Rousey vs Carano Preliminaries            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                29 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="15 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/tYqiDUgdmX.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Utah Law Enforcement Officers Honor Fallen Colleagues at US Capitol" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Politics                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/utah-police-visit-us-capitol" title="Utah Law Enforcement Officers Honor Fallen Colleagues at US Capitol">
+                Utah Law Enforcement Officers Honor Fallen Colleagues at US Capitol            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                29 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                            <div class="swiper-slide" role="group" aria-label="16 / 16" style="width: 206px; margin-right: 15px;">
+                            <div class="oduu-article-item">
+                                
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/qS40jsFHOK.jpeg?location=1&amp;width=206&amp;height=136&amp;quality=90" alt="Subnautica 2 Launches Early Access on New Alien Planet" width="206" height="136" loading="lazy" decoding="async">
+</div>                                
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Technology                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/subnautica-2-launches-early-access-on-new-alien-planet" title="Subnautica 2 Launches Early Access on New Alien Planet">
+                Subnautica 2 Launches Early Access on New Alien Planet            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                30 minutes ago                            </div>
+                                                                    </div>
+                                        </div>
+                            </div>
+                        </div>
+                                    </div>
+            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+            <a href="javascript:void(0);" class="swiper-button swiper-button-prev swiper-button-prev-id-48 oduu-swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-2cf8490374e8b3e4" aria-disabled="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"></path>
+                </svg>
+            </a>
+            <a href="javascript:void(0);" class="swiper-button swiper-button-next swiper-button-next-id-48 oduu-swiper-button-next" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-2cf8490374e8b3e4" aria-disabled="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"></path>
+                </svg>
+            </a>
+        </div>
+        <script>
+            new Swiper('.oduu-desktop .oduu-posts-recommended-wrapper.oduu-posts-recommended-wrapper-id-48', {
+                slidesPerView: 3,
+                spaceBetween: 15,
+                navigation: {
+                    nextEl: '.swiper-button-next.swiper-button-next-id-48',
+                    prevEl: '.swiper-button-prev.swiper-button-prev-id-48'
+                },
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                }
+            });
+        </script>
+    </div>
+
+
+    <div class="oduu-widget oduu-posts-lists-small oduu-posts-lists-small-2-column oduu-posts-lists-small-2-column-id-49">
+        
+    <div class="oduu-widget-header">
+        <h3 class="oduu-widget-title">
+            <span>
+                Other Latest            </span>
+        </h3>
+            </div>
+        
+        <div class="oduu-widget-content oduu-widget-content-id-49">
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/india-fowler-off-campus-casting" title="India Fowler Joins Off Campus Season 2 Cast as Grace Ivers">
+                India Fowler Joins Off Campus Season 2 Cast as Grace Ivers            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/drake-father-dennis-graham-cancer" title="Drake Reveals Father Dennis Graham Battles Cancer in New Album">
+                Drake Reveals Father Dennis Graham Battles Cancer in New Album            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/richard-gadd-half-man-reveal" title="Richard Gadd Explains Narrative Reveal in Half Man Episode Four">
+                Richard Gadd Explains Narrative Reveal in Half Man Episode Four            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/dodgers-angels-freeway-series-anaheim" title="Dodgers and Angels Open Freeway Series Friday in Anaheim">
+                Dodgers and Angels Open Freeway Series Friday in Anaheim            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/china-industrial-output-economic-divergence" title="China Industrial Output Forecast Signals Divergent Economic Recovery">
+                China Industrial Output Forecast Signals Divergent Economic Recovery            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/off-campus-season-two-casting" title="Prime Video Casts India Fowler and Phillipa Soo in Off Campus">
+                Prime Video Casts India Fowler and Phillipa Soo in Off Campus            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/drake-criticizes-khaled-iceman-album" title="Drake Criticizes DJ Khaled Over Palestine During Iceman Livestream">
+                Drake Criticizes DJ Khaled Over Palestine During Iceman Livestream            </a>
+        </h2>
+            </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+    <div class="oduu-article-text">
+        <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/couric-munn-cancer-screening-advocacy" title="Couric and Munn Advocate for Cancer Screening at PatientPoint Event">
+                Couric and Munn Advocate for Cancer Screening at PatientPoint Event            </a>
+        </h2>
+            </div>
+                </div>
+                    </div>
+    </div>
+
+
+
+
+    <div class="oduu-widget oduu-posts-grid oduu-posts-grid-id-50">
+        <style>
+            .oduu-desktop .oduu-widget.oduu-posts-grid.oduu-posts-grid-id-50>.oduu-widget-content {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+        </style>
+        
+    <div class="oduu-widget-header">
+        <h3 class="oduu-widget-title">
+            <span>
+                Most Viewed            </span>
+        </h3>
+            </div>
+        
+        <div class="oduu-widget-content oduu-widget-content-id-50">
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/CbecIqXvb2.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Sophie Cunningham Debuts in Sports Illustrated Swimsuit Issue" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Sports                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/sophie-cunningham-debuts-in-sports-illustrated-swimsuit-issue" title="Sophie Cunningham Debuts in Sports Illustrated Swimsuit Issue">
+                Sophie Cunningham Debuts in Sports Illustrated Swimsuit Issue            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                24 hours ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/T5rb5KaTzu.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Lainey Wilson Marries Devlin Hodges in Custom Oscar de la Renta Gown" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/lainey-wilson-marries-devlin-hodges-in-custom-oscar-de-la-renta-gown" title="Lainey Wilson Marries Devlin Hodges in Custom Oscar de la Renta Gown">
+                Lainey Wilson Marries Devlin Hodges in Custom Oscar de la Renta Gown            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                11 hours ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/AmWj2zGna5.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Sports Illustrated Unveils Four 2026 Swimsuit Issue Cover Stars" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Lifestyle                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/sports-illustrated-unveils-cover-stars" title="Sports Illustrated Unveils Four 2026 Swimsuit Issue Cover Stars">
+                Sports Illustrated Unveils Four 2026 Swimsuit Issue Cover Stars            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                3 days ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/fB0bSB0iND.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Pete Davidson and Elsie Hewitt Split After Birth of Daughter" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/pete-davidson-elsie-hewitt-split" title="Pete Davidson and Elsie Hewitt Split After Birth of Daughter">
+                Pete Davidson and Elsie Hewitt Split After Birth of Daughter            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                5 hours ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/GGJzyxuH1U.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Netanyahu Threatens Defamation Lawsuit Against New York Times" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Politics                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/netanyahu-sues-new-york-times" title="Netanyahu Threatens Defamation Lawsuit Against New York Times">
+                Netanyahu Threatens Defamation Lawsuit Against New York Times            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                11 hours ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/g5lGe7LD20.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Princess of Wales Visits Italy to Study Early Childhood Education" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Education                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/princess-kate-italy-childhood-visit" title="Princess of Wales Visits Italy to Study Early Childhood Education">
+                Princess of Wales Visits Italy to Study Early Childhood Education            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                2 days ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/NAJMSLRXJ6.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Asteroid 2026 JH2 to Pass 56,000 Miles From Earth Monday" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Science                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/asteroid-2026-jh2-earth-flyby" title="Asteroid 2026 JH2 to Pass 56,000 Miles From Earth Monday">
+                Asteroid 2026 JH2 to Pass 56,000 Miles From Earth Monday            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                1 day ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/3texXmLtBJ.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="NBC Cancels Seven Programs Amid Network Programming Overhaul" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Entertainment                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/nbc-cancels-seven-television-shows" title="NBC Cancels Seven Programs Amid Network Programming Overhaul">
+                NBC Cancels Seven Programs Amid Network Programming Overhaul            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                1 day ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                            <div class="oduu-article-item">
+                    
+
+<div class="oduu-article-image">
+                    <img src="https://cdn.infonasional.com/media/images/2026/05/dpiIEKoFcj.jpeg?location=1&amp;width=219&amp;height=144&amp;quality=90" alt="Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions" width="219" height="144" loading="lazy" decoding="async">
+</div>                    
+
+    <div class="oduu-article-text">
+                                    <div class="oduu-article-category">
+                    Conflict &amp; Security                </div>
+                            <h2 class="oduu-article-title">
+            <a href="https://world.infonasional.com/iran-seizes-vessel-uae-tensions" title="Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions">
+                Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions            </a>
+        </h2>
+                                                        <div class="oduu-article-footer">
+                                                    <div class="oduu-article-date">
+                                5 hours ago                            </div>
+                                                                    </div>
+                                        </div>
+                </div>
+                    </div>
+    </div>
+        </main>
+        
+<aside class="oduu-aside">
+    <div class="oduu-sidebar">
+                            <div class="d-flex justify-content-center oduu-mb-20">
+                <div class="oduu-ads oduu-ads-300x250">
+                    <script>
+  atOptions = {
+    'key' : 'd8761389850658a35de9dbfeecba1602',
+    'format' : 'iframe',
+    'height' : 250,
+    'width' : 300,
+    'params' : {}
+  };
+</script>
+<script src="https://pleasurecommitment.com/d8761389850658a35de9dbfeecba1602/invoke.js" class="atScriptd8761389850658a35de9dbfeecba1602_0"></script>                </div>
+            </div>
+                
+
+    <div class="oduu-widget oduu-posts-popular">
+        <div class="oduu-widget-header">
+            <h3 class="oduu-widget-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16m0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15"></path>
+                </svg>
+                <span>
+                    Popular                </span>
+            </h3>
+        </div>
+        
+        <div class="oduu-widget-content">
+                                        <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">1</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/lainey-wilson-marries-devlin-hodges-in-custom-oscar-de-la-renta-gown" title="Lainey Wilson Marries Devlin Hodges in Custom Oscar de la Renta Gown">
+                                Lainey Wilson Marries Devlin Hodges in Custom Oscar de la Renta Gown                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Entertainment                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                11 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">2</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/poet-technologies-lumilens-ai-order" title="POET Technologies Secures 50 Million Dollar AI Engine Order">
+                                POET Technologies Secures 50 Million Dollar AI Engine Order                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Technology                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                17 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">3</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/pete-davidson-elsie-hewitt-split" title="Pete Davidson and Elsie Hewitt Split After Birth of Daughter">
+                                Pete Davidson and Elsie Hewitt Split After Birth of Daughter                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Entertainment                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                5 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">4</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/netanyahu-sues-new-york-times" title="Netanyahu Threatens Defamation Lawsuit Against New York Times">
+                                Netanyahu Threatens Defamation Lawsuit Against New York Times                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Politics                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                11 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">5</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/real-sociedad-victory-girona-laliga" title="Jon Martín Header Secures Victory for Real Sociedad Against Girona">
+                                Jon Martín Header Secures Victory for Real Sociedad Against Girona                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Sports                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                10 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">6</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/mta-lirr-strike-threat-negotiations" title="MTA Attorney Claims LIRR Strike Avoidable Amid Union Wage Dispute">
+                                MTA Attorney Claims LIRR Strike Avoidable Amid Union Wage Dispute                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Economy                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                17 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">7</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/ai-agents-rogue-behavior-self-deletion-study" title="AI Agents Exhibit Rogue Behavior and Self-Deletion in Long-Term Study">
+                                AI Agents Exhibit Rogue Behavior and Self-Deletion in Long-Term Study                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Technology                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                10 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">8</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/singapore-airlines-staff-bonus-fy2026" title="Singapore Airlines Grants 5.7 Month Bonus to Employees for FY2026">
+                                Singapore Airlines Grants 5.7 Month Bonus to Employees for FY2026                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Business                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                18 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">9</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/san-diego-airport-security-breach" title="Unauthorized Smoke Break Triggers San Diego Airport Security Ground Stop">
+                                Unauthorized Smoke Break Triggers San Diego Airport Security Ground Stop                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Conflict &amp; Security                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                12 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                            <div class="oduu-article-item">
+                    <div class="oduu-posts-common">
+                        <span class="oduu-posts-rank-number">10</span>
+                    </div>
+                    <div class="oduu-article-text">
+                        <h2 class="oduu-article-title">
+                            <a href="https://world.infonasional.com/iran-seizes-vessel-uae-tensions" title="Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions">
+                                Iran Seizes Vessel Near UAE Amid Strait of Hormuz Tensions                            </a>
+                        </h2>
+                        <div class="oduu-article-footer">
+                            <div class="oduu-article-view">
+                                Conflict &amp; Security                            </div>
+                            <div>·</div>
+                            <div class="oduu-article-date">
+                                5 hours ago                            </div>
+                        </div>
+                    </div>
+                </div>
+                                    </div>
+    </div>
+                    </div>
+</aside>    </div>
+</div>
+<footer class="oduu-footer">
+    <div class="oduu-footer-line"></div>
+    <div class="oduu-container">
+        <div class="oduu-footer-content">
+            <div class="oduu-footer-logo">
+                <div class="oduu-footer-logo">
+                    <img src="https://cdn.infonasional.com/media/images/2026/02/156984bd829206e..png?location=1&amp;fit=1" alt="" decoding="async" loading="lazy">
+                </div>
+                
+    <div class="oduu-navigation-social oduu-navigation-social-footer">
+                    <div class="oduu-navigation-title">
+                Social Media            </div>
+                <ul>
+                                                                                                                                                    <li>
+                    <a href="https://world.infonasional.com/rss-feeds" class="oduu-social-icon rss" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-label="RSS">
+                            <path d="M6.503 20.752c0 1.794-1.456 3.248-3.251 3.248-1.796 0-3.252-1.454-3.252-3.248 0-1.794 1.456-3.248 3.252-3.248 1.795.001 3.251 1.454 3.251 3.248zm-6.503-12.572v4.811c6.05.062 10.96 4.966 11.022 11.009h4.817c-.062-8.71-7.118-15.758-15.839-15.82zm0-3.368c10.58.046 19.152 8.594 19.183 19.188h4.817c-.03-13.231-10.755-23.954-24-24v4.812z"></path>
+                        </svg>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+                <div class="oduu-footer-copyright"></div>
+            </div>
+            <div class="oduu-grid">
+                                                                                                                                                                                                                                            <nav class="oduu-grid-column-auto">
+                                    <div class="oduu-footer-title ">
+                                        Categories                                    </div>
+                                    <ul class="oduu-footer-menu">
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/politics">
+                                                    Politics                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/business">
+                                                    Business                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/economy">
+                                                    Economy                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/technology">
+                                                    Technology                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/science">
+                                                    Science                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/health">
+                                                    Health                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/climate-environment">
+                                                    Climate &amp; Environment                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/conflict-security">
+                                                    Conflict &amp; Security                                                </a>
+                                                                                            </li>
+                                                                            </ul>
+                                </nav>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <nav class="oduu-grid-column-auto">
+                                    <div class="oduu-footer-title ">
+                                        &nbsp;                                    </div>
+                                    <ul class="oduu-footer-menu">
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/law-justice">
+                                                    Law &amp; Justice                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/education">
+                                                    Education                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/culture">
+                                                    Culture                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/entertainment">
+                                                    Entertainment                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/lifestyle">
+                                                    Lifestyle                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/sports">
+                                                    Sports                                                </a>
+                                                                                            </li>
+                                                                                    <li>
+                                                <a href="https://world.infonasional.com/opinion">
+                                                    Opinion                                                </a>
+                                                                                            </li>
+                                                                            </ul>
+                                </nav>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+        </div>
+    </div>
+</footer>
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-ad-hi="true" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;min-height:auto;max-height:none;min-width:auto;max-width:none;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting; run-ad-auction" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-9394906899280517&amp;output=html&amp;adk=1812271804&amp;adf=3025194257&amp;lmt=1778562890&amp;plat=3%3A16%2C4%3A16%2C9%3A32776%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32%2C43%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fworld.infonasional.com%2Fchinese-refiners-slash-fuel-production&amp;pra=5&amp;asro=0&amp;aiactd=0&amp;aicctd=0&amp;ailctd=0&amp;aimartd=4&amp;aieuf=1&amp;aicrs=1&amp;uach=WyJXaW5kb3dzIiwiMTAuMCIsIng4NiIsIiIsIjE0Ny4wLjc3MjcuMTUiLG51bGwsMCxudWxsLCI2NCIsW1siSGVhZGxlc3NDaHJvbWUiLCIxNDcuMC43NzI3LjE1Il0sWyJOb3QuQS9CcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTQ3LjAuNzcyNy4xNSJdXSwwXQ..&amp;abgtt=6&amp;dt=1778819802424&amp;bpp=2&amp;bdt=2027&amp;idt=1640&amp;shv=r20260512&amp;mjsv=m202605130101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=269122059226&amp;frm=20&amp;pv=2&amp;u_tz=-420&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=32&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=31098358%2C31098563%2C95386338%2C95390680&amp;oid=2&amp;pvsid=2096975121753879&amp;tmod=741369861&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=1656" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement"></iframe></div></ins>
+
+
+    <script src="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/js/modal.js?v=1.0.0.0" defer=""></script>
+<script src="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/js/spotlight.js?v=1.0.0.0" defer=""></script>
+<script src="https://world.infonasional.com/assets/themes/oduu-interactive/desktop/js/jquery-cookie.js?v=1.0.0.0" defer=""></script>
+
+<script>
+            if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('https://world.infonasional.com/pwa-sw.js').then(function(registration) {}, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                }).catch(function(err) {
+                    console.log(err);
+                });
+            });
+        } else {
+            console.log('service worker is not supported');
+        }
+    
+    function oduuTab(e, tabName, classLinks, classContent, classStyle) {
+        var i, oduuTabContent, tablinks;
+        oduuTabContent = document.getElementsByClassName(classContent);
+        for (i = 0; i < oduuTabContent.length; i++) {
+            oduuTabContent[i].style.display = 'none';
+        }
+        oduuTabLinks = document.getElementsByClassName(classLinks);
+        for (i = 0; i < oduuTabLinks.length; i++) {
+            oduuTabLinks[i].className = oduuTabLinks[i].className.replace(' oduu-tab-active', '');
+        }
+        document.getElementById(tabName).style.display = classStyle;
+        e.currentTarget.className += ' oduu-tab-active';
+    }
+
+    function oduuDetectPixel(oduuElement, oduuType) {
+        if ('w' == oduuType) {
+            return document.getElementsByClassName(oduuElement)[0].offsetWidth
+        } else if ('h' == oduuType) {
+            return document.getElementsByClassName(oduuElement)[0].offsetHeight
+        };
+        return null
+    };
+
+    document.addEventListener("DOMContentLoaded", function() {
+                    document.addEventListener("DOMContentLoaded", function() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://world.infonasional.com/run-cron'
+                });
+            });
+        
+        $(document).ready(function() {
+            $('a[href*="#"]').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html, body').animate({
+                            scrollTop: target.offset().top - 170
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            const $iframes = $('.oduu-content iframe').not('.oduu-iframe').filter(function() {
+                return $(this).closest('.oduu-ads.oduu-ads-scroll').length === 0;
+            });
+            if ($iframes.length) {
+                $iframes.addClass('oduu-iframe d-block').wrap('<div class="oduu-box-iframe"></div>');
+            }
+            const $tables = $('.oduu-content table');
+            if ($tables.length) {
+                $tables.wrap('<div class="oduu-box-table"/>');
+            }
+            if ($('.oduu-flex-content-right').length) {
+                $('.oduu-flex-content-left').css('max-width', '518px');
+            }
+        });
+
+        $(window).on('load', function() {
+            const oduuHeight = oduuDetectPixel('oduu-header-top', 'h') + 19;
+            const $stickyLeft = $('.oduu-ads-sticky-left');
+            const $stickyRight = $('.oduu-ads-sticky-right');
+            const $stickyContent = $('.oduu-ads-sticky-content-left');
+            const $sidebar = $('.oduu-sidebar');
+            const $scrollContent = $('.oduu-ads-sticky-scroll-content');
+            const $parallax = $('.oduu-banner-billboard-parallax');
+
+            if ($parallax.length > 0) {
+                $stickyLeft.css('top', 0);
+                $stickyRight.css('top', 0);
+
+                let isSticky = false;
+
+                $(window).on('scroll', function() {
+                    const scrollTop = $(this).scrollTop();
+
+                    if (scrollTop >= 250 && !isSticky) {
+                        $stickyLeft.css('top', oduuHeight);
+                        $stickyRight.css('top', oduuHeight);
+                        isSticky = true;
+                    } else if (scrollTop < 250 && isSticky) {
+                        $stickyLeft.css('top', 0);
+                        $stickyRight.css('top', 0);
+                        isSticky = false;
+                    }
+                });
+            } else {
+                if ($stickyLeft.length) $stickyLeft.css('top', oduuHeight);
+                if ($stickyRight.length) $stickyRight.css('top', oduuHeight);
+            }
+
+            if ($stickyContent.length) {
+                $stickyContent.css('top', oduuHeight);
+            } else {
+                $('.oduu-reaction-image img').css('width', '100%');
+            }
+
+            if ($sidebar.length) $sidebar.css('top', oduuHeight);
+
+            if ($('.oduu-ads-scroll-content').length) {
+                $('.oduu-ads-scroll-content').css('top', oduuHeight);
+            }
+        });
+
+
+        // When the top Menu Button is Clicked
+        $('.oduu-button-menu').click(function() {
+            $('.oduu-hamburger').toggleClass('open');
+            $('.oduu-hamburger-text.open').toggleClass('d-none');
+            $('.oduu-hamburger-text.close').toggleClass('d-none');
+            $('.oduu-menu-sidebar').toggleClass('d-block');
+        });
+
+        // When the top Menu Network is Clicked
+        $('.oduu-navigation-network').click(function() {
+            $('.oduu-list-network').toggleClass('oduu-open');
+        });
+
+        // Slider Font Size
+        const oduuFontSize = localStorage.getItem('oduu-font-size-content');
+        $('.oduu-input-font-size').val(oduuFontSize);
+        $('.oduu-content').css('font-size', oduuFontSize + '%');
+        $('.oduu-input-font-size').on('input', function() {
+            $('.oduu-content').css('font-size', $(this).val() + '%');
+            localStorage.setItem('oduu-font-size-content', $(this).val());
+        });
+
+        const screen_width = window.screen.width;
+        const screen_height = window.screen.height;
+
+                    $('.oduu-copy-link').click(function(e) {
+                e.preventDefault();
+                const oduuGetURL = $(this).attr('data-url');
+                document.addEventListener('copy', function(oduu) {
+                    oduu.clipboardData.setData('text/plain', oduuGetURL);
+                    oduu.preventDefault();
+                }, true);
+                document.execCommand('copy');
+                const oduuStartClass = $('.oduu-copy-link');
+                oduuStartClass.addClass('oduu-copy-link-success');
+                setTimeout(function() {
+                    oduuStartClass.removeClass('oduu-copy-link-success');
+                }, 2000);
+            });
+
+            $('#oduu-show-hide-toc').on('click', function() {
+                const oduuTOCBody = $('.oduu-toc-content');
+                const oduuIsVisible = oduuTOCBody.is(':visible');
+
+                if (oduuIsVisible) {
+                    oduuTOCBody.slideUp();
+                    $(this).text('[ Show ]');
+                } else {
+                    oduuTOCBody.slideDown();
+                    $(this).text('[ Hide ]');
+                }
+            });
+
+                            $.ajax({
+                    type: 'POST',
+                    url: base_url + 'front/increase-page-views',
+                    data: {
+                        'oduuPath': `/chinese-refiners-slash-fuel-production`,
+                        'oduuReferrer': ``,
+                        'oduuScreenWidth': screen_width,
+                        'oduuScreenHeight': screen_height,
+                        'oduuPostId': 318938,
+                        'oduuCategoryId': 0,
+                        'oduuTagId': 0
+                    }
+                });
+                        });
+</script>
+
+
+
+
+<!-- Google Analytic -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-EJLL06JGLS"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+	gtag('config', 'G-EJLL06JGLS');
+</script>
+
+<!-- Google News -->
+<script async="" type="application/javascript" src="https://news.google.com/swg/js/v1/swg-basic.js"></script>
+<script>
+  (self.SWG_BASIC = self.SWG_BASIC || []).push( basicSubscriptions => {
+    basicSubscriptions.init({
+      type: "NewsArticle",
+      isPartOfType: ["Product"],
+      isPartOfProductId: "CAown5PEDA:openaccess",
+      clientOptions: { theme: "light", lang: "en" },
+    });
+  });
+</script>
+
+<!-- Monetag -->
+<script>(function(s){s.dataset.zone='10677390',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script><script data-zone="10677390" src="https://n6wxm.com/vignette.min.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fbf7162491e72d5',t:'MTc3ODgxOTc5OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+<iframe title="Subscribe with Google Service" style="opacity: 0 !important; position: absolute !important; top: -10px !important; left: -10px !important; height: 1px !important; width: 1px !important;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20260512/r20190131/zrt_lookup_fy2021.html" style="display: none;"></iframe></html>

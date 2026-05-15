@@ -1,0 +1,1702 @@
+<!DOCTYPE html><html lang="en-US" style="--whis-height: 116.09375px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.4",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),o([])},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();</script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="facebook-domain-verification" content="wr5gwv85g2m8x1orpzyotkb1s3mgez">
+
+																				<meta property="article:tag" content="MIOC INTELLIGENCE">
+														
+		<link rel="profile" href="//gmpg.org/xfn/11">
+		<link rel="pingback" href="//windward.ai/xmlrpc.php">
+		<!-- DS_WAITERS_MARK -->
+        <script type="rocketlazyloadscript">
+            const assetsUri = `https://windward.ai/wp-content/themes/airfleet-optimized/dist/ds/deps`;
+
+            const dsWaitersConnected = new Set();
+
+            const dsWaiters = {
+                embla: {
+                    js: [
+                        `${assetsUri}/embla-carousel/8.6.0/embla-carousel.umd.js`,
+                        `${assetsUri}/embla-carousel/8.6.0/utils.js`,
+                    ],
+                    for: [
+                        {
+                            what: 'EmblaCarousel',
+                            typeof: 'function',
+                        },
+                    ]
+                },
+                emblaAutoplay: {
+                    js: [
+                        `${assetsUri}/embla-carousel/8.6.0/embla-carousel-autoplay.umd.js`,
+                    ],
+                    for: [
+                        {
+                            what: 'EmblaCarouselAutoplay',
+                            typeof: 'function',
+                        },
+                    ],
+                },
+                emblaFade: {
+                    js: [
+                        `${assetsUri}/embla-carousel/8.6.0/embla-carousel-fade.umd.js`,
+                    ],
+                    for: [
+                        {
+                            what: 'EmblaCarouselFade',
+                            typeof: 'function',
+                        },
+                    ],
+                },
+                emblaAutoScroll: {
+                    js: [
+                        `${assetsUri}/embla-carousel/8.6.0/embla-carousel-auto-scroll.umd.js`,
+                    ],
+                    for: [
+                        {
+                            what: 'EmblaCarouselAutoScroll',
+                            typeof: 'function',
+                        },
+                    ],
+                },
+                emblaClassNames: {
+                    js: [
+                        `${assetsUri}/embla-carousel/8.6.0/embla-carousel-class-names.umd.js`,
+                    ],
+                    for: [
+                        {
+                            what: 'EmblaCarouselClassNames',
+                            typeof: 'function',
+                        },
+                    ],
+                },
+                emblaAutoHeight: {
+                    js: [
+                        `${assetsUri}/embla-carousel/8.6.0/embla-carousel-auto-height.umd.js`,
+                    ],
+                    for: [
+                        {
+                            what: 'EmblaCarouselAutoHeight',
+                            typeof: 'function',
+                        },
+                    ],
+                },
+            };
+
+            function dsWaitFor(whats, callback) {
+                let deps = {
+                    css: [],
+                    js: [],
+                    for: [],
+                };
+
+                ['css', 'js', 'for'].forEach((type) => {
+                    whats.forEach((what) => {
+                        if (dsWaiters[what] && dsWaiters[what][type]) {
+                            deps[type] = deps[type].concat(dsWaiters[what][type]);
+                        }
+                    });
+                });
+
+                if (deps.css) {
+                    deps.css.forEach((file) => {
+                        if (!dsWaitersConnected.has(file)) {
+                            let link = document.createElement('link');
+
+                            link.rel = 'stylesheet';
+                            link.href = file;
+
+                            document.head.prepend(link);
+
+                            dsWaitersConnected.add(file);
+                        }
+                    });
+                }
+
+                if (deps.js) {
+                    deps.js.forEach((file) => {
+                        if (!dsWaitersConnected.has(file)) {
+                            let script = document.createElement('script');
+
+                            script.async = true;
+                            script.src = file;
+
+                            document.body.appendChild(script);
+
+                            dsWaitersConnected.add(file);
+                        }
+                    });
+                }
+
+                if (deps.for.every((item) => typeof window[item.what] === item.typeof)) {
+                    callback();
+                } else {
+                    setTimeout(() => {
+                        dsWaitFor(whats, callback);
+                    }, 100);
+                }
+            }
+
+            function dsHasTargetSelector(selector, cb) {
+                let targets = document.querySelectorAll(selector);
+
+                if (targets.length) {
+                    cb(targets);
+                }
+
+                return;
+            }
+        </script>
+		<!-- DS_WAITERS_MARK_END -->
+
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+
+	gtag("consent", "default", {
+		ad_personalization: "denied",
+		ad_storage: "denied",
+		ad_user_data: "denied",
+		analytics_storage: "denied",
+		functionality_storage: "denied",
+		personalization_storage: "denied",
+		security_storage: "granted",
+		wait_for_update: 500,
+	});
+	gtag("set", "ads_data_redaction", true);
+	</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		(function (w, d, s, l, i) {
+		w[l] = w[l] || [];
+		w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+		var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : '';
+		j.async = true;
+		j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+		f.parentNode.insertBefore(j, f);
+	})(
+		window,
+		document,
+		'script',
+		'dataLayer',
+		'GTM-T6RJT6C'
+	);
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" id="Cookiebot" data-rocket-src="//windward.ai/wp-content/cache/min/1/uc.js?ver=1778768090" data-implementation="wp" data-cbid="f44c2138-bec5-4aa1-9213-83aa4aa33be1" async=""></script>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+	<!-- This site is optimized with the Yoast SEO Premium plugin v26.4 (Yoast SEO v26.4) - https://yoast.com/wordpress/plugins/seo/ -->
+	<link media="all" href="https://windward.ai/wp-content/cache/autoptimize/css/autoptimize_d10f5a8d25ca3deff3239617b7a8ddbd.css" rel="stylesheet"><title>M/T DEYNA Seized: What the Interdiction Signals for the Shadow Fleet</title>
+<link crossorigin="" data-rocket-preconnect="" href="//www.gstatic.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hs-banner.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hs-analytics.net" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hubspot.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hscollectedforms.net" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hsadspixel.net" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//www.clarity.ms" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//static.oktopost.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//static.ads-twitter.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//consent.cookiebot.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//snap.licdn.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//bat.bing.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//www.googletagmanager.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hsforms.net" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//www.google.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//cdn.dreamdata.cloud" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//analytics.ahrefs.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//googleads.g.doubleclick.net" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//ok.windward.ai" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//js.hs-scripts.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//wnwd-com.chilipiper.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//www.influ2.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//static.claydar.com" rel="preconnect">
+<link crossorigin="" data-rocket-preconnect="" href="//consentcdn.cookiebot.com" rel="preconnect">
+
+
+<noscript></noscript><link rel="preload" data-rocket-preload="" as="image" href="//windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-150x150.png" imagesrcset="//windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-150x150.png 150w, //windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-300x300.png 300w, //windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-105x105.png 105w, //windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1.png 532w" imagesizes="(max-width: 150px) 100vw, 150px" fetchpriority="high">
+	<meta name="description" content="MIOC Report: The French seizure of the sanctioned M/T DEYNA signals escalating European physical enforcement against Russia's shadow fleet.">
+	<link rel="canonical" href="https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="MIOC Report: What the French Navy's Mediterranean Interdiction of M/T DEYNA Signals for the Shadow Fleet">
+	<meta property="og:description" content="The French seizure of the sanctioned M/T DEYNA signals escalating European physical enforcement against Russia's shadow fleet, which uses systematic evasion. Russia's counter-reflagging threatens legal enforcement and raises escalation risks.">
+	<meta property="og:url" content="https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/">
+	<meta property="og:site_name" content="Windward">
+	<meta property="article:modified_time" content="2026-03-22T13:39:32+00:00">
+	<meta property="og:image" content="https://windward.ai/wp-content/uploads/2026/03/MIOC-Report-Figma-Buzz-1-1024x536.png">
+	<meta property="og:image:width" content="1024">
+	<meta property="og:image:height" content="536">
+	<meta property="og:image:type" content="image/png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Knowledge Base - Windward’s Maritime AI™ Insights &amp; Resources">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/","url":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/","name":"M/T DEYNA Seized: What the Interdiction Signals for the Shadow Fleet","isPartOf":{"@id":"https://windward.ai/#website"},"primaryImageOfPage":{"@id":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/#primaryimage"},"image":{"@id":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/#primaryimage"},"thumbnailUrl":"https://windward.ai/wp-content/uploads/2026/03/MIOC-Report-Figma-Buzz.png","datePublished":"2026-03-22T13:39:30+00:00","dateModified":"2026-03-22T13:39:32+00:00","description":"MIOC Report: The French seizure of the sanctioned M/T DEYNA signals escalating European physical enforcement against Russia's shadow fleet.","breadcrumb":{"@id":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/#primaryimage","url":"https://windward.ai/wp-content/uploads/2026/03/MIOC-Report-Figma-Buzz.png","contentUrl":"https://windward.ai/wp-content/uploads/2026/03/MIOC-Report-Figma-Buzz.png","width":1860,"height":1200,"caption":"M/T DEYNA Seized: What the French Navy's Mediterranean Interdiction Signals for the Shadow Fleet"},{"@type":"BreadcrumbList","@id":"https://windward.ai/knowledge-base/m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://windward.ai/"},{"@type":"ListItem","position":2,"name":"Knowledge Base","item":"https://windward.ai/knowledge-base/"},{"@type":"ListItem","position":3,"name":"M/T DEYNA Seized: What the French Navy&#8217;s Mediterranean Interdiction Signals for the Shadow Fleet"}]},{"@type":"WebSite","@id":"https://windward.ai/#website","url":"https://windward.ai/","name":"Windward","description":"Power your organization with maritime AI","publisher":{"@id":"https://windward.ai/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://windward.ai/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://windward.ai/#organization","name":"Windward","url":"https://windward.ai/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://windward.ai/#/schema/logo/image/","url":"https://windward.ai/wp-content/uploads/2021/01/WindwardLogo_blue.png","contentUrl":"https://windward.ai/wp-content/uploads/2021/01/WindwardLogo_blue.png","width":1134,"height":720,"caption":"Windward"},"image":{"@id":"https://windward.ai/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//js.hs-scripts.com">
+<link href="//fonts.gstatic.com" crossorigin="" rel="preconnect">
+<link rel="alternate" type="application/rss+xml" title="Windward » Feed" href="//windward.ai/feed/">
+<link rel="alternate" type="application/rss+xml" title="Windward » Comments Feed" href="//windward.ai/comments/feed/">
+
+
+
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio :where(figcaption){color:#ffffffa6}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed :where(figcaption){color:#ffffffa6}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:#ffffffa6}:root :where(.wp-block-image figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme :root :where(.wp-block-image figcaption){color:#ffffffa6}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote:where(.has-text-align-right){border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote:where(.has-text-align-center){border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote:where(.is-style-plain){border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table :where(figcaption){color:#ffffffa6}.wp-block-video :where(figcaption){color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video :where(figcaption){color:#ffffffa6}.wp-block-video{margin:0 0 1em}:root :where(.wp-block-template-part.has-background){margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id="safe-svg-svg-icon-style-inline-css" type="text/css">
+.safe-svg-cover{text-align:center}.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{fill:currentColor;height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+<style id="classic-theme-styles-inline-css" type="text/css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--material-red: #000000;--wp--preset--color--material-pink: #000000;--wp--preset--color--material-purple: #000000;--wp--preset--color--material-deep-purple: #000000;--wp--preset--color--material-indigo: #000000;--wp--preset--color--material-blue: #000000;--wp--preset--color--material-light-blue: #000000;--wp--preset--color--material-cyan: #000000;--wp--preset--color--material-teal: #000000;--wp--preset--color--material-green: #000000;--wp--preset--color--material-light-green: #000000;--wp--preset--color--material-lime: #000000;--wp--preset--color--material-yellow: #000000;--wp--preset--color--material-amber: #000000;--wp--preset--color--material-orange: #000000;--wp--preset--color--material-deep-orange: #000000;--wp--preset--color--material-brown: #000000;--wp--preset--color--material-grey: #000000;--wp--preset--color--material-blue-grey: #000000;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--xs: 12px;--wp--preset--font-size--s: 16px;--wp--preset--font-size--m: 20px;--wp--preset--font-size--l: 28px;--wp--preset--font-size--xl: 36px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+
+
+<style id="google-font-inter-inline-css" type="text/css">
+
+			body * > *, body *, body .ds-reset-fonts * > *, body .ds-reset-fonts * {
+				font-family: 'Inter', sans-serif !important;
+				letter-spacing: 0 !important;
+			}
+			body h1:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__title), body .ds-reset-fonts h1:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__title) { font-size: 3rem !important; line-height: 1.16 !important; font-family: 'Inter', sans-serif !important; }
+			body h2:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__text):not(.b-banner h2.c-title):not(.ds-ctab-title), body .ds-reset-fonts h2:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__text):not(.ds-ctab-title) { font-size: 2rem !important; line-height: 1.16 !important; font-family: 'Inter', sans-serif !important; }
+			@media (max-width: 992px) {
+				body h1:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__title), body .ds-reset-fonts h1:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__title) { font-size: 2rem !important; font-family: 'Inter', sans-serif !important; }
+				body h2:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__text):not(.b-banner h2.c-title):not(.ds-ctab-title), body .ds-reset-fonts h2:not(.wdw-latest-posts-card-title-link .c-title):not(.b-featured-resources-layout-helium .c-single-post .c-title):not(.archive .row.articles .article__title):not(.b-features__item-title):not(.b-featured-resources__item .c-title):not(.b-text-and-media--layout-helium .c-section-header__title):not(.article--single .b-recommended-resources__item .c-title):not(.app-popup__text):not(.ds-ctab-title) { font-size: 1.5rem !important; font-family: 'Inter', sans-serif !important; }
+			}
+
+			body * .b-text-logos-form-layout-modern .c-text ul li {
+				font-weight: 300 !important;
+			}
+
+			body * .b-banner-layout-helium .c-button-collection .c-button, body * .tlf-testimonial-text, body * .b-faq-block--layout-helium .b-faq-block__item-question, body * .helium-accordion-button b, body * .helium-accordion-button strong, body * .b-faq-block--layout-helium .b-faq-block__item-question b, body * .b-faq-block--layout-helium .b-faq-block__item-question strong, body * .b-hero-card-title, body * .b-text-logos-form-layout-modern .c-text b, body * .b-text-logos-form-layout-modern .c-text strong, body * .b-text-logos-form-layout-modern .c-pre-title, body * .stwa-data-item__title, body * .stwa-data-item__content b, body * .stwa-data-item__content strong, body.archive .row.articles .article__title, body * .b-text-2022__text b, body * .b-text-2022__text strong, body * .b-features__item-title, body * .b-comeet-lobby .comeet-list .comeet-position-meta-location {
+				font-weight: 500 !important;
+			}
+
+			body * .btn {
+				font-weight: 500 !important;
+				line-height: 1.67 !important;
+			}
+
+			@media (min-width: 993px) {
+				body * .b-features__item-text {
+					font-size: 1rem !important;
+					line-height: 1.67 !important;
+				}
+				body * .c-footer--refresh .c-footer__menu .menu-item-has-children > a {
+					line-height: 1.37 !important;
+				}
+				body * .solutions-tag, body * .sticky-tab-content .c-text, body * .center-card-quote-text, body * .center-card-quote-cite, body * .b-text-logos-form-layout-modern .c-pre-title, body * .tlf-testimonial-text, body * .helium-accordion-body, body * .helium-accordion-body .c-text, body * .helium-accordion-button, body * .helium-accordion-button .c-text, body * .spl-panel-title, body * .b-faq-block--layout-helium .b-faq-block__item-question, body * .b-discovering .c-text, body * .stwa-data-item__content, body.archive .row.articles .article__title, body * .b-glossary-hero__text, body.archive .row.articles section .c-section-header__tagline, body * .single-af-resource-read .article__content-default .article__hero-cat, body * .single-af-resource .article__content-default .article__hero-cat, body * .b-text-2022__text, body * .c-glossary-blocks__item-text {
+					line-height: 1.4 !important;
+				}
+				footer.c-footer--refresh .c-footer__menu a, footer.c-footer--refresh .c-footer__copyright-text, footer.c-footer--refresh .c-footer__privacy-menu, footer.c-footer--refresh .c-footer__company .c-text, body * .wdw-latest-posts-card-title-link .c-title, body * .wdw-date, body * .b-stats-with-content-layout-helium .b-stats-with-content__stat--label, body * .b-stats-with-content-layout-helium .b-stats-with-content__stat--label, body * .sticky-tabs-nav-tab-trigger, body * .tlf-testimonial-meta, body * .b-text-and-media--layout-helium .c-section-header__title, body * .b-faq-block--layout-helium .b-faq-block__item-answer, body * .b-form-and-content--layout-form-blog .c-text, body * .article-content-nav-link, body * .archive .row.articles .article__source a, body * .b-contact-us__content p, body * .b-contact-us__content h4 {
+					line-height: 1.67 !important;
+				}
+				body * .b-banner h2.c-title {
+					font-size: 2.5rem !important;
+					line-height: 1.16 !important;
+					font-family: 'Inter', sans-serif !important;
+				}
+				body * .b-hero-text-and-media .c-text, body * .b-features__item-title {
+					font-size: 1.37500rem !important;
+					line-height: 1.4 !important;
+				}
+				body * .btn {
+					font-size: 1rem !important;
+				}
+			}
+		
+</style>
+<style id="rocket-lazyload-inline-css" type="text/css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:var(--wpr-bg-ff681c27-37d6-4a7d-b2f3-510abeb76977) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<script type="text/javascript" src="//windward.ai/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jq-core-js" data-rocket-defer="" defer=""></script><link rel="EditURI" type="application/rsd+xml" title="RSD" href="//windward.ai/xmlrpc.php?rsd">
+<link rel="shortlink" href="//windward.ai/?p=48763">
+			<!-- DO NOT COPY THIS SNIPPET! Start of Page Analytics Tracking for HubSpot WordPress plugin v11.3.21-->
+			<script type="rocketlazyloadscript" class="hsq-set-content-id" data-content-id="blog-post">
+				var _hsq = _hsq || [];
+				_hsq.push(["setContentType", "blog-post"]);
+			</script>
+			<!-- DO NOT COPY THIS SNIPPET! End of Page Analytics Tracking for HubSpot WordPress plugin -->
+			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">//<![CDATA[
+  function external_links_in_new_windows_loop() {
+    if (!document.links) {
+      document.links = document.getElementsByTagName('a');
+    }
+    var change_link = false;
+    var force = '';
+    var ignore = '';
+
+    for (var t=0; t<document.links.length; t++) {
+      var all_links = document.links[t];
+      change_link = false;
+      
+      if(document.links[t].hasAttribute('onClick') == false) {
+        // forced if the address starts with http (or also https), but does not link to the current domain
+        if(all_links.href.search(/^http/) != -1 && all_links.href.search('windward.ai') == -1 && all_links.href.search(/^#/) == -1) {
+          // console.log('Changed ' + all_links.href);
+          change_link = true;
+        }
+          
+        if(force != '' && all_links.href.search(force) != -1) {
+          // forced
+          // console.log('force ' + all_links.href);
+          change_link = true;
+        }
+        
+        if(ignore != '' && all_links.href.search(ignore) != -1) {
+          // console.log('ignore ' + all_links.href);
+          // ignored
+          change_link = false;
+        }
+
+        if(change_link == true) {
+          // console.log('Changed ' + all_links.href);
+          document.links[t].setAttribute('onClick', 'javascript:window.open(\'' + all_links.href.replace(/'/g, '') + '\', \'_blank\', \'noopener\'); return false;');
+          document.links[t].removeAttribute('target');
+        }
+      }
+    }
+  }
+  
+  // Load
+  function external_links_in_new_windows_load(func)
+  {  
+    var oldonload = window.onload;
+    if (typeof window.onload != 'function'){
+      window.onload = func;
+    } else {
+      window.onload = function(){
+        oldonload();
+        func();
+      }
+    }
+  }
+
+  external_links_in_new_windows_load(external_links_in_new_windows_loop);
+  //]]></script>
+
+            <style>
+                :root {
+                    --transparent:transparent; /*Transparent*/--Global-Pumpkin:#ff6f00; /*Global/Pumpkin*/--Global-Pumpkin-Hover:#ed5600; /*Global/Pumpkin/Hover*/--Global-Golf-Blue:#021953; /*Global/Golf Blue*/--Global-Stratos:#001028; /*Global/Stratos*/--Global-Stratos-Hover:#41417c; /*Global/Stratos/Hover*/--Blue:#1642b0; /*Blue*/--Low-Risk-Blue:#3180ff; /*Low risk blue*/--Global-Blue-Lagoon:#05808c; /*Global/Blue Lagoon*/--Global-Ocean-Green:#39a591; /*Global/Ocean Green*/--New-Green:#00c853; /*New Green*/--Global-Turquoise-Bay:#72d6cb; /*Global/Turquoise bay*/--Global-Bright-Sky:#b2e7ef; /*Global/Bright Sky*/--Global-Clear-Water:#e3f3fc; /*Global/Clear Water*/--System-Blue:#eaf2ff; /*System Blue*/--Global-Light-Pumpkin:#ff9a6c; /*Global/Light pumpkin*/--Global-Amber:#ffd439; /*Global/Amber*/--Global-Background:#faf7f4; /*Global/Background*/--Neutral-Black:#000000; /*Neutral/Black*/--Neutral-900:#212529; /*Neutral/900*/--Neutral-800:#343a40; /*Neutral/800*/--Neutral-700:#475466; /*Neutral-700*/--Neutral/600:#677281; /*Neutral/600*/--Neutral-500:#acb5c1; /*Neutral/500*/--Neutral-400:#ced4da; /*Neutral/400*/--Neutral-300:#dee2e6; /*Neutral/300*/--Neutral-200:#E9ECEF; /*Neutral/200*/--Neutral-100:#f8f9fa; /*Neutral/100*/--Neutral-White:#ffffff; /*Neutral/White*/--Grey:#e6e6e6; /*Grey*/--Open-Sea-Night:#001028; /*OpenSean/Night*/                }
+            <meta name="generator" content="Elementor 3.32.5; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="//windward.ai/wp-content/uploads/2026/05/cropped-Orange-Favicon-32x32.png" sizes="32x32">
+<link rel="icon" href="//windward.ai/wp-content/uploads/2026/05/cropped-Orange-Favicon-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="//windward.ai/wp-content/uploads/2026/05/cropped-Orange-Favicon-180x180.png">
+<meta name="msapplication-TileImage" content="https://windward.ai/wp-content/uploads/2026/05/cropped-Orange-Favicon-270x270.png">
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>		<link href="https://js.hsforms.net" rel="preconnect"><link href="https://www.google.com" rel="preconnect"></head><body class="af-resource-template-default single single-af-resource postid-48763 wp-embed-responsive m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet menu-color-scheme--default page-has-strip elementor-default elementor-kit-5962"><ul itemscope="" itemtype="http://www.schema.org/SiteNavigationElement" class="d-none"></ul>
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/AkkuratLL-Regular.2530ee1a1b.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/SourceSansPro-Regular.31e10c736d.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/lora/lora-v32-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/lora/lora-v32-latin_latin-ext-500.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/lora/lora-v32-latin_latin-ext-600.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/lora/lora-v32-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/roboto/roboto-v30-latin_latin-ext-regular.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/roboto/roboto-v30-latin_latin-ext-500.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="preload" href="/wp-content/themes/airfleet-optimized/dist/fonts/roboto/roboto-v30-latin_latin-ext-700.woff2" as="font" type="font/woff2" crossorigin="">
+
+				<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+					(function(c,l,a,r,i,t,y){
+						c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+						t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+						y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+					})(window, document, "clarity", "script", "u4d35acuni");
+				</script>
+	<style id="wpr-lazyload-bg-container"></style><style id="wpr-lazyload-bg-exclusion"></style>
+<noscript>
+<style id="wpr-lazyload-bg-nostyle">.b-text-logos-form-layout-one-column .c-form select,
+.two-columns-outline .c-form select{--wpr-bg-4738c5b5-0a15-47c3-bf52-dbaedebde038: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/select-arrow-blue.ae12d5b7e5.svg');}.c-form--default input[type="number"]::-webkit-inner-spin-button,
+.c-form--default input[type="number"]::-webkit-outer-spin-button{--wpr-bg-2536946c-3cc2-4688-9a76-e6a525f508ab: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/spinner-arrow.4ccbc4a556.svg');}.slick-slider .slick-arrow{--wpr-bg-5076ccc1-ae86-4870-beb4-66586dbf3ed1: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/slick-arrow-left.18b89aae50.svg');}.archive .row.articles .article__news-source-logo:before{--wpr-bg-ceb228ba-25f0-4796-b91a-51255870aa23: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/logo-comp.63a53ee198.svg');}body.page-template-page-land .c-form{--wpr-bg-5f42bf2f-0e64-4dc9-a59f-384445d4f3d3: url('https://windward.ai/wp-content/uploads/2025/06/Gradient.png');}.c-modal--style-launch-lightbox .close span{--wpr-bg-fc644e3a-98bd-45db-9188-8a1d3f72c245: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/ico-close.ec904f3585.svg');}.af-custom-menu--footer-group .b-menu-heading__inner.style-gradient-one{--wpr-bg-7ff0cd8b-951c-42bd-a574-c3e4257a8028: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/btn-gradient-one-base.svg');}.af-custom-menu--footer-group .b-menu-heading__inner.style-gradient-one:after{--wpr-bg-aa307952-fced-4294-acab-bef8eff11f26: url('https://windward.ai/wp-content/themes/airfleet-optimized/dist/images/btn-gradient-one-hover.svg');}.rll-youtube-player .play{--wpr-bg-ff681c27-37d6-4a7d-b2f3-510abeb76977: url('https://windward.ai/wp-content/plugins/wp-rocket/assets/img/youtube.png');}</style>
+</noscript>
+<script type="application/javascript">const rocket_pairs = [{"selector":".b-text-logos-form-layout-one-column .c-form select,\r\n.two-columns-outline .c-form select","style":".b-text-logos-form-layout-one-column .c-form select,\r\n.two-columns-outline .c-form select{--wpr-bg-4738c5b5-0a15-47c3-bf52-dbaedebde038: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/select-arrow-blue.ae12d5b7e5.svg');}","hash":"4738c5b5-0a15-47c3-bf52-dbaedebde038","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/select-arrow-blue.ae12d5b7e5.svg"},{"selector":".c-form--default input[type=\"number\"],\r\n.c-form--default input[type=\"number\"]","style":".c-form--default input[type=\"number\"]::-webkit-inner-spin-button,\r\n.c-form--default input[type=\"number\"]::-webkit-outer-spin-button{--wpr-bg-2536946c-3cc2-4688-9a76-e6a525f508ab: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/spinner-arrow.4ccbc4a556.svg');}","hash":"2536946c-3cc2-4688-9a76-e6a525f508ab","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/spinner-arrow.4ccbc4a556.svg"},{"selector":".slick-slider .slick-arrow","style":".slick-slider .slick-arrow{--wpr-bg-5076ccc1-ae86-4870-beb4-66586dbf3ed1: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/slick-arrow-left.18b89aae50.svg');}","hash":"5076ccc1-ae86-4870-beb4-66586dbf3ed1","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/slick-arrow-left.18b89aae50.svg"},{"selector":".archive .row.articles .article__news-source-logo","style":".archive .row.articles .article__news-source-logo:before{--wpr-bg-ceb228ba-25f0-4796-b91a-51255870aa23: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/logo-comp.63a53ee198.svg');}","hash":"ceb228ba-25f0-4796-b91a-51255870aa23","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/logo-comp.63a53ee198.svg"},{"selector":"body.page-template-page-land .c-form","style":"body.page-template-page-land .c-form{--wpr-bg-5f42bf2f-0e64-4dc9-a59f-384445d4f3d3: url('https:\/\/windward.ai\/wp-content\/uploads\/2025\/06\/Gradient.png');}","hash":"5f42bf2f-0e64-4dc9-a59f-384445d4f3d3","url":"https:\/\/windward.ai\/wp-content\/uploads\/2025\/06\/Gradient.png"},{"selector":".c-modal--style-launch-lightbox .close span","style":".c-modal--style-launch-lightbox .close span{--wpr-bg-fc644e3a-98bd-45db-9188-8a1d3f72c245: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/ico-close.ec904f3585.svg');}","hash":"fc644e3a-98bd-45db-9188-8a1d3f72c245","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/ico-close.ec904f3585.svg"},{"selector":".af-custom-menu--footer-group .b-menu-heading__inner.style-gradient-one","style":".af-custom-menu--footer-group .b-menu-heading__inner.style-gradient-one{--wpr-bg-7ff0cd8b-951c-42bd-a574-c3e4257a8028: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/btn-gradient-one-base.svg');}","hash":"7ff0cd8b-951c-42bd-a574-c3e4257a8028","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/btn-gradient-one-base.svg"},{"selector":".af-custom-menu--footer-group .b-menu-heading__inner.style-gradient-one","style":".af-custom-menu--footer-group .b-menu-heading__inner.style-gradient-one:after{--wpr-bg-aa307952-fced-4294-acab-bef8eff11f26: url('https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/btn-gradient-one-hover.svg');}","hash":"aa307952-fced-4294-acab-bef8eff11f26","url":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized\/dist\/images\/btn-gradient-one-hover.svg"},{"selector":".rll-youtube-player .play","style":".rll-youtube-player .play{--wpr-bg-ff681c27-37d6-4a7d-b2f3-510abeb76977: url('https:\/\/windward.ai\/wp-content\/plugins\/wp-rocket\/assets\/img\/youtube.png');}","hash":"ff681c27-37d6-4a7d-b2f3-510abeb76977","url":"https:\/\/windward.ai\/wp-content\/plugins\/wp-rocket\/assets\/img\/youtube.png"}]; const rocket_excluded_pairs = [];</script><meta name="generator" content="WP Rocket 3.20.0.3" data-wpr-features="wpr_lazyload_css_bg_img wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_desktop">
+	
+
+        <svg class="scp-svg-sprite" style="display:none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <symbol id="ds_sprite_chevron_right" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.506 7.505a.7.7 0 0 1 .88-.09l.11.09 5 5a.7.7 0 0 1 0 .99l-5 5a.7.7 0 0 1-.99-.99L14.01 13 9.506 8.495l-.09-.11a.7.7 0 0 1 .09-.88Z"></path>
+            </symbol>
+        </svg>
+
+		<header class="header header--sticky header--visible c-header" data-slug="component-header">
+
+    <template cache="2">bool(true)
+NULL
+bool(false)
+bool(false)
+bool(true)
+bool(false)
+array(7) {
+  [0]=&gt;
+  int(17682)
+  [1]=&gt;
+  int(91)
+  [2]=&gt;
+  int(7204)
+  [3]=&gt;
+  int(5752)
+  [4]=&gt;
+  int(7295)
+  [5]=&gt;
+  int(1258)
+  [6]=&gt;
+  int(11315)
+}
+</template>
+<style>
+    :root {
+        --whis-background_color: rgb(0,16,40);
+        --whis-text_color: rgb(255,111,0);
+        --whis-title_color: rgb(255,111,0);
+        --whis-message_color: rgb(255,111,0);
+        --whis-link_color: rgb(255,111,0);
+        --whis-close_color: rgb(255,247,249);
+        --whis-shadow_color: ;
+
+        --whis-countdown_border_radius: 0.5625rem;
+        --whis-countdown_background_color: rgb(249,246,243);
+        --whis-countdown_text_color: rgb(0,16,40);
+    }
+</style>
+<div id="whis" class="whis" data-days_before="1" style="display: block; box-sizing: border-box;">
+    <div class="whis__content container">
+                    <h4 class="whis-title">🇮🇷 TRACK VESSEL ACTIVITY IN THE STRAIT OF HORMUZ 🇮🇷</h4>
+        
+        
+        
+                    <a class="whis-link" target="_blank" href="https://insights.windward.ai/" data-wpel-link="external" rel="external noopener noreferrer">
+                MONITOR LIVE
+                <svg class="whis-link__icon" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="whis-link__path" fill-rule="evenodd" clip-rule="evenodd" d="M9.29289 7.2929C9.68341 6.90237 10.3166 6.90237 10.7071 7.29289L15.7071 12.2929C15.8947 12.4804 16 12.7348 16 13C16 13.2652 15.8947 13.5196 15.7071 13.7071L10.7071 18.7071C10.3166 19.0976 9.68341 19.0976 9.29289 18.7071C8.90237 18.3166 8.90237 17.6834 9.2929 17.2929L13.5858 13L9.2929 8.70711C8.90237 8.31659 8.90237 7.68342 9.29289 7.2929Z" fill="white"></path>
+                </svg>
+            </a>
+            </div>
+
+    <button id="whis_close" class="whis-close" type="button">
+        <svg class="whis-close__icon" aria-hidden="true" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="whis-close__path" fill-rule="evenodd" clip-rule="evenodd" d="M7.50487 7.43352C7.89539 7.04299 8.52856 7.04299 8.91908 7.43352L15.892 14.4064L22.8649 7.43352C23.2554 7.04299 23.8886 7.04299 24.2791 7.43352C24.6696 7.82404 24.6696 8.45721 24.2791 8.84773L17.3062 15.8206L24.2791 22.7936C24.6696 23.1841 24.6696 23.8172 24.2791 24.2078C23.8886 24.5983 23.2554 24.5983 22.8649 24.2078L15.892 17.2349L8.91908 24.2078C8.52856 24.5983 7.89539 24.5983 7.50487 24.2078C7.11434 23.8172 7.11434 23.1841 7.50487 22.7936L14.4778 15.8206L7.50487 8.84773C7.11434 8.45721 7.11434 7.82404 7.50487 7.43352Z" fill="white"></path>
+        </svg>
+        <span class="sr-only">Hide</span>
+    </button>
+</div>
+
+	<div class="container">
+		<div class="header__body">
+						<div class="header__logo">
+									<a class="logo d-block" href="https://windward.ai/" aria-label="windward.ai homepage" data-wpel-link="internal">
+						<img width="150" height="18" src="//windward.ai/wp-content/uploads/2024/10/150x18.svg" class="31628" alt="150x18" loading="eager" decoding="async">					</a>
+							</div>
+						
+			<div class="header__main" style="--menu-top: 81px;">
+								<div class="header__nav">
+					<ul id="menu-main-menu" class="nav nav-main"><li id="menu-item-8093" class="full-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-8093"><a>Industries</a>
+<ul class="sub-menu">
+	<li id="menu-item-8094" class="industries-mega-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-8094"><div class="af-custom-menu">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-3 wp-block-columns-is-layout-flex">
+<div class="wp-block-column af-custom-menu--style-1 is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-1" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="https://windward.ai/industries/gov/" data-text="Defense &amp; Public Sector" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image entered lazyloading" alt="unselected_icon_cs_fixed" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image" alt="unselected_icon_cs_fixed" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Defense &amp; Public Sector">
+                            Defense &amp; Public Sector
+            		</span>
+            </a>
+</section>
+
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-1 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-1" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/defense/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Defense &amp; Intelligence
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-1 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-2" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/border-protection-customs/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Law Enforcement &amp; Border Protection
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-2 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-3" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/customs/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Customs
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-3 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-4" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/unmanned-technology/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Unmanned Technology &amp; Integrators
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-4 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-5" data-slug="block-menu-item">
+    <a href="https://windward.ai/federal/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Federal
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-5 {}</style>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column af-custom-menu--style-3 is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-2" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="https://windward.ai/industries/trading-and-shipping/" data-text="Commercial" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image entered lazyloading" alt="unselected_icon_cs_fixed" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image" alt="unselected_icon_cs_fixed" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Commercial">
+                            Commercial
+            		</span>
+            </a>
+</section>
+
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-2 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-6" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/energy/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Oil &amp; Energy
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-6 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-7" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/commodity-trading/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Commodity Trade
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-7 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-8" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/offshore-and-undersea-assets/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Offshore &amp; Undersea Infrastructure
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-8 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-9" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/marine-insurance/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Marine Insurance
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-9 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-10" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/maritime-law/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Maritime Law
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-10 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-11" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/shipping-bunkering-and-marine-services/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Shipping, Bunkering &amp; Marine Services
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-11 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-12" data-slug="block-menu-item">
+    <a href="https://windward.ai/industries/financial-institutions/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Financial Institutions
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-12 {}</style>
+</div>
+</div>
+</div>
+</div>
+</div></li>
+</ul>
+</li>
+<li id="menu-item-1180" class="full-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1180"><a>Solutions</a>
+<ul class="sub-menu">
+	<li id="menu-item-8095" class="industries-mega-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-8095"><div class="af-custom-menu">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-6 wp-block-columns-is-layout-flex">
+<div class="wp-block-column af-custom-menu--style-1 is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-3" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="https://windward.ai/solutions/portfolio/" data-text="Solutions" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image entered lazyloading" alt="unselected_icon_cs_fixed" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image" alt="unselected_icon_cs_fixed" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Solutions">
+                            Solutions
+            		</span>
+            </a>
+</section>
+
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-4 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-13" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/advanced-intelligence/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Defense &amp; Intelligence
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-13 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-14" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/mda/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Border &amp; Asset Security
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-14 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-15" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/risk-and-compliance/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Risk &amp; Compliance
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-15 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-16" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/container-tracking/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Container Tracking
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-16 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-17" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/business-intelligence/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="wave" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-waves.svg" class="c-image c-picture__image" alt="wave" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Business Intelligence
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-17 {}</style>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column af-custom-menu--style-3 is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-4" data-slug="block-menu-heading">
+    <div class="b-menu-heading__inner style-style1" data-text="Capabilities">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image entered lazyloading" alt="unselected_icon_cs_fixed" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2026/01/unselected_icon_cs_fixed.svg" class="c-image c-picture__image" alt="unselected_icon_cs_fixed" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Capabilities">
+                            Capabilities
+            		</span>
+            </div>
+</section>
+
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-5 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-18" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/remote-sensing-intelligence/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+					<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Remote Sensing Intelligence
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-18 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-19" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/organization-defined-risk/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Organization Defined Risk
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-19 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-20" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/search-and-analytics/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Search &amp; Analytics
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-20 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-21" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/maritime-infrastructure/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Critical Maritime Infrastructure Protection
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-21 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-22" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/vessel-screening/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Vessel Screening
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-22 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-23" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/smuggling-detection/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Smuggling Detection
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-23 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-24" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/iuu-fishing/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			IUU Fishing
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-24 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-25" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/document-validation/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Document Validation
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-25 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-26" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/early-detection/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Early Detection
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-26 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-27" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/entity-management/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			Entity Management
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-27 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-item b-menu-item--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-item-layout-default b-menu-item--layout-default b-menu-item-style-default b-menu-item--default" id="b-menu-item-28" data-slug="block-menu-item">
+    <a href="https://windward.ai/solutions/demurrage-detention-automation/" class="b-menu-item__inner" data-wpel-link="internal">
+		<div class="b-menu-item__icon">
+			<picture class="c-picture">
+	
+		<img width="9" height="8" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%209%208'%3E%3C/svg%3E" class="c-image c-picture__image" alt="item triangle" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg"><noscript><img width="9" height="8" src="//windward.ai/wp-content/uploads/2022/11/item-triangle.svg" class="c-image c-picture__image" alt="item triangle" decoding="async" /></noscript>
+</picture>
+		</div>
+		<div class="b-menu-item__text">
+			D&amp;D Automation
+					</div>
+	</a>
+</section>
+<style type="text/css">#b-menu-item-28 {}</style>
+</div>
+</div>
+</div>
+</div>
+</div></li>
+</ul>
+</li>
+<li id="menu-item-7108" class="mega-menu menu-item menu-item-type-post_type menu-item-object-af-api-hub menu-item-has-children menu-item-7108"><a href="https://windward.ai/api-hub/windward-api-insights-lab/" data-wpel-link="internal">Data and Tech</a>
+<ul class="sub-menu">
+	<li id="menu-item-50121" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50121"><a href="https://windward.ai/multi-source/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="24" height="24" src="//windward.ai/wp-content/uploads/2026/04/MSI-Menu-iconp.svg" class="attachment-full size-full entered lazyloading" alt="MSI - Menu icon" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/04/MSI-Menu-iconp.svg" data-ll-status="loading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2026/04/MSI-Menu-iconp.svg" class="attachment-full size-full" alt="MSI - Menu icon" decoding="async" /></noscript></span><span>Multi Source Intelligence<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-41205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41205"><a href="https://windward.ai/data-and-technology/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="48" height="48" src="//windward.ai/wp-content/uploads/2025/11/Data-qual-icon-full-24.png" class="attachment-full size-full entered lazyloading" alt="Data qual icon full 24" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2025/11/Data-qual-icon-full-24.png" data-ll-status="loading"><noscript><img width="48" height="48" src="//windward.ai/wp-content/uploads/2025/11/Data-qual-icon-full-24.png" class="attachment-full size-full" alt="Data qual icon full 24" decoding="async" /></noscript></span><span>Data Quality<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-9310" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9310"><a href="https://windward.ai/api/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="52" height="48" src="//windward.ai/wp-content/uploads/2023/04/API-insights-lab.png" class="attachment-full size-full entered lazyloading" alt="API insights lab" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2023/04/API-insights-lab.png" data-ll-status="loading"><noscript><img width="52" height="48" src="//windward.ai/wp-content/uploads/2023/04/API-insights-lab.png" class="attachment-full size-full" alt="API insights lab" decoding="async" /></noscript></span><span>API Insights Lab<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-43539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43539"><a href="https://windward.ai/solutions/mai-expert/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="24" height="24" src="//windward.ai/wp-content/uploads/2026/01/Menu-icon_mai_24x24px.svg" class="attachment-full size-full entered lazyloading" alt="Menu icon mai 24x24px" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/01/Menu-icon_mai_24x24px.svg" data-ll-status="loading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2026/01/Menu-icon_mai_24x24px.svg" class="attachment-full size-full" alt="Menu icon mai 24x24px" decoding="async" /></noscript></span><span>MAI Expert™<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-11528" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11528"><a href="https://windward.ai/company/intellectual-property/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><picture class="attachment-full size-full" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2023/08/22px-icon-rocket-PI-Pagex3-1.png.webp" srcset="https://windward.ai/wp-content/uploads/2023/08/22px-icon-rocket-PI-Pagex3-1.png.webp">
+<img width="67" height="67" src="//windward.ai/wp-content/uploads/2023/08/22px-icon-rocket-PI-Pagex3-1.png" alt="22px icon rocket PI Pagex3" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2023/08/22px-icon-rocket-PI-Pagex3-1.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="67" height="67" src="//windward.ai/wp-content/uploads/2023/08/22px-icon-rocket-PI-Pagex3-1.png" alt="22px icon rocket PI Pagex3" decoding="async"/></noscript>
+</picture>
+</span><span>Intellectual Property<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-37409" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37409"><a href="https://windward.ai/maritime-anomaly-detector/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="24" height="24" src="//windward.ai/wp-content/uploads/2025/06/image-4.png" class="attachment-full size-full entered lazyloading" alt="Anomaly Detector" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2025/06/image-4.png" data-ll-status="loading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2025/06/image-4.png" class="attachment-full size-full" alt="Anomaly Detector" decoding="async" /></noscript></span><span>Maritime AI™ Anomaly Detection<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-9311" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9311"><a href="https://developer.windward.ai/reference/what-is-graphql" data-wpel-link="external" target="_blank" rel="external noopener noreferrer"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="43" height="52" src="//windward.ai/wp-content/uploads/2023/04/Technical-documentation.png" class="attachment-full size-full entered lazyloading" alt="Technical documentation" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2023/04/Technical-documentation.png" data-ll-status="loading"><noscript><img width="43" height="52" src="//windward.ai/wp-content/uploads/2023/04/Technical-documentation.png" class="attachment-full size-full" alt="Technical documentation" decoding="async" /></noscript></span><span>Technical Documentation<span class="menu-item-description"></span></span></span></a></li>
+</ul>
+</li>
+<li id="menu-item-46676" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46676"><a href="https://windward.ai/maritime-intelligence-operations-center/" data-wpel-link="internal">MIOC</a></li>
+<li id="menu-item-1191" class="full-dropdown menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1191"><a>Resources</a>
+<ul class="sub-menu">
+	<li id="menu-item-31596" class="resources-mega-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-31596"><div class="af-custom-menu">
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-7 wp-block-columns-is-layout-flex">
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:33.33%"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-5" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="/blog/iran-war-situation-room/" data-text="Iran War Intelligence" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="24" height="24" src="//windward.ai/wp-content/uploads/2024/10/Menu-icon_news_24x24px.svg" class="c-image c-picture__image entered lazyloading" alt="Menu-icon_news_24x24px" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/10/Menu-icon_news_24x24px.svg" data-ll-status="loading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2024/10/Menu-icon_news_24x24px.svg" class="c-image c-picture__image" alt="Menu-icon_news_24x24px" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Iran War Intelligence">
+                            Iran War Intelligence
+            		</span>
+            </a>
+</section>
+
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-6" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="/blog/" data-text="Blog" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-pencil-line.svg" class="c-image c-picture__image entered lazyloading" alt="Alt" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/10/menu-icon-pencil-line.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-pencil-line.svg" class="c-image c-picture__image" alt="Alt" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Blog">
+                            Blog
+            		</span>
+            </a>
+</section>
+
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-7" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="/knowledge-base/" data-text="Knowledge Base" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-glasses.svg" class="c-image c-picture__image entered lazyloading" alt="Alt" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/10/menu-icon-glasses.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-glasses.svg" class="c-image c-picture__image" alt="Alt" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Knowledge Base">
+                            Knowledge Base
+            		</span>
+            </a>
+</section>
+
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-8" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="/glossary/" data-text="Glossary" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-waves-3.svg" class="c-image c-picture__image entered lazyloading" alt="Alt" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/10/menu-icon-waves-3.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-waves-3.svg" class="c-image c-picture__image" alt="Alt" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Glossary">
+                            Glossary
+            		</span>
+            </a>
+</section>
+
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-9" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="/knowledge-base/case-studies/" data-text="Case Studies" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-book.svg" class="c-image c-picture__image entered lazyloading" alt="Alt" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/10/menu-icon-book.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-book.svg" class="c-image c-picture__image" alt="Alt" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Case Studies">
+                            Case Studies
+            		</span>
+            </a>
+</section>
+
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-menu-heading b-menu-heading--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-menu-heading-layout-default b-menu-heading--layout-default b-menu-heading-style-default b-menu-heading--default" id="b-menu-heading-10" data-slug="block-menu-heading">
+    <a class="b-menu-heading__inner style-style1" href="/events/" data-text="Webinars &amp; Events" data-wpel-link="internal">
+    
+                    <span class="b-menu-heading__icon">
+                                    <picture class="c-picture">
+	
+		<img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-calendar.svg" class="c-image c-picture__image entered lazyloading" alt="Alt" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/10/menu-icon-calendar.svg" data-ll-status="loading"><noscript><img width="32" height="32" src="//windward.ai/wp-content/uploads/2024/10/menu-icon-calendar.svg" class="c-image c-picture__image" alt="Alt" decoding="async" /></noscript>
+</picture>
+                            </span>
+        
+		<span class="b-menu-heading__text" data-text="Webinars &amp; Events">
+                            Webinars &amp; Events
+            		</span>
+            </a>
+</section>
+
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:66.66%"><section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-mega-menu-recent-posts b-mega-menu-recent-posts--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-mega-menu-recent-posts-layout-default b-mega-menu-recent-posts--layout-default b-mega-menu-recent-posts-style-default b-mega-menu-recent-posts--default" id="b-mega-menu-recent-posts-1" data-slug="block-mega-menu-recent-posts">
+    <div class="b-mega-menu-recent-posts-title">Recent posts</div>
+    
+    <div class="mm-recent-post-list">
+                                <div class="mm-recent-post">
+                                    <div class="mm-recent-post-thumb">
+                        <picture class="attachment-post-card-preview size-post-card-preview wp-post-image" decoding="async" loading="lazy">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2026/05/Iran-War-6-500x284.png.avif" srcset="https://windward.ai/wp-content/uploads/2026/05/Iran-War-6-500x284.png.avif">
+<img width="500" height="284" src="//windward.ai/wp-content/uploads/2026/05/Iran-War-6-500x284.png" alt="Iran War" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/05/Iran-War-6-500x284.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="500" height="284" src="//windward.ai/wp-content/uploads/2026/05/Iran-War-6-500x284.png" alt="Iran War" decoding="async" loading="lazy"/></noscript>
+</picture>
+                    </div>
+                
+                <div class="mm-recent-post-content">
+                    <div class="mm-recent-post-date">
+                        May 14, 2026                    </div>
+                    <a class="mm-recent-post-title" href="https://windward.ai/blog/five-weeks-into-the-ceasefire/" data-wpel-link="internal">
+                        Five Weeks Into the Ceasefire, Hormuz Is Operating Under Control                    </a>
+                    <a class="mm-recent-post-link" href="https://windward.ai/blog/five-weeks-into-the-ceasefire/" data-wpel-link="internal">
+                                              </a>
+                </div>
+            </div>
+                                <div class="mm-recent-post">
+                                    <div class="mm-recent-post-thumb">
+                        <picture class="attachment-post-card-preview size-post-card-preview wp-post-image" decoding="async" loading="lazy">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2026/05/Iran-War-5-500x284.png.avif" srcset="https://windward.ai/wp-content/uploads/2026/05/Iran-War-5-500x284.png.avif">
+<img width="500" height="284" src="//windward.ai/wp-content/uploads/2026/05/Iran-War-5-500x284.png" alt="Kharg Export Disruption Deepens as Iran Expands Control" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2026/05/Iran-War-5-500x284.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="500" height="284" src="//windward.ai/wp-content/uploads/2026/05/Iran-War-5-500x284.png" alt="Kharg Export Disruption Deepens as Iran Expands Control" decoding="async" loading="lazy"/></noscript>
+</picture>
+                    </div>
+                
+                <div class="mm-recent-post-content">
+                    <div class="mm-recent-post-date">
+                        May 13, 2026                    </div>
+                    <a class="mm-recent-post-title" href="https://windward.ai/blog/kharg-stalls-as-iran-expands-maritime-control/" data-wpel-link="internal">
+                        Kharg Stalls as Iran Expands Maritime Control Across Hormuz                    </a>
+                    <a class="mm-recent-post-link" href="https://windward.ai/blog/kharg-stalls-as-iran-expands-maritime-control/" data-wpel-link="internal">
+                                              </a>
+                </div>
+            </div>
+            </div>
+</section>
+<style type="text/css">#b-mega-menu-recent-posts-1 {}</style>
+</div>
+</div>
+</div></li>
+</ul>
+</li>
+<li id="menu-item-5819" class="mega-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-5819"><a>Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-1291" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1291"><a href="https://windward.ai/company/about-us/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><picture class="attachment-full size-full" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2022/11/About-us.png.webp" srcset="https://windward.ai/wp-content/uploads/2022/11/About-us.png.webp">
+<img width="24" height="24" src="//windward.ai/wp-content/uploads/2022/11/About-us.png" alt="About us" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/About-us.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2022/11/About-us.png" alt="About us" decoding="async"/></noscript>
+</picture>
+</span><span>Our Story<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-1351" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1351"><a href="https://windward.ai/company/careers/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><picture class="attachment-full size-full" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2022/11/briefcase-Careers.png.webp" srcset="https://windward.ai/wp-content/uploads/2022/11/briefcase-Careers.png.webp">
+<img width="24" height="24" src="//windward.ai/wp-content/uploads/2022/11/briefcase-Careers.png" alt="briefcase Careers" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/briefcase-Careers.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2022/11/briefcase-Careers.png" alt="briefcase Careers" decoding="async"/></noscript>
+</picture>
+</span><span>Careers<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-1537" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1537"><a href="/news/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><picture class="attachment-full size-full" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2022/11/hash-News.png.webp" srcset="https://windward.ai/wp-content/uploads/2022/11/hash-News.png.webp">
+<img width="24" height="24" src="//windward.ai/wp-content/uploads/2022/11/hash-News.png" alt="hash News" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/11/hash-News.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="24" height="24" src="//windward.ai/wp-content/uploads/2022/11/hash-News.png" alt="hash News" decoding="async"/></noscript>
+</picture>
+</span><span>In the News<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-10077" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10077"><a href="https://windward.ai/news/press-releases/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><img width="26" height="26" src="//windward.ai/wp-content/uploads/2023/05/PR-2.png" class="attachment-full size-full entered lazyloading" alt="PR " decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2023/05/PR-2.png" data-ll-status="loading"><noscript><img width="26" height="26" src="//windward.ai/wp-content/uploads/2023/05/PR-2.png" class="attachment-full size-full" alt="PR " decoding="async" /></noscript></span><span>Press Releases<span class="menu-item-description"></span></span></span></a></li>
+	<li id="menu-item-9250" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9250"><a href="https://windward.ai/contact-us/" data-wpel-link="internal"><span class="menu-item-with-icon"><span class="menu-item-icon-wrap"><picture class="attachment-full size-full" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2023/05/port-to-port-icon.png.webp" srcset="https://windward.ai/wp-content/uploads/2023/05/port-to-port-icon.png.webp">
+<img width="60" height="60" src="//windward.ai/wp-content/uploads/2023/05/port-to-port-icon.png" alt="port to port icon" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2023/05/port-to-port-icon.png" data-ll-status="loading" class="entered lazyloading"><noscript><img width="60" height="60" src="//windward.ai/wp-content/uploads/2023/05/port-to-port-icon.png" alt="port to port icon" decoding="async"/></noscript>
+</picture>
+</span><span>Contact Us<span class="menu-item-description"></span></span></span></a></li>
+</ul>
+</li>
+</ul>
+				</div>
+								<div class="header__actions">
+					<ul class="c-button-collection">
+					<li class="c-button-collection__item"><a href="https://windward.ai/request-demo/" class="c-link btn c-button c-button btn-primary" data-wpel-link="internal"> Request a Demo</a>
+				</li>
+			</ul>
+				</div>
+			</div>
+            <div class="header-mobile-actions">
+                <ul class="c-button-collection">
+					<li class="c-button-collection__item"><a href="https://windward.ai/request-demo/" class="c-link btn c-button c-button btn-primary" data-wpel-link="internal"> Request a Demo</a>
+				</li>
+			</ul>
+
+								                <button class="btn-nav" aria-label="Navigation Toggle">
+                    <div class="btn-nav__icon">
+                        <span></span>
+                    </div>
+                </button>
+								            </div>
+		</div>
+	</div>
+</header>
+
+			<article class="article-af-resource post-48763 af-resource type-af-resource status-publish has-post-thumbnail hentry category-risks-compliance af-resource-category-mioc-intelligence">
+	<div class="article__content-default">
+		<div class="article__hero">
+			<div class="article__hero-inner">
+				<div class="article__hero-left-col">
+																				<h3 class="article__hero-cat category"><a href="https://windward.ai/knowledge-base/mioc-intelligence/" class="article__term" data-wpel-link="internal">MIOC INTELLIGENCE</a></h3>
+															<h1 class="article__hero-title">M/T DEYNA Seized: What the French Navy’s Mediterranean Interdiction Signals for the Shadow Fleet</h1>
+				</div>
+			</div>
+		</div>
+		<div class="article__share">
+			<div class="c-resource-share">
+	<ul class="c-share__list c-resource-share__list">
+														<li class="c-share__item c-resource-share__item">
+					<a target="_blank" class="c-share__btn c-share__btn-linkedin" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fwindward.ai%2Fknowledge-base%2Fm-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet%2F" data-wpel-link="external" rel="external noopener noreferrer">
+						<i class="fab fa-linkedin-in"></i>
+					</a>
+				</li>
+												<li class="c-share__item c-resource-share__item">
+					<a target="_blank" class="c-share__btn c-share__btn-twitter" href="https://twitter.com/share?url=https%3A%2F%2Fwindward.ai%2Fknowledge-base%2Fm-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet%2F&amp;text=M%2FT+DEYNA+Seized%3A+What+the+French+Navy%26%238217%3Bs+Mediterranean+Interdiction+Signals+for+the+Shadow+Fleet" data-wpel-link="external" rel="external noopener noreferrer">
+						<i class="fab fa-twitter"></i>
+					</a>
+				</li>
+												<li class="c-share__item c-resource-share__item">
+					<a target="_blank" class="c-share__btn c-share__btn-facebook" href="http://www.facebook.com/share.php?u=https%3A%2F%2Fwindward.ai%2Fknowledge-base%2Fm-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet%2F" data-wpel-link="external" rel="external noopener noreferrer">
+						<i class="fab fa-facebook-f"></i>
+					</a>
+				</li>
+						</ul>
+</div>
+			<div class="c-cta c-with-background">
+	<div class="c-background c-background--container">
+		<div class="container">
+									<ul class="c-button-collection">
+					<li class="c-button-collection__item"><a href="#c-modal_7479" class="c-link c-modal-link c-modal-post-link btn c-button c-button btn-primary" target="_self" data-toggle="modal" data-target="#c-modal_7479"> Request a demo</a>
+		</li>
+			</ul>
+		</div>
+</div></div>
+		</div>
+		<div class="article__body">
+						<div class="article__aside article__aside--start">
+				<div class="article__aside-content">
+					<div class="article-content-nav">
+						<h4 class="article-content-nav-title">What’s inside?</h4>
+						<ol id="wdv-toc" class="article-content-nav-list"></ol>
+					</div>
+				</div>
+			</div>
+						<div class="article__entry c-toc-content">
+				
+<figure class="wp-block-image size-thumbnail"><a href="https://windward.ai/maritime-intelligence-operations-center/" data-wpel-link="internal"><img fetchpriority="high" decoding="async" width="150" height="150" src="//windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-150x150.png" alt="MIOC Logo" class="wp-image-47110" srcset="//windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-150x150.png 150w, //windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-300x300.png 300w, //windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1-105x105.png 105w, //windward.ai/wp-content/uploads/2026/02/MIOC-Logo-1.png 532w" sizes="(max-width: 150px) 100vw, 150px"></a></figure>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-text-2022 b-text-2022--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-text-2022-layout-default b-text-2022--layout-default b-text-2022-style-default b-text-2022--default b-show-in-sidebar-menu" id="b-text-2022-1" data-slug="block-text-2022">
+    <div class="container">
+				<div class="c-text b-text-2022__text">
+		<p><i><span style="font-weight: 400;">This analysis was produced by Windward’s Maritime Intelligence Operations Center (MIOC) — a mission-critical operations center powered by Windward’s maritime intelligence experts, operating as a seamless extension of your team. This is a sample of what we deliver. For intelligence tailored to your operational theater, </span></i><a class="" href="https://windward.ai/maritime-intelligence-operations-center/" target="_blank" rel="noopener"><i><span style="font-weight: 400;">visit the MIOC page</span></i></a><i><span style="font-weight: 400;">.</span></i></p>
+<hr>
+<p><span style="font-weight: 400;">On March 20, 2026, the French Navy intercepted the oil tanker <em>DEYNA</em> in the Western Mediterranean — the sixth confirmed boarding of a Russian shadow fleet vessel by European forces in three months. The vessel was flying a fraudulent Mozambican flag, sanctioned across six jurisdictions, and carrying Russian crude oil from Murmansk. The interdiction is not an isolated enforcement action. It reflects a coordinated, accelerating European campaign to move from administrative sanctions to physical enforcement — with significant implications for maritime compliance, escalation risk, and the long-term viability of the shadow fleet model.</span></p>
+<h2 id="what_happened">What Happened</h2>
+<p><span style="font-weight: 400;">French Navy forces boarded the <em>M/T DEYNA</em> (IMO: 9299903) in the Western Mediterranean. <em>DEYNA</em> is now being escorted to Marseille for prosecution. UK Royal Navy assets provided pre-interdiction surveillance support — a sign of active bilateral intelligence coordination.</span></p>
+<p><span style="font-weight: 400;"><em>DEYNA</em> entered Russian waters on February 22, 2026. What followed over the next week was a systematic identity transformation executed under the cover of AIS darkness.</span></p>
+<p><span style="font-weight: 400;">Within hours of entering Russia’s EEZ, the vessel went dark — no AIS transmissions for approximately 48 hours near Murmansk. When it reappeared, it had a new MMSI number and was flying the Mozambican flag. The flag change was not a registration update. It was a operational move timed precisely to obscure the vessel’s sanctioned identity before loading.</span></p>
+<p><span style="font-weight: 400;">A second dark period followed — another roughly 48 hours, still in the Murmansk area. When <em>DEYNA</em> reappeared again, one data point told the rest of the story: its draft had changed from 8 to 14 meters. A vessel’s draft rises with its cargo weight. <em>DEYNA</em> had loaded.</span></p>
+<p><span style="font-weight: 400;">The sequence — enter Russian waters, go dark, change identity, go dark again, load cargo, depart — is not incidental. It is a defined operational playbook, and <em>DEYNA</em> executed it in full view of maritime tracking systems that recorded every gap.</span></p>
+
+	</div>
+	</div>
+</section>
+<style type="text/css">#b-text-2022-1 {}</style>
+
+
+
+<figure class="wp-block-image aligncenter size-large is-resized"><picture fetchpriority="high" decoding="async" class="wp-image-48764" style="width:1024px;height:auto">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2026/03/deyna-1024x598.png.avif" sizes="(max-width: 1024px) 100vw, 1024px">
+<img fetchpriority="high" decoding="async" width="1024" height="598" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20598'%3E%3C/svg%3E" alt="The M/V TRUST meeting a non-transmitting vessel, Mar 4, 2026." data-lazy-srcset="//windward.ai/wp-content/uploads/2026/03/deyna-1024x598.png 1024w, //windward.ai/wp-content/uploads/2026/03/deyna-300x175.png 300w, //windward.ai/wp-content/uploads/2026/03/deyna-768x448.png 768w, //windward.ai/wp-content/uploads/2026/03/deyna-1536x896.png 1536w, //windward.ai/wp-content/uploads/2026/03/deyna-180x105.png 180w, //windward.ai/wp-content/uploads/2026/03/deyna.png 1604w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="//windward.ai/wp-content/uploads/2026/03/deyna-1024x598.png"><noscript><img fetchpriority="high" decoding="async" width="1024" height="598" src="//windward.ai/wp-content/uploads/2026/03/deyna-1024x598.png" alt="The M/V TRUST meeting a non-transmitting vessel, Mar 4, 2026." srcset="//windward.ai/wp-content/uploads/2026/03/deyna-1024x598.png 1024w, //windward.ai/wp-content/uploads/2026/03/deyna-300x175.png 300w, //windward.ai/wp-content/uploads/2026/03/deyna-768x448.png 768w, //windward.ai/wp-content/uploads/2026/03/deyna-1536x896.png 1536w, //windward.ai/wp-content/uploads/2026/03/deyna-180x105.png 180w, //windward.ai/wp-content/uploads/2026/03/deyna.png 1604w" sizes="(max-width: 1024px) 100vw, 1024px"/></noscript>
+</picture>
+<figcaption class="wp-element-caption">The vessel’s voyage from Mumansk before its interdiction.<br>Source: Windward Maritime AI™Platform</figcaption></figure>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-text-2022 b-text-2022--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-text-2022-layout-default b-text-2022--layout-default b-text-2022-style-default b-text-2022--default" id="b-text-2022-2" data-slug="block-text-2022">
+    <div class="container">
+				<div class="c-text b-text-2022__text">
+		<p><span style="font-weight: 400;">The vessel’s compliance profile is extensive. </span><i><span style="font-weight: 400;">DEYNA</span></i><span style="font-weight: 400;"> carries a <strong>Windward Risk Level 3</strong> (Sanctioned) designation and has been formally designated by the United States (OFAC, January 2025), the European Union (May 2025), the United Kingdom (July 2025), Switzerland (June 2025), Canada (November 2025), and Ukraine (December 2025). Its commercial manager, Sino Ship Management Co. Limited of Hong Kong, was designated by OFAC in January 2025 for activities in the Russian energy sector.</span></p>
+
+	</div>
+	</div>
+</section>
+<style type="text/css">#b-text-2022-2 {}</style>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><picture decoding="async" class="wp-image-48767" style="width:1024px;height:auto">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2026/03/image1-1-1024x269.png.avif" sizes="(max-width: 1024px) 100vw, 1024px">
+<img decoding="async" width="1024" height="269" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20269'%3E%3C/svg%3E" alt="Source: Windward Maritime AI™ Platform." data-lazy-srcset="//windward.ai/wp-content/uploads/2026/03/image1-1-1024x269.png 1024w, //windward.ai/wp-content/uploads/2026/03/image1-1-300x79.png 300w, //windward.ai/wp-content/uploads/2026/03/image1-1-768x202.png 768w, //windward.ai/wp-content/uploads/2026/03/image1-1-1536x403.png 1536w, //windward.ai/wp-content/uploads/2026/03/image1-1-365x96.png 365w, //windward.ai/wp-content/uploads/2026/03/image1-1.png 1999w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="//windward.ai/wp-content/uploads/2026/03/image1-1-1024x269.png"><noscript><img decoding="async" width="1024" height="269" src="//windward.ai/wp-content/uploads/2026/03/image1-1-1024x269.png" alt="Source: Windward Maritime AI™ Platform." srcset="//windward.ai/wp-content/uploads/2026/03/image1-1-1024x269.png 1024w, //windward.ai/wp-content/uploads/2026/03/image1-1-300x79.png 300w, //windward.ai/wp-content/uploads/2026/03/image1-1-768x202.png 768w, //windward.ai/wp-content/uploads/2026/03/image1-1-1536x403.png 1536w, //windward.ai/wp-content/uploads/2026/03/image1-1-365x96.png 365w, //windward.ai/wp-content/uploads/2026/03/image1-1.png 1999w" sizes="(max-width: 1024px) 100vw, 1024px"/></noscript>
+</picture>
+<figcaption class="wp-element-caption">Source: Windward Maritime AI™ Platform</figcaption></figure></div>
+
+
+<figure class="wp-block-image size-large"><picture loading="lazy" decoding="async" class="wp-image-48769">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2026/03/image2-1-1024x344.png.avif" sizes="(max-width: 1024px) 100vw, 1024px">
+<img decoding="async" width="1024" height="344" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20344'%3E%3C/svg%3E" alt="Source: Windward Maritime AI™ Platform." data-lazy-srcset="//windward.ai/wp-content/uploads/2026/03/image2-1-1024x344.png 1024w, //windward.ai/wp-content/uploads/2026/03/image2-1-300x101.png 300w, //windward.ai/wp-content/uploads/2026/03/image2-1-768x258.png 768w, //windward.ai/wp-content/uploads/2026/03/image2-1-1536x516.png 1536w, //windward.ai/wp-content/uploads/2026/03/image2-1-313x105.png 313w, //windward.ai/wp-content/uploads/2026/03/image2-1.png 1999w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="//windward.ai/wp-content/uploads/2026/03/image2-1-1024x344.png"><noscript><img loading="lazy" decoding="async" width="1024" height="344" src="//windward.ai/wp-content/uploads/2026/03/image2-1-1024x344.png" alt="Source: Windward Maritime AI™ Platform." srcset="//windward.ai/wp-content/uploads/2026/03/image2-1-1024x344.png 1024w, //windward.ai/wp-content/uploads/2026/03/image2-1-300x101.png 300w, //windward.ai/wp-content/uploads/2026/03/image2-1-768x258.png 768w, //windward.ai/wp-content/uploads/2026/03/image2-1-1536x516.png 1536w, //windward.ai/wp-content/uploads/2026/03/image2-1-313x105.png 313w, //windward.ai/wp-content/uploads/2026/03/image2-1.png 1999w" sizes="(max-width: 1024px) 100vw, 1024px"/></noscript>
+</picture>
+<figcaption class="wp-element-caption"> Source: Windward Maritime AI™ Platform.</figcaption></figure>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-text-2022 b-text-2022--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-text-2022-layout-default b-text-2022--layout-default b-text-2022-style-default b-text-2022--default b-show-in-sidebar-menu" id="b-text-2022-3" data-slug="block-text-2022">
+    <div class="container">
+				<div class="c-text b-text-2022__text">
+		<p><span style="font-weight: 400;">The evasion pattern is systematic. Since 2020, <em>DEYNA</em> has undergone <strong>13 identity changes: 8 flag changes in 13 months</strong> — cycling through Greece, Vanuatu, Indonesia, Panama, Curaçao, St. Kitts &amp; Nevis, and the Maldives before adopting its fraudulent Mozambican flag on February 25, 2026, immediately before departing Murmansk with a crude oil cargo. The vessel also executed <strong>103 hours of AIS blackout</strong> during the Murmansk departure phase, with a 19-day total blackout between March 1 and the date of interdiction.&nbsp;</span></p>
+<h2 id="what_it_singals">What It Singals</h2>
+<p><span style="font-weight: 400;">The <em>DEYNA</em> interdiction is not a one-off. It is the <strong>sixth confirmed shadow fleet boarding by European naval forces</strong> between January and March 2026 — a deliberate enforcement campaign, not episodic action.</span></p>
+<p><span style="font-weight: 400;">The pattern is consistent across cases. The <a class="" href="https://windward.ai/blog/maritime-defense-weekly-week-of-january-26/" target="_blank" rel="noopener"><em>GRINCH</em></a> was detained three weeks at Fos-sur-Mer in January after France (with UK support) intercepted it in the Alboran Sea for operating under fraudulent Comoros/Mozambique flags. The <a class="" href="https://windward.ai/knowledge-base/belgiums-seizure-of-sanctioned-tanker-ethera/" target="_blank" rel="noopener"><em>ETHERA</em></a> was escorted to Zeebrugge in March under Operation Blue Intruder — a Belgium-France combined operation — with a €10 million bail imposed and crew banned from Belgium. Sweden boarded the <em>REYFA</em> in the Baltic on March 12. Germany turned back the <em>TAVIAN</em> in the North Sea after detecting forged IMO documentation. All share the same profile: fraudulent flags, Russian oil cargo, AIS manipulation, opaque ownership.</span></p>
+<p><span style="font-weight: 400;">The institutional architecture behind this campaign is equally significant. On January 28, 2026, fourteen states — Belgium, Denmark, Estonia, Finland, France, Germany, Latvia, Lithuania, the Netherlands, Norway, Poland, Sweden, the UK, and one additional signatory — issued a joint letter explicitly warning shadow fleet vessels of potential boarding and seizure under UNCLOS stateless vessel provisions. The Joint Expeditionary Force defense ministers met in mid-March to align intelligence sharing and naval coordination. NATO held a Shadow Fleet Symposium at its headquarters on March 17. This is coalition enforcement, not improvised interdiction.</span></p>
+<p><span style="font-weight: 400;">Despite the operational momentum, the scale of the challenge is stark. Russia’s shadow fleet has <strong>grown from under 400 vessels in 2022 to between 1,100 and 1,200 globally today</strong>, with approximately <strong>600 now designated under EU sanctions</strong>. Six physical interdictions in three months <strong>represent a less than 2% interception rate</strong>. Russian Baltic crude exports hit record levels in early 2026, with nearly half carried by sanctioned vessels. The economic logic remains viable: even accounting for fines, delays, and elevated insurance premiums, the profit margin on sanctions-evading oil — approximately $12 per barrel above the price cap — sustains the risk calculus.</span></p>
+<p><span style="font-weight: 400;">Russia is adapting. Approximately <strong>80 shadow-fleet tankers are <a class="" href="https://windward.ai/blog/enforcement-shock-accelerates-russias-dark-fleet-reflagging/" target="_blank" rel="noopener">reflagging to the Russian registry</a></strong> — directly eliminating the false-flag vulnerability that UNCLOS Article 110 enforcement relies on. Russia has deployed naval escorts in the Gulf of Finland. Putin has publicly labeled French boarding operations “piracy.” Following Estonia’s pursuit of the tanker <em>JAGUAR</em>, Russia conducted retaliatory airspace violations. Defense sources report that Russia is considering armed security personnel aboard shadow fleet vessels.</span></p>
+<h2 id="what_to_monitor">What to Monitor</h2>
+<p><b>Russia’s reflagging response is the most significant near-term development to track.</b><span style="font-weight: 400;"> Approximately 80 shadow fleet tankers are actively moving to the Russian registry. This directly neutralizes the legal mechanism — UNCLOS Article 110 false flag authority — that has underpinned every interdiction in this campaign. If the pace accelerates, the current enforcement model loses its primary legal footing.</span></p>
+<p><b>Escalation dynamics remain unsettled.</b><span style="font-weight: 400;"> The trajectory from diplomatic protests to naval escorts to airspace violations is visible, but no stabilization point has emerged. The reported consideration of armed security personnel aboard shadow fleet vessels is the next threshold worth watching — a boarding encounter involving armed Russian-linked personnel would mark a qualitative shift in the risk environment.</span></p>
+<p><b>The economic model has not broken.</b><span style="font-weight: 400;"> Six interdictions in three months have not meaningfully disrupted Russian export volumes, which reached record levels in early 2026. The shadow fleet is expanding, not contracting — adding approximately seven vessels per month. Windward will continue monitoring whether sustained enforcement begins to alter operator behavior or whether adaptation outpaces interdiction.</span></p>
+<p><b>Enforcement geography is expanding.</b><span style="font-weight: 400;"> Operations have moved from the Baltic and North Sea into the Western Mediterranean. Whether this reflects deliberate route diversification by shadow fleet operators — or broadening European patrol reach — is worth tracking as the pattern develops.</span></p>
+
+	</div>
+	</div>
+</section>
+<style type="text/css">#b-text-2022-3 {}</style>
+
+
+<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-text-2022 b-text-2022--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-text-2022-layout-default b-text-2022--layout-default b-text-2022-style-default b-text-2022--default" id="b-text-2022-4" data-slug="block-text-2022">
+    <div class="container">
+				<div class="c-text b-text-2022__text">
+		<hr>
+<h2 id="mission-ready_intelligence_at_your_service" class="ds-ph-title" style="text-align: left;">Mission-Ready Intelligence, at Your Service</h2>
+<p>Detecting patterns like these requires more than static monitoring. Windward’s MIOC integrates multi-sensor intelligence with Agentic AI to detect, collect, and analyze threats in real time.</p>
+<p>To discuss ongoing intelligence coverage or ad-hoc forensic deep dives tailored to your operational theater,<strong> get in touch below.</strong></p>
+
+	</div>
+	</div>
+</section>
+<style type="text/css">#b-text-2022-4 {}</style>
+
+
+
+<script type="rocketlazyloadscript" charset="utf-8" data-rocket-type="text/javascript" data-rocket-src="//js.hsforms.net/forms/embed/v2.js"></script>
+<script type="rocketlazyloadscript">
+hbspt.forms.create({
+region: "na1",
+portalId: "6091557",
+formId: "5ad06784-4c6a-46ac-9d26-f23157ccc831"
+});
+</script>
+
+
+
+<p></p>
+
+							</div>
+			<div class="article__sidebar">
+				<div class="article__sidebar-inner">
+										<div class="article__aside article__aside--end">
+						<div class="article__aside-content">
+							
+							
+							
+													</div>
+					</div>
+									</div>
+			</div>
+		</div>
+	</div>
+	<div class="article__content">
+			</div>
+</article>
+
+	
+<footer class="c-footer container-fluid c-footer--refresh">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 c-footer__main-content">
+                <div class="c-footer__company">
+																					<img width="158" height="18" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20158%2018'%3E%3C/svg%3E" class="attachment-full size-full" alt="158x18 1" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2023/11/158x18-1.svg"><noscript><img width="158" height="18" src="//windward.ai/wp-content/uploads/2023/11/158x18-1.svg" class="attachment-full size-full" alt="158x18 1" loading="lazy" decoding="async" /></noscript>										
+                    <div class="c-text">
+		<p>Windward is the leading Maritime AI™ company, delivering mission-grade, multi-source intelligence at scale for all maritime-based operations.</p>
+<p><em>We encourage shipowners and maritime operators to submit feedback regarding vessels and ownership via <span style="text-decoration: underline;"><a href="https://windward.ai/vessel-feedback/" data-wpel-link="internal">vessel feedback page.</a></span></em></p>
+
+	</div>
+
+                                    </div>
+                <div class="c-footer__menu">
+                    <nav class="menu-footer-menu-container menu-footer-menu-container-main"><ul id="menu-footer-menu-main" class="menu"><li id="menu-item-32357" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32357"><a href="#">Industries</a>
+<ul class="sub-menu">
+	<li id="menu-item-32358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32358"><a href="https://windward.ai/industries/trading-and-shipping/" data-wpel-link="internal">Commercial</a></li>
+	<li id="menu-item-32360" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32360"><a href="https://windward.ai/industries/gov/" data-wpel-link="internal">Defense &amp; Public Sector</a></li>
+</ul>
+</li>
+<li id="menu-item-32354" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32354"><a href="#">Data and Tech</a>
+<ul class="sub-menu">
+	<li id="menu-item-50124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50124"><a href="https://windward.ai/multi-source/" data-wpel-link="internal">Multi Source Intelligence</a></li>
+	<li id="menu-item-41209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41209"><a href="https://windward.ai/data-and-technology/" data-wpel-link="internal">Data Quality</a></li>
+	<li id="menu-item-32355" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32355"><a href="https://windward.ai/api/" data-wpel-link="internal">API Insights Lab</a></li>
+	<li id="menu-item-43979" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43979"><a href="https://windward.ai/solutions/mai-expert/" data-wpel-link="internal">MAI Expert™</a></li>
+	<li id="menu-item-43980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43980"><a href="https://windward.ai/company/intellectual-property/" data-wpel-link="internal">Intellectual Property</a></li>
+	<li id="menu-item-51568" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51568"><a href="https://windward.ai/maritime-anomaly-detector/" data-wpel-link="internal">Maritime AI™ Anomaly Detection</a></li>
+	<li id="menu-item-32356" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-32356"><a href="https://developer.windward.ai/reference/what-is-graphql" data-wpel-link="external" target="_blank" rel="external noopener noreferrer">Technical Documentation</a></li>
+</ul>
+</li>
+</ul></nav>
+                    <nav class="menu-footer-menu-container menu-footer-menu-container-additional"><ul id="menu-footer-menu-additional" class="menu"><li id="menu-item-32362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32362"><a href="#">Solutions</a>
+<ul class="sub-menu">
+	<li id="menu-item-44233" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-44233"><a href="https://windward.ai/solutions/business-intelligence/" data-wpel-link="internal">Business Intelligence</a></li>
+	<li id="menu-item-42780" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42780"><a href="https://windward.ai/solutions/container-tracking/" data-wpel-link="internal">Container Tracking</a></li>
+	<li id="menu-item-32061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32061"><a href="https://windward.ai/solutions/advanced-intelligence/" data-wpel-link="internal">Defense &amp; Intelligence</a></li>
+	<li id="menu-item-40051" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40051"><a href="https://windward.ai/solutions/maritime-domain-awareness/" data-wpel-link="internal">Border &amp; Asset Security</a></li>
+	<li id="menu-item-36384" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-36384"><a href="https://windward.ai/solutions/risk-and-compliance/" data-wpel-link="internal">Risk &amp; Compliance</a></li>
+</ul>
+</li>
+<li id="menu-item-32363" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-32363"><a href="#">Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-32364" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32364"><a href="https://windward.ai/company/about-us/" data-wpel-link="internal">Our Story</a></li>
+	<li id="menu-item-32367" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32367"><a href="https://windward.ai/company/careers/" data-wpel-link="internal">Careers</a></li>
+	<li id="menu-item-32374" class="menu-item menu-item-type-taxonomy menu-item-object-press_type menu-item-32374"><a href="https://windward.ai/news/news/" data-wpel-link="internal">In the News</a></li>
+	<li id="menu-item-32375" class="menu-item menu-item-type-taxonomy menu-item-object-press_type menu-item-32375"><a href="https://windward.ai/news/press-releases/" data-wpel-link="internal">Press Releases</a></li>
+</ul>
+</li>
+</ul></nav>
+                </div>
+                                    <div class="c-footer__certificates">
+                                                    <picture class="c-picture" loading="lazy" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2021/04/Business-Intelligence-Group-AI-award-e1617783238797.png.webp">
+<img width="75" height="75" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2075%2075'%3E%3C/svg%3E" alt="Business Intelligence Group AI award" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2021/04/Business-Intelligence-Group-AI-award-e1617783238797.png"><noscript><img width="75" height="75" src="//windward.ai/wp-content/uploads/2021/04/Business-Intelligence-Group-AI-award-e1617783238797.png" alt="Business Intelligence Group AI award" loading="lazy" decoding="async"/></noscript>
+</picture>
+                                                    <picture class="c-picture" loading="lazy" decoding="async">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2021/04/Leaders-in-Trade-logo-e1618835493216.png.webp">
+<img width="75" height="93" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2075%2093'%3E%3C/svg%3E" alt="Leaders in Trade" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2021/04/Leaders-in-Trade-logo-e1618835493216.png"><noscript><img width="75" height="93" src="//windward.ai/wp-content/uploads/2021/04/Leaders-in-Trade-logo-e1618835493216.png" alt="Leaders in Trade" loading="lazy" decoding="async"/></noscript>
+</picture>
+                                                    <picture class="c-picture" loading="lazy" decoding="async">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2022/05/70x70.png.avif">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2022/05/70x70.png.webp">
+<img width="70" height="70" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2070%2070'%3E%3C/svg%3E" alt="70x70" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2022/05/70x70.png"><noscript><img width="70" height="70" src="//windward.ai/wp-content/uploads/2022/05/70x70.png" alt="70x70" loading="lazy" decoding="async"/></noscript>
+</picture>
+                                                    <img width="247" height="300" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20247%20300'%3E%3C/svg%3E" class="c-picture" alt="" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2024/03/QCA-Code-Badge-2023-C-Windward-Ltd_16823-pdf.jpg"><noscript><img width="247" height="300" src="//windward.ai/wp-content/uploads/2024/03/QCA-Code-Badge-2023-C-Windward-Ltd_16823-pdf.jpg" class="c-picture" alt="" loading="lazy" decoding="async" /></noscript>                                                    <img width="120" height="120" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20120'%3E%3C/svg%3E" class="c-picture" alt="AWS b" decoding="async" data-lazy-srcset="//windward.ai/wp-content/uploads/2023/07/AWS-b.png 120w, //windward.ai/wp-content/uploads/2023/07/AWS-b-105x105.png 105w" data-lazy-sizes="auto, (max-width: 120px) 100vw, 120px" data-lazy-src="//windward.ai/wp-content/uploads/2023/07/AWS-b.png"><noscript><img width="120" height="120" src="//windward.ai/wp-content/uploads/2023/07/AWS-b.png" class="c-picture" alt="AWS b" loading="lazy" decoding="async" srcset="//windward.ai/wp-content/uploads/2023/07/AWS-b.png 120w, //windward.ai/wp-content/uploads/2023/07/AWS-b-105x105.png 105w" sizes="auto, (max-width: 120px) 100vw, 120px" /></noscript>                                                    <img width="903" height="903" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20903%20903'%3E%3C/svg%3E" class="c-picture" alt="image001" decoding="async" data-lazy-srcset="//windward.ai/wp-content/uploads/2023/07/image001.png 903w, //windward.ai/wp-content/uploads/2023/07/image001-300x300.png 300w, //windward.ai/wp-content/uploads/2023/07/image001-150x150.png 150w, //windward.ai/wp-content/uploads/2023/07/image001-768x768.png 768w, //windward.ai/wp-content/uploads/2023/07/image001-105x105.png 105w" data-lazy-sizes="auto, (max-width: 903px) 100vw, 903px" data-lazy-src="//windward.ai/wp-content/uploads/2023/07/image001.png"><noscript><img width="903" height="903" src="//windward.ai/wp-content/uploads/2023/07/image001.png" class="c-picture" alt="image001" loading="lazy" decoding="async" srcset="//windward.ai/wp-content/uploads/2023/07/image001.png 903w, //windward.ai/wp-content/uploads/2023/07/image001-300x300.png 300w, //windward.ai/wp-content/uploads/2023/07/image001-150x150.png 150w, //windward.ai/wp-content/uploads/2023/07/image001-768x768.png 768w, //windward.ai/wp-content/uploads/2023/07/image001-105x105.png 105w" sizes="auto, (max-width: 903px) 100vw, 903px" /></noscript>                                                    <picture class="c-picture" loading="lazy" decoding="async">
+<source type="image/avif" data-lazy-srcset="https://windward.ai/wp-content/uploads/2021/01/iso-logo-1.png.avif">
+<source type="image/webp" data-lazy-srcset="https://windward.ai/wp-content/uploads/2021/01/iso-logo-1.png.webp">
+<img width="91" height="70" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2091%2070'%3E%3C/svg%3E" alt="iso logo 1" decoding="async" data-lazy-src="//windward.ai/wp-content/uploads/2021/01/iso-logo-1.png"><noscript><img width="91" height="70" src="//windward.ai/wp-content/uploads/2021/01/iso-logo-1.png" alt="iso logo 1" loading="lazy" decoding="async"/></noscript>
+</picture>
+                                            </div>
+                            </div>
+        </div>
+    </div>
+    <div class="container c-footer__copyright">
+        <div class="row">
+            <div class="col-md-12">
+                                    <div class="c-footer__copyright--left">
+                                <div class="c-text c-footer__copyright-text">
+		2026 © Windward Ltd. All rights reserved
+	</div>
+                <div class="c-footer__privacy-menu">
+                    <nav class="menu-privacy-menu-container"><ul id="menu-privacy-menu" class="menu"><li id="menu-item-2332" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2332"><a href="https://windward.ai/terms/" data-wpel-link="internal">Terms of use</a></li>
+<li id="menu-item-20159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20159"><a href="https://windward.ai/privacy/" data-wpel-link="internal">Privacy Policy</a></li>
+<li id="menu-item-5835" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5835"><a href="https://windward.ai/cookie-policy/" data-wpel-link="internal">Cookies policy</a></li>
+<li id="menu-item-28052" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28052"><a href="https://windward.ai/use-generative-ai-gen-ai-tools-in-windward/" data-wpel-link="internal">Windward’s AI Guide</a></li>
+</ul></nav>
+                </div>
+                                    </div>
+                    <div class="c-footer__copyright--right">
+                        <ul class="c-social">
+						<li class="c-social__item">
+				<a href="https://www.linkedin.com/company/windward-ltd-/" class="c-link c-social__link" target="_blank" aria-label="linkedin-in" data-wpel-link="external" rel="external noopener noreferrer"> <i class="c-social__icon fab fa-linkedin-in"></i></a>
+			</li>
+					<li class="c-social__item">
+				<a href="https://x.com/WindwardAI" class="c-link c-social__link" target="_blank" aria-label="twitter" data-wpel-link="external" rel="external noopener noreferrer"> <i class="c-social__icon fab fa-twitter"></i></a>
+			</li>
+					<li class="c-social__item">
+				<a href="https://www.youtube.com/channel/UCRiZ6MI5mP_oLWwnnblB1KA/videos" class="c-link c-social__link" target="_blank" aria-label="youtube" data-wpel-link="external" rel="external noopener noreferrer"> <i class="c-social__icon fab fa-youtube"></i></a>
+			</li>
+					<li class="c-social__item">
+				<a href="https://www.facebook.com/WindwardMaritimeAI" class="c-link c-social__link" target="_blank" aria-label="facebook-f" data-wpel-link="external" rel="external noopener noreferrer"> <i class="c-social__icon fab fa-facebook-f"></i></a>
+			</li>
+			</ul>
+                    </div>
+                            </div>
+        </div>
+    </div>
+</footer>
+<div class="c-modal c-modal-post modal fade c-modal--style-default c-modal--title-request-a-demo" id="c-modal_7479" tabindex="-1" role="dialog" aria-labelledby="c-modal_7479Label" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+									<h5 class="modal-title" id="c-modal_7479Label">Request a demo</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+							</div>
+			<div class="modal-body">
+				<section class="c-block b-text-color-default c-margin c-margin--bottom-default c-block b-form b-form--page-m-t-deyna-seized-what-the-french-navys-mediterranean-interdiction-signals-for-the-shadow-fleet  align b-form-layout-default b-form--layout-default b-form-style-default b-form--default" id="b-form-1" data-slug="block-form">
+    <div class="container">
+		<div class="c-form b-form__form c-form--hubspot c-form--default c-form__submit--default">
+		
+		<div class="c-form-hubspot" data-slug="component-form-hubspot" id="c-form-hubspot-6a06a7ddf22a7" data-portal-id="6091557" data-form-id="fbb7644f-8fdd-44b6-847d-9809dd279484" data-form-forbidden-email="Please enter your business email" data-include-styles="true" data-redirect-type="default" data-submit-button-class="c-form-hubspot__submit c-btn-form-submit" data-error-class="c-form-hubspot__input c-form-hubspot__input--error c-input-error" data-error-message-class="c-form-hubspot__error-messages c-error-messages" data-close-modal-on-submit="false">
+	</div>
+	</div>
+	</div>
+</section>
+			</div>
+					</div>
+	</div>
+</div>
+<!-- Start of HubSpot Embed Code -->
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" id="hs-script-loader" async="" defer="" data-rocket-src="//windward.ai/wp-content/cache/min/1/6091557.js?ver=1778768090"></script>
+<!-- End of HubSpot Embed Code -->			<script type="rocketlazyloadscript">
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			
+
+
+
+<style id="core-block-supports-inline-css" type="text/css">
+.wp-container-core-columns-is-layout-1{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-2{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-3{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-4{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-5{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-6{flex-wrap:nowrap;}.wp-container-core-columns-is-layout-7{flex-wrap:nowrap;}
+</style>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/blockText2022.js?ver=1778768157" id="block-text-2022-js" data-rocket-defer="" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/componentToc.js?ver=1778768157" id="component-toc-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="leadin-script-loader-js-js-extra">
+/* <![CDATA[ */
+var leadin_wordpress = {"userRole":"visitor","pageType":"post","leadinPluginVersion":"11.3.21"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/6091557.js?ver=1778768090" id="leadin-script-loader-js-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="rocket_lazyload_css-js-extra">
+/* <![CDATA[ */
+var rocket_lazyload_css_data = {"threshold":"300"};
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket_lazyload_css-js-after">
+/* <![CDATA[ */
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+/* ]]> */
+</script>
+<script type="text/javascript" id="theme-js-bundle-js-extra">
+/* <![CDATA[ */
+var windward = {"ajax_url":"https:\/\/windward.ai\/wp-admin\/admin-ajax.php","assets":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized","version":"2.20250904.0"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/themes/airfleet-optimized/dist/slim.min.js?ver=1768290150" id="theme-js-bundle-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/hubspotlottie.js?ver=1778768090" id="hubspotlottie-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/lazyvideo.js?ver=1778768090" id="lazyvideo-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/header-strip.js?ver=1778768090" id="header-strip-js" data-rocket-defer="" defer=""></script>
+<script type="text/javascript" id="ds-scripts-js-extra">
+/* <![CDATA[ */
+var ds_windward = {"ajax_url":"https:\/\/windward.ai\/wp-admin\/admin-ajax.php","assets":"https:\/\/windward.ai\/wp-content\/themes\/airfleet-optimized","ver":"0.0.1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/ds/ds-scripts.js?ver=1778768090" id="ds-scripts-js" data-rocket-defer="" defer=""></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="//www.google.com/recaptcha/api.js?render=6LckVbwbAAAAAD39s5cHBRvZFqt_cNhE30_QFPHT&amp;ver=3.0" id="google-recaptcha-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wpcf7-recaptcha-js-before">
+/* <![CDATA[ */
+var wpcf7_recaptcha = {
+    "sitekey": "6LckVbwbAAAAAD39s5cHBRvZFqt_cNhE30_QFPHT",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1778768090" id="wpcf7-recaptcha-js" data-rocket-defer="" defer=""></script>
+<script data-minify="1" type="text/javascript" src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/componentHeader.js?ver=1778768090" id="component-header-js" data-rocket-defer="" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/blockMenuHeading.js?ver=1778768090" id="block-menu-heading-js" data-rocket-defer="" defer=""></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="//windward.ai/wp-content/cache/min/1/wp-content/themes/airfleet-optimized/dist/blockForm.js?ver=1778768157" id="block-form-js" data-rocket-defer="" defer=""></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async="" src="//windward.ai/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="//i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="//i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="Play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script><script>(()=>{class RocketElementorPreload{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}t(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this.i(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach((t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this.o(t)}catch(t){}}))}o(t){const e=JSON.parse(t.dataset.settings),i=e.m||e.animation_delay||0,n=e[this.animationSettingKeys.find((t=>e[t]))];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let o=setTimeout((()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this.l(t,e)}),i);window.addEventListener("rocket-startLoading",(function(){clearTimeout(o)}))}i(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach((t=>{e.forEach((e=>{i.push(t+e)}))})),i}l(t,e){this.i().forEach((t=>delete e[t])),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorPreload;requestAnimationFrame(t.t.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorPreload.run)})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9fbfb429cf833541',t:'MTc3ODgyMjUzNA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; visibility: hidden;"></iframe>
+
+
+<link rel="stylesheet" href="/wp-content/plugins/windward/assets/css/hs-forms.css?ver=1.2.4"><link rel="stylesheet" href="/wp-content/themes/airfleet-optimized/dist/styles/blockTextLogosForm.css?ver=1717735661"><span id="elementor-device-mode-wpr" class="elementor-screen-only"></span></body></html>
