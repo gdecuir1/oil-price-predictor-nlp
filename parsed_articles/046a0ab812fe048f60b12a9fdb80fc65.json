@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
-    "scrapedAt": "2026-05-12T17:26:24.660604+00:00"
+    "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+    "searchDate": "2026-04-30",
+    "scrapedAt": "2026-05-13T05:10:54.064641+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Saudi Aramco OR Saudi oil exports OR NEOM energy OR KSA oil policy",
+      "searchDate": "2026-04-30",
       "sourceFile": "046a0ab812fe048f60b12a9fdb80fc65.html"
     }
   ]

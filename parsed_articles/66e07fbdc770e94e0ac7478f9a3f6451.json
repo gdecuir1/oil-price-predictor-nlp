@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:26.828539+00:00"
+    "taskQuery": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:11:03.699864+00:00"
   },
   "count": 4,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+      "searchDate": "2026-05-02",
       "sourceFile": "66e07fbdc770e94e0ac7478f9a3f6451.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+      "searchDate": "2026-05-02",
       "sourceFile": "66e07fbdc770e94e0ac7478f9a3f6451.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+      "searchDate": "2026-05-02",
       "sourceFile": "66e07fbdc770e94e0ac7478f9a3f6451.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Lebanon Israel border tension OR Hezbollah oil market OR East Med gas",
+      "searchDate": "2026-05-02",
       "sourceFile": "66e07fbdc770e94e0ac7478f9a3f6451.html"
     }
   ]

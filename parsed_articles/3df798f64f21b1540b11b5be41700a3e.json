@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:25.753369+00:00"
+    "taskQuery": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:10:59.885466+00:00"
   },
   "count": 1,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Guyana oil production OR Exxon Stabroek block OR Venezuela border dispute",
+      "searchDate": "2026-04-29",
       "sourceFile": "3df798f64f21b1540b11b5be41700a3e.html"
     }
   ]

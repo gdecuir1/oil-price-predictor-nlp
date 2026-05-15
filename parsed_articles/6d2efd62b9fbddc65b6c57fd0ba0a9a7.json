@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Kazakhstan CPC blend OR Tengiz field maintenance OR Caspian oil after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:27.042519+00:00"
+    "taskQuery": "Kazakhstan CPC blend OR Tengiz field maintenance OR Caspian oil",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:11:04.342347+00:00"
   },
   "count": 1,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Kazakhstan CPC blend OR Tengiz field maintenance OR Caspian oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Kazakhstan CPC blend OR Tengiz field maintenance OR Caspian oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "6d2efd62b9fbddc65b6c57fd0ba0a9a7.html"
     }
   ]

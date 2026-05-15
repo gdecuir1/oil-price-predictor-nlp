@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:25.953306+00:00"
+    "taskQuery": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:11:00.783064+00:00"
   },
   "count": 2,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment",
+      "searchDate": "2026-05-02",
       "sourceFile": "457d6c33b7f18f00109e22ed225f099e.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Offshore Brazil pre-salt OR Petrobras production OR FPSO deployment",
+      "searchDate": "2026-05-02",
       "sourceFile": "457d6c33b7f18f00109e22ed225f099e.html"
     }
   ]

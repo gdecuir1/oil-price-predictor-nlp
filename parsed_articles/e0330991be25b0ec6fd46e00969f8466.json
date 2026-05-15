@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:30.465156+00:00"
+    "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:11:18.741339+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil tanker freight rates OR dark fleet oil tankers OR maritime insurance oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "e0330991be25b0ec6fd46e00969f8466.html"
     }
   ]

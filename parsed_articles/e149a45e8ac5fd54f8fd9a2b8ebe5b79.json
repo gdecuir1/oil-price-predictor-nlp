@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:30.586168+00:00"
+    "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:11:19.195777+00:00"
   },
   "count": 7,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries after:2026-04-28 before:2026-04-30",
+      "taskQuery": "China economic stimulus OR Chinese oil refinery run rates OR teapot refineries",
+      "searchDate": "2026-04-29",
       "sourceFile": "e149a45e8ac5fd54f8fd9a2b8ebe5b79.html"
     }
   ]

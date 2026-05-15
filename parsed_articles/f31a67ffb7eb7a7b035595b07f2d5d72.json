@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows after:2026-04-29 before:2026-05-01",
-    "scrapedAt": "2026-05-12T17:26:30.976795+00:00"
+    "taskQuery": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+    "searchDate": "2026-04-30",
+    "scrapedAt": "2026-05-13T05:11:21.097403+00:00"
   },
   "count": 4,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+      "searchDate": "2026-04-30",
       "sourceFile": "f31a67ffb7eb7a7b035595b07f2d5d72.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+      "searchDate": "2026-04-30",
       "sourceFile": "f31a67ffb7eb7a7b035595b07f2d5d72.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+      "searchDate": "2026-04-30",
       "sourceFile": "f31a67ffb7eb7a7b035595b07f2d5d72.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Energy security Europe OR winter gas outlook OR diesel inventory lows after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Energy security Europe OR winter gas outlook OR diesel inventory lows",
+      "searchDate": "2026-04-30",
       "sourceFile": "f31a67ffb7eb7a7b035595b07f2d5d72.html"
     }
   ]

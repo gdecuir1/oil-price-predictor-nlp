@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:29.968965+00:00"
+    "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:11:17.185619+00:00"
   },
   "count": 10,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Houthi Red Sea attacks OR Bab el-Mandeb shipping OR Suez Canal oil",
+      "searchDate": "2026-05-02",
       "sourceFile": "da5a62225dab025cce35698adf2a6b17.html"
     }
   ]

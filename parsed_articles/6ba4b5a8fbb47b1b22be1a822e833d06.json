@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:26.932410+00:00"
+    "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:11:04.089839+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "IEA monthly oil report OR global oil demand peak OR energy agency after:2026-05-01 before:2026-05-03",
+      "taskQuery": "IEA monthly oil report OR global oil demand peak OR energy agency",
+      "searchDate": "2026-05-02",
       "sourceFile": "6ba4b5a8fbb47b1b22be1a822e833d06.html"
     }
   ]

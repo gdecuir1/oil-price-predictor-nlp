@@ -121,6 +121,8 @@ def load_tasks(parsed_dir: Path):
                 "title": article.get("title") or "",
                 "source": article.get("source") or "",
                 "query": article.get("query") or "",
+                "taskQuery": article.get("taskQuery") or "",
+                "searchDate": article.get("searchDate") or "",
                 "source_file": article.get("sourceFile") or jf.name,
                 "url_hash": hashlib.md5(url.encode("utf-8")).hexdigest(),
             })
@@ -201,12 +203,15 @@ class ArticleScraper:
     def _fetch_one(self, browser, proxy_dict: Optional[dict], task: dict) -> Optional[str]:
         """Attempt to download a single article, retrying on failure.
 
-        Returns the saved filename on success, or ``None`` after all
-        retries are exhausted.
+        Returns the saved file path relative to output_dir on success,
+        or ``None`` after all retries are exhausted.
         """
         url = task["url"]
         file_name = f"article_{task['url_hash']}.html"
-        file_path = self.output_dir / file_name
+        date_subdir = task.get("searchDate") or "unknown"
+        article_dir = self.output_dir / date_subdir
+        article_dir.mkdir(parents=True, exist_ok=True)
+        file_path = article_dir / file_name
 
         if not self.force and file_path.exists():
             logger.debug("Already on disk, skipping: %s", file_name)
@@ -235,8 +240,9 @@ class ArticleScraper:
                 html_content = page.content()
                 file_path.write_text(html_content, encoding="utf-8")
 
-                logger.info("Saved %s", file_name)
-                return file_name
+                relative = f"{date_subdir}/{file_name}"
+                logger.info("Saved %s", relative)
+                return relative
 
             except PlaywrightError as exc:
                 logger.warning(
@@ -289,12 +295,13 @@ class ArticleScraper:
             for idx, task in enumerate(tasks, start=1):
                 url = task["url"]
                 file_name = f"article_{task['url_hash']}.html"
-                file_path = self.output_dir / file_name
+                date_subdir = task.get("searchDate") or "unknown"
+                file_path = self.output_dir / date_subdir / file_name
 
                 if not self.force and file_path.exists():
                     logger.debug("[%d/%d] Skipping (exists): %s", idx, len(tasks), url[:80])
                     skipped += 1
-                    manifest.append(self._manifest_entry(task, file_name))
+                    manifest.append(self._manifest_entry(task, f"{date_subdir}/{file_name}"))
                     continue
 
                 logger.info("[%d/%d] Fetching: %s", idx, len(tasks), url[:80])
@@ -338,6 +345,8 @@ class ArticleScraper:
             "original_title": task["title"],
             "source": task["source"],
             "query": task["query"],
+            "taskQuery": task.get("taskQuery", ""),
+            "searchDate": task.get("searchDate", ""),
             "source_file": task["source_file"],
             "local_file": local_file,
         }

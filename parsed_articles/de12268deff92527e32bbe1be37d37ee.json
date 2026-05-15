@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:30.334387+00:00"
+    "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:11:18.321986+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Oil spill response OR environmental regulation oil OR carbon capture energy after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Oil spill response OR environmental regulation oil OR carbon capture energy",
+      "searchDate": "2026-04-29",
       "sourceFile": "de12268deff92527e32bbe1be37d37ee.html"
     }
   ]

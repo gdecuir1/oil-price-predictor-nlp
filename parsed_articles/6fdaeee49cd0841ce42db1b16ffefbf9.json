@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
-    "scrapedAt": "2026-05-12T17:26:27.133206+00:00"
+    "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+    "searchDate": "2026-04-30",
+    "scrapedAt": "2026-05-13T05:11:04.760608+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Crude oil price OR Brent crude OR WTI crude news after:2026-04-29 before:2026-05-01",
+      "taskQuery": "Crude oil price OR Brent crude OR WTI crude news",
+      "searchDate": "2026-04-30",
       "sourceFile": "6fdaeee49cd0841ce42db1b16ffefbf9.html"
     }
   ]

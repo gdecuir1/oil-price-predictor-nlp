@@ -51,7 +51,7 @@ _ARTICLE_LD_TYPES = frozenset({
 # Primary entry points
 # ---------------------------------------------------------------------------
 
-def parse_news_html(html, source_file=None, include_raw=False, min_title_length=8):
+def parse_news_html(html, source_file=None, include_raw=False, min_title_length=8, task_meta=None):
     """Parse a full HTML page and return all extractable article records.
 
     Four extraction strategies run in sequence.  Results are de-duplicated by
@@ -78,7 +78,7 @@ def parse_news_html(html, source_file=None, include_raw=False, min_title_length=
     """
     soup = BeautifulSoup(html, "html.parser")
 
-    metadata = extract_page_metadata(soup, source_file)
+    metadata = extract_page_metadata(soup, source_file, task_meta=task_meta)
     articles_by_key = {}
 
     # Strategy 1 – JSON-LD structured data (highest fidelity)
@@ -111,7 +111,7 @@ def parse_news_html(html, source_file=None, include_raw=False, min_title_length=
     }
 
 
-def parse_file(path, include_raw=False):
+def parse_file(path, include_raw=False, task_meta=None):
     """Read a single HTML file from disk and parse it.
 
     Parameters
@@ -120,6 +120,9 @@ def parse_file(path, include_raw=False):
         Path to the ``.html`` file.
     include_raw : bool
         Forwarded to :func:`parse_news_html`.
+    task_meta : dict | None
+        Optional ``{"taskQuery": str, "searchDate": str}`` from the task file
+        that generated this HTML, used to embed task provenance in each article.
 
     Returns
     -------
@@ -131,6 +134,7 @@ def parse_file(path, include_raw=False):
         path.read_text(encoding="utf-8", errors="ignore"),
         source_file=path.name,
         include_raw=include_raw,
+        task_meta=task_meta,
     )
 
 
@@ -162,7 +166,7 @@ def parse_folder(folder, pattern="*.html", include_raw=False):
 # Metadata extraction
 # ---------------------------------------------------------------------------
 
-def extract_page_metadata(soup, source_file=None):
+def extract_page_metadata(soup, source_file=None, task_meta=None):
     """Build a metadata dict describing the page itself (not individual articles).
 
     Fields include the canonical URL, page title, site name, language, and —
@@ -174,6 +178,9 @@ def extract_page_metadata(soup, source_file=None):
         Parsed DOM of the page.
     source_file : str | None
         Originating filename for traceability.
+    task_meta : dict | None
+        Optional ``{"taskQuery": str, "searchDate": str}`` from the task file
+        that generated this HTML.
 
     Returns
     -------
@@ -181,6 +188,7 @@ def extract_page_metadata(soup, source_file=None):
     """
     canonical = attr(soup, 'link[rel="canonical"]', "href")
     page_title = meta(soup, "og:title") or text(soup, "title")
+    task_meta = task_meta or {}
 
     return {
         "sourceFile": source_file,
@@ -190,6 +198,8 @@ def extract_page_metadata(soup, source_file=None):
         "description": clean(meta(soup, "description") or meta(soup, "og:description")),
         "language": soup.html.get("lang") if soup.html else None,
         "query": extract_search_query(soup),
+        "taskQuery": task_meta.get("taskQuery"),
+        "searchDate": task_meta.get("searchDate"),
         "scrapedAt": datetime.now(timezone.utc).isoformat(),
     }
 
@@ -494,6 +504,8 @@ def normalize_article(article, metadata):
         "section": clean(article.get("section")),
         "keywords": article.get("keywords") or [],
         "query": metadata.get("query"),
+        "taskQuery": metadata.get("taskQuery"),
+        "searchDate": metadata.get("searchDate"),
         "sourceFile": metadata.get("sourceFile"),
         "rawCardText": article.get("rawCardText"),
         "raw": article.get("raw"),
@@ -787,6 +799,13 @@ def build_arg_parser():
         default=False,
         help="Keep raw JSON-LD nodes and card text in the output",
     )
+    p.add_argument(
+        "--tasks-dir",
+        type=Path,
+        default=None,
+        help="Directory containing tasks_YYYY-MM-DD.json files (e.g. oil_tasks/). "
+             "When provided, embeds taskQuery and searchDate into every parsed article.",
+    )
 
     verbosity = p.add_mutually_exclusive_group()
     verbosity.add_argument(
@@ -845,6 +864,26 @@ def main(argv=None):
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Build filename → task metadata lookup when task provenance args are provided.
+    # HTML files are named md5(url).html by the scraper, so we hash each task URL
+    # directly rather than relying on the manifest (which may be incomplete).
+    file_to_task = {}
+    if args.tasks_dir:
+        import hashlib
+        tasks_dir = args.tasks_dir.resolve()
+        for task_file in sorted(tasks_dir.glob("tasks_*.json")):
+            try:
+                for task in json.loads(task_file.read_text(encoding="utf-8")):
+                    url_hash = hashlib.md5(task["url"].encode("utf-8")).hexdigest()
+                    fname = f"{url_hash}.html"
+                    file_to_task[fname] = {
+                        "taskQuery": task["query"],
+                        "searchDate": task["search_date"],
+                    }
+            except Exception as exc:
+                logger.warning("Could not read task file %s: %s", task_file.name, exc)
+        logger.info("Task index built: %d file(s) linked to tasks.", len(file_to_task))
+
     html_files = sorted(input_dir.glob(args.pattern))
     if not html_files:
         logger.error("No files matching '%s' found in %s", args.pattern, input_dir)
@@ -859,7 +898,8 @@ def main(argv=None):
 
     for html_path in html_files:
         try:
-            parsed = parse_file(html_path, include_raw=args.include_raw)
+            task_meta = file_to_task.get(html_path.name)
+            parsed = parse_file(html_path, include_raw=args.include_raw, task_meta=task_meta)
             out_path = output_dir / (html_path.stem + ".json")
             out_path.write_text(
                 json.dumps(parsed, indent=2, ensure_ascii=False), encoding="utf-8"

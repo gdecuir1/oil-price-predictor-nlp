@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
-    "scrapedAt": "2026-05-12T17:26:26.499022+00:00"
+    "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+    "searchDate": "2026-05-01",
+    "scrapedAt": "2026-05-13T05:11:02.850536+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks after:2026-04-30 before:2026-05-02",
+      "taskQuery": "EIA Short-Term Energy Outlook OR oil inventories OR gasoline stocks",
+      "searchDate": "2026-05-01",
       "sourceFile": "5d8f4d0a33e4c0df21aa1a6bdf73cce1.html"
     }
   ]

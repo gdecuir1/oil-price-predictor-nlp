@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:28.380168+00:00"
+    "taskQuery": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:11:09.559045+00:00"
   },
   "count": 3,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin after:2026-04-28 before:2026-04-30",
+      "taskQuery": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin",
+      "searchDate": "2026-04-29",
       "sourceFile": "941d9d9ef150911dd3db779a707cf111.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin after:2026-04-28 before:2026-04-30",
+      "taskQuery": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin",
+      "searchDate": "2026-04-29",
       "sourceFile": "941d9d9ef150911dd3db779a707cf111.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin after:2026-04-28 before:2026-04-30",
+      "taskQuery": "TotalEnergies Suriname OR Namibia oil discovery OR Orange Basin",
+      "searchDate": "2026-04-29",
       "sourceFile": "941d9d9ef150911dd3db779a707cf111.html"
     }
   ]

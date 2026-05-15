@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:28.476761+00:00"
+    "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:11:09.682293+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Strategic Petroleum Reserve OR SPR refill OR US Department of Energy oil",
+      "searchDate": "2026-04-29",
       "sourceFile": "9541c308beac6bf6f5df9e21357e198f.html"
     }
   ]

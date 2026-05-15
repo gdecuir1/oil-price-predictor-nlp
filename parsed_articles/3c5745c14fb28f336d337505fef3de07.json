@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:25.530601+00:00"
+    "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:10:59.501360+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Natural gas LNG arbitrage OR European gas storage OR JKM price after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Natural gas LNG arbitrage OR European gas storage OR JKM price",
+      "searchDate": "2026-05-02",
       "sourceFile": "3c5745c14fb28f336d337505fef3de07.html"
     }
   ]

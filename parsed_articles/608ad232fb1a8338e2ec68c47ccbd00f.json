@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Libya oil field shutdown OR Sharara field OR El Feel production after:2026-05-01 before:2026-05-03",
-    "scrapedAt": "2026-05-12T17:26:26.624915+00:00"
+    "taskQuery": "Libya oil field shutdown OR Sharara field OR El Feel production",
+    "searchDate": "2026-05-02",
+    "scrapedAt": "2026-05-13T05:11:03.146000+00:00"
   },
   "count": 1,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Libya oil field shutdown OR Sharara field OR El Feel production after:2026-05-01 before:2026-05-03",
+      "taskQuery": "Libya oil field shutdown OR Sharara field OR El Feel production",
+      "searchDate": "2026-05-02",
       "sourceFile": "608ad232fb1a8338e2ec68c47ccbd00f.html"
     }
   ]

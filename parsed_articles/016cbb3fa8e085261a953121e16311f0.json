@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Arctic oil drilling OR Norway oil production OR Johan Sverdrup field after:2026-04-30 before:2026-05-02",
-    "scrapedAt": "2026-05-12T17:26:24.566948+00:00"
+    "taskQuery": "Arctic oil drilling OR Norway oil production OR Johan Sverdrup field",
+    "searchDate": "2026-05-01",
+    "scrapedAt": "2026-05-13T05:10:53.807020+00:00"
   },
   "count": 1,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Arctic oil drilling OR Norway oil production OR Johan Sverdrup field after:2026-04-30 before:2026-05-02",
+      "taskQuery": "Arctic oil drilling OR Norway oil production OR Johan Sverdrup field",
+      "searchDate": "2026-05-01",
       "sourceFile": "016cbb3fa8e085261a953121e16311f0.html"
     }
   ]

@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
-    "scrapedAt": "2026-05-12T17:26:25.408966+00:00"
+    "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+    "searchDate": "2026-04-29",
+    "scrapedAt": "2026-05-13T05:10:59.060401+00:00"
   },
   "count": 11,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -43,6 +47,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -60,6 +66,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -77,6 +85,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -94,6 +104,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -111,6 +123,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -128,6 +142,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -145,6 +161,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -162,6 +180,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -179,6 +199,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     },
     {
@@ -196,6 +218,8 @@
       "section": null,
       "keywords": [],
       "query": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand after:2026-04-28 before:2026-04-30",
+      "taskQuery": "Refinery maintenance OR crack spread OR diesel shortage OR jet fuel demand",
+      "searchDate": "2026-04-29",
       "sourceFile": "3a6a23b654f5d97d8282332de7dba489.html"
     }
   ]

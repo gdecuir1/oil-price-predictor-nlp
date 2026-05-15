@@ -7,7 +7,9 @@
     "description": null,
     "language": "en",
     "query": "Global floating storage oil OR oil contango OR backwardation market after:2026-04-30 before:2026-05-02",
-    "scrapedAt": "2026-05-12T17:26:28.803537+00:00"
+    "taskQuery": "Global floating storage oil OR oil contango OR backwardation market",
+    "searchDate": "2026-05-01",
+    "scrapedAt": "2026-05-13T05:11:10.207850+00:00"
   },
   "count": 1,
   "articles": [
@@ -26,6 +28,8 @@
       "section": null,
       "keywords": [],
       "query": "Global floating storage oil OR oil contango OR backwardation market after:2026-04-30 before:2026-05-02",
+      "taskQuery": "Global floating storage oil OR oil contango OR backwardation market",
+      "searchDate": "2026-05-01",
       "sourceFile": "996bb1b19d5a49c39ac4294cb43afb9a.html"
     }
   ]
