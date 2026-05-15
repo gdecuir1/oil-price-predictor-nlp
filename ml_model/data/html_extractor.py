@@ -153,14 +153,15 @@ class HTMLArticleExtractor:
         """Extract text from every HTML file in a directory.
 
         Args:
-            articles_dir: Directory containing ``*.html`` files.
+            articles_dir: Root directory; collects ``article_*.html`` at any depth
+                (flat layout or ``<MM_DD_YYYY>/`` subfolders).
 
         Returns:
             List of extraction result dicts (see :meth:`extract`).
             Files that fail extraction are silently skipped.
         """
         articles_dir = Path(articles_dir)
-        html_files = sorted(articles_dir.glob("*.html"))
+        html_files = sorted(articles_dir.rglob("article_*.html"))
         logger.info(
             "Extracting text from %d HTML files in %s",
             len(html_files),

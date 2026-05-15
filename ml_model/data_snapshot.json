@@ -1,0 +1,36 @@
+{
+  "description": "Point-in-time inventory of raw HTML articles used by the ML pipeline (HTMLArticleExtractor.extract_all). Regenerate when the corpus changes.",
+  "generated_at": "2026-05-14",
+  "raw_articles_dir": "raw_articles",
+  "glob_pattern": "**/article_*.html",
+  "total_article_html_files": 1154,
+  "date_subdirs_article_count": {
+    "04_29_2026": 101,
+    "04_30_2026": 83,
+    "05_01_2026": 50,
+    "05_02_2026": 150,
+    "05_04_2026": 85,
+    "05_05_2026": 94,
+    "05_06_2026": 119,
+    "05_07_2026": 89,
+    "05_08_2026": 88,
+    "05_09_2026": 86,
+    "05_10_2026": 91,
+    "05_11_2026": 60,
+    "05_12_2026": 58
+  },
+  "other_files_in_raw_articles_root": [
+    "manifest.json",
+    "article_manifest_from_parsed.json",
+    "article_manifest_from_parsed.shard0.json",
+    "article_manifest_from_parsed.shard1.json",
+    "article_manifest_from_parsed.shard2.json",
+    "article_manifest_from_parsed.shard3.json",
+    "article_manifest_from_parsed.shard4.json"
+  ],
+  "notes": [
+    "Training/inference iterate only files matching article_*.html under raw_articles (any depth).",
+    "Samples that fail text extraction (fewer than DataConfig.min_article_chars) are skipped; the number of usable tensors is typically slightly below total_article_html_files.",
+    "Parsed metadata for titles/sources comes from parsed_articles/*.json when filenames match the URL-hash convention."
+  ]
+}

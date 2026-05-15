@@ -2,7 +2,8 @@
 Article HTML fetcher driven by Playwright (synchronous API).
 
 This module implements a **two-mode ingestion pipeline** that downloads the full
-DOM HTML of news/article pages and persists it under ``raw_articles/`` using a
+DOM HTML of news/article pages and persists it under ``raw_articles/`` (optionally
+``raw_articles/<MM_DD_YYYY>/`` when ``searchDate`` is known) using a
 **deterministic filename** derived from the article URL. Downstream tooling
 (e.g. ``ml_model/data/html_extractor.py``) expects that naming convention:
 ``article_<md5_hex(url)>.html``.
@@ -81,6 +82,7 @@ import hashlib
 import argparse
 import json
 import subprocess
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Optional
 from urllib.parse import urlparse
@@ -112,6 +114,35 @@ RESULTS_DIR = BASE_DIR / "search_results"
 # PARSED_ARTICLES_DIR: default root for parser-produced *.json when using
 # --from-parsed without an explicit --parsed-dir.
 PARSED_ARTICLES_DIR = BASE_DIR / "parsed_articles"
+
+
+def raw_article_dated_subdir(search_date: str) -> str:
+    """Map ``searchDate`` (``YYYY-MM-DD`` prefix) to ``MM_DD_YYYY`` folder names."""
+    s = (search_date or "").strip()
+    if len(s) >= 10 and s[4] == "-" and s[7] == "-":
+        try:
+            dt = datetime.strptime(s[:10], "%Y-%m-%d")
+            return f"{dt.month:02d}_{dt.day:02d}_{dt.year:04d}"
+        except ValueError:
+            pass
+    return "unknown_date"
+
+
+def find_raw_article_path(raw_dir: Path, file_name: str) -> Optional[Path]:
+    """Resolve ``article_<hash>.html`` anywhere under *raw_dir* (flat or dated subfolders)."""
+    direct = raw_dir / file_name
+    if direct.is_file():
+        return direct
+    for p in raw_dir.rglob(file_name):
+        if p.is_file():
+            return p
+    return None
+
+
+def raw_article_dest_path_parsed(raw_dir: Path, task: dict[str, Any]) -> Path:
+    """Write path for parsed-mode scrapes: ``<raw_dir>/<MM_DD_YYYY>/article_<url_hash>.html``."""
+    sub = raw_article_dated_subdir(str(task.get("searchDate") or ""))
+    return raw_dir / sub / f"article_{task['url_hash']}.html"
 
 
 def launch_chromium(p, launch_opts: dict[str, Any]):
@@ -605,8 +636,10 @@ class ArticleScraper:
 
         **Idempotency**
 
-        For each task, expected HTML path is ``RAW_ARTICLES_DIR/article_<url_hash>.html``.
-        If that path exists and *force* is False:
+        For each task, expected HTML path is
+        ``RAW_ARTICLES_DIR/<MM_DD_YYYY>/article_<url_hash>.html`` (or the same
+        basename anywhere under ``RAW_ARTICLES_DIR`` from an older layout). If a
+        matching file exists and *force* is False:
 
         * No HTTP request is made for that URL.
         * ``skipped`` counter increments.
@@ -628,6 +661,12 @@ class ArticleScraper:
 
         Written with ``ensure_ascii=False`` so titles/snippets with non-ASCII
         characters round-trip legibly in editors.
+
+        **On-disk layout**
+
+        HTML is stored as ``RAW_ARTICLES_DIR/<MM_DD_YYYY>/article_<url_hash>.html``
+        (``MM_DD_YYYY`` from ``searchDate``). Skip-if-exists checks resolve the file
+        at any depth under ``RAW_ARTICLES_DIR``.
 
         Args:
             parsed_dir: Absolute or resolved directory containing ``*.json``.
@@ -693,9 +732,10 @@ class ArticleScraper:
             for i, task in enumerate(tasks):
                 url = task["url"]
                 file_name = f"article_{task['url_hash']}.html"
-                file_path = RAW_ARTICLES_DIR / file_name
+                existing = find_raw_article_path(RAW_ARTICLES_DIR, file_name)
+                dest_path = raw_article_dest_path_parsed(RAW_ARTICLES_DIR, task)
 
-                if not force and file_path.exists():
+                if not force and existing is not None:
                     logger.info(
                         f"[{i + 1}/{len(tasks)}] Skip (exists): {file_name} ← {url[:70]}..."
                     )
@@ -736,9 +776,10 @@ class ArticleScraper:
                         time.sleep(random.uniform(2.0, 5.0))
 
                         html_content = page.content()
-                        file_path.write_text(html_content, encoding="utf-8")
+                        dest_path.parent.mkdir(parents=True, exist_ok=True)
+                        dest_path.write_text(html_content, encoding="utf-8")
 
-                        logger.info(f"✓ Saved HTML to {file_name}")
+                        logger.info(f"✓ Saved HTML to {dest_path.relative_to(RAW_ARTICLES_DIR)}")
                         ok = True
                         downloaded += 1
                         manifest.append(self._manifest_row_parsed(task, file_name))

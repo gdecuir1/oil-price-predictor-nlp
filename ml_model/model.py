@@ -12,8 +12,9 @@ The model supports **two operating modes** controlled by the configuration:
 1. **Fine-tune mode** (``use_pretrained=True``, default)
    Loads a pre-trained transformer encoder (FinBERT, BERT, DistilBERT, etc.)
    from HuggingFace and attaches fresh multi-task classification heads.
-   This is the recommended mode given the relatively small dataset (~353
-   articles) — transfer learning from a finance-domain model provides
+   This is the recommended mode given a finite news corpus (on the order
+   of 1k+ raw HTML files; see ``ml_model/data_snapshot.json`` for the latest
+   count) — transfer learning from a finance-domain model provides
    strong initialisation that pseudo-labelling alone cannot match.
 
 2. **From-scratch mode** (``use_pretrained=False``)

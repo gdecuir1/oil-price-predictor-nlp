@@ -187,7 +187,8 @@ class OilMarketPredictor:
         """
         logger.info("Extracting articles from %s", articles_dir)
         articles = self.extractor.extract_all(articles_dir)
-        return self.predict_from_articles(articles, n_total=len(list(articles_dir.glob("*.html"))))
+        n_html = len(list(Path(articles_dir).rglob("article_*.html")))
+        return self.predict_from_articles(articles, n_total=n_html)
 
     def predict_from_articles(
         self,
