@@ -42,8 +42,9 @@ if str(_PROJECT_ROOT) not in sys.path:
 
 from ml_model.data.price_fetcher import get_price_labels
 from ml_model.data.window_builder import build_windows_with_metadata
-from ml_model.model_lstm import OilLSTMPredictor
+from ml_model.model_lstm import OilLSTMPredictorLegacy, load_model_from_checkpoint
 from ml_model.pipeline_config import PipelineConfig
+from ml_model.train_lstm import apply_feature_norm
 
 logging.basicConfig(
     level=logging.INFO,
@@ -51,7 +52,63 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-_LABEL_NAMES = ["Down", "Flat", "Up"]
+
+def _config_from_payload(payload: dict) -> PipelineConfig:
+    """Rebuild :class:`PipelineConfig` from a checkpoint dict (handles legacy keys)."""
+    fields = PipelineConfig.__dataclass_fields__
+    raw = payload.get("config", {})
+    kwargs = {k: v for k, v in raw.items() if k in fields}
+    if "embed_dim" in raw and "finbert_dim" not in kwargs:
+        kwargs["finbert_dim"] = 768
+    if "finbert_dim" not in kwargs:
+        kwargs["finbert_dim"] = 768
+    if raw.get("embed_dim", 768) > 768:
+        kwargs["use_keywords"] = True
+    elif "use_keywords" not in kwargs:
+        kwargs["use_keywords"] = False
+    if "label_mode" not in kwargs:
+        kwargs["label_mode"] = "ternary"
+    return PipelineConfig(**kwargs)
+
+
+def print_down_up_focus(
+    y_true: List[int],
+    y_pred: List[int],
+    config: PipelineConfig,
+) -> Dict[str, Any]:
+    """Metrics on decisive moves only (Down vs Up), for ternary or binary runs.
+
+    For binary mode this matches full test accuracy.  For ternary, excludes Flat (1).
+    """
+    names = list(config.class_names)
+    if config.label_mode == "binary":
+        pairs = list(zip(y_true, y_pred))
+        flat_idx = None
+    else:
+        flat_idx = 1
+        pairs = [(t, p) for t, p in zip(y_true, y_pred) if t != flat_idx]
+
+    if not pairs:
+        print("\n=== Down vs Up focus: no samples ===")
+        return {"accuracy": None, "n": 0}
+
+    correct = sum(1 for t, p in pairs if t == p)
+    acc = correct / len(pairs)
+    print(f"\n=== Down vs Up focus (label_mode={config.label_mode}) ===")
+    print(f"  Accuracy: {acc:.4f} ({correct}/{len(pairs)})")
+    if config.label_mode == "ternary":
+        for cls, name in [(0, "Down"), (2, "Up")]:
+            sub = [(t, p) for t, p in pairs if t == cls]
+            if sub:
+                r = sum(1 for t, p in sub if t == p) / len(sub)
+                print(f"  {name} recall: {r:.4f} ({sum(1 for t,p in sub if t==p)}/{len(sub)})")
+    else:
+        for i, name in enumerate(names):
+            sub = [(t, p) for t, p in pairs if t == i]
+            if sub:
+                r = sum(1 for t, p in sub if t == p) / len(sub)
+                print(f"  {name} recall: {r:.4f}")
+    return {"accuracy": acc, "n": len(pairs)}
 
 
 def parse_args() -> argparse.Namespace:
@@ -67,28 +124,25 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def load_checkpoint(path: Path) -> Tuple[OilLSTMPredictor, PipelineConfig, List[Dict], Dict]:
-    """Load model weights and metadata from pickle.
-
-    Args:
-        path: Checkpoint ``.pkl`` path.
+def load_checkpoint(path: Path) -> Tuple[Any, PipelineConfig, List[Dict], Dict, Any, Any, dict]:
+    """Load model (v3, v2, or legacy), config, and normalisation stats.
 
     Returns:
-        ``(model, config, train_history, test_metrics_from_train)``.
-
-    Raises:
-        FileNotFoundError: If path missing.
+        ``(model, config, train_history, test_metrics, feature_mean, feature_std, payload)``.
     """
     with open(path, "rb") as f:
         payload = pickle.load(f)
-    cfg_dict = payload["config"]
-    config = PipelineConfig(**{k: v for k, v in cfg_dict.items() if k in PipelineConfig.__dataclass_fields__})
-    model = OilLSTMPredictor(config)
-    model.load_state_dict(payload["model_state_dict"])
-    model.eval()
-    history = payload.get("train_history", [])
-    test_metrics = payload.get("test_metrics", {})
-    return model, config, history, test_metrics
+    config = _config_from_payload(payload)
+    model = load_model_from_checkpoint(payload, config)
+    return (
+        model,
+        config,
+        payload.get("train_history", []),
+        payload.get("test_metrics", {}),
+        payload.get("feature_mean"),
+        payload.get("feature_std"),
+        payload,
+    )
 
 
 def find_latest_checkpoint(ckpt_dir: Path) -> Path:
@@ -133,7 +187,7 @@ def chronological_test_slice(
 
 @torch.no_grad()
 def evaluate_classification(
-    model: OilLSTMPredictor,
+    model: torch.nn.Module,
     test_loader: DataLoader,
     config: PipelineConfig,
     device: torch.device,
@@ -164,22 +218,23 @@ def evaluate_classification(
         all_true.extend(yb.tolist())
         all_attn.append(attn.cpu().numpy())
 
-    cm = confusion_matrix(all_true, all_pred, labels=[0, 1, 2])
+    label_ids = list(range(config.num_classes))
+    names = list(config.class_names)
+    cm = confusion_matrix(all_true, all_pred, labels=label_ids)
     prec, rec, f1, support = precision_recall_fscore_support(
-        all_true, all_pred, labels=[0, 1, 2], zero_division=0
+        all_true, all_pred, labels=label_ids, zero_division=0
     )
     acc = accuracy_score(all_true, all_pred)
     macro_f1 = f1_score(all_true, all_pred, average="macro", zero_division=0)
 
-    # Majority-class baseline: always predict most frequent class in test set.
     if all_true:
-        majority_cls = max(range(3), key=lambda c: all_true.count(c))
+        majority_cls = max(label_ids, key=lambda c: all_true.count(c))
         baseline_acc = sum(1 for t in all_true if t == majority_cls) / len(all_true)
     else:
         baseline_acc = 0.0
 
     per_class = {}
-    for i, name in enumerate(_LABEL_NAMES):
+    for i, name in enumerate(names):
         per_class[name] = {
             "precision": float(prec[i]),
             "recall": float(rec[i]),
@@ -192,6 +247,7 @@ def evaluate_classification(
     print(f"Macro F1: {macro_f1:.4f}")
     print("Confusion matrix (rows=true, cols=pred):")
     print(cm)
+    print_down_up_focus(all_true, all_pred, config)
 
     return {
         "confusion_matrix": cm.tolist(),
@@ -207,7 +263,7 @@ def evaluate_classification(
 
 @torch.no_grad()
 def backtest_vs_actual(
-    model: OilLSTMPredictor,
+    model: torch.nn.Module,
     X_test: torch.Tensor,
     y_test: torch.Tensor,
     meta_test: List[Dict[str, Any]],
@@ -252,25 +308,29 @@ def backtest_vs_actual(
             idx_pos = idx_pos.start or 0
         prev_close = float(price_df.iloc[idx_pos - 1]["close"]) if idx_pos > 0 else np.nan
 
-        rows.append(
-            {
-                "prediction_date": pred_date.strftime("%Y-%m-%d"),
-                "actual_close": close_t,
-                "prev_close": prev_close,
-                "actual_log_return": log_ret,
-                "actual_direction": _LABEL_NAMES[true_cls],
-                "predicted_direction": _LABEL_NAMES[pred_cls],
-                "predicted_proba_down": float(probs[0]),
-                "predicted_proba_flat": float(probs[1]),
-                "predicted_proba_up": float(probs[2]),
-                "correct": pred_cls == true_cls,
-            }
-        )
+        names = list(config.class_names)
+        row = {
+            "prediction_date": pred_date.strftime("%Y-%m-%d"),
+            "actual_close": close_t,
+            "prev_close": prev_close,
+            "actual_log_return": log_ret,
+            "actual_direction": names[true_cls] if true_cls < len(names) else str(true_cls),
+            "predicted_direction": names[pred_cls] if pred_cls < len(names) else str(pred_cls),
+            "correct": pred_cls == true_cls,
+        }
+        if len(probs) >= 1:
+            row["predicted_proba_down"] = float(probs[0])
+        if len(probs) >= 2:
+            row["predicted_proba_flat"] = float(probs[1]) if config.num_classes == 3 else float("nan")
+            row["predicted_proba_up"] = float(probs[1]) if config.num_classes == 2 else float(probs[2])
+        if len(probs) >= 3:
+            row["predicted_proba_up"] = float(probs[2])
+        rows.append(row)
 
     df = pd.DataFrame(rows)
 
     print("\n=== Directional accuracy by actual class ===")
-    for cls_id, name in enumerate(_LABEL_NAMES):
+    for cls_id, name in enumerate(config.class_names):
         subset = df[df["actual_direction"] == name]
         if len(subset) == 0:
             print(f"  {name}: no test samples")
@@ -507,7 +567,7 @@ def main() -> None:
         ckpt_path = find_latest_checkpoint(config.checkpoint_path)
     logger.info("Using checkpoint: %s", ckpt_path)
 
-    model, ckpt_config, history, _ = load_checkpoint(ckpt_path)
+    model, ckpt_config, history, _, feat_mean, feat_std, payload = load_checkpoint(ckpt_path)
     # Prefer checkpoint config for consistency.
     if args.window is None and args.gap is None:
         config = ckpt_config
@@ -523,6 +583,9 @@ def main() -> None:
     X_test, y_test, meta_test = chronological_test_slice(
         X, y, meta, config.train_val_test_split
     )
+    X_test = apply_feature_norm(X_test, feat_mean, feat_std)
+    if X_test.size(-1) > 768 and isinstance(model, OilLSTMPredictorLegacy):
+        X_test = X_test[..., :768]
 
     test_loader = DataLoader(
         TensorDataset(X_test, y_test),

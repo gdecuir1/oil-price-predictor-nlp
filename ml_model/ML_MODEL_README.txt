@@ -9,6 +9,84 @@ readers who want implementation and design detail.
 
 
 ================================================================================
+0. SETUP — PREREQUISITES, DEPENDENCIES, AND HOW TO RUN
+================================================================================
+
+This section is for someone cloning the repo who needs to install packages and
+run train_lstm, evaluate_lstm, or predict_lstm from the project root (the
+directory that contains ml_model/ and raw_articles/).
+
+Prerequisites (not installed by pip)
+
+  • Python 3.10 or newer (3.11+ recommended).
+  • A virtual environment is optional but recommended:
+      python -m venv .venv
+      source .venv/bin/activate          # macOS / Linux
+      .venv\Scripts\activate             # Windows
+  • Scraped article HTML under raw_articles/<MM_DD_YYYY>/article_<hash>.html.
+    Training, evaluation, and prediction all read from this tree (read-only).
+  • Optional: parsed_articles/*.json for richer metadata in extracted text.
+  • Network access on first run:
+      - yfinance downloads price history for the label ticker (default USO).
+      - Hugging Face downloads ProsusAI/finbert (~400 MB) for article embeddings.
+  • For evaluate_lstm and predict_lstm: at least one trained checkpoint
+    ml_model/outputs/checkpoints/model_*.pkl (created by train_lstm).
+
+Install Python dependencies (all three LSTM entry points use the same set)
+
+  From the project root:
+
+    pip install -r ml_model/requirements.txt
+
+  Or install packages individually (minimum versions match requirements.txt):
+
+    pip install "torch>=2.0.0" "transformers>=4.30.0" "numpy>=1.24.0" \
+      "pandas>=2.0.0" "yfinance>=0.2.0" "scikit-learn>=1.3.0" \
+      "beautifulsoup4>=4.12.0" "trafilatura>=1.6.0" "readability-lxml>=0.8.1" \
+      "lxml>=4.9.0" "tqdm>=4.65.0"
+
+Package list and what each is used for
+
+  Package (pip name)     | Used by
+  -----------------------|--------------------------------------------------
+  torch                  | LSTM model, tensors, training/inference loops
+  transformers           | Frozen FinBERT encoder (window_builder)
+  numpy                  | Arrays, metrics, window tensors
+  pandas                 | Price labels, dates, backtest tables
+  yfinance               | Download/cache USO (or --ticker) prices
+  scikit-learn           | Accuracy, F1, confusion matrix, classification report
+  beautifulsoup4         | HTML text extraction fallback (html_extractor)
+  trafilatura            | Primary HTML article extraction
+  readability-lxml       | HTML extraction fallback
+  lxml                   | Parser backend for readability / BeautifulSoup
+  tqdm                   | Progress bars elsewhere in ml_model (optional for LSTM CLI)
+
+  Standard library only (no pip install): argparse, json, logging, pickle,
+  pathlib, datetime, dataclasses, etc.
+
+  evaluate_lstm and predict_lstm do not require extra packages beyond the list
+  above; they use the same data stack as train_lstm (FinBERT, HTML extraction,
+  yfinance).
+
+Typical first-time workflow
+
+  1. pip install -r ml_model/requirements.txt
+  2. Ensure raw_articles/ is populated (scraper or provided dataset).
+  3. python -m ml_model.train_lstm
+  4. python -m ml_model.evaluate_lstm
+  5. python -m ml_model.predict_lstm --end-date YYYY-MM-DD
+
+Artifacts created automatically on first use
+
+  ml_model/outputs/embed_cache_v3.pt — cached FinBERT + keyword day vectors (v3)
+  ml_model/outputs/price_cache.csv  — cached yfinance prices
+  ml_model/outputs/checkpoints/     — model_*.pkl after training
+  ml_model/outputs/reports/         — eval_*.html / eval_*.json after evaluation
+
+GPU is optional; all scripts default to CPU if CUDA is unavailable.
+
+
+================================================================================
 1. WHAT THIS PROJECT DOES
 ================================================================================
 
@@ -19,7 +97,8 @@ or go down on the next trading day we care about?
 Inputs are not prices during the window — they are the *text* of news articles
 saved as HTML under raw_articles/.  Each article is converted to a numerical
 embedding (a list of 768 numbers from FinBERT).  For each day in the window we
-average embeddings from up to ten articles.  Those daily vectors form a short
+average embeddings from up to twenty articles (FinBERT [CLS] per article in v2).
+  Those daily vectors form a short
 sequence fed into a bidirectional LSTM with attention.
 
 Outputs are three classes:
@@ -48,8 +127,31 @@ Limitations (read these before trusting outputs):
 
 
 ================================================================================
-2. MODEL TYPE AND DESIGN CHOICES
+2. MODEL TYPE AND DESIGN CHOICES (v3 — recommended)
 ================================================================================
+
+IMPORTANT: Checkpoints are not interchangeable across v1 / v2 / v3.  After
+upgrading, retrain with:
+
+    python -m ml_model.train_lstm
+
+Compare old vs new models:
+
+    python -m ml_model.compare_checkpoints
+
+What v3 fixes (after v2 test accuracy ~15%)
+  • **Smaller LSTM** again: 128 hidden, 2 layers, proj 256 (~500k params vs ~5.5M).
+  • **Keyword features** (8 groups: bullish, bearish, supply, demand, geo, etc.)
+    concatenated to each day vector — see data/keyword_extractor.py.
+  • **Binary labels (default)**: label_mode=binary drops Flat days; only Down vs Up.
+    Avoids the “model predicts Flat but test has no Flat” failure mode.
+  • **Ternary option**: label_mode=ternary with flat_band_pct=0.35 (narrower band
+    than 0.5 → fewer Flat labels than before).
+  • Masked attention, CLS pooling, feature normalisation, weighted sampling.
+  • Early stopping on **val_loss** (more stable on tiny validation sets).
+  • **Down vs Up focus** metrics printed in train/eval when ternary is used.
+
+Embeddings cache: ml_model/outputs/embed_cache_v3.pt (768 FinBERT + 8 keywords = 776 dims).
 
 What is an LSTM?
   A Long Short-Term Memory network processes sequences step by step and keeps a
@@ -84,9 +186,9 @@ Why not train a full transformer from scratch?
   windows, a from-scratch transformer would overfit and train slowly.  Frozen
   FinBERT + small LSTM is the pragmatic trade-off.
 
-Why a projection layer (768 → lstm_hidden) before the LSTM?
-  It cuts parameter count and speeds each epoch.  The LSTM operates in a
-  128-dimensional space by default instead of 768.
+Why a projection layer (768 → proj_dim → lstm_hidden) before the LSTM?
+  FinBERT vectors are high-dimensional; a learned bottleneck lets the LSTM focus
+  on compressed temporal patterns.  Default proj_dim=512, lstm_hidden=256.
 
 Attention math (additive / Bahdanau-style)
   For each day t, LSTM output vector h_t (size lstm_hidden*2 if bidirectional).
@@ -117,13 +219,18 @@ Text extraction
   Short or empty extractions are skipped.
 
 FinBERT embedding (frozen)
-  Each article: tokenise (max 256 tokens), run FinBERT, mean-pool token hidden
-  states over non-padding positions → vector (768,).
+  Each article: tokenise (max 256 tokens), run FinBERT.  Default article_pooling
+  is "cls": use the [CLS] token embedding (index 0).
+
+Keyword features (v3)
+  For each article, count normalised hits in 8 oil-domain keyword groups
+  (bullish, bearish, supply_up, supply_down, demand_up, demand_down,
+  geopolitical, volatility).  Day-level keyword vector = mean over articles.
+  Concatenated: day_vector = [FinBERT_768 | keywords_8] → input_dim 776.
 
 Per-day embedding
-  Up to max_articles_per_day articles (default 10), sorted filenames for
-  reproducibility.  day_embedding = mean(article vectors).  If no articles:
-  zero vector of length 768 (logged as zero-padded day).
+  Up to max_articles_per_day articles (default 20).  If no articles: zero vector;
+  LSTM attention mask ignores those days.
 
 Price labels (ground truth)
   price_fetcher downloads USO (or --ticker) via yfinance, caches CSV.
@@ -141,9 +248,13 @@ Sliding window sample (worked example)
   X shape (5, 768), y in {0,1,2}.  Samples are built for every prediction date
   where price labels exist and the window can be formed.
 
+Label modes
+  binary (default): training samples only on days USO moved Up or Down; Flat
+  days are skipped.  Targets are 0=Down, 1=Up.
+  ternary: 0=Down, 1=Flat, 2=Up using flat_band_pct on log returns.
+
 Embedding cache
-  ml_model/outputs/embed_cache.pt stores { "YYYY-MM-DD": Tensor(768) } so
-  reruns skip FinBERT for days already embedded.
+  ml_model/outputs/embed_cache_v3.pt stores { "YYYY-MM-DD": Tensor(776) }.
 
 
 ================================================================================
@@ -161,24 +272,38 @@ Class weighting
   reduces the trivial strategy of always predicting Flat.
 
 Early stopping
-  Training stops if validation loss fails to improve for `patience` epochs (default
-  6), restoring the best weights.  That limits overfitting when the model
-  memorises train noise.
+  Training stops if the chosen metric fails to improve for `patience` epochs
+  (default 10).  Default early_stopping_metric is val_macro_f1 so the saved
+  checkpoint favours balanced Up/Flat/Down performance, not only low loss.
 
-How to run training (from project root):
+Feature normalisation
+  When normalize_features=True, each embedding dimension is z-scored using
+  mean and std from the training split only.  feature_mean and feature_std are
+  stored in the .pkl so predict_lstm and evaluate_lstm apply the same transform.
 
-  pip install -r ml_model/requirements.txt
+Weighted sampling
+  use_weighted_sampler=True oversamples minority direction classes each epoch,
+  complementing use_class_weights in the loss.
+
+How to run training (from project root)
+
+  See section 0 for install and prerequisites.  Then:
 
   python -m ml_model.train_lstm
 
   python -m ml_model.train_lstm --window 3 --gap 1 --epochs 20 --ticker USO
+
+  python -m ml_model.compare_checkpoints
+
+  CLI flags: --window, --gap, --epochs, --ticker (override pipeline_config defaults).
+  Edit pipeline_config.py for label_mode ("binary" | "ternary"), use_keywords, etc.
 
 Outputs:
   ml_model/outputs/checkpoints/model_<timestamp>_<window>w_<gap>g.pkl
   ml_model/outputs/checkpoints/config_<timestamp>.json
 
 Pickle payload keys: model_state_dict, config, train_history, embed_cache_path,
-test_metrics.
+test_metrics, feature_mean, feature_std.
 
 
 ================================================================================
@@ -207,12 +332,68 @@ Walk-forward cross-validation (concept)
   split; you can repeat training with different cutoff dates to approximate
   walk-forward manually.
 
-Generate evaluation report:
+How to run evaluation (evaluate_lstm)
 
-  python -m ml_model.evaluate_lstm
-  python -m ml_model.evaluate_lstm --checkpoint ml_model/outputs/checkpoints/model_....pkl
+  Prerequisites: same pip install and data as section 0; a checkpoint from
+  train_lstm (or pass --checkpoint explicitly).
 
-Writes ml_model/outputs/reports/eval_<timestamp>.html and .json.
+  From the project root:
+
+    python -m ml_model.evaluate_lstm
+
+  Uses the newest model_*.pkl in ml_model/outputs/checkpoints/ if --checkpoint
+  is omitted.  Rebuilds test windows with FinBERT (reuses embed_cache.pt when
+  possible) and compares predictions to held-out chronological test dates.
+
+  Examples:
+
+    python -m ml_model.evaluate_lstm --checkpoint ml_model/outputs/checkpoints/model_20260514_120000_5w_0g.pkl
+    python -m ml_model.evaluate_lstm --window 3 --gap 1
+
+  CLI flags: --checkpoint PATH, --window INT, --gap INT (window/gap must match
+  how the checkpoint was trained unless you intentionally experiment).
+
+  Outputs (created under ml_model/outputs/reports/):
+
+    eval_<timestamp>.html  — confusion matrix, backtest table, attention heatmap
+    eval_<timestamp>.json  — same metrics in machine-readable form
+
+
+================================================================================
+5B. SINGLE-DATE INFERENCE (predict_lstm)
+================================================================================
+
+predict_lstm scores one prediction date: it loads a checkpoint, builds the
+news window ending before that date (per window_days and gap_days), runs the
+BiLSTM, and prints the predicted class, probabilities, attention weights, and
+article filenames per day.
+
+Prerequisites
+
+  Same dependencies as section 0 (pip install -r ml_model/requirements.txt).
+  Requires raw_articles/ folders for each day in the window.  Requires a
+  trained checkpoint (newest model_*.pkl by default).
+
+How to run (from project root)
+
+  python -m ml_model.predict_lstm --end-date YYYY-MM-DD
+
+  --end-date is the prediction date (the day whose oil direction is predicted).
+  News days are computed backward from that date using window_days and gap_days
+  in the checkpoint config (overridable with --window / --gap).
+
+  Examples:
+
+    python -m ml_model.predict_lstm --end-date 2026-05-10
+    python -m ml_model.predict_lstm --end-date 2026-05-10 --checkpoint ml_model/outputs/checkpoints/model_20260514_120000_5w_0g.pkl
+    python -m ml_model.predict_lstm --end-date 2026-05-10 --window 5 --gap 0
+
+  CLI flags: --end-date (required), --checkpoint PATH, --window INT, --gap INT.
+
+  Output is printed to the terminal (class name, probabilities, attention per
+  day, article paths).  If price data exists for that date, actual direction
+  and match YES/NO are shown; dates beyond price_cache or non-trading days may
+  have no ground-truth label.
 
 
 ================================================================================
@@ -223,32 +404,25 @@ All defaults live in pipeline_config.PipelineConfig.
 
 Parameter              | Default              | Description
 -----------------------|----------------------|------------------------------------------
-window_days            | 5                    | Number of news days in each input sequence
-gap_days               | 0                    | Days between last news day and prediction date
-horizon_days           | 1                    | Reserved for multi-day targets (same-day label now)
-flat_band_pct          | 0.5                  | Flat zone half-width in percent on log return
-price_ticker           | USO                  | yfinance symbol for labels
-price_start            | 2025-04-28           | Price history start
-price_end              | 2026-05-13           | Price history end
-embedding_model        | ProsusAI/finbert     | Frozen HuggingFace encoder
-embed_dim              | 768                  | FinBERT hidden size
-max_articles_per_day   | 10                   | Cap articles embedded per day
-max_tokens_per_article | 256                  | Token cap per article
-lstm_hidden            | 128                  | LSTM hidden units per direction
-lstm_layers            | 2                    | Stacked LSTM depth (use 1 if slow)
-dropout                | 0.3                  | Dropout in proj/LSTM/head
-bidirectional          | True                 | Forward+backward LSTM
-train_val_test_split   | (0.80, 0.10, 0.10)   | Chronological fractions
-batch_size             | 16                   | Minibatch size
-epochs                 | 30                   | Max epochs
-lr                     | 2e-4                 | AdamW learning rate
-weight_decay           | 1e-4                 | L2 regularisation
-patience               | 6                    | Early stopping patience
-use_class_weights      | True                 | Balance loss across classes
-checkpoint_dir         | ml_model/outputs/... | Saved models
-report_dir             | ml_model/outputs/... | HTML/JSON reports
-embed_cache_path       | .../embed_cache.pt   | Day embedding cache
-price_cache_path       | .../price_cache.csv  | Offline price CSV
+label_mode             | binary               | binary (Down/Up only) or ternary
+flat_band_pct          | 0.35                 | Flat band for ternary labels (%)
+window_days            | 5                    | News days per sample
+gap_days               | 0                    | Gap before prediction date
+use_keywords           | True                 | Append 8 keyword features per day
+finbert_dim            | 768                  | FinBERT vector size
+input_dim              | 776                  | finbert_dim + keyword_dim
+max_articles_per_day   | 20                   | Articles embedded per day
+article_pooling        | cls                  | cls or mean per article
+proj_dim               | 256                  | Projection width
+lstm_hidden            | 128                  | LSTM hidden size
+lstm_layers            | 2                    | LSTM depth
+mlp_hidden             | 64                   | Classifier hidden size
+dropout                | 0.3                  | Dropout rate
+epochs                 | 50                   | Max training epochs
+patience               | 8                    | Early stopping patience
+early_stopping_metric  | val_loss             | val_loss or val_macro_f1
+embed_cache_path       | .../embed_cache_v3.pt| Day vector cache
+compare_checkpoints    | (script)             | python -m ml_model.compare_checkpoints
 
 
 ================================================================================
@@ -312,7 +486,9 @@ Parameter sensitivity (fill in after you run experiments):
 
 pipeline_config.py       — Dataclass of all hyperparameters and paths for LSTM pipeline.
 data/price_fetcher.py    — Downloads USO prices; log returns; 3-class labels; CSV cache.
-data/window_builder.py   — HTML → frozen FinBERT → daily vectors → sliding (X, y).
+  data/keyword_extractor.py — Oil-domain keyword hit features per article/day.
+  data/window_builder.py   — HTML → FinBERT + keywords → sliding (X, y); binary filter.
+  compare_checkpoints.py   — Side-by-side test metrics for two .pkl checkpoints.
 data/html_extractor.py   — Shared HTML text extraction (used by window_builder).
 data/preprocessor.py     — Tokeniser utilities for the transformer stack (legacy path).
 data/dataset.py          — PyTorch dataset for the multi-task transformer (legacy path).
@@ -342,8 +518,16 @@ outputs/price_cache.csv  — Cached yfinance prices (created on first label fetc
 QUICK COMMAND REFERENCE
 ================================================================================
 
+  # One-time setup (project root)
+  pip install -r ml_model/requirements.txt
+
+  # Train → evaluate → predict
   python -m ml_model.train_lstm
   python -m ml_model.evaluate_lstm
   python -m ml_model.predict_lstm --end-date 2026-05-10
+
+  # Optional: point to a specific checkpoint
+  python -m ml_model.evaluate_lstm --checkpoint ml_model/outputs/checkpoints/model_<timestamp>_5w_0g.pkl
+  python -m ml_model.predict_lstm --end-date 2026-05-10 --checkpoint ml_model/outputs/checkpoints/model_<timestamp>_5w_0g.pkl
 
 ================================================================================

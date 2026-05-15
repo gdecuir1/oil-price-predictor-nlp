@@ -20,7 +20,9 @@ import logging
 import pickle
 import sys
 from pathlib import Path
-from typing import Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
+
+import torch.nn
 
 import pandas as pd
 import torch
@@ -31,8 +33,10 @@ if str(_PROJECT_ROOT) not in sys.path:
 
 from ml_model.data.price_fetcher import get_price_labels
 from ml_model.data.window_builder import build_single_window
-from ml_model.model_lstm import OilLSTMPredictor
+from ml_model.evaluate_lstm import _config_from_payload
+from ml_model.model_lstm import OilLSTMPredictorLegacy, load_model_from_checkpoint
 from ml_model.pipeline_config import PipelineConfig
+from ml_model.train_lstm import apply_feature_norm
 
 logging.basicConfig(
     level=logging.INFO,
@@ -40,7 +44,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-_LABEL_NAMES = ["Down", "Flat", "Up"]
 
 
 def parse_args() -> argparse.Namespace:
@@ -57,26 +60,13 @@ def parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
-def load_checkpoint(path: Path) -> Tuple[OilLSTMPredictor, PipelineConfig]:
-    """Load model and config from pickle checkpoint.
-
-    Args:
-        path: ``.pkl`` file path.
-
-    Returns:
-        ``(model, config)`` in eval mode.
-
-    Raises:
-        FileNotFoundError: If checkpoint missing.
-    """
+def load_checkpoint(path: Path) -> Tuple[Any, PipelineConfig, Dict[str, Any]]:
+    """Load model, config, and full pickle payload."""
     with open(path, "rb") as f:
         payload = pickle.load(f)
-    fields = PipelineConfig.__dataclass_fields__
-    config = PipelineConfig(**{k: v for k, v in payload["config"].items() if k in fields})
-    model = OilLSTMPredictor(config)
-    model.load_state_dict(payload["model_state_dict"])
-    model.eval()
-    return model, config
+    config = _config_from_payload(payload)
+    model = load_model_from_checkpoint(payload, config)
+    return model, config, payload
 
 
 def find_latest_checkpoint(ckpt_dir: Path) -> Path:
@@ -99,7 +89,7 @@ def find_latest_checkpoint(ckpt_dir: Path) -> Path:
 
 @torch.no_grad()
 def run_prediction(
-    model: OilLSTMPredictor,
+    model: torch.nn.Module,
     X: torch.Tensor,
     config: PipelineConfig,
     device: torch.device,
@@ -129,8 +119,7 @@ def main() -> None:
     ckpt = args.checkpoint or find_latest_checkpoint(PipelineConfig().checkpoint_path)
     logger.info("Checkpoint: %s", ckpt)
 
-    model, config = load_checkpoint(ckpt)
-    # Override window geometry for data building (model accepts variable sequence length).
+    model, config, payload = load_checkpoint(ckpt)
     if args.window is not None:
         config.window_days = args.window
     if args.gap is not None:
@@ -143,18 +132,23 @@ def main() -> None:
     last_price_date = pd.Timestamp(price_df.index.max()).normalize()
 
     X, true_label, meta = build_single_window(config, args.end_date, price_df)
+    X = apply_feature_norm(X, payload.get("feature_mean"), payload.get("feature_std"))
+    if X.size(-1) > 768 and isinstance(model, OilLSTMPredictorLegacy):
+        X = X[..., :768]
 
     pred_cls, probs, attn = run_prediction(model, X, config, device)
+    names = list(config.class_names)
 
     print("\n" + "=" * 60)
     print(f"Prediction date: {meta['prediction_date']}")
-    print(f"Predicted direction: {_LABEL_NAMES[pred_cls]} (class {pred_cls})")
-    print(f"Probabilities — Down: {probs[0]:.4f}  Flat: {probs[1]:.4f}  Up: {probs[2]:.4f}")
+    print(f"Predicted direction: {names[pred_cls]} (class {pred_cls})")
+    prob_parts = [f"{names[i]}: {probs[i]:.4f}" for i in range(len(names))]
+    print("Probabilities — " + "  ".join(prob_parts))
 
     if pred_ts > last_price_date:
         print("\nNote: end-date is beyond downloaded price history — no ground-truth label.")
     elif true_label is not None:
-        print(f"Actual direction:    {_LABEL_NAMES[true_label]} (class {true_label})")
+        print(f"Actual direction:    {names[true_label]} (class {true_label})")
         print(f"Match: {'YES' if pred_cls == true_label else 'NO'}")
     else:
         print("\nNo price label available for this date (non-trading day or missing data).")

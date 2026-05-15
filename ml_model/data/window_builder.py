@@ -53,6 +53,7 @@ from transformers import AutoModel, AutoTokenizer
 
 from ..pipeline_config import PipelineConfig
 from .html_extractor import HTMLArticleExtractor
+from .keyword_extractor import aggregate_keyword_vectors, extract_keyword_vector
 
 logger = logging.getLogger(__name__)
 
@@ -183,11 +184,12 @@ def _embed_text(text: str, config: PipelineConfig) -> Tensor:
 
     with torch.no_grad():
         outputs = model(input_ids=input_ids, attention_mask=attention_mask)
-        # last_hidden_state: (1, seq_len, hidden)
         hidden = outputs.last_hidden_state.squeeze(0)
         mask = attention_mask.squeeze(0).bool()
-        # Mean pool only over non-padding tokens.
-        if mask.any():
+        # CLS token (index 0) is standard for sentence classification with BERT/FinBERT.
+        if config.article_pooling == "cls":
+            pooled = hidden[0]
+        elif mask.any():
             pooled = hidden[mask].mean(dim=0)
         else:
             pooled = hidden.mean(dim=0)
@@ -216,26 +218,34 @@ def _day_embedding(
     """
     key = day.strftime("%Y-%m-%d")
     if key in cache:
-        return cache[key], [], False
+        cached = cache[key]
+        if cached.numel() == config.input_dim:
+            return cached, [], False
 
     paths = _load_day_article_paths(raw_root, day)
     filenames: List[str] = []
-    vectors: List[Tensor] = []
+    finbert_vectors: List[Tensor] = []
+    keyword_vectors: List[Tensor] = []
 
-    # Respect max articles per day — take first N after sort for reproducibility.
     for path in paths[: config.max_articles_per_day]:
         result = extractor.extract(path)
         if result and result.get("text"):
-            vec = _embed_text(result["text"], config)
-            vectors.append(vec)
+            text = result["text"]
+            finbert_vectors.append(_embed_text(text, config))
+            if config.use_keywords:
+                keyword_vectors.append(extract_keyword_vector(text))
             filenames.append(path.name)
 
-    if vectors:
-        day_vec = torch.stack(vectors, dim=0).mean(dim=0)
+    if finbert_vectors:
+        fb = torch.stack(finbert_vectors, dim=0).mean(dim=0)
+        if config.use_keywords:
+            kw = aggregate_keyword_vectors(keyword_vectors)
+            day_vec = torch.cat([fb, kw], dim=0)
+        else:
+            day_vec = fb
         zero_padded = False
     else:
-        # No news that day: use zero vector so LSTM still receives fixed shape.
-        day_vec = torch.zeros(config.embed_dim)
+        day_vec = torch.zeros(config.input_dim)
         zero_padded = True
 
     cache[key] = day_vec
@@ -269,6 +279,23 @@ def _save_embed_cache(path: Path, cache: Dict[str, Tensor]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     torch.save(cache, path)
     logger.info("Saved embedding cache: %d days → %s", len(cache), path)
+
+
+def _label_for_sample(ternary_label: int, config: PipelineConfig) -> Optional[int]:
+    """Map price label to model target; return None to skip (Flat in binary mode).
+
+    Args:
+        ternary_label: 0=Down, 1=Flat, 2=Up from price_fetcher.
+        config: Pipeline label_mode.
+
+    Returns:
+        Binary 0/1 or ternary 0/1/2, or None if sample should be dropped.
+    """
+    if config.label_mode == "binary":
+        if ternary_label == 1:
+            return None
+        return 0 if ternary_label == 0 else 1
+    return ternary_label
 
 
 def build_windows(
@@ -349,7 +376,11 @@ def build_windows_with_metadata(
         if len(day_tensors) != config.window_days:
             continue
 
-        label = int(price_df.loc[pred_date, "label"])
+        ternary = int(price_df.loc[pred_date, "label"])
+        label = _label_for_sample(ternary, config)
+        if label is None:
+            continue
+
         samples_x.append(torch.stack(day_tensors, dim=0))
         samples_y.append(label)
         metadata.append(
@@ -358,6 +389,7 @@ def build_windows_with_metadata(
                 "window_dates": [d.strftime("%Y-%m-%d") for d in wdates],
                 "article_filenames": day_files,
                 "zero_padded_days": sample_zero_days,
+                "ternary_label": ternary,
             }
         )
 
@@ -374,8 +406,15 @@ def build_windows_with_metadata(
     # Class distribution logging.
     unique, counts = torch.unique(y, return_counts=True)
     dist = {int(u.item()): int(c.item()) for u, c in zip(unique, counts)}
-    logger.info("Built %d window samples; class distribution: %s", len(y), dist)
+    logger.info(
+        "Built %d window samples (label_mode=%s); class distribution: %s",
+        len(y),
+        config.label_mode,
+        dist,
+    )
     logger.info("Total zero-padded (no article) days across samples: %d", zero_day_count)
+    if config.use_keywords:
+        logger.info("Day vectors include %d keyword features", config.keyword_dim)
 
     return X, y, metadata
 
@@ -420,7 +459,7 @@ def build_single_window(
     if price_df is not None:
         pred_norm = pd.Timestamp(pred).normalize()
         if pred_norm in price_df.index:
-            label = int(price_df.loc[pred_norm, "label"])
+            label = _label_for_sample(int(price_df.loc[pred_norm, "label"]), config)
 
     meta = {
         "prediction_date": pred.strftime("%Y-%m-%d"),

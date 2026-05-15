@@ -42,7 +42,7 @@ from sklearn.metrics import (
     confusion_matrix,
     f1_score,
 )
-from torch.utils.data import DataLoader, TensorDataset
+from torch.utils.data import DataLoader, TensorDataset, WeightedRandomSampler
 
 # Project root on path for ``python -m ml_model.train_lstm``.
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -52,6 +52,7 @@ if str(_PROJECT_ROOT) not in sys.path:
 from ml_model.data.price_fetcher import get_price_labels
 from ml_model.data.window_builder import build_windows
 from ml_model.model_lstm import OilLSTMPredictor
+from torch import nn as _nn
 from ml_model.pipeline_config import PipelineConfig
 
 logging.basicConfig(
@@ -150,23 +151,68 @@ def _log_class_dist(name: str, y: torch.Tensor) -> None:
     logger.info("  %s class distribution: %s", name, dist)
 
 
-def compute_class_weights(y_train: torch.Tensor) -> torch.Tensor:
-    """Inverse-frequency weights: weight_i = N / (3 * count_i).
+def compute_class_weights(y_train: torch.Tensor, num_classes: int) -> torch.Tensor:
+    """Inverse-frequency weights: weight_i = N / (C * count_i).
 
     Args:
         y_train: Training labels only.
+        num_classes: Number of classes (2 or 3).
 
     Returns:
-        Float tensor of shape ``(3,)`` for ``CrossEntropyLoss(weight=...)``.
+        Float tensor of shape ``(num_classes,)`` for ``CrossEntropyLoss``.
     """
     n = len(y_train)
-    weights = torch.ones(3, dtype=torch.float32)
-    for cls in range(3):
+    weights = torch.ones(num_classes, dtype=torch.float32)
+    for cls in range(num_classes):
         count = (y_train == cls).sum().item()
         if count > 0:
-            weights[cls] = n / (3.0 * count)
+            weights[cls] = n / (float(num_classes) * count)
     logger.info("Class weights (train): %s", weights.tolist())
     return weights
+
+
+def apply_feature_norm(
+    X: torch.Tensor,
+    feature_mean: Optional[torch.Tensor],
+    feature_std: Optional[torch.Tensor],
+) -> torch.Tensor:
+    """Apply training-set z-score stored in a checkpoint.
+
+    Args:
+        X: Features ``(N, T, D)``.
+        feature_mean: ``(1, 1, D)`` or None to skip.
+        feature_std: ``(1, 1, D)`` or None to skip.
+
+    Returns:
+        Normalised tensor (or ``X`` unchanged).
+    """
+    if feature_mean is None or feature_std is None:
+        return X
+    return (X - feature_mean) / feature_std.clamp(min=1e-6)
+
+
+def normalize_features(
+    X_train: torch.Tensor,
+    X_val: torch.Tensor,
+    X_test: torch.Tensor,
+) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    """Z-score normalise using training-set mean/std over (time, feature).
+
+    Args:
+        X_train, X_val, X_test: Feature tensors ``(N, T, D)``.
+
+    Returns:
+        Normalised tensors plus ``feature_mean`` and ``feature_std`` (1, 1, D).
+    """
+    mean = X_train.mean(dim=(0, 1), keepdim=True)
+    std = X_train.std(dim=(0, 1), keepdim=True).clamp(min=1e-6)
+    return (
+        (X_train - mean) / std,
+        (X_val - mean) / std,
+        (X_test - mean) / std,
+        mean.cpu(),
+        std.cpu(),
+    )
 
 
 def make_loader(
@@ -174,6 +220,7 @@ def make_loader(
     y: torch.Tensor,
     batch_size: int,
     shuffle: bool,
+    weighted_sampler: bool = False,
 ) -> DataLoader:
     """Wrap tensors in a :class:`DataLoader`.
 
@@ -181,21 +228,30 @@ def make_loader(
         X: Feature tensor.
         y: Label tensor.
         batch_size: Batch size from config.
-        shuffle: True only for training (after chronological split).
+        shuffle: Used when ``weighted_sampler`` is False.
+        weighted_sampler: Oversample minority classes in training.
 
     Returns:
         DataLoader yielding ``(X_batch, y_batch)``.
     """
     ds = TensorDataset(X, y)
+    if weighted_sampler:
+        counts: Dict[int, int] = {}
+        for label in y.tolist():
+            counts[label] = counts.get(label, 0) + 1
+        weights = [1.0 / counts[int(lbl)] for lbl in y.tolist()]
+        sampler = WeightedRandomSampler(weights, num_samples=len(weights), replacement=True)
+        return DataLoader(ds, batch_size=batch_size, sampler=sampler)
     return DataLoader(ds, batch_size=batch_size, shuffle=shuffle)
 
 
 def train_one_epoch(
-    model: OilLSTMPredictor,
+    model: _nn.Module,
     loader: DataLoader,
     criterion: nn.Module,
     optimizer: torch.optim.Optimizer,
     device: torch.device,
+    max_grad_norm: float = 0.0,
 ) -> float:
     """Run one training epoch; return mean loss.
 
@@ -205,6 +261,7 @@ def train_one_epoch(
         criterion: Loss function.
         optimizer: AdamW optimiser.
         device: CPU or CUDA.
+        max_grad_norm: Clip global gradient norm; 0 disables clipping.
 
     Returns:
         Average loss over batches.
@@ -218,6 +275,8 @@ def train_one_epoch(
         logits, _ = model(xb)
         loss = criterion(logits, yb)
         loss.backward()
+        if max_grad_norm > 0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_grad_norm)
         optimizer.step()
         total_loss += loss.item()
         n_batches += 1
@@ -226,7 +285,7 @@ def train_one_epoch(
 
 @torch.no_grad()
 def evaluate_epoch(
-    model: OilLSTMPredictor,
+    model: _nn.Module,
     loader: DataLoader,
     criterion: nn.Module,
     device: torch.device,
@@ -265,13 +324,13 @@ def evaluate_epoch(
 
 
 def run_training_loop(
-    model: OilLSTMPredictor,
+    model: _nn.Module,
     train_loader: DataLoader,
     val_loader: DataLoader,
     config: PipelineConfig,
     class_weights: Optional[torch.Tensor],
     device: torch.device,
-) -> Tuple[OilLSTMPredictor, List[Dict[str, Any]]]:
+) -> Tuple[_nn.Module, List[Dict[str, Any]]]:
     """Full training with early stopping and best-weight restore.
 
     Args:
@@ -286,7 +345,10 @@ def run_training_loop(
         Tuple of ``(model_with_best_weights, train_history)``.
     """
     weight = class_weights.to(device) if class_weights is not None else None
-    criterion = nn.CrossEntropyLoss(weight=weight)
+    criterion = nn.CrossEntropyLoss(
+        weight=weight,
+        label_smoothing=config.label_smoothing,
+    )
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=config.lr,
@@ -296,13 +358,21 @@ def run_training_loop(
         optimizer, mode="min", factor=0.5, patience=2
     )
 
-    best_val_loss = float("inf")
+    maximize_f1 = config.early_stopping_metric == "val_macro_f1"
+    best_score = float("-inf") if maximize_f1 else float("inf")
     best_state: Optional[Dict[str, torch.Tensor]] = None
     patience_counter = 0
     history: List[Dict[str, Any]] = []
 
     for epoch in range(1, config.epochs + 1):
-        train_loss = train_one_epoch(model, train_loader, criterion, optimizer, device)
+        train_loss = train_one_epoch(
+            model,
+            train_loader,
+            criterion,
+            optimizer,
+            device,
+            max_grad_norm=config.max_grad_norm,
+        )
         val_loss, val_acc, val_f1 = evaluate_epoch(
             model, val_loader, criterion, device
         )
@@ -326,14 +396,20 @@ def run_training_loop(
             val_f1,
         )
 
-        if val_loss < best_val_loss:
-            best_val_loss = val_loss
+        score = val_f1 if maximize_f1 else val_loss
+        improved = score > best_score if maximize_f1 else score < best_score
+        if improved:
+            best_score = score
             best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
             patience_counter = 0
         else:
             patience_counter += 1
             if patience_counter >= config.patience:
-                logger.info("Early stopping at epoch %d", epoch)
+                logger.info(
+                    "Early stopping at epoch %d (metric=%s)",
+                    epoch,
+                    config.early_stopping_metric,
+                )
                 break
 
     if best_state is not None:
@@ -343,7 +419,8 @@ def run_training_loop(
 
 @torch.no_grad()
 def evaluate_test_set(
-    model: OilLSTMPredictor,
+    model: _nn.Module,
+    config: PipelineConfig,
     test_loader: DataLoader,
     device: torch.device,
 ) -> Dict[str, Any]:
@@ -351,6 +428,7 @@ def evaluate_test_set(
 
     Args:
         model: Trained model.
+        config: Pipeline config (num_classes, class names).
         test_loader: Test loader.
         device: Compute device.
 
@@ -367,29 +445,36 @@ def evaluate_test_set(
         all_preds.extend(logits.argmax(dim=1).cpu().tolist())
         all_true.extend(yb.tolist())
 
-    cm = confusion_matrix(all_true, all_preds, labels=[0, 1, 2])
+    labels = list(range(config.num_classes))
+    names = list(config.class_names)
+    cm = confusion_matrix(all_true, all_preds, labels=labels)
     report = classification_report(
-        all_true, all_preds, labels=[0, 1, 2],
-        target_names=["Down", "Flat", "Up"],
+        all_true, all_preds, labels=labels,
+        target_names=names,
         zero_division=0,
         output_dict=True,
     )
     acc = accuracy_score(all_true, all_preds)
+    macro_f1 = f1_score(all_true, all_preds, average="macro", zero_division=0)
 
     print("\n=== Test confusion matrix (rows=true, cols=pred) ===")
-    print("       Down  Flat   Up")
-    for i, row_name in enumerate(["Down", "Flat", "Up"]):
-        print(f"{row_name:5}  {cm[i]}")
+    header = "".join(f"{n:>8}" for n in names)
+    print(f"       {header}")
+    for i, row_name in enumerate(names):
+        print(f"{row_name:8}  {cm[i]}")
 
     print("\n=== Per-class precision / recall / F1 ===")
     print(classification_report(
-        all_true, all_preds, labels=[0, 1, 2],
-        target_names=["Down", "Flat", "Up"],
+        all_true, all_preds, labels=labels,
+        target_names=names,
         zero_division=0,
     ))
+    if config.label_mode == "ternary":
+        _print_down_up_only_metrics(all_true, all_preds)
 
     return {
         "accuracy": acc,
+        "macro_f1": macro_f1,
         "confusion_matrix": cm.tolist(),
         "classification_report": report,
         "y_true": all_true,
@@ -397,11 +482,28 @@ def evaluate_test_set(
     }
 
 
+def _print_down_up_only_metrics(y_true: List[int], y_pred: List[int]) -> None:
+    """Print accuracy on non-Flat test rows (ternary labels 0 and 2 only)."""
+    pairs = [(t, p) for t, p in zip(y_true, y_pred) if t != 1]
+    if not pairs:
+        return
+    correct = sum(1 for t, p in pairs if t == p)
+    print(f"\n=== Down vs Up only (excluding Flat) ===")
+    print(f"  Accuracy: {correct / len(pairs):.4f} ({correct}/{len(pairs)})")
+    for cls, name in [(0, "Down"), (2, "Up")]:
+        sub = [(t, p) for t, p in pairs if t == cls]
+        if sub:
+            acc = sum(1 for t, p in sub if t == p) / len(sub)
+            print(f"  {name} recall: {acc:.4f} ({sum(1 for t,p in sub if t==p)}/{len(sub)})")
+
+
 def save_checkpoint(
     model: OilLSTMPredictor,
     config: PipelineConfig,
     history: List[Dict[str, Any]],
     test_metrics: Dict[str, Any],
+    feature_mean: Optional[torch.Tensor] = None,
+    feature_std: Optional[torch.Tensor] = None,
 ) -> Path:
     """Save pickle checkpoint and JSON config per spec.
 
@@ -427,6 +529,8 @@ def save_checkpoint(
         "train_history": history,
         "embed_cache_path": config.embed_cache_path,
         "test_metrics": test_metrics,
+        "feature_mean": feature_mean,
+        "feature_std": feature_std,
     }
     with open(ckpt_path, "wb") as f:
         pickle.dump(payload, f)
@@ -459,11 +563,25 @@ def main() -> None:
         X, y, config.train_val_test_split
     )
 
+    feature_mean: Optional[torch.Tensor] = None
+    feature_std: Optional[torch.Tensor] = None
+    if config.normalize_features:
+        X_train, X_val, X_test, feature_mean, feature_std = normalize_features(
+            X_train, X_val, X_test
+        )
+        logger.info("Applied train-set feature normalisation (per-dimension z-score)")
+
     class_weights = None
     if config.use_class_weights:
-        class_weights = compute_class_weights(y_train)
+        class_weights = compute_class_weights(y_train, config.num_classes)
 
-    train_loader = make_loader(X_train, y_train, config.batch_size, shuffle=True)
+    train_loader = make_loader(
+        X_train,
+        y_train,
+        config.batch_size,
+        shuffle=not config.use_weighted_sampler,
+        weighted_sampler=config.use_weighted_sampler,
+    )
     val_loader = make_loader(X_val, y_val, config.batch_size, shuffle=False)
     test_loader = make_loader(X_test, y_test, config.batch_size, shuffle=False)
 
@@ -474,8 +592,10 @@ def main() -> None:
         model, train_loader, val_loader, config, class_weights, device
     )
 
-    test_metrics = evaluate_test_set(model, test_loader, device)
-    save_checkpoint(model, config, history, test_metrics)
+    test_metrics = evaluate_test_set(model, config, test_loader, device)
+    save_checkpoint(
+        model, config, history, test_metrics, feature_mean, feature_std
+    )
 
     elapsed = time.time() - t0
     logger.info("Total elapsed time: %.1f seconds (%.1f minutes)", elapsed, elapsed / 60)
