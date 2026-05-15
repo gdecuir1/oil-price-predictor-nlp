@@ -10,7 +10,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Tuple
+from typing import Optional, Tuple
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
@@ -42,27 +42,42 @@ class PipelineConfig:
     proj_dim: int = 256
     lstm_hidden: int = 128
     lstm_layers: int = 2
-    mlp_hidden: int = 64
-    dropout: float = 0.3
+    mlp_hidden: int = 48
+    dropout: float = 0.35
     bidirectional: bool = True
     use_residual: bool = True
 
     train_val_test_split: Tuple[float, float, float] = (0.80, 0.10, 0.10)
     batch_size: int = 16
     epochs: int = 50
-    lr: float = 2e-4
-    weight_decay: float = 1e-4
-    patience: int = 8
-    # Unweighted loss + uniform sampling avoids collapsed "always Down" predictions.
-    use_class_weights: bool = False
-    use_weighted_sampler: bool = False
-    label_smoothing: float = 0.05
+    lr: float = 1e-4
+    weight_decay: float = 1e-3
+    patience: int = 12
+    # Class balance: "none" | "sqrt" (mild) | "full" (inverse freq).
+    class_weight_mode: str = "sqrt"
+    use_class_weights: bool = True
+    use_weighted_sampler: bool = True
+    label_smoothing: float = 0.0
     max_grad_norm: float = 1.0
     normalize_features: bool = True
-    # val_macro_f1 | val_balanced_accuracy | val_loss
-    early_stopping_metric: str = "val_macro_f1"
-    # Stop if validation recall for Up stays 0 for this many epochs in a row.
-    zero_up_recall_patience: int = 5
+    normalize_finbert_only: bool = True
+    use_focal_loss: bool = True
+    focal_gamma: float = 2.0
+    min_train_epochs: int = 25
+    # val_min_recall | val_macro_f1 | val_balanced_accuracy | val_loss
+    early_stopping_metric: str = "val_min_recall"
+    # Stop if either class has 0 val recall for this many epochs in a row.
+    zero_up_recall_patience: int = 8
+    zero_down_recall_patience: int = 8
+    # Only save / early-stop on epochs that predict both classes on val.
+    reject_collapsed_val_predictions: bool = True
+
+    # Post-training: tune P(Up) cutoff on validation (binary only).
+    tune_up_threshold: bool = True
+    threshold_tuning_metric: str = "balanced_accuracy"  # or macro_f1
+    # Threshold must achieve at least this recall on each class on val (if possible).
+    threshold_min_class_recall: float = 0.15
+    up_probability_threshold: Optional[float] = None  # set after val tuning; stored in checkpoint
 
     checkpoint_dir: str = "ml_model/outputs/checkpoints"
     report_dir: str = "ml_model/outputs/reports"

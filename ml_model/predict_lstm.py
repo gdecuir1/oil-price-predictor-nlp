@@ -36,6 +36,7 @@ from ml_model.data.window_builder import build_single_window
 from ml_model.evaluate_lstm import _config_from_payload
 from ml_model.model_lstm import OilLSTMPredictorLegacy, load_model_from_checkpoint
 from ml_model.pipeline_config import PipelineConfig
+from ml_model.threshold_tuning import predict_classes
 from ml_model.train_lstm import apply_feature_norm
 
 logging.basicConfig(
@@ -93,6 +94,7 @@ def run_prediction(
     X: torch.Tensor,
     config: PipelineConfig,
     device: torch.device,
+    up_threshold: Optional[float] = None,
 ) -> Tuple[int, torch.Tensor, torch.Tensor]:
     """Forward pass for a single window batch.
 
@@ -109,7 +111,8 @@ def run_prediction(
     X = X.to(device)
     logits, attn = model(X)
     probs = torch.softmax(logits, dim=1).squeeze(0).cpu()
-    pred = int(logits.argmax(dim=1).item())
+    thresh = up_threshold if up_threshold is not None else config.up_probability_threshold
+    pred = int(predict_classes(logits, config, thresh).item())
     return pred, probs, attn.squeeze(0).cpu()
 
 
@@ -136,11 +139,14 @@ def main() -> None:
     if X.size(-1) > 768 and isinstance(model, OilLSTMPredictorLegacy):
         X = X[..., :768]
 
-    pred_cls, probs, attn = run_prediction(model, X, config, device)
+    up_thresh = payload.get("up_probability_threshold") or config.up_probability_threshold
+    pred_cls, probs, attn = run_prediction(model, X, config, device, up_threshold=up_thresh)
     names = list(config.class_names)
 
     print("\n" + "=" * 60)
-    print(f"Prediction date: {meta['prediction_date']}")
+    print(f"Prediction date T: {meta['prediction_date']} (news window ends before T)")
+    if up_thresh is not None and config.label_mode == "binary":
+        print(f"Decision rule: Up if P(Up) >= {up_thresh:.3f}")
     print(f"Predicted direction: {names[pred_cls]} (class {pred_cls})")
     prob_parts = [f"{names[i]}: {probs[i]:.4f}" for i in range(len(names))]
     print("Probabilities — " + "  ".join(prob_parts))

@@ -54,6 +54,7 @@ if str(_PROJECT_ROOT) not in sys.path:
 from ml_model.data.price_fetcher import get_price_labels
 from ml_model.data.window_builder import build_windows
 from ml_model.model_lstm import OilLSTMPredictor
+from ml_model.threshold_tuning import predict_classes, tune_threshold_on_loader
 from torch import nn as _nn
 from ml_model.pipeline_config import PipelineConfig
 
@@ -153,12 +154,17 @@ def _log_class_dist(name: str, y: torch.Tensor) -> None:
     logger.info("  %s class distribution: %s", name, dist)
 
 
-def compute_class_weights(y_train: torch.Tensor, num_classes: int) -> torch.Tensor:
-    """Inverse-frequency weights: weight_i = N / (C * count_i).
+def compute_class_weights(
+    y_train: torch.Tensor,
+    num_classes: int,
+    mode: str = "sqrt",
+) -> torch.Tensor:
+    """Class weights for CrossEntropyLoss.
 
     Args:
         y_train: Training labels only.
         num_classes: Number of classes (2 or 3).
+        mode: ``sqrt`` (mild), ``full`` (inverse freq), or ``none``.
 
     Returns:
         Float tensor of shape ``(num_classes,)`` for ``CrossEntropyLoss``.
@@ -168,9 +174,18 @@ def compute_class_weights(y_train: torch.Tensor, num_classes: int) -> torch.Tens
     for cls in range(num_classes):
         count = (y_train == cls).sum().item()
         if count > 0:
-            weights[cls] = n / (float(num_classes) * count)
-    logger.info("Class weights (train): %s", weights.tolist())
+            if mode == "full":
+                weights[cls] = n / (float(num_classes) * count)
+            elif mode == "sqrt":
+                weights[cls] = (n / float(count)) ** 0.5
+    weights = weights / weights.mean().clamp(min=1e-6)
+    logger.info("Class weights (train, mode=%s): %s", mode, weights.tolist())
     return weights
+
+
+def _val_predictions_collapsed(val_recall: Dict[int, float]) -> bool:
+    """True when validation recall is 0 for any class with support in the split."""
+    return any(r <= 0.0 for r in val_recall.values())
 
 
 def apply_feature_norm(
@@ -197,17 +212,18 @@ def normalize_features(
     X_train: torch.Tensor,
     X_val: torch.Tensor,
     X_test: torch.Tensor,
+    finbert_dim: int = 768,
+    finbert_only: bool = True,
 ) -> Tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
     """Z-score normalise using training-set mean/std over (time, feature).
 
-    Args:
-        X_train, X_val, X_test: Feature tensors ``(N, T, D)``.
-
-    Returns:
-        Normalised tensors plus ``feature_mean`` and ``feature_std`` (1, 1, D).
+    When ``finbert_only``, only the first ``finbert_dim`` channels are scaled.
     """
-    mean = X_train.mean(dim=(0, 1), keepdim=True)
-    std = X_train.std(dim=(0, 1), keepdim=True).clamp(min=1e-6)
+    mean = torch.zeros_like(X_train[:1, :1, :])
+    std = torch.ones_like(X_train[:1, :1, :])
+    end = finbert_dim if finbert_only else X_train.size(-1)
+    mean[..., :end] = X_train[..., :end].mean(dim=(0, 1), keepdim=True)
+    std[..., :end] = X_train[..., :end].std(dim=(0, 1), keepdim=True).clamp(min=1e-6)
     return (
         (X_train - mean) / std,
         (X_val - mean) / std,
@@ -217,12 +233,39 @@ def normalize_features(
     )
 
 
+class FocalLoss(nn.Module):
+    """Focal loss — down-weights easy examples so the model learns harder ones."""
+
+    def __init__(
+        self,
+        gamma: float = 2.0,
+        weight: Optional[torch.Tensor] = None,
+        label_smoothing: float = 0.0,
+    ) -> None:
+        super().__init__()
+        self.gamma = gamma
+        self.weight = weight
+        self.label_smoothing = label_smoothing
+
+    def forward(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
+        ce = nn.functional.cross_entropy(
+            logits,
+            targets,
+            weight=self.weight,
+            label_smoothing=self.label_smoothing,
+            reduction="none",
+        )
+        pt = torch.exp(-ce)
+        return ((1.0 - pt) ** self.gamma * ce).mean()
+
+
 def make_loader(
     X: torch.Tensor,
     y: torch.Tensor,
     batch_size: int,
     shuffle: bool,
     weighted_sampler: bool = False,
+    sampler_weight_mode: str = "sqrt",
 ) -> DataLoader:
     """Wrap tensors in a :class:`DataLoader`.
 
@@ -241,7 +284,10 @@ def make_loader(
         counts: Dict[int, int] = {}
         for label in y.tolist():
             counts[label] = counts.get(label, 0) + 1
-        weights = [1.0 / counts[int(lbl)] for lbl in y.tolist()]
+        if sampler_weight_mode == "full":
+            weights = [1.0 / counts[int(lbl)] for lbl in y.tolist()]
+        else:
+            weights = [1.0 / (counts[int(lbl)] ** 0.5) for lbl in y.tolist()]
         sampler = WeightedRandomSampler(weights, num_samples=len(weights), replacement=True)
         return DataLoader(ds, batch_size=batch_size, sampler=sampler)
     return DataLoader(ds, batch_size=batch_size, shuffle=shuffle)
@@ -361,10 +407,17 @@ def run_training_loop(
         Tuple of ``(model_with_best_weights, train_history)``.
     """
     weight = class_weights.to(device) if class_weights is not None else None
-    criterion = nn.CrossEntropyLoss(
-        weight=weight,
-        label_smoothing=config.label_smoothing,
-    )
+    if config.use_focal_loss:
+        criterion: nn.Module = FocalLoss(
+            gamma=config.focal_gamma,
+            weight=weight,
+            label_smoothing=config.label_smoothing,
+        )
+    else:
+        criterion = nn.CrossEntropyLoss(
+            weight=weight,
+            label_smoothing=config.label_smoothing,
+        )
     optimizer = torch.optim.AdamW(
         model.parameters(),
         lr=config.lr,
@@ -375,14 +428,19 @@ def run_training_loop(
     )
 
     up_class_idx = list(config.class_names).index("Up")
+    down_class_idx = list(config.class_names).index("Down")
     maximize_metric = config.early_stopping_metric in (
         "val_macro_f1",
         "val_balanced_accuracy",
+        "val_min_recall",
     )
     best_score = float("-inf") if maximize_metric else float("inf")
     best_state: Optional[Dict[str, torch.Tensor]] = None
+    best_non_collapsed_state: Optional[Dict[str, torch.Tensor]] = None
+    best_non_collapsed_score = float("-inf")
     patience_counter = 0
     zero_up_recall_streak = 0
+    zero_down_recall_streak = 0
     history: List[Dict[str, Any]] = []
 
     for epoch in range(1, config.epochs + 1):
@@ -397,12 +455,20 @@ def run_training_loop(
         val_loss, val_acc, val_f1, val_bal_acc, val_recall = evaluate_epoch(
             model, val_loader, criterion, device, config.num_classes
         )
+        val_p_up_std = 0.0
+        if config.label_mode == "binary":
+            from ml_model.threshold_tuning import collect_val_probabilities
+            _yt, p_up, _ = collect_val_probabilities(model, val_loader, config, device)
+            val_p_up_std = float(p_up.std()) if len(p_up) else 0.0
         scheduler.step(val_loss)
 
         recall_parts = ", ".join(
             f"{config.class_names[c]}={val_recall[c]:.3f}" for c in range(config.num_classes)
         )
         up_recall = val_recall.get(up_class_idx, 0.0)
+        down_recall = val_recall.get(down_class_idx, 0.0)
+        val_min_recall = min(val_recall.values()) if val_recall else 0.0
+        collapsed = _val_predictions_collapsed(val_recall)
 
         record = {
             "epoch": epoch,
@@ -411,13 +477,18 @@ def run_training_loop(
             "val_accuracy": val_acc,
             "val_macro_f1": val_f1,
             "val_balanced_accuracy": val_bal_acc,
+            "val_min_recall": val_min_recall,
+            "val_collapsed": collapsed,
             "val_recall": {config.class_names[k]: v for k, v in val_recall.items()},
             "val_up_recall": up_recall,
+            "val_down_recall": down_recall,
+            "val_p_up_std": val_p_up_std,
         }
         history.append(record)
         logger.info(
             "Epoch %d/%d — train_loss=%.4f val_loss=%.4f val_acc=%.4f "
-            "val_f1=%.4f val_bal_acc=%.4f | val recall: %s",
+            "val_f1=%.4f val_bal_acc=%.4f val_min_recall=%.4f%s | "
+            "val recall: %s | P(Up) std=%.4f",
             epoch,
             config.epochs,
             train_loss,
@@ -425,17 +496,29 @@ def run_training_loop(
             val_acc,
             val_f1,
             val_bal_acc,
+            val_min_recall,
+            " [collapsed]" if collapsed else "",
             recall_parts,
+            val_p_up_std,
         )
 
         if config.early_stopping_metric == "val_macro_f1":
             score = val_f1
         elif config.early_stopping_metric == "val_balanced_accuracy":
             score = val_bal_acc
+        elif config.early_stopping_metric == "val_min_recall":
+            score = val_min_recall
         else:
             score = val_loss
 
-        improved = score > best_score if maximize_metric else score < best_score
+        counts_for_early_stop = (
+            not collapsed or not config.reject_collapsed_val_predictions
+        )
+        if maximize_metric:
+            improved = counts_for_early_stop and score > best_score
+        else:
+            improved = counts_for_early_stop and score < best_score
+
         if improved:
             best_score = score
             best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
@@ -443,18 +526,36 @@ def run_training_loop(
         else:
             patience_counter += 1
 
+        if not collapsed and val_min_recall > best_non_collapsed_score:
+            best_non_collapsed_score = val_min_recall
+            best_non_collapsed_state = {
+                k: v.cpu().clone() for k, v in model.state_dict().items()
+            }
+
         if up_recall <= 0.0:
             zero_up_recall_streak += 1
         else:
             zero_up_recall_streak = 0
+        if down_recall <= 0.0:
+            zero_down_recall_streak += 1
+        else:
+            zero_down_recall_streak = 0
 
-        if zero_up_recall_streak >= config.zero_up_recall_patience:
-            logger.warning(
-                "Early stopping at epoch %d: Up recall 0 for %d consecutive epochs",
-                epoch,
-                zero_up_recall_streak,
-            )
-            break
+        if epoch >= config.min_train_epochs:
+            if zero_up_recall_streak >= config.zero_up_recall_patience:
+                logger.warning(
+                    "Early stopping at epoch %d: Up recall 0 for %d consecutive epochs",
+                    epoch,
+                    zero_up_recall_streak,
+                )
+                break
+            if zero_down_recall_streak >= config.zero_down_recall_patience:
+                logger.warning(
+                    "Early stopping at epoch %d: Down recall 0 for %d consecutive epochs",
+                    epoch,
+                    zero_down_recall_streak,
+                )
+                break
 
         if patience_counter >= config.patience:
             logger.info(
@@ -464,8 +565,17 @@ def run_training_loop(
             )
             break
 
-    if best_state is not None:
+    if best_non_collapsed_state is not None:
+        model.load_state_dict(best_non_collapsed_state)
+        logger.info(
+            "Restored best non-collapsed weights (val_min_recall=%.4f)",
+            best_non_collapsed_score,
+        )
+    elif best_state is not None:
         model.load_state_dict(best_state)
+        logger.warning(
+            "No epoch predicted both classes on val; using best collapsed checkpoint"
+        )
     return model, history
 
 
@@ -475,6 +585,7 @@ def evaluate_test_set(
     config: PipelineConfig,
     test_loader: DataLoader,
     device: torch.device,
+    up_threshold: Optional[float] = None,
 ) -> Dict[str, Any]:
     """Final test metrics and confusion matrix.
 
@@ -490,11 +601,16 @@ def evaluate_test_set(
     """
     model.eval()
     all_preds: List[int] = []
+    all_preds_argmax: List[int] = []
     all_true: List[int] = []
+    thresh = up_threshold if up_threshold is not None else config.up_probability_threshold
     for xb, yb in test_loader:
         xb = xb.to(device)
         logits, _ = model(xb)
-        all_preds.extend(logits.argmax(dim=1).cpu().tolist())
+        all_preds.extend(
+            predict_classes(logits, config, thresh).cpu().tolist()
+        )
+        all_preds_argmax.extend(logits.argmax(dim=1).cpu().tolist())
         all_true.extend(yb.tolist())
 
     labels = list(range(config.num_classes))
@@ -507,7 +623,23 @@ def evaluate_test_set(
         output_dict=True,
     )
     acc = accuracy_score(all_true, all_preds)
+    bal_acc = balanced_accuracy_score(all_true, all_preds)
     macro_f1 = f1_score(all_true, all_preds, average="macro", zero_division=0)
+    _, recall, _, support = precision_recall_fscore_support(
+        all_true, all_preds, labels=labels, zero_division=0,
+    )
+
+    print("\n=== Test metrics (primary: thresholded if tuned) ===")
+    print(f"  Balanced accuracy: {bal_acc:.4f}  |  Macro F1: {macro_f1:.4f}  |  Accuracy: {acc:.4f}")
+    if thresh is not None and config.label_mode == "binary":
+        print(f"  Up probability threshold: {thresh:.3f}")
+    for i, name in enumerate(names):
+        r = float(recall[i]) if support[i] > 0 else 0.0
+        print(f"  {name} recall: {r:.4f} (support={int(support[i])})")
+    if thresh is not None and all_preds_argmax != all_preds:
+        acc_am = accuracy_score(all_true, all_preds_argmax)
+        bal_am = balanced_accuracy_score(all_true, all_preds_argmax)
+        print(f"  (argmax baseline — acc={acc_am:.4f}, bal_acc={bal_am:.4f})")
 
     print("\n=== Test confusion matrix (rows=true, cols=pred) ===")
     header = "".join(f"{n:>8}" for n in names)
@@ -526,11 +658,15 @@ def evaluate_test_set(
 
     return {
         "accuracy": acc,
+        "balanced_accuracy": bal_acc,
         "macro_f1": macro_f1,
+        "per_class_recall": {names[i]: float(recall[i]) for i in range(len(names))},
+        "up_probability_threshold": thresh,
         "confusion_matrix": cm.tolist(),
         "classification_report": report,
         "y_true": all_true,
         "y_pred": all_preds,
+        "y_pred_argmax": all_preds_argmax,
     }
 
 
@@ -556,6 +692,7 @@ def save_checkpoint(
     test_metrics: Dict[str, Any],
     feature_mean: Optional[torch.Tensor] = None,
     feature_std: Optional[torch.Tensor] = None,
+    threshold_tuning: Optional[Dict[str, Any]] = None,
 ) -> Path:
     """Save pickle checkpoint and JSON config per spec.
 
@@ -583,6 +720,8 @@ def save_checkpoint(
         "test_metrics": test_metrics,
         "feature_mean": feature_mean,
         "feature_std": feature_std,
+        "up_probability_threshold": config.up_probability_threshold,
+        "threshold_tuning": threshold_tuning or {},
     }
     with open(ckpt_path, "wb") as f:
         pickle.dump(payload, f)
@@ -619,13 +758,24 @@ def main() -> None:
     feature_std: Optional[torch.Tensor] = None
     if config.normalize_features:
         X_train, X_val, X_test, feature_mean, feature_std = normalize_features(
-            X_train, X_val, X_test
+            X_train,
+            X_val,
+            X_test,
+            finbert_dim=config.finbert_dim,
+            finbert_only=config.normalize_finbert_only,
         )
-        logger.info("Applied train-set feature normalisation (per-dimension z-score)")
+        scope = "FinBERT dims only" if config.normalize_finbert_only else "all dims"
+        logger.info("Applied train-set z-score normalisation (%s)", scope)
+
+    weight_mode = config.class_weight_mode
+    if weight_mode == "none":
+        weight_mode = "none"
+    elif not config.use_class_weights:
+        weight_mode = "none"
 
     class_weights = None
-    if config.use_class_weights:
-        class_weights = compute_class_weights(y_train, config.num_classes)
+    if weight_mode != "none":
+        class_weights = compute_class_weights(y_train, config.num_classes, mode=weight_mode)
 
     train_loader = make_loader(
         X_train,
@@ -633,20 +783,54 @@ def main() -> None:
         config.batch_size,
         shuffle=not config.use_weighted_sampler,
         weighted_sampler=config.use_weighted_sampler,
+        sampler_weight_mode=weight_mode if weight_mode != "none" else "sqrt",
     )
     val_loader = make_loader(X_val, y_val, config.batch_size, shuffle=False)
     test_loader = make_loader(X_test, y_test, config.batch_size, shuffle=False)
 
     model = OilLSTMPredictor(config).to(device)
+    model.init_classifier_bias_from_labels(y_train)
     logger.info("Trainable parameters: %d", model.count_parameters())
 
     model, history = run_training_loop(
         model, train_loader, val_loader, config, class_weights, device
     )
 
-    test_metrics = evaluate_test_set(model, config, test_loader, device)
+    if history and all(h.get("val_collapsed", False) for h in history):
+        logger.warning(
+            "Every epoch collapsed on val (single-class predictions). "
+            "Try more data, lower lr, or compare_checkpoints against the legacy 3-class model."
+        )
+
+    threshold_tuning: Dict[str, Any] = {}
+    if config.tune_up_threshold and config.label_mode == "binary":
+        up_thresh, threshold_tuning = tune_threshold_on_loader(
+            model, val_loader, config, device
+        )
+        if threshold_tuning.get("used_argmax_fallback"):
+            config.up_probability_threshold = None
+            logger.warning(
+                "No balanced threshold on val — using argmax for test "
+                "(mean P(Up)=%.3f, std=%.3f)",
+                threshold_tuning.get("mean_p_up", 0),
+                threshold_tuning.get("std_p_up", 0),
+            )
+        elif up_thresh is not None:
+            config.up_probability_threshold = up_thresh
+            logger.info(
+                "Tuned Up threshold=%.3f on val (bal_acc=%.4f, min_recall=%.4f; "
+                "argmax bal_acc=%.4f)",
+                up_thresh,
+                threshold_tuning.get("val_balanced_accuracy_at_threshold", 0),
+                threshold_tuning.get("val_min_recall_at_threshold", 0),
+                threshold_tuning.get("val_balanced_accuracy_argmax", 0),
+            )
+
+    test_metrics = evaluate_test_set(
+        model, config, test_loader, device, up_threshold=config.up_probability_threshold
+    )
     save_checkpoint(
-        model, config, history, test_metrics, feature_mean, feature_std
+        model, config, history, test_metrics, feature_mean, feature_std, threshold_tuning
     )
 
     elapsed = time.time() - t0

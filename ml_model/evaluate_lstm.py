@@ -29,6 +29,7 @@ import pandas as pd
 import torch
 from sklearn.metrics import (
     accuracy_score,
+    balanced_accuracy_score,
     classification_report,
     confusion_matrix,
     f1_score,
@@ -44,6 +45,7 @@ from ml_model.data.price_fetcher import get_price_labels
 from ml_model.data.window_builder import build_windows_with_metadata
 from ml_model.model_lstm import OilLSTMPredictorLegacy, load_model_from_checkpoint
 from ml_model.pipeline_config import PipelineConfig
+from ml_model.threshold_tuning import predict_classes, up_class_index
 from ml_model.train_lstm import apply_feature_norm
 
 logging.basicConfig(
@@ -75,6 +77,7 @@ def print_down_up_focus(
     y_true: List[int],
     y_pred: List[int],
     config: PipelineConfig,
+    n_test: Optional[int] = None,
 ) -> Dict[str, Any]:
     """Metrics on decisive moves only (Down vs Up), for ternary or binary runs.
 
@@ -95,6 +98,8 @@ def print_down_up_focus(
     correct = sum(1 for t, p in pairs if t == p)
     acc = correct / len(pairs)
     print(f"\n=== Down vs Up focus (label_mode={config.label_mode}) ===")
+    if n_test is not None:
+        print(f"  (n_test={n_test} — indicative only; prefer balanced acc + per-class recall)")
     print(f"  Accuracy: {acc:.4f} ({correct}/{len(pairs)})")
     if config.label_mode == "ternary":
         for cls, name in [(0, "Down"), (2, "Up")]:
@@ -191,6 +196,7 @@ def evaluate_classification(
     test_loader: DataLoader,
     config: PipelineConfig,
     device: torch.device,
+    up_threshold: Optional[float] = None,
 ) -> Dict[str, Any]:
     """Compute confusion matrix, per-class metrics, accuracy, and majority baseline.
 
@@ -210,10 +216,12 @@ def evaluate_classification(
     all_pred: List[int] = []
     all_attn: List[np.ndarray] = []
 
+    thresh = up_threshold if up_threshold is not None else config.up_probability_threshold
+
     for xb, yb in test_loader:
         xb = xb.to(device)
         logits, attn = model(xb)
-        preds = logits.argmax(dim=1).cpu().numpy()
+        preds = predict_classes(logits, config, thresh).cpu().numpy()
         all_pred.extend(preds.tolist())
         all_true.extend(yb.tolist())
         all_attn.append(attn.cpu().numpy())
@@ -225,6 +233,7 @@ def evaluate_classification(
         all_true, all_pred, labels=label_ids, zero_division=0
     )
     acc = accuracy_score(all_true, all_pred)
+    bal_acc = balanced_accuracy_score(all_true, all_pred)
     macro_f1 = f1_score(all_true, all_pred, average="macro", zero_division=0)
 
     if all_true:
@@ -243,18 +252,28 @@ def evaluate_classification(
         }
 
     print("\n=== Classification (test set) ===")
-    print(f"Accuracy: {acc:.4f}  |  Majority baseline: {baseline_acc:.4f}")
-    print(f"Macro F1: {macro_f1:.4f}")
+    print(f"n_test={len(all_true)} (small sample — metrics are indicative, not definitive)")
+    print(
+        f"Balanced accuracy: {bal_acc:.4f}  |  Macro F1: {macro_f1:.4f}  |  "
+        f"Accuracy: {acc:.4f}  |  Majority baseline: {baseline_acc:.4f}"
+    )
+    if thresh is not None and config.label_mode == "binary":
+        print(f"Decision rule: predict Up if P(Up) >= {thresh:.3f}")
+    for i, name in enumerate(names):
+        r = float(rec[i]) if support[i] > 0 else 0.0
+        print(f"  {name} recall: {r:.4f} (support={int(support[i])})")
     print("Confusion matrix (rows=true, cols=pred):")
     print(cm)
-    print_down_up_focus(all_true, all_pred, config)
+    print_down_up_focus(all_true, all_pred, config, n_test=len(all_true))
 
     return {
         "confusion_matrix": cm.tolist(),
         "per_class": per_class,
         "accuracy": float(acc),
+        "balanced_accuracy": float(bal_acc),
         "macro_f1": float(macro_f1),
         "majority_baseline_accuracy": float(baseline_acc),
+        "up_probability_threshold": thresh,
         "y_true": all_true,
         "y_pred": all_pred,
         "attention_weights": all_attn,
@@ -270,8 +289,12 @@ def backtest_vs_actual(
     price_df: pd.DataFrame,
     config: PipelineConfig,
     device: torch.device,
+    up_threshold: Optional[float] = None,
 ) -> pd.DataFrame:
     """Compare model predictions to realised price directions on test dates.
+
+  Horizon: news window ends on T−1; label is the USO move on prediction day T
+  (see ``meta_test[i]['prediction_date']``).
 
     For each test sample, records actual close, previous close, log return,
     true and predicted direction, softmax probabilities, and correctness.
@@ -290,15 +313,19 @@ def backtest_vs_actual(
     """
     model.eval()
     rows: List[Dict[str, Any]] = []
+    thresh = up_threshold if up_threshold is not None else config.up_probability_threshold
+    up_idx = up_class_index(config) if config.label_mode == "binary" else 2
 
     for i in range(len(X_test)):
         xb = X_test[i : i + 1].to(device)
         logits, _ = model(xb)
         probs = torch.softmax(logits, dim=1).squeeze(0).cpu().numpy()
-        pred_cls = int(logits.argmax(dim=1).item())
+        pred_cls = int(predict_classes(logits, config, thresh).item())
+        pred_cls_argmax = int(logits.argmax(dim=1).item())
         true_cls = int(y_test[i].item())
 
         pred_date = pd.Timestamp(meta_test[i]["prediction_date"]).normalize()
+        window_end = meta_test[i].get("window_end_date") or meta_test[i].get("last_news_date")
         close_t = float(price_df.loc[pred_date, "close"])
         log_ret = float(price_df.loc[pred_date, "log_return"])
 
@@ -309,37 +336,55 @@ def backtest_vs_actual(
         prev_close = float(price_df.iloc[idx_pos - 1]["close"]) if idx_pos > 0 else np.nan
 
         names = list(config.class_names)
+        pred_name = names[pred_cls] if pred_cls < len(names) else f"class_{pred_cls}"
+        pred_argmax_name = (
+            names[pred_cls_argmax] if pred_cls_argmax < len(names) else f"class_{pred_cls_argmax}"
+        )
         row = {
-            "prediction_date": pred_date.strftime("%Y-%m-%d"),
+            "prediction_date_T": pred_date.strftime("%Y-%m-%d"),
+            "news_through_T_minus_1": str(window_end) if window_end else "",
             "actual_close": close_t,
             "prev_close": prev_close,
             "actual_log_return": log_ret,
             "actual_direction": names[true_cls] if true_cls < len(names) else str(true_cls),
-            "predicted_direction": names[pred_cls] if pred_cls < len(names) else str(pred_cls),
+            "predicted_direction": pred_name,
+            "predicted_direction_argmax": pred_argmax_name,
             "correct": pred_cls == true_cls,
         }
         if len(probs) >= 1:
             row["predicted_proba_down"] = float(probs[0])
+        if config.num_classes == 3 and len(probs) >= 2:
+            row["predicted_proba_flat"] = float(probs[1])
         if len(probs) >= 2:
-            row["predicted_proba_flat"] = float(probs[1]) if config.num_classes == 3 else float("nan")
-            row["predicted_proba_up"] = float(probs[1]) if config.num_classes == 2 else float(probs[2])
-        if len(probs) >= 3:
-            row["predicted_proba_up"] = float(probs[2])
+            row["predicted_proba_up"] = float(probs[up_idx])
         rows.append(row)
 
     df = pd.DataFrame(rows)
 
-    print("\n=== Directional accuracy by actual class ===")
+    print("\n=== Backtest: per-class recall (Down vs Up rows) ===")
     for cls_id, name in enumerate(config.class_names):
         subset = df[df["actual_direction"] == name]
         if len(subset) == 0:
             print(f"  {name}: no test samples")
             continue
-        acc = subset["correct"].mean()
-        print(f"  {name}: {acc:.4f} ({subset['correct'].sum()}/{len(subset)})")
+        recall = subset["correct"].mean()
+        print(f"  {name} recall: {recall:.4f} ({subset['correct'].sum()}/{len(subset)})")
 
-    overall = df["correct"].mean() if len(df) else 0.0
-    print(f"  Overall: {overall:.4f}")
+    if len(df) and "actual_direction" in df.columns:
+        names = set(config.class_names)
+        pairs = [
+            (a, p)
+            for a, p in zip(df["actual_direction"], df["predicted_direction"])
+            if a in names and p in names
+        ]
+        if pairs:
+            y_t = [config.class_names.index(a) for a, _ in pairs]
+            y_p = [config.class_names.index(p) for _, p in pairs]
+            print(f"  Balanced accuracy (comparable preds only): {balanced_accuracy_score(y_t, y_p):.4f}")
+        flat_n = int((~df["predicted_direction"].isin(names)).sum())
+        if flat_n:
+            print(f"  Note: {flat_n} predictions outside {list(config.class_names)} (e.g. Flat) — excluded above")
+    print(f"  (n={len(df)} test points — treat as indicative)")
     return df
 
 
@@ -419,12 +464,16 @@ def _build_html(
         f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in asdict(config).items()
     )
 
+    label_names = list(config.class_names)
+    n_cls = len(label_names)
     cm = np.array(cls_res["confusion_matrix"])
     cm_html = "<table class='cm'><tr><th></th>" + "".join(
-        f"<th>{n}</th>" for n in _LABEL_NAMES
+        f"<th>{n}</th>" for n in label_names
     ) + "</tr>"
-    for i, name in enumerate(_LABEL_NAMES):
-        cm_html += f"<tr><th>{name}</th>" + "".join(f"<td>{cm[i,j]}</td>" for j in range(3)) + "</tr>"
+    for i, name in enumerate(label_names):
+        cm_html += f"<tr><th>{name}</th>" + "".join(
+            f"<td>{cm[i,j]}</td>" for j in range(n_cls)
+        ) + "</tr>"
     cm_html += "</table>"
 
     metrics_html = "<table><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th></tr>"
@@ -465,9 +514,12 @@ def _build_html(
   <table>{cfg_rows}</table>
 
   <h2>Classification Metrics</h2>
-  <p>Accuracy: <strong>{cls_res['accuracy']:.4f}</strong> |
+  <p>Balanced accuracy: <strong>{cls_res.get('balanced_accuracy', 0):.4f}</strong> |
      Macro F1: <strong>{cls_res['macro_f1']:.4f}</strong> |
+     Accuracy: <strong>{cls_res['accuracy']:.4f}</strong> |
      Majority baseline: <strong>{cls_res['majority_baseline_accuracy']:.4f}</strong></p>
+  <p><em>n_test is small (~23); use per-class recall and Down vs Up focus, not accuracy alone.</em></p>
+  <p>Horizon: news through T−1 → USO move on day T (prediction_date_T in backtest table).</p>
   {metrics_html}
   <h3>Confusion Matrix</h3>
   {cm_html}
@@ -593,9 +645,15 @@ def main() -> None:
         shuffle=False,
     )
 
-    cls_res = evaluate_classification(model, test_loader, config, device)
+    up_thresh = payload.get("up_probability_threshold")
+    if up_thresh is None:
+        up_thresh = ckpt_config.up_probability_threshold
+
+    cls_res = evaluate_classification(
+        model, test_loader, config, device, up_threshold=up_thresh
+    )
     backtest_df = backtest_vs_actual(
-        model, X_test, y_test, meta_test, price_df, config, device
+        model, X_test, y_test, meta_test, price_df, config, device, up_threshold=up_thresh
     )
     generate_report(
         cls_res,

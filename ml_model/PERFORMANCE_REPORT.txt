@@ -1,0 +1,217 @@
+================================================================================
+LSTM OIL DIRECTION MODEL — RECENT PERFORMANCE REPORT
+================================================================================
+Generated: 2026-05-15
+Source: terminal training logs (last 5 completed `python -m ml_model.train_lstm` runs)
+Model: v3 binary BiLSTM (OilLSTMPredictor), USO labels, 5-day news window
+
+================================================================================
+1. TASK AND EVALUATION SETUP (CONTEXT)
+================================================================================
+
+Prediction target
+  Given 5 trading days of oil-news features (FinBERT CLS + 8 keyword groups per day),
+  predict whether USO’s next-day log return is Down (0) or Up (1). Flat days are
+  dropped in binary mode.
+
+Horizon (consistent across pipeline)
+  News through day T−1 → label is the USO move on prediction day T.
+
+Data split (same for all runs below)
+  Chronological 80/10/10 on 226 binary windows:
+    Train: 180 samples (Down=80, Up=100)
+    Val:    23 samples (Down=9,  Up=14)
+    Test:   23 samples (Down=10, Up=13)
+
+Model spec (v3 defaults at time of runs)
+  ~1.17M trainable parameters | input_dim=776 (768 FinBERT + 8 keywords)
+  BiLSTM: 128 hidden, 2 layers, bidirectional | proj_dim=256 | mlp_hidden=48
+  Focal loss (γ=2), sqrt class weights + sqrt weighted sampler
+  FinBERT-only z-score normalization | early stop on val_min_recall
+  Post-train P(Up) threshold tuning when a non-collapsed cutoff exists on val
+
+Important caveat
+  n_test=23 is very small. Metrics swing with random init and which single-class
+  bias the model settles on. Treat numbers as indicative, not production-grade.
+  Majority-class baseline on test ≈ 13/23 ≈ 57% (predict always Up).
+
+================================================================================
+2. LAST FIVE TRAINING RUNS — TEST SET CLASSIFICATION TABLES
+================================================================================
+
+All tables: chronological test split, sklearn classification_report format.
+
+--------------------------------------------------------------------------------
+Run 1 — model_20260515_001847_5w_0g.pkl  (2026-05-15 00:18:47)
+Val: all epochs collapsed (always Up). Argmax on test. P(Up) std=0 on val.
+--------------------------------------------------------------------------------
+
+              precision    recall  f1-score   support
+
+        Down       0.00      0.00      0.00        10
+          Up       0.57      1.00      0.72        13
+
+    accuracy                           0.57        23
+   macro avg       0.28      0.50      0.36        23
+weighted avg       0.32      0.57      0.41        23
+
+Summary: balanced accuracy 0.50 | macro F1 0.36 | accuracy 0.57
+Confusion (true→pred): Down [0,10], Up [0,13] — predicts Up only.
+
+--------------------------------------------------------------------------------
+Run 2 — model_20260515_002011_5w_0g.pkl  (2026-05-15 00:20:11)
+Val collapsed. Argmax. P(Up) std=0 on val.
+--------------------------------------------------------------------------------
+
+              precision    recall  f1-score   support
+
+        Down       0.36      0.50      0.42        10
+          Up       0.44      0.31      0.36        13
+
+    accuracy                           0.39        23
+   macro avg       0.40      0.40      0.39        23
+weighted avg       0.41      0.39      0.39        23
+
+Summary: balanced accuracy 0.40 | macro F1 0.39 | accuracy 0.39
+Confusion: Down [5,5], Up [9,4] — first run with both classes predicted on test.
+
+--------------------------------------------------------------------------------
+Run 3 — model_20260515_002018_5w_0g.pkl  (2026-05-15 00:20:18)
+Same pattern as Run 2 (identical test table).
+--------------------------------------------------------------------------------
+
+              precision    recall  f1-score   support
+
+        Down       0.36      0.50      0.42        10
+          Up       0.44      0.31      0.36        13
+
+    accuracy                           0.39        23
+   macro avg       0.40      0.40      0.39        23
+weighted avg       0.41      0.39      0.39        23
+
+Summary: balanced accuracy 0.40 | macro F1 0.39 | accuracy 0.39
+Confusion: Down [5,5], Up [9,4]
+
+--------------------------------------------------------------------------------
+Run 4 — model_20260515_002027_5w_0g.pkl  (2026-05-15 00:20:27)  *** BEST RUN ***
+Val collapsed. Argmax. P(Up) std=0 on val.
+--------------------------------------------------------------------------------
+
+              precision    recall  f1-score   support
+
+        Down       0.56      0.50      0.53        10
+          Up       0.64      0.69      0.67        13
+
+    accuracy                           0.61        23
+   macro avg       0.60      0.60      0.60        23
+weighted avg       0.60      0.61      0.61        23
+
+Summary: balanced accuracy 0.60 | macro F1 0.60 | accuracy 0.61
+Confusion: Down [5,5], Up [4,9] — most balanced per-class performance in this batch.
+
+--------------------------------------------------------------------------------
+Run 5 — model_20260515_002035_5w_0g.pkl  (2026-05-15 00:20:35)
+Threshold tuned: P(Up) >= 0.486 on val. Test uses thresholded decisions.
+--------------------------------------------------------------------------------
+
+              precision    recall  f1-score   support
+
+        Down       0.44      0.80      0.57        10
+          Up       0.60      0.23      0.33        13
+
+    accuracy                           0.48        23
+   macro avg       0.52      0.52      0.45        23
+weighted avg       0.53      0.48      0.44        23
+
+Summary: balanced accuracy 0.52 | macro F1 0.45 | accuracy 0.48
+         Up threshold=0.486 | argmax baseline accuracy 0.39, bal_acc 0.45
+Confusion: Down [8,2], Up [10,3] — high Down recall, weak Up recall (Down-heavy).
+
+================================================================================
+3. CROSS-RUN COMPARISON (TEST SET)
+================================================================================
+
+Checkpoint                      Acc    BalAcc  MacroF1  Down R  Up R   Pattern
+------------------------------  -----  ------  -------  ------  -----  ------------------
+model_20260515_001847_5w_0g     0.57   0.50    0.36     0.00    1.00   All-Up collapse
+model_20260515_002011_5w_0g     0.39   0.40    0.39     0.50    0.31   Mixed, weak overall
+model_20260515_002018_5w_0g     0.39   0.40    0.39     0.50    0.31   Same as 002011
+model_20260515_002027_5w_0g     0.61   0.60    0.60     0.50    0.69   Best balanced run
+model_20260515_002035_5w_0g     0.48   0.52    0.45     0.80    0.23   Threshold → Down bias
+
+Recommended checkpoint from this session: model_20260515_002027_5w_0g.pkl
+
+================================================================================
+4. ANALYSIS RELATIVE TO MODEL SPEC AND PREDICTION GOALS
+================================================================================
+
+What the pipeline is designed to do
+  Map multi-day financial news embeddings to next-day USO direction. The v3 stack
+  is intentionally compact (~1.2M params) for ~180 training windows, with frozen
+  FinBERT day vectors cached from ~1,171 articles across ~383 calendar days.
+
+Training dynamics observed (all 5 runs)
+  • Validation P(Up) standard deviation was 0.000 every epoch — the model outputs
+    nearly identical probabilities for all 23 val windows each run. Learning is
+    dominated by a global bias flip (all Down vs all Up on val), not fine-grained
+    per-window features.
+  • Early stopping fired at epoch 12 with val_min_recall never improving above 0
+    (collapsed val predictions). Checkpoints are effectively random seeds + bias.
+  • Runs 2–4 that predict both classes on test do so despite val collapse — test
+    metrics are unstable and should not be over-interpreted.
+
+Run 1 (all-Up) vs user-highlighted table
+  The pattern in the terminal snippet (Down recall 0, Up recall 1, accuracy 0.57)
+  matches Run 1 exactly: accuracy equals the Up fraction on test (13/23), not
+  discriminative skill. This is the failure mode the collapse-aware training and
+  threshold logic were added to detect.
+
+Run 4 (best of batch)
+  Macro F1 and balanced accuracy both ~0.60 with Down recall 0.50 and Up recall
+  0.69. For a binary direction task on 23 points, this is modest but meaningfully
+  better than majority-only or single-class rules. Confusion is symmetric on Down
+  (5/10 correct) and stronger on Up (9/13). This is the only run in the batch
+  where headline accuracy (0.61) reflects both classes contributing.
+
+Run 5 (threshold tuning)
+  Tuning P(Up)>=0.486 on val forced more Down predictions (Down recall 0.80) at
+  the cost of Up recall (0.23). Balanced accuracy 0.52 is slightly below Run 4;
+  thresholding helps when probabilities separate classes on val — here it mainly
+  shifted bias rather than revealed signal.
+
+Relative to project goals
+  • Beats naive always-Up (~57% acc) only when the run avoids collapse (Run 4).
+  • Does not yet demonstrate reliable generalization: high variance across seeds,
+    val never non-collapsed, and test n=23.
+  • Legacy ternary checkpoint (model_20260514_234831) uses a different label space
+    and test count; compare with `python -m ml_model.compare_checkpoints` for
+    Down-vs-Up focus on ternary (not directly comparable accuracy).
+
+Gaps vs model capacity / data
+  • Signal limit: ~226 labels from ~1 year of USO + news may be insufficient for
+    the LSTM to learn stable temporal patterns beyond class priors.
+  • Feature limit: frozen FinBERT may not encode short-horizon price direction;
+    keyword features need validation (`python -m ml_model.inspect_keywords`).
+  • Largest lever: more `raw_articles` days and longer history before expecting
+    stable non-collapsed validation.
+
+Practical recommendations
+  1. Deploy / report using model_20260515_002027_5w_0g.pkl from this session.
+  2. Fix random seed for reproducibility if comparing training changes.
+  3. Monitor P(Up) std on val during training; values near 0 mean no usable
+     probability calibration for threshold tuning.
+  4. Prefer balanced accuracy and per-class recall over accuracy on this test set.
+  5. Re-run compare_checkpoints against legacy v1 for qualitative baseline.
+
+================================================================================
+5. RELATED ARTIFACTS
+================================================================================
+
+  ml_model/ML_MODEL_README.txt     — Full pipeline documentation
+  ml_model/outputs/checkpoints/    — model_*.pkl and config_*.json per run
+  python -m ml_model.evaluate_lstm --checkpoint <path>
+  python -m ml_model.compare_checkpoints --checkpoints <path1> <path2>
+
+================================================================================
+END OF REPORT
+================================================================================

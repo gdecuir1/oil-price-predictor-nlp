@@ -58,6 +58,15 @@ class OilLSTMPredictor(nn.Module):
         )
         self._finbert_dim = finbert_dim
 
+    def init_classifier_bias_from_labels(self, y_train: torch.Tensor) -> None:
+        """Set final-layer bias to log class priors (reduces single-class collapse at start)."""
+        counts = torch.bincount(y_train.long(), minlength=self.num_classes).float()
+        priors = counts / counts.sum().clamp(min=1.0)
+        log_priors = torch.log(priors.clamp(min=1e-6))
+        for module in self.classifier.modules():
+            if isinstance(module, nn.Linear) and module.out_features == self.num_classes:
+                module.bias.data.copy_(log_priors.to(module.bias.device))
+
     def _day_presence_mask(self, x: torch.Tensor) -> torch.Tensor:
         """True when the FinBERT slice of the day vector is non-zero."""
         return x[..., : self._finbert_dim].norm(dim=-1) > 1e-6

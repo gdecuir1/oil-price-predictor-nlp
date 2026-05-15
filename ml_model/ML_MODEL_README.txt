@@ -148,13 +148,30 @@ What v3 fixes (after v2 test accuracy ~15%)
   • **Ternary option**: label_mode=ternary with flat_band_pct=0.35 (narrower band
     than 0.5 → fewer Flat labels than before).
   • Masked attention, CLS pooling, feature normalisation, weighted sampling.
-  • **Unweighted** training (`use_class_weights=False`, `use_weighted_sampler=False`)
-    to reduce "always Down" collapse.
-  • Early stopping on **val_macro_f1** (or `val_balanced_accuracy`); stops if **Up recall**
-    is 0 for `zero_up_recall_patience` consecutive epochs (default 5).
+  • **Mild class balance**: `class_weight_mode=sqrt` + sqrt weighted sampler (not full inverse).
+  • Early stopping on **val_min_recall** (worst-class recall); skips collapsed val epochs.
+    Stops if Down or Up val recall is 0 for 8 consecutive epochs (after min_train_epochs=25).
+  • **Focal loss** (gamma=2), **FinBERT-only** z-score norm (keywords keep raw scale).
+  • Threshold tuning rejects cutoffs that predict only one class on val.
   • **Down vs Up focus** metrics printed in train/eval when ternary is used.
+  • **Decision threshold (B):** after training, sweep P(Up) on validation; stored as
+    up_probability_threshold in checkpoint (see PERFORMANCE_REPORT.txt for recent runs).
+  • **Regularisation (C):** mlp_hidden=48, dropout=0.35, weight_decay=1e-3, lr=1e-4.
 
 Embeddings cache: ml_model/outputs/embed_cache_v3.pt (768 FinBERT + 8 keywords = 776 dims).
+
+Labels and horizon (D)
+  • Default label_mode=binary drops Flat days — recommended unless you need an
+    “unchanged” class (then ternary with flat_band_pct=0.35).
+  • Prediction horizon: news through trading day T−1 → USO move on day T
+    (prediction_date in metadata).  Backtest/eval reports label this explicitly.
+
+Data and evaluation (E, F)
+  • More article days under raw_articles/ is the largest real lever.
+  • python -m ml_model.inspect_keywords — mean keyword groups by Down/Up label.
+  • Report balanced accuracy and per-class recall; ~23 test points are indicative only.
+  • python -m ml_model.compare_checkpoints — side-by-side bal_acc / macro F1;
+    older 3-class checkpoints may still beat a collapsed binary run.
 
 What is an LSTM?
   A Long Short-Term Memory network processes sequences step by step and keeps a
@@ -419,16 +436,27 @@ article_pooling        | cls                  | cls or mean per article
 proj_dim               | 256                  | Projection width
 lstm_hidden            | 128                  | LSTM hidden size
 lstm_layers            | 2                    | LSTM depth
-mlp_hidden             | 64                   | Classifier hidden size
-dropout                | 0.3                  | Dropout rate
+mlp_hidden             | 48                   | Classifier hidden size
+dropout                | 0.35                 | Dropout rate
+lr                     | 1e-4                 | AdamW learning rate
+weight_decay           | 1e-3                 | AdamW L2
+use_focal_loss         | True                 | Focal loss gamma=2 (hard examples)
+normalize_finbert_only | True                 | Z-score FinBERT dims only; keywords raw
+min_train_epochs       | 25                   | Before zero-recall early stop applies
+tune_up_threshold      | True                 | Sweep P(Up) on val after training (binary)
+threshold_tuning_metric| balanced_accuracy    | or macro_f1
+up_probability_threshold| (set at train)      | Saved in .pkl; used at eval/predict
 epochs                 | 50                   | Max training epochs
-patience               | 8                    | Early stopping patience
-early_stopping_metric  | val_macro_f1         | val_macro_f1, val_balanced_accuracy, or val_loss
-zero_up_recall_patience| 5                    | Stop if Up val recall is 0 this many epochs in a row
-use_class_weights      | False                | True oversamples minority via loss
-use_weighted_sampler   | False                | True oversamples minority each epoch
+patience               | 12                   | Early stopping patience (non-collapsed metric)
+early_stopping_metric  | val_min_recall       | Worst per-class val recall; also macro_f1, bal_acc, loss
+zero_up/down_recall_patience | 8            | Stop if either class val recall is 0
+class_weight_mode      | sqrt                 | none | sqrt | full
+use_weighted_sampler   | True                 | sqrt-weighted oversampling in training
+reject_collapsed_val   | True                 | Do not early-stop on all-Down or all-Up val epochs
+threshold_min_class_recall | 0.15           | Threshold sweep must hit both classes on val
 embed_cache_path       | .../embed_cache_v3.pt| Day vector cache
 compare_checkpoints    | (script)             | python -m ml_model.compare_checkpoints
+PERFORMANCE_REPORT.txt | (doc)                | Recent training runs and test metrics summary
 
 
 ================================================================================
@@ -495,6 +523,9 @@ data/price_fetcher.py    — Downloads USO prices; log returns; 3-class labels; 
   data/keyword_extractor.py — Oil-domain keyword hit features per article/day.
   data/window_builder.py   — HTML → FinBERT + keywords → sliding (X, y); binary filter.
   compare_checkpoints.py   — Side-by-side test metrics for two .pkl checkpoints.
+  threshold_tuning.py    — Post-train P(Up) cutoff on validation (binary).
+  inspect_keywords.py    — Mean keyword features by Down/Up label.
+  PERFORMANCE_REPORT.txt — Summary of recent v3 binary training runs and analysis.
 data/html_extractor.py   — Shared HTML text extraction (used by window_builder).
 data/preprocessor.py     — Tokeniser utilities for the transformer stack (legacy path).
 data/dataset.py          — PyTorch dataset for the multi-task transformer (legacy path).
@@ -530,7 +561,12 @@ QUICK COMMAND REFERENCE
   # Train → evaluate → predict
   python -m ml_model.train_lstm
   python -m ml_model.evaluate_lstm
+  python -m ml_model.compare_checkpoints
+  python -m ml_model.inspect_keywords
   python -m ml_model.predict_lstm --end-date 2026-05-10
+
+  # Recent run metrics (written after training sessions):
+  #   ml_model/PERFORMANCE_REPORT.txt
 
   # Optional: point to a specific checkpoint
   python -m ml_model.evaluate_lstm --checkpoint ml_model/outputs/checkpoints/model_<timestamp>_5w_0g.pkl

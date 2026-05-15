@@ -28,6 +28,7 @@ if str(_PROJECT_ROOT) not in sys.path:
 from ml_model.data.price_fetcher import get_price_labels
 from ml_model.data.window_builder import build_windows_with_metadata
 from ml_model.evaluate_lstm import (
+    _config_from_payload,
     backtest_vs_actual,
     chronological_test_slice,
     evaluate_classification,
@@ -38,19 +39,31 @@ from ml_model.pipeline_config import PipelineConfig
 from ml_model.train_lstm import apply_feature_norm
 
 
-def _config_from_payload(payload: dict) -> PipelineConfig:
-    fields = PipelineConfig.__dataclass_fields__
+def _resolve_checkpoint_config(
+    payload: dict,
+    model: torch.nn.Module,
+) -> PipelineConfig:
+    """Rebuild config and align label mode / cache with checkpoint architecture."""
+    config = _config_from_payload(payload)
     raw = payload.get("config", {})
-    kwargs = {k: v for k, v in raw.items() if k in fields}
-    if "embed_dim" in raw and "finbert_dim" not in kwargs:
-        kwargs["finbert_dim"] = 768 if raw["embed_dim"] == 768 else raw["embed_dim"]
-    if "finbert_dim" not in kwargs:
-        kwargs["finbert_dim"] = 768
-    if raw.get("embed_dim", 768) > 768:
-        kwargs["use_keywords"] = True
-    elif "use_keywords" not in kwargs:
-        kwargs["use_keywords"] = False
-    return PipelineConfig(**kwargs)
+
+    if isinstance(model, OilLSTMPredictorLegacy):
+        config.label_mode = "ternary"
+        config.use_keywords = False
+    elif raw.get("embed_cache_path"):
+        config.embed_cache_path = raw["embed_cache_path"]
+
+    state = payload.get("model_state_dict", {})
+    for key, tensor in state.items():
+        if key.endswith(".weight") and "classifier" in key and tensor.ndim == 2:
+            out_dim = int(tensor.shape[0])
+            if out_dim == 3:
+                config.label_mode = "ternary"
+            elif out_dim == 2:
+                config.label_mode = "binary"
+            break
+
+    return config
 
 
 def evaluate_one_checkpoint(path: Path, device: torch.device) -> Dict[str, Any]:
@@ -67,7 +80,10 @@ def evaluate_one_checkpoint(path: Path, device: torch.device) -> Dict[str, Any]:
         payload = pickle.load(f)
     config = _config_from_payload(payload)
     model = load_model_from_checkpoint(payload, config)
+    config = _resolve_checkpoint_config(payload, model)
     model.to(device)
+    logger_msg = f"label_mode={config.label_mode}, input_dim={config.input_dim}"
+    print(f"  Config: {logger_msg}")
 
     price_df = get_price_labels(config)
     X, y, meta = build_windows_with_metadata(config, price_df)
@@ -82,12 +98,22 @@ def evaluate_one_checkpoint(path: Path, device: torch.device) -> Dict[str, Any]:
     if X_test.size(-1) > 768 and isinstance(model, OilLSTMPredictorLegacy):
         X_test = X_test[..., :768]
 
+    up_thresh: Optional[float] = None
+    if config.label_mode == "binary":
+        up_thresh = payload.get("up_probability_threshold")
+        if up_thresh is None:
+            up_thresh = config.up_probability_threshold
+
     loader = DataLoader(TensorDataset(X_test, y_test), batch_size=config.batch_size)
-    cls_res = evaluate_classification(model, loader, config, device)
-    backtest_df = backtest_vs_actual(
-        model, X_test, y_test, meta_test, price_df, config, device
+    cls_res = evaluate_classification(
+        model, loader, config, device, up_threshold=up_thresh
     )
-    down_up = print_down_up_focus(cls_res["y_true"], cls_res["y_pred"], config)
+    backtest_df = backtest_vs_actual(
+        model, X_test, y_test, meta_test, price_df, config, device, up_threshold=up_thresh
+    )
+    down_up = print_down_up_focus(
+        cls_res["y_true"], cls_res["y_pred"], config, n_test=len(y_test)
+    )
 
     return {
         "path": str(path.name),
@@ -95,9 +121,15 @@ def evaluate_one_checkpoint(path: Path, device: torch.device) -> Dict[str, Any]:
         "input_dim": config.input_dim,
         "num_classes": config.num_classes,
         "accuracy": cls_res["accuracy"],
+        "balanced_accuracy": cls_res.get("balanced_accuracy"),
         "macro_f1": cls_res["macro_f1"],
         "majority_baseline": cls_res["majority_baseline_accuracy"],
+        "up_threshold": up_thresh,
         "down_up_accuracy": down_up.get("accuracy"),
+        "per_class_recall": {
+            name: cls_res["per_class"][name]["recall"]
+            for name in cls_res.get("per_class", {})
+        },
         "n_test": len(y_test),
         "train_test_metrics": payload.get("test_metrics", {}),
     }
@@ -140,14 +172,16 @@ def main() -> None:
     print("SUMMARY TABLE")
     print("=" * 72)
     print(
-        f"{'checkpoint':<42} {'mode':<8} {'acc':>6} {'macroF1':>8} "
+        f"{'checkpoint':<42} {'mode':<8} {'balAcc':>7} {'macroF1':>8} "
         f"{'DownUpAcc':>10} {'n_test':>7}"
     )
     for r in rows:
         du = r.get("down_up_accuracy")
         du_s = f"{du:.4f}" if du is not None else "n/a"
+        bal = r.get("balanced_accuracy")
+        bal_s = f"{bal:.3f}" if bal is not None else "n/a"
         print(
-            f"{r['path']:<42} {r['label_mode']:<8} {r['accuracy']:>6.3f} "
+            f"{r['path']:<42} {r['label_mode']:<8} {bal_s:>7} "
             f"{r['macro_f1']:>8.3f} {du_s:>10} {r['n_test']:>7}"
         )
     print("=" * 72)
