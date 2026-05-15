@@ -38,9 +38,11 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import (
     accuracy_score,
+    balanced_accuracy_score,
     classification_report,
     confusion_matrix,
     f1_score,
+    precision_recall_fscore_support,
 )
 from torch.utils.data import DataLoader, TensorDataset, WeightedRandomSampler
 
@@ -283,23 +285,32 @@ def train_one_epoch(
     return total_loss / max(n_batches, 1)
 
 
+def _per_class_recall(
+    y_true: List[int],
+    y_pred: List[int],
+    num_classes: int,
+) -> Dict[int, float]:
+    """Recall per class id; 0.0 if class absent from y_true."""
+    if not y_true:
+        return {c: 0.0 for c in range(num_classes)}
+    _, recall, _, support = precision_recall_fscore_support(
+        y_true, y_pred, labels=list(range(num_classes)), zero_division=0
+    )
+    return {c: float(recall[c]) if support[c] > 0 else 0.0 for c in range(num_classes)}
+
+
 @torch.no_grad()
 def evaluate_epoch(
     model: _nn.Module,
     loader: DataLoader,
     criterion: nn.Module,
     device: torch.device,
-) -> Tuple[float, float, float]:
-    """Compute val/test loss, accuracy, and macro F1.
-
-    Args:
-        model: LSTM predictor.
-        loader: Validation or test loader.
-        criterion: Loss function.
-        device: Compute device.
+    num_classes: int,
+) -> Tuple[float, float, float, float, Dict[int, float]]:
+    """Compute val/test loss, accuracy, macro F1, balanced accuracy, per-class recall.
 
     Returns:
-        ``(mean_loss, accuracy, macro_f1)``.
+        ``(mean_loss, accuracy, macro_f1, balanced_accuracy, recall_by_class)``.
     """
     model.eval()
     total_loss = 0.0
@@ -318,9 +329,14 @@ def evaluate_epoch(
         all_true.extend(yb.cpu().tolist())
 
     mean_loss = total_loss / max(n_batches, 1)
-    acc = accuracy_score(all_true, all_preds) if all_true else 0.0
-    f1 = f1_score(all_true, all_preds, average="macro", zero_division=0) if all_true else 0.0
-    return mean_loss, acc, f1
+    if not all_true:
+        return mean_loss, 0.0, 0.0, 0.0, {c: 0.0 for c in range(num_classes)}
+
+    acc = accuracy_score(all_true, all_preds)
+    f1 = f1_score(all_true, all_preds, average="macro", zero_division=0)
+    bal_acc = balanced_accuracy_score(all_true, all_preds)
+    recall = _per_class_recall(all_true, all_preds, num_classes)
+    return mean_loss, acc, f1, bal_acc, recall
 
 
 def run_training_loop(
@@ -358,10 +374,15 @@ def run_training_loop(
         optimizer, mode="min", factor=0.5, patience=2
     )
 
-    maximize_f1 = config.early_stopping_metric == "val_macro_f1"
-    best_score = float("-inf") if maximize_f1 else float("inf")
+    up_class_idx = list(config.class_names).index("Up")
+    maximize_metric = config.early_stopping_metric in (
+        "val_macro_f1",
+        "val_balanced_accuracy",
+    )
+    best_score = float("-inf") if maximize_metric else float("inf")
     best_state: Optional[Dict[str, torch.Tensor]] = None
     patience_counter = 0
+    zero_up_recall_streak = 0
     history: List[Dict[str, Any]] = []
 
     for epoch in range(1, config.epochs + 1):
@@ -373,10 +394,15 @@ def run_training_loop(
             device,
             max_grad_norm=config.max_grad_norm,
         )
-        val_loss, val_acc, val_f1 = evaluate_epoch(
-            model, val_loader, criterion, device
+        val_loss, val_acc, val_f1, val_bal_acc, val_recall = evaluate_epoch(
+            model, val_loader, criterion, device, config.num_classes
         )
         scheduler.step(val_loss)
+
+        recall_parts = ", ".join(
+            f"{config.class_names[c]}={val_recall[c]:.3f}" for c in range(config.num_classes)
+        )
+        up_recall = val_recall.get(up_class_idx, 0.0)
 
         record = {
             "epoch": epoch,
@@ -384,33 +410,59 @@ def run_training_loop(
             "val_loss": val_loss,
             "val_accuracy": val_acc,
             "val_macro_f1": val_f1,
+            "val_balanced_accuracy": val_bal_acc,
+            "val_recall": {config.class_names[k]: v for k, v in val_recall.items()},
+            "val_up_recall": up_recall,
         }
         history.append(record)
         logger.info(
-            "Epoch %d/%d — train_loss=%.4f val_loss=%.4f val_acc=%.4f val_f1=%.4f",
+            "Epoch %d/%d — train_loss=%.4f val_loss=%.4f val_acc=%.4f "
+            "val_f1=%.4f val_bal_acc=%.4f | val recall: %s",
             epoch,
             config.epochs,
             train_loss,
             val_loss,
             val_acc,
             val_f1,
+            val_bal_acc,
+            recall_parts,
         )
 
-        score = val_f1 if maximize_f1 else val_loss
-        improved = score > best_score if maximize_f1 else score < best_score
+        if config.early_stopping_metric == "val_macro_f1":
+            score = val_f1
+        elif config.early_stopping_metric == "val_balanced_accuracy":
+            score = val_bal_acc
+        else:
+            score = val_loss
+
+        improved = score > best_score if maximize_metric else score < best_score
         if improved:
             best_score = score
             best_state = {k: v.cpu().clone() for k, v in model.state_dict().items()}
             patience_counter = 0
         else:
             patience_counter += 1
-            if patience_counter >= config.patience:
-                logger.info(
-                    "Early stopping at epoch %d (metric=%s)",
-                    epoch,
-                    config.early_stopping_metric,
-                )
-                break
+
+        if up_recall <= 0.0:
+            zero_up_recall_streak += 1
+        else:
+            zero_up_recall_streak = 0
+
+        if zero_up_recall_streak >= config.zero_up_recall_patience:
+            logger.warning(
+                "Early stopping at epoch %d: Up recall 0 for %d consecutive epochs",
+                epoch,
+                zero_up_recall_streak,
+            )
+            break
+
+        if patience_counter >= config.patience:
+            logger.info(
+                "Early stopping at epoch %d (metric=%s)",
+                epoch,
+                config.early_stopping_metric,
+            )
+            break
 
     if best_state is not None:
         model.load_state_dict(best_state)

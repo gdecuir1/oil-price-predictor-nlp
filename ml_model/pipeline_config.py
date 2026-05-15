@@ -53,12 +53,16 @@ class PipelineConfig:
     lr: float = 2e-4
     weight_decay: float = 1e-4
     patience: int = 8
-    use_class_weights: bool = True
-    use_weighted_sampler: bool = True
+    # Unweighted loss + uniform sampling avoids collapsed "always Down" predictions.
+    use_class_weights: bool = False
+    use_weighted_sampler: bool = False
     label_smoothing: float = 0.05
     max_grad_norm: float = 1.0
     normalize_features: bool = True
-    early_stopping_metric: str = "val_loss"
+    # val_macro_f1 | val_balanced_accuracy | val_loss
+    early_stopping_metric: str = "val_macro_f1"
+    # Stop if validation recall for Up stays 0 for this many epochs in a row.
+    zero_up_recall_patience: int = 5
 
     checkpoint_dir: str = "ml_model/outputs/checkpoints"
     report_dir: str = "ml_model/outputs/reports"

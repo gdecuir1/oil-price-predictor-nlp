@@ -148,7 +148,10 @@ What v3 fixes (after v2 test accuracy ~15%)
   • **Ternary option**: label_mode=ternary with flat_band_pct=0.35 (narrower band
     than 0.5 → fewer Flat labels than before).
   • Masked attention, CLS pooling, feature normalisation, weighted sampling.
-  • Early stopping on **val_loss** (more stable on tiny validation sets).
+  • **Unweighted** training (`use_class_weights=False`, `use_weighted_sampler=False`)
+    to reduce "always Down" collapse.
+  • Early stopping on **val_macro_f1** (or `val_balanced_accuracy`); stops if **Up recall**
+    is 0 for `zero_up_recall_patience` consecutive epochs (default 5).
   • **Down vs Up focus** metrics printed in train/eval when ternary is used.
 
 Embeddings cache: ml_model/outputs/embed_cache_v3.pt (768 FinBERT + 8 keywords = 776 dims).
@@ -420,7 +423,10 @@ mlp_hidden             | 64                   | Classifier hidden size
 dropout                | 0.3                  | Dropout rate
 epochs                 | 50                   | Max training epochs
 patience               | 8                    | Early stopping patience
-early_stopping_metric  | val_loss             | val_loss or val_macro_f1
+early_stopping_metric  | val_macro_f1         | val_macro_f1, val_balanced_accuracy, or val_loss
+zero_up_recall_patience| 5                    | Stop if Up val recall is 0 this many epochs in a row
+use_class_weights      | False                | True oversamples minority via loss
+use_weighted_sampler   | False                | True oversamples minority each epoch
 embed_cache_path       | .../embed_cache_v3.pt| Day vector cache
 compare_checkpoints    | (script)             | python -m ml_model.compare_checkpoints
 
