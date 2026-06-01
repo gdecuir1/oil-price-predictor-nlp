@@ -5,3 +5,5 @@ search_results/
 current_outputs.txt
 cache/
 .sentry-native/
+run_parallel.py
+.env
