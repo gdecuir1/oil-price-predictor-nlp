@@ -1,4 +1,6 @@
 .env
+.env.*
+env
 raw_html/
 __pycache__/
 search_results/
@@ -6,4 +8,5 @@ current_outputs.txt
 cache/
 .sentry-native/
 run_parallel.py
-.env
+node_*.log
+scrape_from_parsed.log
